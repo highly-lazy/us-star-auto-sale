@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-regular);
+  background: var(--white);
+  color: var(--navy);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ==========================
+   LOGO / HEADER
+========================== */
+.logo {
+  font-family: "Bold", sans-serif;
+  font-size: 24px;
+  color: navy; /* qolgan matn uchun rang */
+  text-decoration: none;
+}
+
+.logo .red-star {
+  color: red; /* Star qizil bo‘ladi */
+  font-size: 35px; /* Star matnga nisbatan kattaroq qilamiz */
+  vertical-align: middle; /* matn bilan hizalanishi uchun */
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Car Details</title>
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css " />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-container">
+        <a class="logo" href="index.html">US Star Auto Sale</a>
+
+        <!-- Desktop nav -->
+        <nav class="desktop-nav">
+          <a href="index.html">Home</a>
+          <a href="collection.html">Inventory</a>
+          <a href="#services">Service</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- Call Now button -->
+        <a href="tel:+1 (865) 377-3230" class="call-btn">Call Now</a>
+
+        <!-- Mobile menu button -->
+        <button class="menu-btn" id="menuBtn">☰</button>
+      </div>
+    </header>
+
+    <!-- Sidebar for mobile -->
+    <aside class="sidebar" id="sidebar">
+      <button class="close-btn" id="closeBtn">✕</button>
+      <a href="index.html">Home</a>
+      <a href="collection.html">Inventory</a>
+      <a href="#services">Service</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+1 (865) 377-3230" class="call-btn">Call Now</a>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+
+    <section class="section container car-details">
+      <div class="car-images"></div>
+      <div class="car-info">
+        <h1 class="car-title"></h1>
+        <p class="car-price"></p>
+        <p class="car-mileage"></p>
+        <p class="car-description"></p>
+        <ul class="car-features"></ul>
+      </div>
+    </section>
+
+    <aside class="sidebar" id="sidebar">
+      <button class="close-btn" id="closeBtn">✕</button>
+      <a href="index.html">Home</a>
+      <a href="collection.html">Inventory</a>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+
+    <footer class="site-footer">
+      <div class="container footer-container">
+        <!-- Logo -->
+        <div class="footer-logo">
+          <a class="logo" href="index.html">
+            US <span class="red-star">★</span> Auto Sale
+          </a>
+        </div>
+
+        <!-- Info -->
+        <div class="footer-info">
+          <p><strong>Working Hours:</strong> 9:00 – 18:00, Mon – Fri</p>
+          <p>
+            <strong>Address:</strong> 7665 Maynardville Pike, Knoxville, TN
+            37938
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:Usstar@autoussales.com">Usstar@autoussales.com</a>
+          </p>
+        </div>
+
+        <!-- Social centered -->
+        <div class="footer-social">
+          <a href="https://www.instagram.com/usautosale.tn" target="_blank">
+            <img
+              src="assets/icons/instagram-2016-logo-svgrepo-com.svg"
+              alt="Instagram"
+            />
+            Instagram
+          </a>
+        </div>
+
+        <!-- Copyright -->
+        <p class="footer-copy">© US Star Auto Sale 2025 All rights reserved</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/car.js"></script>
+  </body>
+</html>

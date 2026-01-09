@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>US Star Auto Sale</title>
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-container">
+        <a class="logo" href="index.html">
+          US <span class="red-star">★</span> Auto Sale
+        </a>
+
+        <!-- Desktop nav -->
+        <nav class="desktop-nav">
+          <a href="index.html">Home</a>
+          <a href="collection.html">Inventory</a>
+          <a href="#services">Service</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- Call Now button -->
+        <a href="tel:+1 (865) 377-3230" class="call-btn">Call Now</a>
+
+        <!-- Mobile menu button -->
+        <button class="menu-btn" id="menuBtn">☰</button>
+      </div>
+    </header>
+
+    <!-- Sidebar for mobile -->
+    <aside class="sidebar" id="sidebar">
+      <button class="close-btn" id="closeBtn">✕</button>
+      <a href="index.html">Home</a>
+      <a href="collection.html">Inventory</a>
+      <a href="#services">Service</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+1 (865) 377-3230" class="call-btn">Call Now</a>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+      <button class="close-btn" id="closeBtn">✕</button>
+      <a href="index.html">Home</a>
+      <a href="collection.html">Inventory</a>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="wrapper">
+        <h1 class="hero-title">Find Your Perfect Drive</h1>
+        <p class="hero-subtext">
+          Nationwide Delivery • Financing Options • Test Drive Available
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-hero btn-test">Test Drive</a>
+          <a href="collection.html" class="btn-hero btn-inventory"
+            >View Inventory</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <div class="service-card">
+            <img src="assets/icons/delivery.png" alt="Nationwide Delivery" />
+            <h3>Nationwide Delivery</h3>
+            <p>We deliver your car anywhere in the USA safely and on time.</p>
+          </div>
+          <!-- Service 2 -->
+          <div class="service-card">
+            <img src="assets/icons/financee.png" alt="Financing Options" />
+            <h3>Financing Options</h3>
+            <p>Flexible financing tailored to your needs with easy approval.</p>
+          </div>
+          <!-- Service 3 -->
+          <div class="service-card">
+            <img src="assets/icons/drive.png" alt="Test Drive" />
+            <h3>Test Drive</h3>
+            <p>Book a test drive and experience your car before buying.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <!-- <h2 class="section-title">Get in Touch</h2>
+        <p>
+          Fill out the form below and we will get back to you as soon as
+          possible.
+        </p> -->
+        <section class="contact">
+          <h2 class="section-title">Contact Us</h2>
+          <p>Send us a message and we'll get back to you!</p>
+
+          <form id="contactForm">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows="5"
+              required
+            ></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+
+          <p id="formStatus" style="margin-top: 15px"></p>
+        </section>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container footer-container">
+        <!-- Logo -->
+        <div class="footer-logo">
+          <a class="logo" href="index.html">
+            US <span class="red-star">★</span> Auto Sale
+          </a>
+        </div>
+
+        <!-- Info -->
+        <div class="footer-info">
+          <p><strong>Working Hours:</strong> 9:00 – 18:00, Mon – Fri</p>
+          <p>
+            <strong>Address:</strong> 7665 Maynardville Pike, Knoxville, TN
+            37938
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:Usstar@autoussales.com">Usstar@autoussales.com</a>
+          </p>
+        </div>
+
+        <!-- Social centered -->
+        <div class="footer-social">
+          <a href="https://www.instagram.com/usautosale.tn" target="_blank">
+            <img
+              src="assets/icons/instagram-2016-logo-svgrepo-com.svg"
+              alt="Instagram"
+            />
+            Instagram
+          </a>
+        </div>
+
+        <!-- Copyright -->
+        <p class="footer-copy">© US Star Auto Sale 2025 All rights reserved</p>
+      </div>
+    </footer>
+  </body>
+
+  <script src="js/main.js"></script>
+</html>

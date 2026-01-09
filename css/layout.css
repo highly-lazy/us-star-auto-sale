@@ -1,0 +1,116 @@
+/* Header */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(11, 28, 45, 0.85);
+  color: var(--white);
+  z-index: 999;
+  transition: background 0.3s;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.logo {
+  font-family: var(--font-bold);
+  font-size: 22px;
+  color: var(--white);
+}
+
+/* Desktop nav */
+.desktop-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.desktop-nav a {
+  font-family: var(--font-semibold);
+  color: var(--white);
+  transition: color 0.3s;
+}
+
+.desktop-nav a:hover {
+  color: var(--red);
+}
+
+/* Mobile menu button */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 280px;
+  height: 100vh;
+  background: var(--navy);
+  padding: 20px;
+  z-index: 1000;
+  transition: left 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar a {
+  color: var(--white);
+  font-size: 18px;
+  font-family: var(--font-medium);
+}
+
+.sidebar a:hover {
+  color: var(--red);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 22px;
+  align-self: flex-end;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 900;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  .menu-btn {
+    display: block;
+  }
+}
