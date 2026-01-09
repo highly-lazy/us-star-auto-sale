@@ -114,3 +114,76 @@
     display: block;
   }
 }
+
+/* --- MOBIL VERSIYA UCHUN MAXSUS TUZATISHLAR --- */
+@media (max-width: 768px) {
+  /* 1. Header konteynerini kengaytirish */
+  .header-container {
+    height: 80px !important; /* Header juda kichik bo'lmasligi uchun */
+    padding: 0 15px !important;
+  }
+
+  /* Logotip o'lchami */
+  .logo {
+    font-size: 18px !important;
+    white-space: nowrap;
+  }
+
+  /* 2. O'ng tomondagi elementlar (Sell Now + Burger) */
+  /* Agar HTML-da tugma va burger alohida bo'lsa, ularni flex qiling */
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Gamburger tugmasining o'zi */
+  .menu-btn {
+    font-size: 24px !important;
+    margin-left: 10px; /* Tugma bilan oraliq masofa */
+  }
+
+  /* 3. Hero Section - Cho'zilib ketgan tugmalar va padding */
+  .hero {
+    padding: 140px 20px 60px !important; /* Header tagida qolmasligi uchun */
+  }
+
+  .hero-title {
+    font-size: 26px !important; /* Sarlavha sig'ishi uchun */
+    line-height: 1.3;
+  }
+
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: column !important; /* Ustma-ust qilish */
+    align-items: center !important;
+    gap: 15px !important;
+    width: 100% !important;
+  }
+
+  /* Tugmalarni "rasvo" cho'zilishidan qutqarish */
+  .btn-hero {
+    width: 85% !important; /* Ekran bo'ylab 100% yoyilmaydi */
+    max-width: 300px !important; /* Juda katta bo'lishini cheklaydi */
+    padding: 14px 0 !important;
+    text-align: center;
+    font-size: 15px !important;
+    display: block !important;
+  }
+
+  /* 4. Kontakt Formasidagi tugma */
+  #contactForm button {
+    width: 85% !important;
+    max-width: 300px !important;
+  }
+}
+
+/* Juda kichik ekranlar uchun qo'shimcha (iPhone SE) */
+@media (max-width: 380px) {
+  .logo {
+    font-size: 16px !important;
+  }
+  .header-container {
+    height: 70px !important;
+  }
+}

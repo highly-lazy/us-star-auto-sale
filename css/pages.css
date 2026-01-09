@@ -432,3 +432,79 @@
     max-height: 300px;
   }
 }
+
+/* --- MOBIL VERSIYA UCHUN TAYYOR YECHIM --- */
+@media (max-width: 768px) {
+  /* 1. Header'ni tartibga solamiz */
+  header,
+  .site-header {
+    height: 70px !important;
+    padding: 0 15px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--navy);
+  }
+
+  /* Logotip juda katta bo'lsa, uni moslaymiz */
+  header .logo img,
+  .site-header img {
+    height: 35px !important;
+    width: auto;
+  }
+
+  /* O'ng tomondagi Call/Sell va Burger masofasi */
+  .header-right,
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px !important; /* Bir-biriga yopishib qolmasligi uchun */
+  }
+
+  /* 2. Hero Section - Paddingni headerga qarab to'g'rilash */
+  .hero {
+    padding: 130px 15px 60px !important; /* Header tagida qolib ketmasligi uchun */
+  }
+
+  .hero-title {
+    font-size: 28px !important; /* 42px telefonda juda katta */
+    margin-bottom: 15px;
+  }
+
+  /* 3. Hero Tugmalarini chiroyli qilish */
+  .hero-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100%;
+  }
+
+  .btn-hero {
+    width: 85% !important; /* Ekran bo'ylab 100% cho'zilmaydi */
+    max-width: 300px; /* Juda katta bo'lib ketishini cheklaydi */
+    padding: 14px 20px !important;
+    font-size: 15px !important;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  /* 4. Contact Form tugmasi ham cho'zilib ketmasligi uchun */
+  #contactForm button {
+    width: 85% !important;
+    max-width: 300px;
+  }
+}
+
+/* Kichik telefonlar uchun (iPhone SE) */
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 24px !important;
+  }
+  .btn-hero {
+    width: 90% !important;
+  }
+}

@@ -164,3 +164,92 @@
     height: 200px;
   }
 }
+
+/* --- MOBIL QURILMALAR UCHUN MAXSUS TUZATISHLAR --- */
+@media (max-width: 768px) {
+  /* 1. Header'ni tartibga solamiz */
+  .site-header {
+    background: var(--navy) !important; /* Shaffoflikni kamaytiramiz */
+    height: 75px !important;
+  }
+
+  .header-container {
+    height: 75px !important;
+    padding: 0 15px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  /* Logotip va tugmalar siqilmasligi uchun */
+  .logo {
+    font-size: 18px !important;
+    flex-shrink: 0;
+  }
+
+  /* 2. Call Now va Burger btn orasini ochamiz */
+  .menu-btn {
+    display: block !important;
+    margin-left: 10px !important; /* Call-btn dan uzoqlashadi */
+    padding: 5px !important;
+  }
+
+  /* 3. Hero Section - Padding va Tugmalar */
+  .hero {
+    padding: 130px 20px 60px !important; /* Header tagida qolmasligi uchun */
+    min-height: auto !important;
+  }
+
+  .hero-title {
+    font-size: 26px !important; /* 42px telefonda juda katta */
+    line-height: 1.2 !important;
+    margin-bottom: 15px !important;
+  }
+
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: column !important; /* Tugmalar ustma-ust */
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  /* Tugmalarni "rasvo" cho'zilib ketishidan qutqarish */
+  .btn-hero {
+    width: 85% !important; /* Ekran bo'yicha 100% yoyilmaydi */
+    max-width: 280px !important; /* Tugma juda ulkan bo'lmaydi */
+    padding: 12px 20px !important;
+    font-size: 15px !important;
+    text-align: center !important;
+    border-radius: 8px !important;
+  }
+
+  /* 4. Car Cards (Avtomobillar ro'yxati) */
+  .car-card img {
+    height: 220px !important; /* Juda katta yoki kichik bo'lmasligi uchun */
+  }
+
+  .car-buttons {
+    padding: 0 10px 15px !important;
+  }
+}
+
+/* 5. Juda kichik ekranlar uchun (iPhone SE) */
+@media (max-width: 380px) {
+  .header-container {
+    height: 65px !important;
+  }
+
+  .logo {
+    font-size: 16px !important;
+  }
+
+  .call-btn {
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+  }
+
+  .hero-title {
+    font-size: 22px !important;
+  }
+}

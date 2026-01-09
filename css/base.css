@@ -43,3 +43,63 @@ img {
   font-size: 35px; /* Star matnga nisbatan kattaroq qilamiz */
   vertical-align: middle; /* matn bilan hizalanishi uchun */
 }
+
+/* --- MOBIL UCHUN MAXSUS TUZATISHLAR --- */
+@media (max-width: 768px) {
+  /* 1. Header balandligi va elementlar masofasi */
+  .site-header {
+    height: 70px !important; /* Header qisilib qolmasligi uchun */
+    display: flex;
+    align-items: center;
+  }
+
+  .header-container {
+    height: 100%;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  /* 2. Logotipni kichraytirish */
+  .logo {
+    font-size: 18px !important; /* 24px telefonda katta */
+  }
+
+  .logo .red-star {
+    font-size: 24px !important; /* 35px headerdan toshib ketyapti */
+  }
+
+  /* 3. Hero qismidagi "cho'zilgan" tugmalar muammosi */
+  .hero {
+    padding-top: 130px !important; /* Header tagida qolib ketmaslik uchun */
+  }
+
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: column !important; /* Tugmalarni ustma-ust qo'yish */
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .btn-hero {
+    width: 80% !important; /* 100% bo'lib butun ekranga cho'zilmaydi */
+    max-width: 280px !important; /* Juda katta bo'lishini cheklaydi */
+    text-align: center;
+    padding: 12px 0 !important;
+  }
+
+  /* 4. Gamburger va Call Now uzoqligi */
+  .header-right,
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px !important; /* Elementlar orasida nafas olish uchun joy */
+  }
+}
+
+/* 5. Rasmlar cho'zilib ketmasligi uchun global tuzatish */
+.logo img,
+.menu-btn img,
+.header-container img {
+  width: auto !important; /* Header ichidagi rasmlar 100% bo'lmasligi kerak */
+}

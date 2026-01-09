@@ -11,3 +11,75 @@
 .hidden {
   display: none;
 }
+
+/* --- MOBIL VERSIYANI MAJBURIY TO'G'RILASH --- */
+@media (max-width: 768px) {
+  /* 1. Header qismini kengaytirish va elementlarni joylash */
+  .site-header {
+    height: 75px !important;
+    background: rgba(
+      11,
+      28,
+      45,
+      0.95
+    ) !important; /* Shaffoflikni kamaytirdik */
+  }
+
+  .header-container {
+    display: flex !important;
+    flex-direction: row !important; /* Ustma-ust bo'lib qolmasligi uchun */
+    justify-content: space-between !important;
+    align-items: center !important;
+    height: 100% !important;
+    width: 95% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Logotip va Yulduzchani kichraytirish */
+  .logo {
+    font-size: 18px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .logo .red-star {
+    font-size: 24px !important; /* 35px dan 24px ga tushirdik */
+  }
+
+  /* 2. Hero Section - Tugmalarni "O'rtacha" o'lchamga keltirish */
+  .hero {
+    padding-top: 130px !important; /* Header matnni yopib qo'ymasligi uchun */
+  }
+
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: column !important; /* Tugmalar ustma-ust */
+    align-items: center !important;
+    gap: 15px !important;
+    width: 100% !important;
+  }
+
+  .btn-hero,
+  .btn-test,
+  .btn-inventory {
+    width: 280px !important; /* Butun ekran bo'ylab cho'zilishni to'xtatdik */
+    max-width: 90% !important;
+    padding: 12px 0 !important;
+    margin: 0 auto !important;
+    display: inline-block !important;
+    text-align: center !important;
+    border-radius: 8px !important;
+  }
+
+  /* 3. Call Now va Burger btn masofasi */
+  .menu-btn {
+    font-size: 24px !important;
+    margin-left: 15px !important;
+  }
+
+  .call-btn {
+    padding: 6px 12px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+  }
+}
