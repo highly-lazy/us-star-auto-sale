@@ -123,6 +123,12 @@
     padding: 0 15px !important;
   }
 
+  .btn {
+    min-width: 200px !important; /* Juda kichik bo'lib qolmasligi uchun */
+    max-width: 300px !important; /* Juda katta bo'lib ketmasligi uchun */
+    margin: 0 auto !important;
+  }
+
   /* Logotip o'lchami */
   .logo {
     font-size: 18px !important;
@@ -185,5 +191,26 @@
   }
   .header-container {
     height: 70px !important;
+  }
+}
+
+/* 380px dan 403px gacha bo'lgan oraliq uchun maxsus tuzatish */
+@media (max-width: 403px) and (min-width: 380px) {
+  .call-btn {
+    padding: 6px 10px !important; /* Paddingni kamaytiramiz */
+    font-size: 12px !important; /* Shriftni kichraytiramiz */
+    height: auto !important; /* Balandlikni avtomat qilamiz */
+    line-height: 1.2 !important;
+    display: flex !important; /* Markazlash uchun */
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .header-container {
+    gap: 5px !important; /* Logo va tugmalar orasini biroz qisqartiramiz */
+  }
+
+  .logo {
+    font-size: 16px !important; /* Logotip ham joy bo'shatishi uchun */
   }
 }
