@@ -1,25 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>US Star Auto Sale</title>
+    <meta charset="UTF-8" />
+    <title>Trade-In | US Star Auto Sale</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/tradein.css" />
     <link rel="stylesheet" href="css/pages.css" />
     <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
-    <!-- HEADER -->
+    <!-- ================= HEADER ================= -->
     <header class="site-header">
       <div class="container header-container">
-        <!-- Logo -->
         <a class="logo" href="index.html">
           US <span class="red-star">★</span> Auto Sale
         </a>
 
-        <!-- Desktop Navigation -->
         <nav class="desktop-nav">
           <a href="index.html">Home</a>
           <a href="financing.html">Financing</a>
@@ -29,10 +32,7 @@
           <a href="#contact">Contact</a>
         </nav>
 
-        <!-- Call Button -->
         <a href="tel:+18653773230" class="call-btn">Call Now</a>
-
-        <!-- Mobile Menu Button -->
         <button class="menu-btn" id="menuBtn">☰</button>
       </div>
     </header>
@@ -48,17 +48,14 @@
       <a href="#contact">Contact</a>
       <a href="tel:+18653773230" class="call-btn">Call Now</a>
     </aside>
-
-    <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
 
+    <!-- ================= HERO ================= -->
     <section class="hero">
       <div class="overlay"></div>
       <div class="wrapper">
-        <h1 class="hero-title">Find Your Perfect Drive</h1>
-        <p class="hero-subtext">
-          Nationwide Delivery • Financing Options • Test Drive Available
-        </p>
+        <h1 class="hero-title">Trade Your Car Easily</h1>
+        <p class="hero-subtext">Trade your car with us !</p>
         <div class="hero-buttons">
           <a href="#contact" class="btn-hero btn-test">Test Drive</a>
           <a href="collection.html" class="btn-hero btn-inventory"
@@ -68,54 +65,59 @@
       </div>
     </section>
 
-    <section class="section services" id="services">
-      <div class="container">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-grid">
-          <!-- Service 1 -->
-          <div class="service-card">
-            <img src="assets/icons/delivery.png" alt="Nationwide Delivery" />
-            <h3>Nationwide Delivery</h3>
-            <p>We deliver your car anywhere in the USA safely and on time.</p>
-          </div>
-          <!-- Service 2 -->
-          <div class="service-card">
-            <img src="assets/icons/financee.png" alt="Financing Options" />
-            <h3>Financing Options</h3>
-            <p>Flexible financing tailored to your needs with easy approval.</p>
-          </div>
-          <!-- Service 3 -->
-          <div class="service-card">
-            <img src="assets/icons/drive.png" alt="Test Drive" />
-            <h3>Test Drive</h3>
-            <p>Book a test drive and experience your car before buying.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- ================= TRADE-IN FORM ================= -->
+    <section class="tradein-section">
+      <div class="container tradein-container">
+        <h2 class="section-title">Get Trade-In Estimate</h2>
 
-    <section class="section contact" id="contact">
-      <div class="container">
-        <h2 class="section-title">Contact Us</h2>
-        <p>Send us a message and we'll get back to you!</p>
+        <form id="tradeForm" class="tradein-form">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Full Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              required
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              required
+            />
+          </div>
 
-        <form id="contactForm">
-          <input type="hidden" name="form_type" value="contact" />
+          <label for="tradeCarSelect">Select Vehicle You Want</label>
+          <select name="car" id="tradeCarSelect" required>
+            <option value="">Select Vehicle</option>
+          </select>
+          <div class="selected-car-preview">
+            <img id="tradeCarImage" alt="Selected Vehicle" />
+          </div>
 
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
+          <h3 class="form-subtitle">Your Trade-In Vehicle</h3>
+          <div class="form-group">
+            <input type="text" name="make" placeholder="Make" />
+            <input type="text" name="model" placeholder="Model" />
+          </div>
+          <div class="form-group">
+            <input type="text" name="year" placeholder="Year" />
+            <input type="text" name="mileage" placeholder="Mileage" />
+          </div>
           <textarea
             name="message"
-            placeholder="Your Message"
-            rows="5"
-            required
+            placeholder="Additional Information (Optional)"
           ></textarea>
-          <button type="submit">Send Message</button>
-          <p id="formStatus" style="margin-top: 15px"></p>
+
+          <button type="submit" class="btn-primary">
+            Get Trade-In Estimate
+          </button>
+          <p id="tradeStatus" class="form-status"></p>
         </form>
       </div>
     </section>
 
+    <!-- ================= FOOTER ================= -->
     <footer class="site-footer">
       <!-- Map on top -->
       <div class="footer-map">
@@ -175,5 +177,6 @@
       </div>
     </footer>
     <script src="js/main.js"></script>
+    <script src="js/form.js"></script>
   </body>
 </html>

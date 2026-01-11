@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Financing | US Star Auto Sale</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/financing.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container header-container">
+        <a class="logo" href="index.html"
+          >US <span class="red-star">★</span> Auto Sale</a
+        >
+        <nav class="desktop-nav">
+          <a href="index.html">Home</a>
+          <a href="financing.html">Financing</a>
+          <a href="tradein.html">Trade-In</a>
+          <a href="collection.html">Inventory</a>
+          <a href="#services">Service</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a href="tel:+18653773230" class="call-btn">Call Now</a>
+        <button class="menu-btn" id="menuBtn">☰</button>
+      </div>
+    </header>
+
+    <!-- MOBILE SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <button class="close-btn" id="closeBtn">✕</button>
+      <a href="index.html">Home</a>
+      <a href="financing.html">Financing</a>
+      <a href="tradein.html">Trade-In</a>
+      <a href="collection.html">Inventory</a>
+      <a href="#services">Service</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+18653773230" class="call-btn">Call Now</a>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="wrapper">
+        <h1 class="hero-title">No Credit, Bad Credit, We Say Yes</h1>
+        <p class="hero-subtext">Flexible financing options for everyone</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-hero btn-test">Test Drive</a>
+          <a href="collection.html" class="btn-hero btn-inventory"
+            >View Inventory</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- FINANCING FORM -->
+    <section class="financing-section">
+      <div class="container financing-container">
+        <h2 class="section-title">Apply for Financing</h2>
+
+        <div class="progress-bar">
+          <div class="progress" id="progress"></div>
+        </div>
+
+        <form id="financingForm" class="financing-form">
+          <!-- STEP 1 -->
+          <div class="form-step active">
+            <h3>Applicant Information</h3>
+            <div class="form-grid">
+              <input
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                required
+              />
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+              />
+              <input type="date" name="dob" required />
+              <select name="maritalStatus" required>
+                <option value="">Marital Status</option>
+                <option>Single</option>
+                <option>Married</option>
+              </select>
+              <input
+                type="text"
+                name="ssn"
+                placeholder="SSN (Last 4 digits)"
+                maxlength="4"
+                required
+              />
+              <input
+                type="text"
+                name="dlState"
+                placeholder="Driver License State"
+                required
+              />
+              <input
+                type="text"
+                name="dlNumber"
+                placeholder="Driver License Number"
+                required
+              />
+            </div>
+            <button type="button" class="btn next">Next</button>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="form-step">
+            <h3>Applicant Residence Information</h3>
+            <div class="form-grid">
+              <input
+                type="text"
+                name="street"
+                placeholder="Street Address"
+                required
+              />
+              <input type="text" name="city" placeholder="City" required />
+              <input type="text" name="state" placeholder="State" required />
+              <input type="text" name="zip" placeholder="ZIP Code" required />
+              <select name="residenceType" required>
+                <option value="">Residence Type</option>
+                <option>Rent</option>
+                <option>Own</option>
+              </select>
+              <input
+                type="number"
+                name="monthlyPayment"
+                placeholder="Monthly Rent / Mortgage"
+                required
+              />
+              <input
+                type="number"
+                name="yearsAtAddress"
+                placeholder="Years at Address"
+                required
+              />
+              <input
+                type="number"
+                name="monthsAtAddress"
+                placeholder="Months at Address"
+                required
+              />
+            </div>
+            <div class="buttons">
+              <button type="button" class="btn prev">Back</button>
+              <button type="button" class="btn next">Next</button>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="form-step">
+            <h3>Applicant Employment Information</h3>
+            <div class="form-grid">
+              <select name="employmentStatus" required>
+                <option value="">Employment Status</option>
+                <option>Employed</option>
+                <option>Self-Employed</option>
+                <option>Unemployed</option>
+              </select>
+              <input
+                type="text"
+                name="employer"
+                placeholder="Employer / Business Name"
+                required
+              />
+              <input type="text" name="jobTitle" placeholder="Job Title" />
+              <input
+                type="number"
+                name="monthlyIncome"
+                placeholder="Monthly Income"
+                required
+              />
+              <input type="tel" name="workPhone" placeholder="Work Phone" />
+              <input
+                type="number"
+                name="yearsOnJob"
+                placeholder="Years on Job"
+              />
+              <input
+                type="number"
+                name="monthsOnJob"
+                placeholder="Months on Job"
+              />
+            </div>
+            <div class="buttons">
+              <button type="button" class="btn prev">Back</button>
+              <button type="button" class="btn next">Next</button>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="form-step">
+            <h3>Down Payment & Term</h3>
+            <div class="form-grid">
+              <select name="vehicle" id="carSelect" required>
+                <option value="">Select Vehicle</option>
+              </select>
+              <div class="selected-car-preview">
+                <img id="selectedCarImage" alt="Selected Vehicle" />
+              </div>
+              <input
+                type="number"
+                name="downPayment"
+                placeholder="Down Payment Amount"
+              />
+              <select name="term" required>
+                <option value="">Preferred Term</option>
+                <option>36 Months</option>
+                <option>48 Months</option>
+                <option>60 Months</option>
+                <option>72 Months</option>
+              </select>
+              <select name="tradeIn">
+                <option value="">Trade-In?</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+            <div class="buttons">
+              <button type="button" class="btn prev">Back</button>
+              <button type="submit" class="btn submit">
+                Submit Application
+              </button>
+            </div>
+            <p id="financingStatus" class="form-status"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <!-- Map on top -->
+      <div class="footer-map">
+        <iframe
+          src="https://www.google.com/maps?q=7665%20Maynardville%20Pike%2C%20Knoxville%2C%20TN%2037938&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+
+        <div class="map-overlay">
+          <h4>US Star Auto Sale</h4>
+          <p>7665 Maynardville Pike<br />Knoxville, TN 37938</p>
+          <a
+            href="https://maps.google.com/?q=7665+Maynardville+Pike+Knoxville+TN+37938"
+            target="_blank"
+          >
+            Get Directions →
+          </a>
+        </div>
+      </div>
+
+      <div class="container footer-container">
+        <!-- Logo -->
+        <div class="footer-logo">
+          <a class="logo" href="index.html">
+            US <span class="red-star">★</span> Auto Sale
+          </a>
+        </div>
+
+        <!-- Info -->
+        <div class="footer-info">
+          <p><strong>Working Hours:</strong> 9:00 – 18:00, Mon – Fri</p>
+          <p>
+            <strong>Address:</strong> 7665 Maynardville Pike, Knoxville, TN
+            37938
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:Usstar@autoussales.com">Usstar@autoussales.com</a>
+          </p>
+        </div>
+
+        <!-- Social centered -->
+        <div class="footer-social">
+          <a href="https://www.instagram.com/usautosale.tn" target="_blank">
+            <img
+              src="assets/icons/instagram-2016-logo-svgrepo-com.svg"
+              alt="Instagram"
+            />
+            Instagram
+          </a>
+        </div>
+
+        <!-- Copyright -->
+        <p class="footer-copy">© US Star Auto Sale 2025 All rights reserved</p>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/form.js"></script>
+  </body>
+</html>

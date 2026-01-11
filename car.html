@@ -10,35 +10,45 @@
     <link rel="stylesheet" href="css/pages.css " />
   </head>
   <body>
+    <!-- HEADER -->
     <header class="site-header">
       <div class="container header-container">
-        <a class="logo" href="index.html">US Star Auto Sale</a>
+        <!-- Logo -->
+        <a class="logo" href="index.html">
+          US <span class="red-star">★</span> Auto Sale
+        </a>
 
-        <!-- Desktop nav -->
+        <!-- Desktop Navigation -->
         <nav class="desktop-nav">
           <a href="index.html">Home</a>
+          <a href="financing.html">Financing</a>
+          <a href="tradein.html">Trade-In</a>
           <a href="collection.html">Inventory</a>
           <a href="#services">Service</a>
           <a href="#contact">Contact</a>
         </nav>
 
-        <!-- Call Now button -->
-        <a href="tel:+1 (865) 377-3230" class="call-btn">Call Now</a>
+        <!-- Call Button -->
+        <a href="tel:+18653773230" class="call-btn">Call Now</a>
 
-        <!-- Mobile menu button -->
+        <!-- Mobile Menu Button -->
         <button class="menu-btn" id="menuBtn">☰</button>
       </div>
     </header>
 
-    <!-- Sidebar for mobile -->
+    <!-- MOBILE SIDEBAR -->
     <aside class="sidebar" id="sidebar">
       <button class="close-btn" id="closeBtn">✕</button>
       <a href="index.html">Home</a>
+      <a href="financing.html">Financing</a>
+      <a href="tradein.html">Trade-In</a>
       <a href="collection.html">Inventory</a>
       <a href="#services">Service</a>
       <a href="#contact">Contact</a>
-      <a href="tel:+1 (865) 377-3230" class="call-btn">Call Now</a>
+      <a href="tel:+18653773230" class="call-btn">Call Now</a>
     </aside>
+
+    <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
 
     <section class="section container car-details">
@@ -60,29 +70,52 @@
     <div class="overlay" id="overlay"></div>
 
     <footer class="site-footer">
+      <!-- MAP -->
+      <div class="footer-map">
+        <iframe
+          src="https://www.google.com/maps?q=7665%20Maynardville%20Pike%2C%20Knoxville%2C%20TN%2037938&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+
+        <div class="map-overlay">
+          <h4>US Star Auto Sale</h4>
+          <p>7665 Maynardville Pike<br />Knoxville, TN 37938</p>
+          <a
+            href="https://maps.google.com/?q=7665+Maynardville+Pike+Knoxville+TN+37938"
+            target="_blank"
+          >
+            Get Directions →
+          </a>
+        </div>
+      </div>
+
+      <!-- FOOTER CONTENT -->
       <div class="container footer-container">
         <!-- Logo -->
-        <div class="footer-logo">
+        <div class="footer-col footer-logo">
           <a class="logo" href="index.html">
             US <span class="red-star">★</span> Auto Sale
           </a>
         </div>
 
         <!-- Info -->
-        <div class="footer-info">
-          <p><strong>Working Hours:</strong> 9:00 – 18:00, Mon – Fri</p>
+        <div class="footer-col footer-info">
+          <p><strong>Working Hours:</strong><br />9:00 – 18:00, Mon – Fri</p>
           <p>
-            <strong>Address:</strong> 7665 Maynardville Pike, Knoxville, TN
-            37938
+            <strong>Address:</strong><br />
+            7665 Maynardville Pike<br />
+            Knoxville, TN 37938
           </p>
           <p>
-            <strong>Email:</strong>
+            <strong>Email:</strong><br />
             <a href="mailto:Usstar@autoussales.com">Usstar@autoussales.com</a>
           </p>
         </div>
 
-        <!-- Social centered -->
-        <div class="footer-social">
+        <!-- Social -->
+        <div class="footer-col footer-social">
           <a href="https://www.instagram.com/usautosale.tn" target="_blank">
             <img
               src="assets/icons/instagram-2016-logo-svgrepo-com.svg"
@@ -91,10 +124,9 @@
             Instagram
           </a>
         </div>
-
-        <!-- Copyright -->
-        <p class="footer-copy">© US Star Auto Sale 2025 All rights reserved</p>
       </div>
+
+      <p class="footer-copy">© US Star Auto Sale 2025 • All rights reserved</p>
     </footer>
 
     <script src="js/main.js"></script>

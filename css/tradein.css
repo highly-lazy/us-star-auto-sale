@@ -1,0 +1,121 @@
+/* ================= TRADE-IN PAGE ================= */
+
+.hero-tradein {
+  min-height: 55vh;
+}
+
+/* ==============================
+   TRADE-IN SECTION
+============================== */
+.tradein-section {
+  padding: 60px 0;
+  background: #f8f9fb;
+}
+
+.tradein-container {
+  max-width: 650px;
+  margin: auto;
+}
+
+/* Form */
+.tradein-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Form Groups */
+.form-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.tradein-form input,
+.tradein-form select,
+.tradein-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.tradein-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.tradein-form input:focus,
+.tradein-form select:focus,
+.tradein-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* Subtitle */
+.form-subtitle {
+  margin: 20px 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0b1c2d;
+}
+
+/* Selected car preview */
+.selected-car-preview {
+  width: 100%;
+  margin: 20px auto 15px;
+  text-align: center;
+}
+
+.selected-car-preview img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: none;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Selected car info */
+.selected-car-info {
+  background: #f0f0f0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Button */
+.btn-primary {
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  background: var(--navy);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: var(--red);
+}
+
+/* Status */
+.form-status {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .tradein-form {
+    padding: 20px;
+  }
+}
