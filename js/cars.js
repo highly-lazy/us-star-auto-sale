@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <a href="car.html?id=${
                 car.id
               }" class="btn btn-view">View Details</a>
-              <a href="#test-drive" class="btn btn-test">Test Drive</a>
+              <a href="index.html#contact" class="btn btn-test">Test Drive</a>
             </div>
           </div>
         </div>

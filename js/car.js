@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <h3>Features:</h3>
           <ul>${car.features.map((f) => `<li>${f}</li>`).join("")}</ul>
           <div class="car-buttons">
-            <a href="#test-drive" class="btn btn-test">Test Drive</a>
+            <a href="index.html#contact" class="btn btn-test">Test Drive</a>
           </div>
         `;
       }
