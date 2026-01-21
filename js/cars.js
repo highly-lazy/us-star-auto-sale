@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <img src="${car.img}" alt="${car.make} ${car.model}">
           <div class="car-info">
             <h3>${car.make} ${car.model}</h3>
+            
             <p>Year: ${
               car.year
             } | Mileage: ${car.mileage.toLocaleString()} miles</p>
@@ -25,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
         </div>
-      `
+      `,
         )
         .join("");
     });
