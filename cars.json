@@ -184,6 +184,51 @@
   },
 
   {
+    "id": 4,
+    "make": "Jaguar",
+    "model": "XF",
+    "year": 2016,
+    "price": 13200,
+    "mileage": 86.463,
+    "color": "Gray",
+    "engine": "340 hp 3L V6",
+    "transmission": "Automatic",
+    "stock": "Y03033",
+    "vin": "SAJBF4BV5GCY03033",
+    "features": [
+      "Air Bag",
+      "Driver Air Bag",
+      "Passenger Air Bag",
+      "Air Conditioning",
+      "AM/FM Stereo",
+      "Cruise Control",
+      "Interval Wipers",
+      "Power Steering",
+      "Power Brakes",
+      "Tilt Wheel",
+      "Trip Odometer",
+      "Power Driver's Seat",
+      "Cloth Interior",
+      "Power Door Locks",
+      "Power Mirrors",
+      "Power Windows"
+    ],
+    "img": "assets/cars/jaguar.jpg",
+    "images": [
+      "assets/cars/jaguar1.jpg",
+      "assets/cars/jaguar2.jpg",
+      "assets/cars/jaguar3.jpg",
+      "assets/cars/jaguar4.jpg",
+      "assets/cars/jaguar5.jpg",
+      "assets/cars/jaguar6.jpg",
+      "assets/cars/jaguar7.jpg",
+      "assets/cars/jaguar8.jpg",
+      "assets/cars/jaguar9.jpg"
+    ],
+    "description": "2016 Jaguar XF in Gray with 86,463 miles. Equipped with 340 hp 3L V6 engine, automatic transmission, and full power options."
+  },
+
+  {
     "id": 6,
     "make": "Hyundai",
     "model": "Sonata",
@@ -346,5 +391,95 @@
       "assets/cars/equinox8.jpg"
     ],
     "description": "2019 Chevrolet Equinox in Red with 153,200 miles. Equipped with a 1.5L turbo engine, automatic transmission, and power options."
+  },
+
+  {
+    "id": 10,
+    "make": "Chevrolet",
+    "model": "Traverse",
+    "year": 2017,
+    "price": 8400,
+    "mileage": 114.736,
+    "color": "Silver",
+    "engine": "281 hp 3.6L V6",
+    "transmission": "Automatic",
+    "stock": "339899",
+    "vin": "1GNKRFED2HJ339899",
+    "features": [
+      "Air Bag",
+      "Driver Air Bag",
+      "Passenger Air Bag",
+      "Air Conditioning",
+      "AM/FM Stereo",
+      "Cruise Control",
+      "Interval Wipers",
+      "Power Steering",
+      "Power Brakes",
+      "Tilt Wheel",
+      "Trip Odometer",
+      "Power Driver's Seat",
+      "Cloth Interior",
+      "Power Door Locks",
+      "Power Mirrors",
+      "Power Windows"
+    ],
+    "img": "assets/cars/traverse.jpg",
+    "images": [
+      "assets/cars/traverse1.jpg",
+      "assets/cars/traverse2.jpg",
+      "assets/cars/traverse3.jpg",
+      "assets/cars/traverse4.jpg",
+      "assets/cars/traverse5.jpg",
+      "assets/cars/traverse6.jpg",
+      "assets/cars/traverse7.jpg",
+      "assets/cars/traverse8.jpg",
+      "assets/cars/traverse9.jpg"
+    ],
+    "description": "2017 Chevrolet Traverse LS FWD in Silver with 114,736 miles. Equipped with 281 hp 3.6L V6 engine, automatic transmission, and full power options."
+  },
+
+  {
+    "id": 11,
+    "make": "Chevrolet",
+    "model": "Malibu",
+    "year": 2016,
+    "price": 8607,
+    "mileage": 126.175,
+    "color": "White",
+    "engine": "160 hp 1.5L I6",
+    "transmission": "Automatic",
+    "stock": "332576",
+    "vin": "1G1ZE5ST5GF332576",
+    "features": [
+      "Air Bag",
+      "Driver Air Bag",
+      "Passenger Air Bag",
+      "Air Conditioning",
+      "AM/FM Stereo",
+      "Cruise Control",
+      "Interval Wipers",
+      "Power Steering",
+      "Power Brakes",
+      "Tilt Wheel",
+      "Trip Odometer",
+      "Power Driver's Seat",
+      "Cloth Interior",
+      "Power Door Locks",
+      "Power Mirrors",
+      "Power Windows"
+    ],
+    "img": "assets/cars/malibu.jpg",
+    "images": [
+      "assets/cars/malibu1.jpg",
+      "assets/cars/malibu2.jpg",
+      "assets/cars/malibu3.jpg",
+      "assets/cars/malibu4.jpg",
+      "assets/cars/malibu5.jpg",
+      "assets/cars/malibu6.jpg",
+      "assets/cars/malibu7.jpg",
+      "assets/cars/malibu8.jpg",
+      "assets/cars/malibu9.jpg"
+    ],
+    "description": "2016 Chevrolet Malibu in White with 126,175 miles. Equipped with 160 hp 1.5L I6 engine, automatic transmission, and full power options."
   }
 ]
