@@ -184,7 +184,7 @@
   },
 
   {
-    "id": 4,
+    "id": 5,
     "make": "Jaguar",
     "model": "XF",
     "year": 2016,
@@ -215,7 +215,7 @@
     ],
     "img": "assets/cars/jaguar.jpg",
     "images": [
-      "assets/cars/jaguar1.jpg",
+      "assets/cars/jaguar.jpg",
       "assets/cars/jaguar2.jpg",
       "assets/cars/jaguar3.jpg",
       "assets/cars/jaguar4.jpg",
