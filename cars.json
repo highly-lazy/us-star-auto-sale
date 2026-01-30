@@ -481,5 +481,49 @@
       "assets/cars/malibu9.jpg"
     ],
     "description": "2016 Chevrolet Malibu in White with 126,175 miles. Equipped with 160 hp 1.5L I6 engine, automatic transmission, and full power options."
+  },
+
+  {
+    "id": 12,
+    "make": "Subaru",
+    "model": "Outback",
+    "year": 2022,
+    "price": 21000,
+    "mileage": 67.938,
+    "color": "White",
+    "engine": "182 hp 2.5L H4",
+    "transmission": "Automatic",
+    "stock": "218589",
+    "vin": "4S4BTACC3N3218589",
+    "features": [
+      "Air Bag",
+      "Driver Air Bag",
+      "Passenger Air Bag",
+      "Air Conditioning",
+      "AM/FM Stereo",
+      "Cruise Control",
+      "Interval Wipers",
+      "Power Steering",
+      "Power Brakes",
+      "Tilt Wheel",
+      "Trip Odometer",
+      "Power Driver's Seat",
+      "Cloth Interior",
+      "Backup Camera",
+      "ABS Brakes",
+      "Curtain Air Bags"
+    ],
+    "img": "assets/cars/subaru1.jpg",
+    "images": [
+      "assets/cars/subaru.jpg",
+      "assets/cars/subaru2.jpg",
+      "assets/cars/subaru3.jpg",
+      "assets/cars/subaru4.jpg",
+      "assets/cars/subaru5.jpg",
+      "assets/cars/subaru6.jpg",
+      "assets/cars/subaru7.jpg",
+      "assets/cars/subaru8.jpg"
+    ],
+    "description": "2022 Subaru Outback in White with 67,938 miles. Equipped with 182 hp 2.5L H4 engine, automatic transmission, and full power options."
   }
 ]
