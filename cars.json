@@ -932,6 +932,111 @@
       "assets/cars/sedona11.jpg"
     ],
     "description": "2019 Kia Sedona in Black with 161,527 miles. Equipped with  3.3L V6 engine, automatic transmission, and full power options."
+  },
+
+
+  {
+    "id":22,
+    "make": "Nissan",
+    "model": "Versa",
+    "year": 2015,
+    "price": 4500,
+    "mileage": 147.717,
+    "color":"Blue",
+    "engine": "1.6L I4",
+    "transmission":"Automatic",
+    "features":[
+
+      "Air Bag",
+      "Driver Air Bag",
+      "Passenger Air Bag",
+      "Air Conditioning",
+      "AM/FM Stereo",
+      "Cruise Control",
+      "Interval Wipers",
+      "Power Steering",
+      "Power Brakes",
+      "Tilt Wheel",
+      "Trip Odometer",
+      "Power Driver's Seat",
+      "Cloth Interior",
+      "Power Door Locks",
+      "Power Mirrors",
+      "Power Windows"
+
+    ],
+
+    "img": "assets/cars/versa.jpg",
+    "images": [
+      "assets/cars/versa1.jpg",
+      "assets/cars/versa2.jpg",
+      "assets/cars/versa3.jpg",
+      "assets/cars/versa4.jpg",
+      "assets/cars/versa5.jpg",
+      "assets/cars/versa6.jpg",
+      "assets/cars/versa7.jpg",
+      "assets/cars/versa8.jpg",
+      "assets/cars/versa9.jpg"
+    ],
+
+    "description": "2015 Nissan Versa in Blue with 147,717 miles"
+
+  },
+
+
+  {
+    "id":23,
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2010,
+    "price": 6720,
+    "mileage": 166.795,
+    "color":"White",
+    "engine": "2.5L 169hp ",
+    "transmission":"Automatic",
+    "features":[
+
+      "Air Bag",
+      "Driver Air Bag",
+      "Passenger Air Bag",
+      "Air Conditioning",
+      "AM/FM Stereo",
+      "Cruise Control",
+      "Interval Wipers",
+      "Power Steering",
+      "Power Brakes",
+      "Tilt Wheel",
+      "Trip Odometer",
+      "Power Driver's Seat",
+      "Cloth Interior",
+      "Power Door Locks",
+      "Power Mirrors",
+      "Power Windows"
+
+    ],
+
+    "img": "assets/cars/camry.jpg",
+    "images": [
+      "assets/cars/camry1.jpg",
+      "assets/cars/camry2.jpg",
+      "assets/cars/camry3.jpg",
+      "assets/cars/camry4.jpg",
+      "assets/cars/camry5.jpg",
+      "assets/cars/camry6.jpg",
+      "assets/cars/camry7.jpg",
+      "assets/cars/camry8.jpg",
+      "assets/cars/camry9.jpg",
+      "assets/cars/camry10.jpg",
+      "assets/cars/camry11.jpg"
+
+    ],
+
+    "description": "2010 Toyota Camry in White with 166,795 miles"
+
   }
+
+
+
+
 
 ]
