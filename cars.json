@@ -1036,7 +1036,7 @@
   },
 
 
-{
+  {
     "id":24,
     "make": "Chevrolet",
     "model": "Malibu LT",
@@ -1136,8 +1136,160 @@
 
     "description": "2016 Nissan Altima  in Black with 152,929 miles"
 
-  }
+  },
 
+  {
+    "id":26,
+    "make": "Chevrolet",
+    "model": "Sonic LT", 
+    "year": 2020,
+    "price": 8369,
+    "mileage": 80.621,
+    "color":"Red",
+    "engine": "1.4L 4-Cyl Turbo ",
+    "vin": "1G1JG6SB6L4120845",
+    "stock": "120845",
+    "transmission":"Automatic",
+    "features":[
+
+      "Air Bag",
+      "Driver Air Bag",
+      "Passenger Air Bag",
+      "Air Conditioning",
+      "AM/FM Stereo",
+      "Cruise Control",
+      "Interval Wipers",
+      "Power Steering",
+      "Power Brakes",
+      "Tilt Wheel",
+      "Trip Odometer",
+      "Power Driver's Seat",
+      "Cloth Interior",
+      "Power Door Locks",
+      "Power Mirrors",
+      "Power Windows"
+
+    ],
+    "img": "assets/cars/sonic.jpg",
+    "images": [
+      "assets/cars/sonic1.jpg",
+      "assets/cars/sonic2.jpg",
+      "assets/cars/sonic3.jpg",
+      "assets/cars/sonic4.jpg",
+      "assets/cars/sonic5.jpg",
+      "assets/cars/sonic6.jpg",
+      "assets/cars/sonic7.jpg",
+      "assets/cars/sonic8.jpg",
+      "assets/cars/sonic9.jpg",
+      "assets/cars/sonic10.jpg"
+
+    ],
+    "description": "2020 Chevrolet Sonic LT in Red with 80,621 miles"
+  },
+
+
+
+  {
+    "id":27,
+    "make": "Mitsubishi",
+    "model": "Outlander Sport SE",
+    "year": 2018,
+    "price": 7665,
+    "mileage": 141.408,
+    "color":"Silver",
+    "engine": "2.4L 4-Cyl",
+    "vin": "JA4AP3AW3JU013466",
+    "stock": "013466",
+    "transmission":"Automatic",
+    "features":[
+
+      "Air Bag",
+      "Driver Air Bag",
+      "Passenger Air Bag",
+      "Air Conditioning",
+      "AM/FM Stereo",
+      "Cruise Control",
+      "Interval Wipers",
+      "Power Steering",
+      "Power Brakes",
+      "Tilt Wheel",
+      "Trip Odometer",
+      "Power Driver's Seat",
+      "Cloth Interior",
+      "Power Door Locks",
+      "Power Mirrors",
+      "Power Windows"
+
+    ],
+    "img": "assets/cars/mits.jpg",
+    "images": [
+      "assets/cars/mits1.jpg",
+      "assets/cars/mits2.jpg",
+      "assets/cars/mits3.jpg",
+      "assets/cars/mits4.jpg",
+      "assets/cars/mits5.jpg",
+      "assets/cars/mits6.jpg",
+      "assets/cars/mits7.jpg",
+      "assets/cars/mits8.jpg",
+      "assets/cars/mits9.jpg",
+      "assets/cars/mits10.jpg"
+
+    ],
+
+    "description": "2018 Mitsubishi Outlander Sport SE in Silver with 141,408 miles"
+
+  },
+
+
+
+  {
+    "id":28,
+    "make": "Ford",
+    "model": "Escape SE",
+    "year": 2020,
+    "price": 8650,
+    "mileage": 142.521,
+    "color":"White",
+    "engine": "1.5L 3-Cyl",
+    "vin": "1FMCU0G60LUB74283",
+    "stock": "B74283",
+    "transmission":"Automatic",
+    "features":[
+
+      "Air Bag",
+      "Driver Air Bag",
+      "Passenger Air Bag",
+      "Air Conditioning",
+      "AM/FM Stereo",
+      "Cruise Control",
+      "Interval Wipers",
+      "Power Steering",
+      "Power Brakes",
+      "Tilt Wheel",
+      "Trip Odometer",
+      "Power Driver's Seat",
+      "Cloth Interior",
+      "Power Door Locks",
+      "Power Mirrors",
+      "Power Windows"
+
+    ],
+    "img": "assets/cars/escape.jpg",
+    "images": [
+      "assets/cars/escape1.jpg",
+      "assets/cars/escape2.jpg",
+      "assets/cars/escape3.jpg",
+      "assets/cars/escape4.jpg",
+      "assets/cars/escape5.jpg",
+      "assets/cars/escape6.jpg",
+      "assets/cars/escape7.jpg",
+      "assets/cars/escape8.jpg",
+      "assets/cars/escape9.jpg",
+      "assets/cars/escape10.jpg"
+
+    ],
+    "description": 	"2020 Ford Escape SE in White with 142,521 miles"
+  }
 
 
 
