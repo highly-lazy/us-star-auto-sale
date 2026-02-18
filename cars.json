@@ -884,5 +884,54 @@
       "assets/cars/caravan9.jpg"
     ],
     "description": "2016 Dodge Grand Caravan in White with 145,124 miles. Equipped with 283 hp 3.6L V6 engine, automatic transmission, and full power options."
+  },
+
+
+  {
+    "id": 21,
+    "make": "Kia",
+    "model": "Sedona",
+    "year": 2019,
+    "price": 8105,
+    "mileage": 161.527,
+    "color": "Black",
+    "engine": "3.3L V6",
+    "transmission": "Automatic",
+    "stock": "123456",
+    "vin": "2C4RDGCG6GR123456",
+    "features": [
+      "Air Bag",
+      "Driver Air Bag",
+      "Passenger Air Bag",
+      "Air Conditioning",
+      "AM/FM Stereo",
+      "Cruise Control",
+      "Interval Wipers",
+      "Power Steering",
+      "Power Brakes",
+      "Tilt Wheel",
+      "Trip Odometer",
+      "Power Driver's Seat",
+      "Cloth Interior",
+      "Power Door Locks",
+      "Power Mirrors",
+      "Power Windows"
+    ],
+    "img": "assets/cars/sedona.jpg",
+    "images": [
+      "assets/cars/sedona1.jpg",
+      "assets/cars/sedona2.jpg",
+      "assets/cars/sedona3.jpg",
+      "assets/cars/sedona4.jpg",
+      "assets/cars/sedona5.jpg",
+      "assets/cars/sedona6.jpg",
+      "assets/cars/sedona7.jpg",
+      "assets/cars/sedona8.jpg",
+      "assets/cars/sedona9.jpg",
+      "assets/cars/sedona10.jpg",
+      "assets/cars/sedona11.jpg"
+    ],
+    "description": "2019 Kia Sedona in Black with 161,527 miles. Equipped with  3.3L V6 engine, automatic transmission, and full power options."
   }
+
 ]
