@@ -1033,8 +1033,110 @@
 
     "description": "2010 Toyota Camry in White with 166,795 miles"
 
-  }
+  },
 
+
+{
+    "id":24,
+    "make": "Chevrolet",
+    "model": "Malibu LT",
+    "year": 2015,
+    "price": 7125,
+    "mileage": 120.366,
+    "color":"Silver",
+    "engine": "2.5L 4-Cyl ",
+    "transmission":"Automatic",
+    "features":[
+      "Air Bag",
+      "Driver Air Bag",
+      "Passenger Air Bag",
+      "Air Conditioning",
+      "AM/FM Stereo",
+      "Cruise Control",
+      "Interval Wipers",
+      "Power Steering",
+      "Power Brakes",
+      "Tilt Wheel",
+      "Trip Odometer",
+      "Power Driver's Seat",
+      "Cloth Interior",
+      "Power Door Locks",
+      "Power Mirrors",
+      "Power Windows"
+
+    ],
+
+    "img": "assets/cars/malbu.jpg",
+    "images": [
+      "assets/cars/malbu1.jpg",
+      "assets/cars/malbu2.jpg",
+      "assets/cars/malbu3.jpg",
+      "assets/cars/malbu4.jpg",
+      "assets/cars/malbu5.jpg",
+      "assets/cars/malbu6.jpg",
+      "assets/cars/malbu7.jpg",
+      "assets/cars/malbu8.jpg",
+      "assets/cars/malbu9.jpg",
+      "assets/cars/malbu10.jpg"
+
+    ],
+
+    "description": "2015 Chevrolet Malibu LT in White with 120,366 miles"
+
+  },
+
+
+  {
+    "id":25,
+    "make": "Nissan",
+    "model": "Altima",
+    "year": 2016,
+    "price": 7134,
+    "mileage": 152.929,
+    "color":"Black",
+    "engine": "2.5L 4-Cyl ",
+    "vin": "undefined",
+    "stock": "undefined",
+    "transmission":"Automatic",
+    "features":[
+
+      "Air Bag",
+      "Driver Air Bag",
+      "Passenger Air Bag",
+      "Air Conditioning",
+      "AM/FM Stereo",
+      "Cruise Control",
+      "Interval Wipers",
+      "Power Steering",
+      "Power Brakes",
+      "Tilt Wheel",
+      "Trip Odometer",
+      "Power Driver's Seat",
+      "Cloth Interior",
+      "Power Door Locks",
+      "Power Mirrors",
+      "Power Windows"
+
+    ],
+
+    "img": "assets/cars/albl.jpg",
+    "images": [
+      "assets/cars/albl1.jpg",
+      "assets/cars/albl2.jpg",
+      "assets/cars/albl3.jpg",
+      "assets/cars/albl4.jpg",
+      "assets/cars/albl5.jpg",
+      "assets/cars/albl6.jpg",
+      "assets/cars/albl7.jpg",
+      "assets/cars/albl8.jpg",
+      "assets/cars/albl9.jpg",
+      "assets/cars/albl10.jpg"
+
+    ],
+
+    "description": "2016 Nissan Altima  in Black with 152,929 miles"
+
+  }
 
 
 
