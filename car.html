@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/pages.css " />
+    <link rel="stylesheet" href="css/pages.css" />
   </head>
   <body>
     <!-- HEADER -->
@@ -24,8 +24,8 @@
           <a href="financing.html">Financing</a>
           <a href="tradein.html">Trade-In</a>
           <a href="collection.html">Inventory</a>
-          <a href="#services">Service</a>
-          <a href="#contact">Contact</a>
+          <a href="index.html#services">Service</a>
+          <a href="index.html#contact">Contact</a>
         </nav>
 
         <!-- Call Button -->
@@ -36,39 +36,47 @@
       </div>
     </header>
 
-    <!-- MOBILE SIDEBAR -->
+    <!-- MOBILE SIDEBAR (ONLY ONCE) -->
     <aside class="sidebar" id="sidebar">
       <button class="close-btn" id="closeBtn">✕</button>
       <a href="index.html">Home</a>
       <a href="financing.html">Financing</a>
       <a href="tradein.html">Trade-In</a>
       <a href="collection.html">Inventory</a>
-      <a href="#services">Service</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html#services">Service</a>
+      <a href="index.html#contact">Contact</a>
       <a href="tel:+18653773230" class="call-btn">Call Now</a>
     </aside>
 
-    <!-- Overlay -->
+    <!-- Overlay (ONLY ONCE) -->
     <div class="overlay" id="overlay"></div>
 
+    <!-- CAR DETAILS -->
     <section class="section container car-details">
       <div class="car-images"></div>
+
       <div class="car-info">
         <h1 class="car-title"></h1>
+
         <p class="car-price"></p>
         <p class="car-mileage"></p>
+
+        <!-- CARFAX / HISTORY TRUST (ADDED) -->
+        <div class="car-trust">
+          <span class="car-trust__badge">
+            📄 Vehicle History Report Available (CARFAX / AutoCheck)
+          </span>
+          <p class="car-trust__note">
+            Ask our team for the vehicle history report for this listing.
+          </p>
+        </div>
+
         <p class="car-description"></p>
         <ul class="car-features"></ul>
       </div>
     </section>
 
-    <aside class="sidebar" id="sidebar">
-      <button class="close-btn" id="closeBtn">✕</button>
-      <a href="index.html">Home</a>
-      <a href="collection.html">Inventory</a>
-    </aside>
-    <div class="overlay" id="overlay"></div>
-
+    <!-- FOOTER -->
     <footer class="site-footer">
       <!-- MAP -->
       <div class="footer-map">
@@ -76,8 +84,7 @@
           src="https://www.google.com/maps?q=7665%20Maynardville%20Pike%2C%20Knoxville%2C%20TN%2037938&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-        >
-        </iframe>
+        ></iframe>
 
         <div class="map-overlay">
           <h4>US Star Auto Sale</h4>

@@ -11,6 +11,8 @@
     "transmission": "Automatic",
     "stock": "058738",
     "vin": "KNAGM4AD9D5058738",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Air Bag",
       "Driver Air Bag",
@@ -44,7 +46,6 @@
     ],
     "description": "2013 Kia Optima Hybrid in Silver with 126,354 miles. Equipped with 2.4L engine, automatic transmission, and full power options."
   },
-
   {
     "id": 2,
     "make": "Hyundai",
@@ -57,6 +58,8 @@
     "transmission": "Automatic",
     "stock": "531540",
     "vin": "5NPD84LFXLH531540",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Air Bag",
       "Driver Air Bag",
@@ -91,19 +94,20 @@
     ],
     "description": "2020 Hyundai Elantra in Red with 129,995 miles. Equipped with 2.0L engine, automatic transmission, and premium features."
   },
-
   {
     "id": 3,
     "make": "BMW",
     "model": "3 series",
     "year": 2015,
     "price": 5999,
-    "mileage": 176.548,
+    "mileage": 176548,
     "color": "White",
     "engine": "2.5L I4",
     "transmission": "Automatic",
     "stock": "123456",
     "vin": "WBA3B3G56FNR86590",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Air Bag",
       "Driver Air Bag",
@@ -135,21 +139,22 @@
       "assets/cars/bmw10.jpg",
       "assets/cars/bmw11.jpg"
     ],
-    "description": "2013 BMW 3 Series in White with 112,345 miles. Equipped with 2.5L engine, automatic transmission, and full power options."
+    "description": "2015 BMW 3 Series in White with 176,548 miles. Equipped with 2.5L engine, automatic transmission, and full power options."
   },
-
   {
     "id": 4,
     "make": "Dodge Ram",
     "model": "1500",
     "year": 2018,
     "price": 32599,
-    "mileage": 212.256,
+    "mileage": 212256,
     "color": "Gray",
     "engine": "2.5L I4",
     "transmission": "Automatic",
     "stock": "789012",
     "vin": "3C63RRGLOPG508148",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Air Bag",
       "Driver Air Bag",
@@ -180,21 +185,22 @@
       "assets/cars/ram9.jpg",
       "assets/cars/ram10.jpg"
     ],
-    "description": "2018 Dodge Ram 1500 in Blue with 45,000 miles. Equipped with 2.5L engine, automatic transmission, and full power options."
+    "description": "2018 Dodge Ram 1500 in Gray with 212,256 miles. Equipped with 2.5L engine, automatic transmission, and full power options."
   },
-
   {
     "id": 5,
     "make": "Jaguar",
     "model": "XF",
     "year": 2016,
     "price": 13200,
-    "mileage": 86.463,
+    "mileage": 86463,
     "color": "Gray",
     "engine": "340 hp 3L V6",
     "transmission": "Automatic",
     "stock": "Y03033",
     "vin": "SAJBF4BV5GCY03033",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Air Bag",
       "Driver Air Bag",
@@ -227,7 +233,6 @@
     ],
     "description": "2016 Jaguar XF in Gray with 86,463 miles. Equipped with 340 hp 3L V6 engine, automatic transmission, and full power options."
   },
-
   {
     "id": 6,
     "make": "Hyundai",
@@ -240,6 +245,8 @@
     "transmission": "Automatic",
     "stock": "561205",
     "vin": "5NPE24AF3HH561205",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Driver Air Bag",
       "Passenger Air Bag",
@@ -269,7 +276,6 @@
     ],
     "description": "2017 Hyundai Sonata in Silver with 118,633 miles. Equipped with a 2.4L engine, automatic transmission, and power options."
   },
-
   {
     "id": 7,
     "make": "Volvo",
@@ -282,6 +288,8 @@
     "transmission": "Automatic",
     "stock": "251087",
     "vin": "YV4902DZ6C2251087",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Driver Air Bag",
       "Passenger Air Bag",
@@ -309,7 +317,6 @@
     ],
     "description": "2012 Volvo XC60 in White with 128,374 miles. Equipped with a 3.2L engine, automatic transmission, and power options."
   },
-
   {
     "id": 8,
     "make": "Audi",
@@ -318,10 +325,12 @@
     "price": 7300,
     "mileage": 139134,
     "color": "Silver",
-    "engine": "2.0T Premium Plus ",
+    "engine": "2.0T Premium Plus",
     "transmission": "Automatic",
     "stock": "058835",
     "vin": "WA19FAFLXDA0588835",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Driver Air Bag",
       "Passenger Air Bag",
@@ -351,7 +360,6 @@
     ],
     "description": "2013 Audi Allroad in Silver with 139,134 miles. Equipped with a 2.0L turbo engine, automatic transmission, and power options."
   },
-
   {
     "id": 9,
     "make": "Chevrolet",
@@ -364,6 +372,8 @@
     "transmission": "Automatic",
     "stock": "294626",
     "vin": "2GNAXUEV0K6294626",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Driver Air Bag",
       "Passenger Air Bag",
@@ -392,19 +402,20 @@
     ],
     "description": "2019 Chevrolet Equinox in Red with 153,200 miles. Equipped with a 1.5L turbo engine, automatic transmission, and power options."
   },
-
   {
     "id": 10,
     "make": "Chevrolet",
     "model": "Traverse",
     "year": 2017,
     "price": 8400,
-    "mileage": 114.736,
+    "mileage": 114736,
     "color": "Silver",
     "engine": "281 hp 3.6L V6",
     "transmission": "Automatic",
     "stock": "339899",
     "vin": "1GNKRFED2HJ339899",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Air Bag",
       "Driver Air Bag",
@@ -437,19 +448,20 @@
     ],
     "description": "2017 Chevrolet Traverse LS FWD in Silver with 114,736 miles. Equipped with 281 hp 3.6L V6 engine, automatic transmission, and full power options."
   },
-
   {
     "id": 11,
     "make": "Chevrolet",
     "model": "Malibu",
     "year": 2016,
     "price": 8607,
-    "mileage": 126.175,
+    "mileage": 126175,
     "color": "White",
     "engine": "160 hp 1.5L I6",
     "transmission": "Automatic",
     "stock": "332576",
     "vin": "1G1ZE5ST5GF332576",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Air Bag",
       "Driver Air Bag",
@@ -482,19 +494,20 @@
     ],
     "description": "2016 Chevrolet Malibu in White with 126,175 miles. Equipped with 160 hp 1.5L I6 engine, automatic transmission, and full power options."
   },
-
   {
     "id": 12,
     "make": "Subaru",
     "model": "Outback",
     "year": 2022,
     "price": 21000,
-    "mileage": 67.938,
+    "mileage": 67938,
     "color": "White",
     "engine": "182 hp 2.5L H4",
     "transmission": "Automatic",
     "stock": "218589",
     "vin": "4S4BTACC3N3218589",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Air Bag",
       "Driver Air Bag",
@@ -526,19 +539,20 @@
     ],
     "description": "2022 Subaru Outback in White with 67,938 miles. Equipped with 182 hp 2.5L H4 engine, automatic transmission, and full power options."
   },
-
   {
     "id": 13,
     "make": "Chevrolet",
     "model": "Equinox",
     "year": 2016,
-    "price": 7.991,
-    "mileage": 100.374,
+    "price": 7991,
+    "mileage": 100374,
     "color": "Blue",
     "engine": "182 hp 2.4L I4",
     "transmission": "Automatic",
     "stock": "322102",
     "vin": "2GNALBEK2G6322102",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Air Bag",
       "Driver Air Bag",
@@ -570,7 +584,6 @@
     ],
     "description": "2016 Chevrolet Equinox in Blue with 100,374 miles. Equipped with 182 hp 2.4L I4 engine, automatic transmission, and full power options."
   },
-
   {
     "id": 14,
     "make": "Nissan",
@@ -583,6 +596,8 @@
     "transmission": "Automatic",
     "stock": "244498",
     "vin": "1N4AL2EP8CC244498",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Air Bag",
       "Driver Air Bag",
@@ -616,19 +631,20 @@
     ],
     "description": "2012 Nissan Altima in White with 145,780 miles. Equipped with 175 hp 2.5L I4 engine, automatic transmission, and full power options."
   },
-
   {
     "id": 15,
     "make": "Mercedes-Benz",
     "model": "GLS 450",
     "year": 2019,
     "price": 30500,
-    "mileage": 69.971,
+    "mileage": 69971,
     "color": "Gray",
     "engine": "362 hp 3.0L V6",
     "transmission": "Automatic",
     "stock": "221771",
     "vin": "4JGDF6EE0KB221771",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Air Bag",
       "Driver Air Bag",
@@ -659,19 +675,20 @@
     ],
     "description": "2019 Mercedes-Benz GLS 450 in Gray with 69,971 miles. Equipped with 362 hp 3.0L V6 engine, automatic transmission, and luxury features."
   },
-
   {
     "id": 16,
     "make": "Ford",
     "model": "Escape",
     "year": 2019,
     "price": 7430,
-    "mileage": 138.725,
+    "mileage": 138725,
     "color": "Black",
     "engine": "179 hp 1.5L I4",
     "transmission": "Automatic",
     "stock": "A22723",
     "vin": "1FMCU0GD3KUA22723",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Air Bag",
       "Driver Air Bag",
@@ -703,21 +720,22 @@
       "assets/cars/ford8.jpg",
       "assets/cars/ford9.jpg"
     ],
-    "description": "2019 Ford Escape  in Black with 138,725 miles. Equipped with 179 hp 1.5L I4 engine, automatic transmission, and luxury features."
+    "description": "2019 Ford Escape in Black with 138,725 miles. Equipped with 179 hp 1.5L I4 engine, automatic transmission, and luxury features."
   },
-
   {
     "id": 17,
     "make": "Nissan",
     "model": "Rogue",
     "year": 2020,
     "price": 9500,
-    "mileage": 145.138,
+    "mileage": 145138,
     "color": "Gray",
     "engine": "170 hp 2.5L I4",
     "transmission": "Automatic",
     "stock": "529193",
     "vin": "KNMAT2MT7LP529193",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Air Bag",
       "Driver Air Bag",
@@ -749,19 +767,20 @@
     ],
     "description": "2020 Nissan Rogue in Gray with 145,138 miles. Equipped with 170 hp 2.5L I4 engine, automatic transmission, and full power options."
   },
-
   {
     "id": 18,
     "make": "Kia",
     "model": "Sorento",
     "year": 2016,
     "price": 6965,
-    "mileage": 145.111,
+    "mileage": 145111,
     "color": "Gray",
     "engine": "185 hp 2.4L I4",
     "transmission": "Automatic",
     "stock": "062730",
     "vin": "5XYPG4A36GG062730",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Air Bag",
       "Driver Air Bag",
@@ -794,19 +813,20 @@
     ],
     "description": "2016 Kia Sorento in Gray with 145,111 miles. Equipped with 185 hp 2.4L I4 engine, automatic transmission, and full power options."
   },
-
   {
     "id": 19,
     "make": "Kia",
     "model": "Sorento",
     "year": 2018,
     "price": 9800,
-    "mileage": 121.555,
+    "mileage": 121555,
     "color": "Gray",
     "engine": "185 hp 2.4L I4",
     "transmission": "Automatic",
     "stock": "062730",
     "vin": "5XYPG4A36GG062730",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Air Bag",
       "Driver Air Bag",
@@ -840,19 +860,20 @@
     ],
     "description": "2018 Kia Sorento in Gray with 121,555 miles. Equipped with 185 hp 2.4L I4 engine, automatic transmission, and full power options."
   },
-
   {
     "id": 20,
     "make": "Dodge Grand",
     "model": "Caravan",
     "year": 2016,
     "price": 6850,
-    "mileage": 145.124,
+    "mileage": 145124,
     "color": "White",
     "engine": "283 hp 3.6L V6",
     "transmission": "Automatic",
     "stock": "123456",
     "vin": "2C4RDGCG6GR123456",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Air Bag",
       "Driver Air Bag",
@@ -885,20 +906,20 @@
     ],
     "description": "2016 Dodge Grand Caravan in White with 145,124 miles. Equipped with 283 hp 3.6L V6 engine, automatic transmission, and full power options."
   },
-
-
   {
     "id": 21,
     "make": "Kia",
     "model": "Sedona",
     "year": 2019,
     "price": 8105,
-    "mileage": 161.527,
+    "mileage": 161527,
     "color": "Black",
     "engine": "3.3L V6",
     "transmission": "Automatic",
     "stock": "123456",
     "vin": "2C4RDGCG6GR123456",
+    "carfax": true,
+    "financing": true,
     "features": [
       "Air Bag",
       "Driver Air Bag",
@@ -931,22 +952,23 @@
       "assets/cars/sedona10.jpg",
       "assets/cars/sedona11.jpg"
     ],
-    "description": "2019 Kia Sedona in Black with 161,527 miles. Equipped with  3.3L V6 engine, automatic transmission, and full power options."
+    "description": "2019 Kia Sedona in Black with 161,527 miles. Equipped with 3.3L V6 engine, automatic transmission, and full power options."
   },
-
-
   {
-    "id":22,
+    "id": 22,
     "make": "Nissan",
     "model": "Versa",
     "year": 2015,
     "price": 4500,
-    "mileage": 147.717,
-    "color":"Blue",
+    "mileage": 147717,
+    "color": "Blue",
     "engine": "1.6L I4",
-    "transmission":"Automatic",
-    "features":[
-
+    "transmission": "Automatic",
+    "stock": "",
+    "vin": "",
+    "carfax": true,
+    "financing": true,
+    "features": [
       "Air Bag",
       "Driver Air Bag",
       "Passenger Air Bag",
@@ -963,9 +985,7 @@
       "Power Door Locks",
       "Power Mirrors",
       "Power Windows"
-
     ],
-
     "img": "assets/cars/versa.jpg",
     "images": [
       "assets/cars/versa1.jpg",
@@ -978,24 +998,23 @@
       "assets/cars/versa8.jpg",
       "assets/cars/versa9.jpg"
     ],
-
-    "description": "2015 Nissan Versa in Blue with 147,717 miles"
-
+    "description": "2015 Nissan Versa in Blue with 147,717 miles."
   },
-
-
   {
-    "id":23,
+    "id": 23,
     "make": "Toyota",
     "model": "Camry",
     "year": 2010,
     "price": 6720,
-    "mileage": 166.795,
-    "color":"White",
-    "engine": "2.5L 169hp ",
-    "transmission":"Automatic",
-    "features":[
-
+    "mileage": 166795,
+    "color": "White",
+    "engine": "2.5L 169hp",
+    "transmission": "Automatic",
+    "stock": "",
+    "vin": "",
+    "carfax": true,
+    "financing": true,
+    "features": [
       "Air Bag",
       "Driver Air Bag",
       "Passenger Air Bag",
@@ -1012,9 +1031,7 @@
       "Power Door Locks",
       "Power Mirrors",
       "Power Windows"
-
     ],
-
     "img": "assets/cars/camry.jpg",
     "images": [
       "assets/cars/camry1.jpg",
@@ -1028,25 +1045,24 @@
       "assets/cars/camry9.jpg",
       "assets/cars/camry10.jpg",
       "assets/cars/camry11.jpg"
-
     ],
-
-    "description": "2010 Toyota Camry in White with 166,795 miles"
-
+    "description": "2010 Toyota Camry in White with 166,795 miles."
   },
-
-
   {
-    "id":24,
+    "id": 24,
     "make": "Chevrolet",
     "model": "Malibu LT",
     "year": 2015,
     "price": 7125,
-    "mileage": 120.366,
-    "color":"Silver",
-    "engine": "2.5L 4-Cyl ",
-    "transmission":"Automatic",
-    "features":[
+    "mileage": 120366,
+    "color": "Silver",
+    "engine": "2.5L 4-Cyl",
+    "transmission": "Automatic",
+    "stock": "",
+    "vin": "",
+    "carfax": true,
+    "financing": true,
+    "features": [
       "Air Bag",
       "Driver Air Bag",
       "Passenger Air Bag",
@@ -1063,9 +1079,7 @@
       "Power Door Locks",
       "Power Mirrors",
       "Power Windows"
-
     ],
-
     "img": "assets/cars/malbu.jpg",
     "images": [
       "assets/cars/malbu1.jpg",
@@ -1078,28 +1092,24 @@
       "assets/cars/malbu8.jpg",
       "assets/cars/malbu9.jpg",
       "assets/cars/malbu10.jpg"
-
     ],
-
-    "description": "2015 Chevrolet Malibu LT in White with 120,366 miles"
-
+    "description": "2015 Chevrolet Malibu LT in Silver with 120,366 miles."
   },
-
-
   {
-    "id":25,
+    "id": 25,
     "make": "Nissan",
     "model": "Altima",
     "year": 2016,
     "price": 7134,
-    "mileage": 152.929,
-    "color":"Black",
-    "engine": "2.5L 4-Cyl ",
-    "vin": "undefined",
-    "stock": "undefined",
-    "transmission":"Automatic",
-    "features":[
-
+    "mileage": 152929,
+    "color": "Black",
+    "engine": "2.5L 4-Cyl",
+    "transmission": "Automatic",
+    "stock": "",
+    "vin": "",
+    "carfax": true,
+    "financing": true,
+    "features": [
       "Air Bag",
       "Driver Air Bag",
       "Passenger Air Bag",
@@ -1116,9 +1126,7 @@
       "Power Door Locks",
       "Power Mirrors",
       "Power Windows"
-
     ],
-
     "img": "assets/cars/albl.jpg",
     "images": [
       "assets/cars/albl1.jpg",
@@ -1131,27 +1139,24 @@
       "assets/cars/albl8.jpg",
       "assets/cars/albl9.jpg",
       "assets/cars/albl10.jpg"
-
     ],
-
-    "description": "2016 Nissan Altima  in Black with 152,929 miles"
-
+    "description": "2016 Nissan Altima in Black with 152,929 miles."
   },
-
   {
-    "id":26,
+    "id": 26,
     "make": "Chevrolet",
-    "model": "Sonic LT", 
+    "model": "Sonic LT",
     "year": 2020,
     "price": 8369,
-    "mileage": 80.621,
-    "color":"Red",
-    "engine": "1.4L 4-Cyl Turbo ",
-    "vin": "1G1JG6SB6L4120845",
+    "mileage": 80621,
+    "color": "Red",
+    "engine": "1.4L 4-Cyl Turbo",
+    "transmission": "Automatic",
     "stock": "120845",
-    "transmission":"Automatic",
-    "features":[
-
+    "vin": "1G1JG6SB6L4120845",
+    "carfax": true,
+    "financing": true,
+    "features": [
       "Air Bag",
       "Driver Air Bag",
       "Passenger Air Bag",
@@ -1168,7 +1173,6 @@
       "Power Door Locks",
       "Power Mirrors",
       "Power Windows"
-
     ],
     "img": "assets/cars/sonic.jpg",
     "images": [
@@ -1182,27 +1186,24 @@
       "assets/cars/sonic8.jpg",
       "assets/cars/sonic9.jpg",
       "assets/cars/sonic10.jpg"
-
     ],
-    "description": "2020 Chevrolet Sonic LT in Red with 80,621 miles"
+    "description": "2020 Chevrolet Sonic LT in Red with 80,621 miles."
   },
-
-
-
   {
-    "id":27,
+    "id": 27,
     "make": "Mitsubishi",
     "model": "Outlander Sport SE",
     "year": 2018,
     "price": 7665,
-    "mileage": 141.408,
-    "color":"Silver",
+    "mileage": 141408,
+    "color": "Silver",
     "engine": "2.4L 4-Cyl",
-    "vin": "JA4AP3AW3JU013466",
+    "transmission": "Automatic",
     "stock": "013466",
-    "transmission":"Automatic",
-    "features":[
-
+    "vin": "JA4AP3AW3JU013466",
+    "carfax": true,
+    "financing": true,
+    "features": [
       "Air Bag",
       "Driver Air Bag",
       "Passenger Air Bag",
@@ -1219,7 +1220,6 @@
       "Power Door Locks",
       "Power Mirrors",
       "Power Windows"
-
     ],
     "img": "assets/cars/mits.jpg",
     "images": [
@@ -1233,29 +1233,24 @@
       "assets/cars/mits8.jpg",
       "assets/cars/mits9.jpg",
       "assets/cars/mits10.jpg"
-
     ],
-
-    "description": "2018 Mitsubishi Outlander Sport SE in Silver with 141,408 miles"
-
+    "description": "2018 Mitsubishi Outlander Sport SE in Silver with 141,408 miles."
   },
-
-
-
   {
-    "id":28,
+    "id": 28,
     "make": "Ford",
     "model": "Escape SE",
     "year": 2020,
     "price": 8650,
-    "mileage": 142.521,
-    "color":"White",
+    "mileage": 142521,
+    "color": "White",
     "engine": "1.5L 3-Cyl",
-    "vin": "1FMCU0G60LUB74283",
+    "transmission": "Automatic",
     "stock": "B74283",
-    "transmission":"Automatic",
-    "features":[
-
+    "vin": "1FMCU0G60LUB74283",
+    "carfax": true,
+    "financing": true,
+    "features": [
       "Air Bag",
       "Driver Air Bag",
       "Passenger Air Bag",
@@ -1272,7 +1267,6 @@
       "Power Door Locks",
       "Power Mirrors",
       "Power Windows"
-
     ],
     "img": "assets/cars/escape.jpg",
     "images": [
@@ -1286,11 +1280,7 @@
       "assets/cars/escape8.jpg",
       "assets/cars/escape9.jpg",
       "assets/cars/escape10.jpg"
-
     ],
-    "description": 	"2020 Ford Escape SE in White with 142,521 miles"
+    "description": "2020 Ford Escape SE in White with 142,521 miles."
   }
-
-
-
 ]
