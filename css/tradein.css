@@ -1,121 +1,74 @@
-/* ================= TRADE-IN PAGE ================= */
+/* ================= TRADE-IN PAGE (premium dark) ================= */
 
-.hero-tradein {
-  min-height: 55vh;
+.hero-tradein{ min-height: 55vh; }
+
+.tradein-section{ padding: 70px 0 90px; }
+
+.tradein-container{ max-width: 980px; margin: 0 auto; }
+
+.tradein-form{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: var(--shadow-soft);
 }
 
-/* ==============================
-   TRADE-IN SECTION
-============================== */
-.tradein-section {
-  padding: 60px 0;
-  background: #f8f9fb;
+.tradein-form h2{ color: var(--text-strong); font-family: var(--font-bold); margin-bottom: 8px; }
+.tradein-form .form-subtitle{ color: var(--text-muted); margin: 16px 0 10px; font-family: var(--font-semibold); }
+
+.form-group{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
-.tradein-container {
-  max-width: 650px;
-  margin: auto;
+@media (max-width: 900px){
+  .form-group{ grid-template-columns: repeat(2, 1fr); }
 }
-
-/* Form */
-.tradein-form {
-  background: #fff;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-/* Form Groups */
-.form-group {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 15px;
-  margin-bottom: 15px;
+@media (max-width: 640px){
+  .form-group{ grid-template-columns: 1fr; }
 }
 
 .tradein-form input,
 .tradein-form select,
-.tradein-form textarea {
+.tradein-form textarea{
   width: 100%;
-  padding: 14px 16px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  font-size: 15px;
 }
 
-.tradein-form textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.tradein-form input:focus,
-.tradein-form select:focus,
-.tradein-form textarea:focus {
-  outline: none;
-  border-color: var(--primary-color);
-}
-
-/* Subtitle */
-.form-subtitle {
-  margin: 20px 0 10px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #0b1c2d;
-}
-
-/* Selected car preview */
-.selected-car-preview {
+.selected-car-preview{
   width: 100%;
-  margin: 20px auto 15px;
-  text-align: center;
+  margin: 14px auto 10px;
 }
 
-.selected-car-preview img {
+.selected-car-preview img{
   width: 100%;
   max-height: 320px;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 18px;
   display: none;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.45);
 }
 
-/* Selected car info */
-.selected-car-info {
-  background: #f0f0f0;
-  padding: 14px 16px;
-  border-radius: 12px;
-  margin-bottom: 20px;
+.selected-car-info{
+  background: rgba(5,7,10,0.28);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 12px 14px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  color: var(--text-muted);
   font-size: 14px;
-  line-height: 1.4;
 }
 
-/* Button */
-.btn-primary {
+.tradein-form .btn{
   width: 100%;
-  padding: 15px;
-  border-radius: 12px;
-  background: var(--navy);
-  color: #fff;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
+  border-radius: 14px;
 }
 
-.btn-primary:hover {
-  background: var(--red);
-}
-
-/* Status */
-.form-status {
-  margin-top: 15px;
-  text-align: center;
-  font-weight: 500;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .tradein-form {
-    padding: 20px;
-  }
+.form-status{
+  margin-top: 12px;
+  text-align:center;
+  color: var(--text-muted);
 }

@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Car Details</title>
+    <meta charset="UTF-8" />
+    <title>Schedule a Test Drive | US Star Auto Sale</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     
   <meta name="description" content="Premium used cars in Knoxville, TN. Browse inventory, schedule a test drive, trade-in, and apply for financing online at US Star Auto Sale." />
   <link rel="icon" href="/assets/icons/logo.png" type="image/png" />
@@ -12,9 +14,10 @@
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/pages.css" />
-      <link rel="stylesheet" href="css/final.css" />
-</head>
-  <body style="--page-bg-image: url('/assets/images/fon1.png');" class="page-car">
+    <link rel="stylesheet" href="css/final.css" />
+<!-- legacy css removed -->
+  </head>
+  <body class="page-testdrive">
     <!-- HEADER -->
     <header class="site-header">
       <div class="topbar">
@@ -106,32 +109,41 @@
     <!-- Overlay (ONLY ONCE) -->
     <div class="overlay" id="overlay"></div>
 
-    <!-- CAR DETAILS -->
-    <section class="section container car-details">
-      <div class="car-images"></div>
-
-      <div class="car-info">
-        <h1 class="car-title"></h1>
-
-        <p class="car-price"></p>
-        <p class="car-mileage"></p>
-
-        <!-- CARFAX / HISTORY TRUST (ADDED) -->
-        <div class="car-trust">
-          <span class="car-trust__badge">
-            📄 Vehicle History Report Available (CARFAX / AutoCheck)
-          </span>
-          <p class="car-trust__note">
-            Ask our team for the vehicle history report for this listing.
-          </p>
+    <section class="hero hero--compact" style="--hero-image: url('/assets/images/blue.jpg');">
+      <div class="wrapper">
+        <div>
+          <div class="hero-kicker">★ Test Drive • Knoxville, TN</div>
+          <h1 class="hero-title">Schedule a Test Drive</h1>
+          <p class="hero-sub">Pick a date/time and we’ll confirm quickly. Prefer to call? <a href="tel:+18653773230" style="text-decoration: underline;">(865) 377‑3230</a>.</p>
         </div>
-
-        <p class="car-description"></p>
-        <ul class="car-features"></ul>
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <section class="section container page-pad">
+
+      <form id="testDriveForm" class="financing-form form-max">
+        <div class="form-step active form-card">
+          <h3>Your Info</h3>
+          <div class="form-grid">
+            <input type="text" name="name" placeholder="Full Name" required />
+            <input type="tel" name="phone" placeholder="Phone Number" required />
+            <input type="email" name="email" placeholder="Email Address" />
+            <input type="text" name="car" placeholder="Car (optional)" />
+            <input type="date" name="preferredDate" required />
+            <input type="time" name="preferredTime" required />
+          </div>
+          <textarea
+            class="field-textarea"
+            name="message"
+            placeholder="Anything you want us to know? (trade-in, financing, questions…)"
+          ></textarea>
+
+          <button type="submit" class="btn next">Send Request</button>
+        </div>
+      </form>
+    </section>
+
+<!-- FOOTER -->
     <footer class="site-footer">
       <!-- MAP -->
       <div class="footer-map">
@@ -193,8 +205,6 @@
 
     <script src="js/main.js"></script>
     <script src="js/favorites.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/car.js"></script>
     <script type="module" src="js/form.js"></script>
   </body>
 </html>

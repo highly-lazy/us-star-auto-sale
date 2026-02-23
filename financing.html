@@ -1,323 +1,714 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>Financing | US Star Auto Sale</title>
+    <title>Apply for Financing | US Star Auto Sale</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Get pre-approved online. Apply for auto financing at US Star Auto Sale in Knoxville, TN." />
+  <link rel="icon" href="/assets/icons/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/icons/logo.png" />
 
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/financing.css" />
     <link rel="stylesheet" href="css/pages.css" />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/final.css" />
   </head>
-  <body>
+
+  <body class="page-financing">
     <!-- HEADER -->
     <header class="site-header">
+      <div class="topbar">
+        <div class="container topbar-inner">
+          <div class="topbar-left">
+            <span class="top-item">
+              <svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 22s7-4.5 7-12a7 7 0 1 0-14 0c0 7.5 7 12 7 12Z" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 13.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              Knoxville, TN
+            </span>
+            <span class="top-item">
+              <svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10Z" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Mon–Sat 9:00–6:00
+            </span>
+          </div>
+
+          <div class="topbar-right">
+            <a class="top-link" href="financing.html">
+              <svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Apply Financing
+            </a>
+            <a class="top-link" href="tel:+18653773230">
+              <svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .6a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+              (865) 377‑3230
+            </a>
+            <a class="top-link pulse" href="sms:+18653773230">
+              <svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+              Text Us
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div class="container header-container">
-        <a class="logo" href="index.html"
-          >US <span class="red-star">★</span> Auto Sale</a
-        >
-        <nav class="desktop-nav">
+        <a class="brand" href="index.html" aria-label="US Star Auto Sale Home">
+          <span class="brand-mark">★</span>
+          <span class="brand-stack">
+            <span class="brand-name">US Star Auto</span>
+            <span class="brand-tag">Sale</span>
+          </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary">
           <a href="index.html">Home</a>
-          <a href="financing.html">Financing</a>
-          <a href="tradein.html">Trade-In</a>
           <a href="collection.html">Inventory</a>
-          <a href="index.html#services">Service</a>
-          <a href="index.html#contact">Contact</a>
+          <a href="saved.html" class="nav-saved">Saved <span class="nav-badge" data-fav-count>0</span></a>
+          <a href="financing.html" class="is-active">Financing</a>
+          <a href="tradein.html">Trade‑In</a>
+          <a href="testdrive.html">Test Drive</a>
+          <a href="contact.html">Contact</a>
         </nav>
-        <a href="tel:+18653773230" class="call-btn">Call Now</a>
-        <button class="menu-btn" id="menuBtn">☰</button>
+
+        <div class="header-actions">
+          <a href="collection.html" class="btn btn-ghost btn-small">Browse</a>
+          <a href="testdrive.html" class="btn btn-primary btn-small">Schedule</a>
+          <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        </div>
       </div>
     </header>
 
-    <!-- MOBILE SIDEBAR -->
-    <aside class="sidebar" id="sidebar">
-      <button class="close-btn" id="closeBtn">✕</button>
+    <aside class="sidebar" id="sidebar" aria-label="Mobile menu">
+      <button class="close-btn" id="closeBtn" aria-label="Close menu">✕</button>
       <a href="index.html">Home</a>
-      <a href="financing.html">Financing</a>
-      <a href="tradein.html">Trade-In</a>
       <a href="collection.html">Inventory</a>
-      <a href="index.html#services">Service</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="tel:+18653773230" class="call-btn">Call Now</a>
+      <a href="saved.html">Saved</a>
+      <a href="financing.html">Financing</a>
+      <a href="tradein.html">Trade‑In</a>
+      <a href="testdrive.html">Test Drive</a>
+      <a href="contact.html">Contact</a>
+      <div class="sidebar-cta">
+        <a class="btn btn-primary" href="collection.html">Browse Inventory</a>
+        <a class="btn btn-ghost" href="tel:+18653773230">Call Now</a>
+      </div>
     </aside>
     <div class="overlay" id="overlay"></div>
 
     <!-- HERO -->
-
-    <section class="hero">
-      <div class="overlay"></div>
+    <section class="hero hero--compact">
       <div class="wrapper">
-        <h1 class="hero-title">No Credit, Bad Credit, We Say Yes</h1>
-        <p class="hero-subtext">Flexible financing options for everyone</p>
-        <div class="hero-buttons">
-          <a href="#contact" class="btn-hero btn-test">Test Drive</a>
-          <a href="collection.html" class="btn-hero btn-inventory"
-            >View Inventory</a
-          >
+        <div>
+          <div class="hero-kicker">Financing</div>
+          <h1 class="hero-title">Get Pre‑Approved Online</h1>
+          <p class="hero-subtext">Fill out the application below and we’ll confirm quickly. Prefer to call? <a href="tel:+18653773230" style="text-decoration:underline;">(865) 377‑3230</a></p>
+        </div>
+        <div class="hero-panel">
+          <div class="trust-row">
+            <span class="trust-badge">✅ Secure</span>
+            <span class="trust-badge">⚡ Fast Response</span>
+            <span class="trust-badge">🏁 All Credit Welcome</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- FINANCING FORM -->
-    <section class="financing-section">
-      <div class="container financing-container">
-        <h2 class="section-title">Apply for Financing</h2>
-
-        <div class="progress-bar">
-          <div class="progress" id="progress"></div>
+    <!-- FORM -->
+    <main class="section container page-pad">
+      <form id="financingForm" class="form-card" autocomplete="on" style="padding:22px;border-radius:22px;">
+        <div class="page-lead">
+          <h2 class="section-title" style="font-size:28px;">Online Credit Application</h2>
+          <p class="section-subtitle">Please enter all information you can. If something doesn’t apply, leave it blank.</p>
         </div>
 
-        <form id="financingForm" class="financing-form">
-          <!-- STEP 1 -->
-          <div class="form-step active">
-            <h3>Applicant Information</h3>
-            <div class="form-grid">
-              <input
-                type="text"
-                name="firstName"
-                placeholder="First Name"
-                required
-              />
-              <input
-                type="text"
-                name="lastName"
-                placeholder="Last Name"
-                required
-              />
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                required
-              />
-              <input type="date" name="dob" required />
-              <select name="maritalStatus" required>
+        <div class="fin-grid">
+          <!-- Left: form -->
+          <div class="fin-left">
+            <h3 class="fin-h">Vehicle</h3>
+            <div class="fin-row">
+              <label class="fin-label" for="carSelect">Select Vehicle</label>
+              <select id="carSelect" name="vehicle" class="fin-input">
+                <option value="">Choose vehicle (optional)</option>
+              </select>
+            </div>
+
+            <h3 class="fin-h">Applicant Information</h3>
+            <div class="fin-row fin-3">
+              <input class="fin-input" name="first_name" placeholder="First" required />
+              <input class="fin-input" name="middle_name" placeholder="Middle" />
+              <input class="fin-input" name="last_name" placeholder="Last" required />
+            </div>
+            <div class="fin-row fin-2">
+              <input class="fin-input" name="cell_phone" placeholder="Cell Phone" required />
+              <input class="fin-input" name="email" type="email" placeholder="Email" required />
+            </div>
+            <div class="fin-row fin-4">
+              <select class="fin-input" name="dob_month">
+                <option value="">DOB Month</option>
+                <option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option>
+                <option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option>
+              </select>
+              <select class="fin-input" name="dob_day">
+                <option value="">Day</option>
+                <option>01</option>
+                <option>02</option>
+                <option>03</option>
+                <option>04</option>
+                <option>05</option>
+                <option>06</option>
+                <option>07</option>
+                <option>08</option>
+                <option>09</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+                <option>23</option>
+                <option>24</option>
+                <option>25</option>
+                <option>26</option>
+                <option>27</option>
+                <option>28</option>
+                <option>29</option>
+                <option>30</option>
+                <option>31</option>
+              </select>
+              <select class="fin-input" name="dob_year">
+                <option value="">Year</option>
+                <option>2008</option>
+                <option>2007</option>
+                <option>2006</option>
+                <option>2005</option>
+                <option>2004</option>
+                <option>2003</option>
+                <option>2002</option>
+                <option>2001</option>
+                <option>2000</option>
+                <option>1999</option>
+                <option>1998</option>
+                <option>1997</option>
+                <option>1996</option>
+                <option>1995</option>
+                <option>1994</option>
+                <option>1993</option>
+                <option>1992</option>
+                <option>1991</option>
+                <option>1990</option>
+                <option>1989</option>
+                <option>1988</option>
+                <option>1987</option>
+                <option>1986</option>
+                <option>1985</option>
+                <option>1984</option>
+                <option>1983</option>
+                <option>1982</option>
+                <option>1981</option>
+                <option>1980</option>
+                <option>1979</option>
+                <option>1978</option>
+                <option>1977</option>
+                <option>1976</option>
+                <option>1975</option>
+                <option>1974</option>
+                <option>1973</option>
+                <option>1972</option>
+                <option>1971</option>
+                <option>1970</option>
+                <option>1969</option>
+                <option>1968</option>
+                <option>1967</option>
+                <option>1966</option>
+                <option>1965</option>
+                <option>1964</option>
+                <option>1963</option>
+                <option>1962</option>
+                <option>1961</option>
+                <option>1960</option>
+                <option>1959</option>
+                <option>1958</option>
+                <option>1957</option>
+                <option>1956</option>
+                <option>1955</option>
+                <option>1954</option>
+                <option>1953</option>
+                <option>1952</option>
+                <option>1951</option>
+                <option>1950</option>
+                <option>1949</option>
+                <option>1948</option>
+                <option>1947</option>
+                <option>1946</option>
+                <option>1945</option>
+                <option>1944</option>
+                <option>1943</option>
+                <option>1942</option>
+                <option>1941</option>
+                <option>1940</option>
+              </select>
+              <select class="fin-input" name="marital_status">
                 <option value="">Marital Status</option>
                 <option>Single</option>
                 <option>Married</option>
+                <option>Separated</option>
+                <option>Divorced</option>
+                <option>Widowed</option>
               </select>
-              <input
-                type="text"
-                name="ssn"
-                placeholder="SSN (Last 4 digits)"
-                maxlength="4"
-                required
-              />
-              <input
-                type="text"
-                name="dlState"
-                placeholder="Driver License State"
-                required
-              />
-              <input
-                type="text"
-                name="dlNumber"
-                placeholder="Driver License Number"
-                required
-              />
             </div>
-            <button type="button" class="btn next">Next</button>
-          </div>
+            <div class="fin-row fin-4">
+              <select class="fin-input" name="dl_state">
+                <option value="">DL State</option>
+                <option>AL</option>
+                <option>AK</option>
+                <option>AZ</option>
+                <option>AR</option>
+                <option>CA</option>
+                <option>CO</option>
+                <option>CT</option>
+                <option>DE</option>
+                <option>DC</option>
+                <option>FL</option>
+                <option>GA</option>
+                <option>HI</option>
+                <option>ID</option>
+                <option>IL</option>
+                <option>IN</option>
+                <option>IA</option>
+                <option>KS</option>
+                <option>KY</option>
+                <option>LA</option>
+                <option>ME</option>
+                <option>MD</option>
+                <option>MA</option>
+                <option>MI</option>
+                <option>MN</option>
+                <option>MS</option>
+                <option>MO</option>
+                <option>MT</option>
+                <option>NE</option>
+                <option>NV</option>
+                <option>NH</option>
+                <option>NJ</option>
+                <option>NM</option>
+                <option>NY</option>
+                <option>NC</option>
+                <option>ND</option>
+                <option>OH</option>
+                <option>OK</option>
+                <option>OR</option>
+                <option>PA</option>
+                <option>RI</option>
+                <option>SC</option>
+                <option>SD</option>
+                <option>TN</option>
+                <option>TX</option>
+                <option>UT</option>
+                <option>VT</option>
+                <option>VA</option>
+                <option>WA</option>
+                <option>WV</option>
+                <option>WI</option>
+                <option>WY</option>
+              </select>
+              <input class="fin-input" name="dl_number" placeholder="Driver License #" />
+              <input class="fin-input" name="ssn" placeholder="SSN" />
+              <select class="fin-input" name="timezone">
+                <option value="">Choose Time Zone</option>
+                <option>Eastern</option>
+                <option>Central</option>
+                <option>Mountain</option>
+                <option>Pacific</option>
+              </select>
+            </div>
 
-          <!-- STEP 2 -->
-          <div class="form-step">
-            <h3>Applicant Residence Information</h3>
-            <div class="form-grid">
-              <input
-                type="text"
-                name="street"
-                placeholder="Street Address"
-                required
-              />
-              <input type="text" name="city" placeholder="City" required />
-              <input type="text" name="state" placeholder="State" required />
-              <input type="text" name="zip" placeholder="ZIP Code" required />
-              <select name="residenceType" required>
+            <h3 class="fin-h">Residence Information</h3>
+            <div class="fin-row fin-2">
+              <input class="fin-input" name="address" placeholder="Street Address" required />
+              <input class="fin-input" name="apt" placeholder="Apt / Unit #" />
+            </div>
+            <div class="fin-row fin-3">
+              <input class="fin-input" name="city" placeholder="City" required />
+              <select class="fin-input" name="state" required>
+                <option value="">State</option>
+                <option>AL</option>
+                <option>AK</option>
+                <option>AZ</option>
+                <option>AR</option>
+                <option>CA</option>
+                <option>CO</option>
+                <option>CT</option>
+                <option>DE</option>
+                <option>DC</option>
+                <option>FL</option>
+                <option>GA</option>
+                <option>HI</option>
+                <option>ID</option>
+                <option>IL</option>
+                <option>IN</option>
+                <option>IA</option>
+                <option>KS</option>
+                <option>KY</option>
+                <option>LA</option>
+                <option>ME</option>
+                <option>MD</option>
+                <option>MA</option>
+                <option>MI</option>
+                <option>MN</option>
+                <option>MS</option>
+                <option>MO</option>
+                <option>MT</option>
+                <option>NE</option>
+                <option>NV</option>
+                <option>NH</option>
+                <option>NJ</option>
+                <option>NM</option>
+                <option>NY</option>
+                <option>NC</option>
+                <option>ND</option>
+                <option>OH</option>
+                <option>OK</option>
+                <option>OR</option>
+                <option>PA</option>
+                <option>RI</option>
+                <option>SC</option>
+                <option>SD</option>
+                <option>TN</option>
+                <option>TX</option>
+                <option>UT</option>
+                <option>VT</option>
+                <option>VA</option>
+                <option>WA</option>
+                <option>WV</option>
+                <option>WI</option>
+                <option>WY</option>
+              </select>
+              <input class="fin-input" name="zip" placeholder="Zip" required />
+            </div>
+            <div class="fin-row">
+              <input class="fin-input" name="country" placeholder="Country" value="USA" />
+            </div>
+            <div class="fin-row fin-2">
+              <select class="fin-input" name="time_at_residence_years">
+                <option value="">Time at Residence (Years)</option>
+                <option>0 Years</option>
+                <option>1 Years</option>
+                <option>2 Years</option>
+                <option>3 Years</option>
+                <option>4 Years</option>
+                <option>5 Years</option>
+                <option>6 Years</option>
+                <option>7 Years</option>
+                <option>8 Years</option>
+                <option>9 Years</option>
+                <option>10 Years</option>
+                <option>11 Years</option>
+                <option>12 Years</option>
+                <option>13 Years</option>
+                <option>14 Years</option>
+                <option>15 Years</option>
+                <option>16 Years</option>
+                <option>17 Years</option>
+                <option>18 Years</option>
+                <option>19 Years</option>
+                <option>20 Years</option>
+                <option>21 Years</option>
+                <option>22 Years</option>
+                <option>23 Years</option>
+                <option>24 Years</option>
+                <option>25 Years</option>
+                <option>26 Years</option>
+                <option>27 Years</option>
+                <option>28 Years</option>
+                <option>29 Years</option>
+                <option>30 Years</option>
+              </select>
+              <select class="fin-input" name="time_at_residence_months">
+                <option value="">Months</option>
+                <option>0 Months</option>
+                <option>1 Months</option>
+                <option>2 Months</option>
+                <option>3 Months</option>
+                <option>4 Months</option>
+                <option>5 Months</option>
+                <option>6 Months</option>
+                <option>7 Months</option>
+                <option>8 Months</option>
+                <option>9 Months</option>
+                <option>10 Months</option>
+                <option>11 Months</option>
+              </select>
+            </div>
+            <div class="fin-row fin-2">
+              <input class="fin-input" name="monthly_payment" placeholder="Monthly Payment" />
+              <select class="fin-input" name="residence_type">
                 <option value="">Residence Type</option>
                 <option>Rent</option>
                 <option>Own</option>
+                <option>Living with family</option>
+                <option>Other</option>
               </select>
-              <input
-                type="number"
-                name="monthlyPayment"
-                placeholder="Monthly Rent / Mortgage"
-                required
-              />
-              <input
-                type="number"
-                name="yearsAtAddress"
-                placeholder="Years at Address"
-                required
-              />
-              <input
-                type="number"
-                name="monthsAtAddress"
-                placeholder="Months at Address"
-                required
-              />
             </div>
-            <div class="buttons">
-              <button type="button" class="btn prev">Back</button>
-              <button type="button" class="btn next">Next</button>
+            <div class="fin-row fin-2">
+              <input class="fin-input" name="mortgage_company" placeholder="Mortgage / Leasing Company" />
+              <select class="fin-input" name="existing_loans">
+                <option value="">Any Existing Loans?</option>
+                <option>No</option>
+                <option>Yes</option>
+              </select>
             </div>
-          </div>
 
-          <!-- STEP 3 -->
-          <div class="form-step">
-            <h3>Applicant Employment Information</h3>
-            <div class="form-grid">
-              <select name="employmentStatus" required>
-                <option value="">Employment Status</option>
-                <option>Employed</option>
-                <option>Self-Employed</option>
+            <h3 class="fin-h">Employment Information</h3>
+            <div class="fin-row">
+              <input class="fin-input" name="employer" placeholder="Employer" />
+            </div>
+            <div class="fin-row fin-2">
+              <input class="fin-input" name="employer_address" placeholder="Employer Address" />
+              <input class="fin-input" name="employer_apt" placeholder="Apt / Unit #" />
+            </div>
+            <div class="fin-row fin-3">
+              <input class="fin-input" name="employer_city" placeholder="City" />
+              <input class="fin-input" name="employer_state" placeholder="State" />
+              <input class="fin-input" name="employer_zip" placeholder="Zip" />
+            </div>
+            <div class="fin-row fin-3">
+              <input class="fin-input" name="title" placeholder="Title" />
+              <select class="fin-input" name="employment_type">
+                <option value="">Type of Employment</option>
+                <option>Full‑time</option>
+                <option>Part‑time</option>
+                <option>Self‑employed</option>
+                <option>Retired</option>
+                <option>Student</option>
                 <option>Unemployed</option>
               </select>
-              <input
-                type="text"
-                name="employer"
-                placeholder="Employer / Business Name"
-                required
-              />
-              <input type="text" name="jobTitle" placeholder="Job Title" />
-              <input
-                type="number"
-                name="monthlyIncome"
-                placeholder="Monthly Income"
-                required
-              />
-              <input type="tel" name="workPhone" placeholder="Work Phone" />
-              <input
-                type="number"
-                name="yearsOnJob"
-                placeholder="Years on Job"
-              />
-              <input
-                type="number"
-                name="monthsOnJob"
-                placeholder="Months on Job"
-              />
+              <input class="fin-input" name="work_phone" placeholder="Work Phone" />
             </div>
-            <div class="buttons">
-              <button type="button" class="btn prev">Back</button>
-              <button type="button" class="btn next">Next</button>
+            <div class="fin-row fin-2">
+              <select class="fin-input" name="time_at_company_years">
+                <option value="">Time at Company (Years)</option>
+                <option>0 Years</option>
+                <option>1 Years</option>
+                <option>2 Years</option>
+                <option>3 Years</option>
+                <option>4 Years</option>
+                <option>5 Years</option>
+                <option>6 Years</option>
+                <option>7 Years</option>
+                <option>8 Years</option>
+                <option>9 Years</option>
+                <option>10 Years</option>
+                <option>11 Years</option>
+                <option>12 Years</option>
+                <option>13 Years</option>
+                <option>14 Years</option>
+                <option>15 Years</option>
+                <option>16 Years</option>
+                <option>17 Years</option>
+                <option>18 Years</option>
+                <option>19 Years</option>
+                <option>20 Years</option>
+                <option>21 Years</option>
+                <option>22 Years</option>
+                <option>23 Years</option>
+                <option>24 Years</option>
+                <option>25 Years</option>
+                <option>26 Years</option>
+                <option>27 Years</option>
+                <option>28 Years</option>
+                <option>29 Years</option>
+                <option>30 Years</option>
+              </select>
+              <select class="fin-input" name="time_at_company_months">
+                <option value="">Months</option>
+                <option>0 Months</option>
+                <option>1 Months</option>
+                <option>2 Months</option>
+                <option>3 Months</option>
+                <option>4 Months</option>
+                <option>5 Months</option>
+                <option>6 Months</option>
+                <option>7 Months</option>
+                <option>8 Months</option>
+                <option>9 Months</option>
+                <option>10 Months</option>
+                <option>11 Months</option>
+              </select>
+            </div>
+            <div class="fin-row fin-2">
+              <input class="fin-input" name="gross_monthly_income" placeholder="Gross Monthly Income" />
+              <input class="fin-input" name="additional_income" placeholder="Additional Income" />
+            </div>
+            <div class="fin-row">
+              <input class="fin-input" name="additional_income_source" placeholder="Source of Additional Income" />
+            </div>
+
+            <h3 class="fin-h">Down Payment & Term</h3>
+            <div class="fin-row fin-2">
+              <input class="fin-input" name="down_payment" placeholder="Down Payment Amount" />
+              <select class="fin-input" name="term">
+                <option value="">Desired Term</option>
+                <option>36 months</option>
+                <option>48 months</option>
+                <option>60 months</option>
+                <option>72 months</option>
+                <option>84 months</option>
+              </select>
+            </div>
+            <div class="fin-row fin-2">
+              <div class="fin-radio">
+                <span>Joint Application</span>
+                <label><input type="radio" name="joint_application" value="Yes" /> Yes</label>
+                <label><input type="radio" name="joint_application" value="No" checked /> No</label>
+              </div>
+              <div class="fin-radio">
+                <span>Trade‑In</span>
+                <label><input type="radio" name="trade_in" value="Yes" /> Yes</label>
+                <label><input type="radio" name="trade_in" value="No" checked /> No</label>
+              </div>
+            </div>
+
+            <h3 class="fin-h">Appointment</h3>
+            <div class="fin-row fin-2">
+              <input class="fin-input" type="date" name="appointment_date" />
+              <select class="fin-input" name="appointment_time">
+                <option value="">Choose Time</option>
+                <option>09:00 AM</option><option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option>
+                <option>01:00 PM</option><option>02:00 PM</option><option>03:00 PM</option><option>04:00 PM</option><option>05:00 PM</option>
+              </select>
+            </div>
+
+            <div class="fin-row">
+              <textarea class="fin-input fin-text" name="additional_message" placeholder="Additional message (trade‑in, financing questions...)" rows="5"></textarea>
+            </div>
+
+            <div class="fin-row">
+              <label class="fin-check">
+                <input type="checkbox" name="agree_terms" value="Yes" required />
+                <span>I certify the information is complete and accurate and agree to be contacted about my request.</span>
+              </label>
+            </div>
+
+            <div class="fin-actions">
+              <button class="btn btn-primary" type="submit">Submit</button>
+              <a class="btn btn-ghost" href="tel:+18653773230">Call Instead</a>
             </div>
           </div>
 
-          <!-- STEP 4 -->
-          <div class="form-step">
-            <h3>Down Payment & Term</h3>
-            <div class="form-grid">
-              <select name="vehicle" id="carSelect" required>
-                <option value="">Select Vehicle</option>
-              </select>
-              <div class="selected-car-preview">
-                <img id="selectedCarImage" alt="Selected Vehicle" />
+          <!-- Right: preview -->
+          <aside class="fin-right">
+            <div class="fin-preview">
+              <div class="fin-preview__top">
+                <div>
+                  <div class="fin-preview__label">Selected vehicle</div>
+                  <div id="finVehicleText" class="fin-preview__title">Choose a vehicle (optional)</div>
+                  <div class="fin-preview__meta" id="finVehicleMeta">We’ll match your application to inventory.</div>
+                </div>
+                <a class="btn btn-ghost btn-small" href="collection.html">Browse</a>
               </div>
-              <input
-                type="number"
-                name="downPayment"
-                placeholder="Down Payment Amount"
-              />
-              <select name="term" required>
-                <option value="">Preferred Term</option>
-                <option>6 Months</option>
-                <option>12 Months</option>
-                <option>24 Months</option>
-                <option>36 Months</option>
-                <option>48 Months</option>
-                <option>60 Months</option>
-                <option>72 Months</option>
-              </select>
-              <select name="tradeIn">
-                <option value="">Trade-In?</option>
-                <option>Yes</option>
-                <option>No</option>
-              </select>
+              <img id="selectedCarImage" src="" alt="Selected vehicle" style="display:none;" />
+              <div class="fin-preview__note">
+                Need help? Text us anytime: <a href="sms:+18653773230">(865) 377‑3230</a>
+              </div>
             </div>
-            <div class="buttons">
-              <button type="button" class="btn prev">Back</button>
-              <button type="submit" class="btn submit">
-                Submit Application
-              </button>
-            </div>
-            <p id="financingStatus" class="form-status"></p>
-          </div>
-        </form>
-      </div>
-    </section>
+          </aside>
+        </div>
+      </form>
+    </main>
 
     <!-- FOOTER -->
     <footer class="site-footer">
-      <!-- Map on top -->
       <div class="footer-map">
         <iframe
           src="https://www.google.com/maps?q=7665%20Maynardville%20Pike%2C%20Knoxville%2C%20TN%2037938&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-        >
-        </iframe>
+        ></iframe>
 
         <div class="map-overlay">
           <h4>US Star Auto Sale</h4>
           <p>7665 Maynardville Pike<br />Knoxville, TN 37938</p>
-          <a
-            href="https://maps.google.com/?q=7665+Maynardville+Pike+Knoxville+TN+37938"
-            target="_blank"
-          >
-            Get Directions →
-          </a>
+          <a href="https://maps.google.com/?q=7665+Maynardville+Pike+Knoxville+TN+37938" target="_blank" rel="noopener">Get Directions →</a>
         </div>
       </div>
 
       <div class="container footer-container">
-        <!-- Logo -->
-        <div class="footer-logo">
-          <a class="logo" href="index.html">
-            US <span class="red-star">★</span> Auto Sale
-          </a>
+        <div class="footer-col footer-logo">
+          <a class="logo" href="index.html">US <span class="red-star">★</span> Auto Sale</a>
         </div>
 
-        <!-- Info -->
-        <div class="footer-info">
-          <p><strong>Working Hours:</strong> 9:00 – 18:00, Mon – Fri</p>
-          <p>
-            <strong>Address:</strong> 7665 Maynardville Pike, Knoxville, TN
-            37938
-          </p>
-          <p>
-            <strong>Email:</strong>
-            <a href="mailto:Usstar@autoussales.com">Usstar@autoussales.com</a>
-          </p>
+        <div class="footer-col footer-info">
+          <p><strong>Working Hours:</strong><br />9:00 – 18:00, Mon – Sat</p>
+          <p><strong>Address:</strong><br />7665 Maynardville Pike<br />Knoxville, TN 37938</p>
+          <p><strong>Email:</strong><br /><a href="mailto:Usstar@autoussales.com">Usstar@autoussales.com</a></p>
         </div>
 
-        <!-- Social centered -->
-        <div class="footer-social">
-          <a href="https://www.instagram.com/usautosale.tn" target="_blank">
-            <img
-              src="assets/icons/instagram-2016-logo-svgrepo-com.svg"
-              alt="Instagram"
-            />
+        <div class="footer-col">
+          <div class="footer-social">
+          <a href="https://www.instagram.com/usautosale.tn" target="_blank" rel="noopener">
+            <img src="assets/icons/instagram-2016-logo-svgrepo-com.svg" alt="Instagram" />
             Instagram
           </a>
+          <a href="https://www.facebook.com/usstarautosale/" target="_blank" rel="noopener">
+            <img src="assets/icons/facebook-svgrepo-com.svg" alt="Facebook" />
+            Facebook
+          </a>
+          <a href="https://www.cargurus.com/Cars/m-US-Star-Auto-Group-LLC-sp463559" target="_blank" rel="noopener">
+            <img src="assets/icons/cargurus.svg" alt="CarGurus" />
+            CarGurus
+          </a>
+        </div>
         </div>
 
-        <!-- Copyright -->
-        <p class="footer-copy">© US Star Auto Sale 2025 All rights reserved</p>
+        <p class="footer-copy">© 2026 US Star Auto Sale. All rights reserved.</p>
       </div>
     </footer>
 
     <script src="js/main.js"></script>
-    <script type="module" src="js/form.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/form.js"></script>
+
+    <script>
+      // Build years dropdown for DOB (last 100 years)
+      (function(){
+        const yearSel = document.querySelector('[name="dob_year"]');
+        if(!yearSel) return;
+        const now = new Date().getFullYear();
+        for(let y = now; y >= now-100; y--){
+          const o=document.createElement('option');
+          o.textContent=String(y);
+          o.value=String(y);
+          yearSel.appendChild(o);
+        }
+      })();
+
+      // Vehicle text preview
+      document.addEventListener('DOMContentLoaded', ()=>{
+        const sel = document.getElementById('carSelect');
+        const text = document.getElementById('finVehicleText');
+        if(!sel||!text) return;
+        sel.addEventListener('change', ()=>{
+          const opt = sel.options[sel.selectedIndex];
+          text.textContent = opt && opt.value ? opt.textContent : 'Choose a vehicle (optional)';
+        });
+      });
+    </script>
   </body>
 </html>

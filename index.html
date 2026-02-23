@@ -3,144 +3,173 @@
   <head>
     <title>US Star Auto Sale</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/variables.css" />
+    
+  <meta name="description" content="Premium used cars in Knoxville, TN. Browse inventory, schedule a test drive, trade-in, and apply for financing online at US Star Auto Sale." />
+  <link rel="icon" href="/assets/icons/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/icons/logo.png" />
+<link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/pages.css" />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/final.css" />
+<!-- legacy css removed -->
   </head>
-  <body>
+  <body  class="page-home">
     <!-- HEADER -->
     <header class="site-header">
+      <div class="topbar">
+        <div class="container topbar-inner">
+          <div class="topbar-left">
+            <span class="top-item">
+              <svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 22s7-4.5 7-12a7 7 0 1 0-14 0c0 7.5 7 12 7 12Z" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 13.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              Knoxville, TN
+            </span>
+            <span class="top-item">
+              <svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10Z" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Mon–Sat 9:00–6:00
+            </span>
+          </div>
+
+          <div class="topbar-right">
+            <a class="top-link" href="financing.html">
+              <svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Apply Financing
+            </a>
+            <a class="top-link" href="tel:+18653773230">
+              <svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .6a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+              (865) 377‑3230
+            </a>
+            <a class="top-link pulse" href="sms:+18653773230">
+              <svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+              Text Us
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div class="container header-container">
-        <!-- Logo -->
-        <a class="logo" href="index.html">
-          US <span class="red-star">★</span> Auto Sale
+        <a class="brand" href="index.html" aria-label="US Star Auto Sale Home">
+          <span class="brand-mark">★</span>
+          <span class="brand-stack">
+            <span class="brand-name">US Star Auto</span>
+            <span class="brand-tag">Sale</span>
+          </span>
         </a>
 
-        <!-- Desktop Navigation -->
-        <nav class="desktop-nav">
+        <nav class="desktop-nav" aria-label="Primary">
           <a href="index.html">Home</a>
-          <a href="financing.html">Financing</a>
-          <a href="tradein.html">Trade-In</a>
           <a href="collection.html">Inventory</a>
-          <a href="index.html#services">Service</a>
-          <a href="index.html#contact">Contact</a>
+          <a href="saved.html" class="nav-saved">Saved <span class="nav-badge" data-fav-count>0</span></a>
+          <a href="financing.html">Financing</a>
+          <a href="tradein.html">Trade‑In</a>
+          <a href="testdrive.html">Test Drive</a>
+          <a href="contact.html">Contact</a>
         </nav>
 
-        <!-- Call Button -->
-        <a href="tel:+18653773230" class="call-btn">Call Now</a>
-
-        <!-- Mobile Menu Button -->
-        <button class="menu-btn" id="menuBtn">☰</button>
+        <div class="header-actions">
+          <a href="collection.html" class="btn btn-ghost btn-small">Browse</a>
+          <a href="financing.html" class="btn btn-primary btn-small">Get Pre‑Approved</a>
+          <!-- always dark mode -->
+          <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        </div>
       </div>
     </header>
 
     <!-- MOBILE SIDEBAR -->
-    <aside class="sidebar" id="sidebar">
-      <button class="close-btn" id="closeBtn">✕</button>
+    <aside class="sidebar" id="sidebar" aria-label="Mobile menu">
+      <button class="close-btn" id="closeBtn" aria-label="Close menu">✕</button>
       <a href="index.html">Home</a>
-      <a href="financing.html">Financing</a>
-      <a href="tradein.html">Trade-In</a>
       <a href="collection.html">Inventory</a>
-      <a href="index.html#services">Service</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="tel:+18653773230" class="call-btn">Call Now</a>
+          <a href="saved.html" class="nav-saved">Saved <span class="nav-badge" data-fav-count>0</span></a>
+      <a href="financing.html">Financing</a>
+      <a href="tradein.html">Trade‑In</a>
+      <a href="testdrive.html">Test Drive</a>
+      <a href="contact.html">Contact</a>
+      <div class="sidebar-cta">
+        <a class="btn btn-primary" href="financing.html">Get Pre‑Approved</a>
+        <a class="btn btn-ghost" href="tel:+18653773230">Call Now</a>
+      </div>
     </aside>
 
-    <!-- Overlay -->
+    <!-- Overlay (ONLY ONCE) -->
     <div class="overlay" id="overlay"></div>
 
-    <section class="hero">
-      <div class="overlay"></div>
+    <section class="hero hero--home" style="--hero-image: url('/assets/images/elantra12.webp');">
       <div class="wrapper">
-        <h1 class="hero-title">Find Your Perfect Drive</h1>
-        <p class="hero-subtext">
-          Nationwide Delivery • Financing Options • Test Drive Available
-        </p>
-        <div class="hero-buttons">
-          <a href="#contact" class="btn-hero btn-test">Test Drive</a>
-          <a href="collection.html" class="btn-hero btn-inventory"
-            >View Inventory</a
-          >
+        <div>
+          <div class="hero-kicker floaty">★ Premium Used Cars • Knoxville, TN</div>
+          <h1 class="hero-title">A better way to buy your next car.</h1>
+          <p class="hero-subtext">
+            Shop our curated inventory, schedule a test drive, and get pre‑approved — fast.
+          </p>
+
+          <div class="trust-row">
+            <span class="trust-badge">✅ Quality‑Inspected Vehicles</span>
+            <span class="trust-badge">🚚 Nationwide Delivery</span>
+            <span class="trust-badge">🧾 CARFAX Available</span>
+            <span class="trust-badge">⭐ CarGurus Dealer</span>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="hero-search">
+            <input id="heroSearch" type="search" placeholder="Search make, model, year, stock, VIN…" aria-label="Search inventory">
+            <a class="btn btn-primary" href="collection.html" aria-label="Go to inventory">Search</a>
+          </div>
+          <div class="hero-cta-row">
+            <a class="icon-btn pulse" href="tel:+18653773230" aria-label="Call us">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .6a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              Call
+            </a>
+            <a class="icon-btn" href="sms:+18653773230" aria-label="Text us">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              Text
+            </a>
+            <a class="icon-btn" href="testdrive.html" aria-label="Schedule test drive">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 7V3m8 4V3M4 11h16M6 21h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Test Drive
+            </a>
+            <a class="icon-btn" href="financing.html" aria-label="Apply for financing">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7h18M5 11h14M7 15h10M9 19h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Financing
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-
-    <section class="premium-fin-section">
-  <div class="fin-container">
-    <div class="fin-card">
-      <div class="fin-card__header">
-        <h2 class="fin-card__title">Financing Available</h2>
-        <p class="fin-card__subtitle">We work with all credit situations — fast & easy approval.</p>
+    <!-- FEATURED INVENTORY (Prime Motors style) -->
+    <section class="section container featured">
+      <div class="section-head">
+        <h2 class="section-title">Featured Inventory</h2>
+        <a class="link-more" href="collection.html">View All →</a>
       </div>
 
-      <div class="fin-accordion-group" data-accordion-v3>
-        <div class="fin-acc-item">
-          <button class="fin-acc-trigger" type="button" aria-expanded="false">
-            <span class="fin-acc-text">Bad Credit OK</span>
-            <span class="fin-acc-arrow"></span>
-          </button>
-          <div class="fin-acc-panel">
-            <div class="fin-acc-content">
-              We work with lender programs that help customers with challenged credit.
-            </div>
-          </div>
-        </div>
-
-        <div class="fin-acc-item">
-          <button class="fin-acc-trigger" type="button" aria-expanded="false">
-            <span class="fin-acc-text">No Credit OK</span>
-            <span class="fin-acc-arrow"></span>
-          </button>
-          <div class="fin-acc-panel">
-            <div class="fin-acc-content">
-              No credit history? We have options for first-time buyers and new credit profiles.
-            </div>
-          </div>
-        </div>
-
-        <div class="fin-acc-item">
-          <button class="fin-acc-trigger" type="button" aria-expanded="false">
-            <span class="fin-acc-text">First Time Buyers Welcome</span>
-            <span class="fin-acc-arrow"></span>
-          </button>
-          <div class="fin-acc-panel">
-            <div class="fin-acc-content">
-              We guide you step-by-step and keep the process simple and transparent.
-            </div>
-          </div>
-        </div>
-
-        <div class="fin-acc-item">
-          <button class="fin-acc-trigger" type="button" aria-expanded="false">
-            <span class="fin-acc-text">Low Down Payment Options</span>
-            <span class="fin-acc-arrow"></span>
-          </button>
-          <div class="fin-acc-panel">
-            <div class="fin-acc-content">
-              Flexible down payment programs may be available based on your approval.
-            </div>
-          </div>
-        </div>
+      <div class="inventory-toolbar">
+        <input
+          id="homeSearch"
+          class="inventory-search"
+          type="search"
+          placeholder="Search by make, model, year, stock, VIN…"
+          aria-label="Search inventory"
+        />
       </div>
 
-      <div class="fin-actions">
-        <a href="financing.html" class="fin-btn fin-btn--main">GET PRE-APPROVED</a>
-        <a href="tel:+18653773230" class="fin-btn fin-btn--call">CALL NOW</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-    
+      <div id="featuredGrid" class="cards-row"></div>
+    </section>
 
     <!-- ==========================
      ABOUT US (Home Page)
@@ -214,36 +243,23 @@
       </div>
     </section>
 
-    <section class="section contact" id="contact">
-      <div class="container">
-        <h2 class="section-title">Contact Us</h2>
-        <p>Send us a message and we'll get back to you!</p>
-
-        <form id="contactForm">
-          <input type="hidden" name="form_type" value="contact" />
-
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            required
-          ></textarea>
-          <button type="submit">Send Message</button>
-          <p id="formStatus" style="margin-top: 15px"></p>
-        </form>
-      </div>
-    </section>
+    <!-- Home page contact form removed (Contact is a dedicated page) -->
 
     <!-- ==========================
      LEGAL DISCLAIMER
 ========================== -->
-    <section class="legal-disclaimer">
+    <section class="legal-disclaimer" id="legal">
       <div class="container">
-        <h2>Legal Disclaimer & Terms of Sale</h2>
+        <div class="legal-card">
+          <div class="legal-head">
+            <h2>Legal Disclaimer &amp; Terms of Sale</h2>
+            <button class="btn btn-view legal-toggle" type="button" aria-expanded="false" aria-controls="legalBody">
+              Read full terms
+            </button>
+          </div>
 
-        <h3>As-Is Vehicle Sales</h3>
+          <div class="legal-body" id="legalBody">
+<h3>As-Is Vehicle Sales</h3>
         <p>
           All vehicles sold by <strong>US Star Auto Sale</strong> are sold on an
           <strong>"as-is"</strong> basis, with no expressed or implied
@@ -289,6 +305,8 @@
           disclaimer and understands that the vehicle is being sold “as-is” and
           “with all faults.”
         </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -337,12 +355,17 @@
 
         <!-- Social centered -->
         <div class="footer-social">
-          <a href="https://www.instagram.com/usautosale.tn" target="_blank">
-            <img
-              src="assets/icons/instagram-2016-logo-svgrepo-com.svg"
-              alt="Instagram"
-            />
+          <a href="https://www.instagram.com/usautosale.tn" target="_blank" rel="noopener">
+            <img src="assets/icons/instagram-2016-logo-svgrepo-com.svg" alt="Instagram" />
             Instagram
+          </a>
+          <a href="https://www.facebook.com/usstarautosale/" target="_blank" rel="noopener">
+            <img src="assets/icons/facebook-svgrepo-com.svg" alt="Facebook" />
+            Facebook
+          </a>
+          <a href="https://www.cargurus.com/Cars/m-US-Star-Auto-Group-LLC-sp463559" target="_blank" rel="noopener">
+            <img src="assets/icons/cargurus.svg" alt="CarGurus" />
+            CarGurus
           </a>
         </div>
 
@@ -352,6 +375,8 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/home.js"></script>
     <script type="module" src="js/form.js"></script>
     
     </div>

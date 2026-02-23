@@ -1,28 +1,39 @@
 :root {
-  --navy: #0b1c2d;
+  /* Brand */
+  --navy: #071a2d;
+  --navy-2: #051321;
+  --navy-3: #0b2742;
+
   --white: #ffffff;
+  --offwhite: #eef3f8;
+
   --red: #c1121f;
-  --gray: #f4f6f8;
+  --red-2: #ff2d2d;
 
-  --font-regular: "Montserrat-Regular", system-ui, sans-serif;
-  --font-medium: "Montserrat-Medium", system-ui, sans-serif;
-  --font-semibold: "Montserrat-SemiBold", system-ui, sans-serif;
-  --font-bold: "Montserrat-Bold", system-ui, sans-serif;
-}
+  /* UI tokens */
+  --bg: var(--navy-2);
+  --bg-top: var(--navy);
+  --surface: rgba(255,255,255,0.06);
+  --surface-2: rgba(255,255,255,0.10);
+  --border: rgba(255,255,255,0.12);
 
-@font-face {
-  font-family: "Montserrat-Regular";
-  src: url("../assets/fonts/Montserrat-Regular.ttf");
-}
-@font-face {
-  font-family: "Montserrat-Medium";
-  src: url("../assets/fonts/Montserrat-Medium.ttf");
-}
-@font-face {
-  font-family: "Montserrat-SemiBold";
-  src: url("../assets/fonts/Montserrat-SemiBold.ttf");
-}
-@font-face {
-  font-family: "Montserrat-Bold";
-  src: url("../assets/fonts/Montserrat-Bold.ttf");
+  --text: rgba(255,255,255,0.92);
+  --text-2: rgba(255,255,255,0.74);
+  --muted: rgba(255,255,255,0.55);
+
+  --accent: var(--red);
+  --accent-2: #2c7bff;
+  --gold: #d9b451;
+
+  --shadow-soft: 0 18px 50px rgba(0,0,0,0.35);
+  --shadow-strong: 0 26px 80px rgba(0,0,0,0.55);
+
+  --radius: 18px;
+  --radius-sm: 12px;
+
+  --font-regular: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-display: var(--font-regular);
+
+  /* Layout */
+  --container: 1220px;
 }

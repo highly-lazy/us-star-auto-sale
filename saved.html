@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Car Details</title>
+    <title>Saved Vehicles | US Star Auto Sale</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
   <meta name="description" content="Premium used cars in Knoxville, TN. Browse inventory, schedule a test drive, trade-in, and apply for financing online at US Star Auto Sale." />
@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="css/pages.css" />
       <link rel="stylesheet" href="css/final.css" />
 </head>
-  <body style="--page-bg-image: url('/assets/images/fon1.png');" class="page-car">
-    <!-- HEADER -->
+  <body style="--page-bg-image: url('/assets/images/fon1.png');" class="page-saved">
+    <!-- HEADER (same markup as other pages) -->
     <header class="site-header">
       <div class="topbar">
         <div class="container topbar-inner">
@@ -81,18 +81,15 @@
         <div class="header-actions">
           <a href="collection.html" class="btn btn-ghost btn-small">Browse</a>
           <a href="financing.html" class="btn btn-primary btn-small">Get Pre‑Approved</a>
-          <!-- always dark mode -->
           <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
         </div>
       </div>
     </header>
 
-    <!-- MOBILE SIDEBAR -->
     <aside class="sidebar" id="sidebar" aria-label="Mobile menu">
       <button class="close-btn" id="closeBtn" aria-label="Close menu">✕</button>
       <a href="index.html">Home</a>
       <a href="collection.html">Inventory</a>
-          <a href="saved.html" class="nav-saved">Saved <span class="nav-badge" data-fav-count>0</span></a>
       <a href="financing.html">Financing</a>
       <a href="tradein.html">Trade‑In</a>
       <a href="testdrive.html">Test Drive</a>
@@ -102,38 +99,22 @@
         <a class="btn btn-ghost" href="tel:+18653773230">Call Now</a>
       </div>
     </aside>
-
-    <!-- Overlay (ONLY ONCE) -->
     <div class="overlay" id="overlay"></div>
 
-    <!-- CAR DETAILS -->
-    <section class="section container car-details">
-      <div class="car-images"></div>
-
-      <div class="car-info">
-        <h1 class="car-title"></h1>
-
-        <p class="car-price"></p>
-        <p class="car-mileage"></p>
-
-        <!-- CARFAX / HISTORY TRUST (ADDED) -->
-        <div class="car-trust">
-          <span class="car-trust__badge">
-            📄 Vehicle History Report Available (CARFAX / AutoCheck)
-          </span>
-          <p class="car-trust__note">
-            Ask our team for the vehicle history report for this listing.
-          </p>
+    <section class="section container">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Saved Vehicles</h2>
+          <p class="section-subtitle">Tap the heart again to remove a vehicle from your saved list.</p>
         </div>
-
-        <p class="car-description"></p>
-        <ul class="car-features"></ul>
+        <a class="btn btn-ghost btn-small" href="collection.html">Browse Inventory</a>
       </div>
+
+      <div id="savedGrid" class="cars-grid"></div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER copied from collection -->
     <footer class="site-footer">
-      <!-- MAP -->
       <div class="footer-map">
         <iframe
           src="https://www.google.com/maps?q=7665%20Maynardville%20Pike%2C%20Knoxville%2C%20TN%2037938&output=embed"
@@ -144,57 +125,39 @@
         <div class="map-overlay">
           <h4>US Star Auto Sale</h4>
           <p>7665 Maynardville Pike<br />Knoxville, TN 37938</p>
-          <a
-            href="https://maps.google.com/?q=7665+Maynardville+Pike+Knoxville+TN+37938"
-            target="_blank"
-          >
-            Get Directions →
-          </a>
+          <a href="https://maps.google.com/?q=7665+Maynardville+Pike+Knoxville+TN+37938" target="_blank">Get Directions →</a>
         </div>
       </div>
 
-      <!-- FOOTER CONTENT -->
       <div class="container footer-container">
-        <!-- Logo -->
         <div class="footer-col footer-logo">
-          <a class="logo" href="index.html">
-            US <span class="red-star">★</span> Auto Sale
-          </a>
+          <a class="logo" href="index.html">US <span class="red-star">★</span> Auto Sale</a>
         </div>
 
-        <!-- Info -->
         <div class="footer-col footer-info">
           <p><strong>Working Hours:</strong><br />9:00 – 18:00, Mon – Fri</p>
-          <p>
-            <strong>Address:</strong><br />
-            7665 Maynardville Pike<br />
-            Knoxville, TN 37938
-          </p>
-          <p>
-            <strong>Email:</strong><br />
-            <a href="mailto:Usstar@autoussales.com">Usstar@autoussales.com</a>
-          </p>
+          <p><strong>Address:</strong><br />7665 Maynardville Pike<br />Knoxville, TN 37938</p>
+          <p><strong>Email:</strong><br /><a href="mailto:Usstar@autoussales.com">Usstar@autoussales.com</a></p>
         </div>
 
-        <!-- Social -->
         <div class="footer-col footer-social">
           <a href="https://www.instagram.com/usautosale.tn" target="_blank">
-            <img
-              src="assets/icons/instagram-2016-logo-svgrepo-com.svg"
-              alt="Instagram"
-            />
-            Instagram
+            <img src="assets/icons/instagram-2016-logo-svgrepo-com.svg" alt="Instagram" />
+          </a>
+          <a href="https://www.facebook.com/usstarautosale/" target="_blank">
+            <img src="assets/icons/facebook-svgrepo-com.svg" alt="Facebook" />
           </a>
         </div>
       </div>
 
-      <p class="footer-copy">© US Star Auto Sale 2025 • All rights reserved</p>
+      <div class="footer-bottom">
+        <p>© 2026 US Star Auto Sale. All rights reserved.</p>
+      </div>
     </footer>
 
     <script src="js/main.js"></script>
     <script src="js/favorites.js"></script>
     <script src="js/utils.js"></script>
-    <script src="js/car.js"></script>
-    <script type="module" src="js/form.js"></script>
+    <script src="js/saved.js"></script>
   </body>
 </html>

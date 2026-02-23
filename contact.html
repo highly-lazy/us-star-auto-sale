@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Car Details</title>
+    <title>Contact | US Star Auto Sale</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
   <meta name="description" content="Premium used cars in Knoxville, TN. Browse inventory, schedule a test drive, trade-in, and apply for financing online at US Star Auto Sale." />
@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/pages.css" />
-      <link rel="stylesheet" href="css/final.css" />
-</head>
-  <body style="--page-bg-image: url('/assets/images/fon1.png');" class="page-car">
+    <link rel="stylesheet" href="css/final.css" />
+  </head>
+  <body style="--page-bg-image: url('/assets/images/fon1.png');" class="page-contact">
     <!-- HEADER -->
     <header class="site-header">
       <div class="topbar">
@@ -39,7 +39,7 @@
           <div class="topbar-right">
             <a class="top-link" href="financing.html">
               <svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M7 7h10M7 12h6M7 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               </svg>
               Apply Financing
             </a>
@@ -75,13 +75,12 @@
           <a href="financing.html">Financing</a>
           <a href="tradein.html">Trade‑In</a>
           <a href="testdrive.html">Test Drive</a>
-          <a href="contact.html">Contact</a>
+          <a href="contact.html" aria-current="page">Contact</a>
         </nav>
 
         <div class="header-actions">
           <a href="collection.html" class="btn btn-ghost btn-small">Browse</a>
           <a href="financing.html" class="btn btn-primary btn-small">Get Pre‑Approved</a>
-          <!-- always dark mode -->
           <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
         </div>
       </div>
@@ -92,7 +91,7 @@
       <button class="close-btn" id="closeBtn" aria-label="Close menu">✕</button>
       <a href="index.html">Home</a>
       <a href="collection.html">Inventory</a>
-          <a href="saved.html" class="nav-saved">Saved <span class="nav-badge" data-fav-count>0</span></a>
+      <a href="saved.html" class="nav-saved">Saved <span class="nav-badge" data-fav-count>0</span></a>
       <a href="financing.html">Financing</a>
       <a href="tradein.html">Trade‑In</a>
       <a href="testdrive.html">Test Drive</a>
@@ -102,99 +101,70 @@
         <a class="btn btn-ghost" href="tel:+18653773230">Call Now</a>
       </div>
     </aside>
-
-    <!-- Overlay (ONLY ONCE) -->
     <div class="overlay" id="overlay"></div>
 
-    <!-- CAR DETAILS -->
-    <section class="section container car-details">
-      <div class="car-images"></div>
+    <main class="contact-page">
+      <section class="section container">
+        <div class="contact-shell">
+          <div class="contact-map">
+            <iframe
+              src="https://www.google.com/maps?q=7665%20Maynardville%20Pike%2C%20Knoxville%2C%20TN%2037938&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="US Star Auto Sale Location"
+            ></iframe>
+          </div>
 
-      <div class="car-info">
-        <h1 class="car-title"></h1>
+          <aside class="contact-panel">
+            <h1 class="contact-title">Contact US Star Auto Sale</h1>
+            <p class="contact-sub">We’ll reply fast. You can also call or text anytime.</p>
 
-        <p class="car-price"></p>
-        <p class="car-mileage"></p>
+            <div class="contact-meta">
+              <div><strong>Phone:</strong> <a href="tel:+18653773230">(865) 377‑3230</a></div>
+              <div><strong>Hours:</strong> Mon–Sat 9:00–6:00</div>
+              <div><strong>Address:</strong> 7665 Maynardville Pike, Knoxville, TN 37938</div>
+            </div>
 
-        <!-- CARFAX / HISTORY TRUST (ADDED) -->
-        <div class="car-trust">
-          <span class="car-trust__badge">
-            📄 Vehicle History Report Available (CARFAX / AutoCheck)
-          </span>
-          <p class="car-trust__note">
-            Ask our team for the vehicle history report for this listing.
-          </p>
+            <form class="contact-form" action="#" method="post" novalidate>
+              <div class="grid-2">
+                <input type="text" name="first" placeholder="First" autocomplete="given-name" required />
+                <input type="text" name="last" placeholder="Last" autocomplete="family-name" required />
+              </div>
+              <div class="grid-2">
+                <input type="tel" name="phone" placeholder="Phone" autocomplete="tel" required />
+                <input type="email" name="email" placeholder="Email" autocomplete="email" required />
+              </div>
+<textarea name="message" placeholder="Message" rows="5" required></textarea>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+            <a class="btn btn-ghost" href="https://maps.google.com/?q=7665+Maynardville+Pike+Knoxville+TN+37938" target="_blank">Get Directions →</a>
+          </aside>
         </div>
+      </section>
+    </main>
 
-        <p class="car-description"></p>
-        <ul class="car-features"></ul>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
     <footer class="site-footer">
-      <!-- MAP -->
-      <div class="footer-map">
-        <iframe
-          src="https://www.google.com/maps?q=7665%20Maynardville%20Pike%2C%20Knoxville%2C%20TN%2037938&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-
-        <div class="map-overlay">
-          <h4>US Star Auto Sale</h4>
-          <p>7665 Maynardville Pike<br />Knoxville, TN 37938</p>
-          <a
-            href="https://maps.google.com/?q=7665+Maynardville+Pike+Knoxville+TN+37938"
-            target="_blank"
-          >
-            Get Directions →
-          </a>
-        </div>
-      </div>
-
-      <!-- FOOTER CONTENT -->
       <div class="container footer-container">
-        <!-- Logo -->
         <div class="footer-col footer-logo">
-          <a class="logo" href="index.html">
-            US <span class="red-star">★</span> Auto Sale
-          </a>
+          <a class="logo" href="index.html">US <span class="red-star">★</span> Auto Sale</a>
         </div>
-
-        <!-- Info -->
         <div class="footer-col footer-info">
-          <p><strong>Working Hours:</strong><br />9:00 – 18:00, Mon – Fri</p>
-          <p>
-            <strong>Address:</strong><br />
-            7665 Maynardville Pike<br />
-            Knoxville, TN 37938
-          </p>
-          <p>
-            <strong>Email:</strong><br />
-            <a href="mailto:Usstar@autoussales.com">Usstar@autoussales.com</a>
-          </p>
+          <p><strong>Working Hours:</strong><br />Mon–Sat 9:00–6:00</p>
+          <p><strong>Address:</strong><br />7665 Maynardville Pike<br />Knoxville, TN 37938</p>
+          <p><strong>Email:</strong><br /><a href="mailto:Usstar@autoussales.com">Usstar@autoussales.com</a></p>
         </div>
-
-        <!-- Social -->
         <div class="footer-col footer-social">
           <a href="https://www.instagram.com/usautosale.tn" target="_blank">
-            <img
-              src="assets/icons/instagram-2016-logo-svgrepo-com.svg"
-              alt="Instagram"
-            />
+            <img src="assets/icons/instagram-2016-logo-svgrepo-com.svg" alt="Instagram" />
             Instagram
           </a>
         </div>
       </div>
-
       <p class="footer-copy">© US Star Auto Sale 2025 • All rights reserved</p>
     </footer>
 
     <script src="js/main.js"></script>
     <script src="js/favorites.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/car.js"></script>
-    <script type="module" src="js/form.js"></script>
   </body>
 </html>

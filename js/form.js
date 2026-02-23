@@ -27,30 +27,69 @@ function handleFormSubmit(formId, carSelectId = null, carImgId = null) {
   const form = document.getElementById(formId);
   if (!form) return;
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const formData = new FormData(form);
-    let message = `New Form Submission (${formId}):\n`;
+    // Collect ALL named fields (including empty)
+    const values = {};
+    const radios = {};
 
-    for (let [key, value] of formData.entries()) {
-      message += `${key}: ${value}\n`;
-    }
+    Array.from(form.elements).forEach((el) => {
+      if (!el || !el.name || el.disabled) return;
 
-    // Agar car select va rasm bo'lsa
+      const name = el.name;
+      const type = (el.type || "").toLowerCase();
+
+      if (type === "radio") {
+        radios[name] = radios[name] || null;
+        if (el.checked) radios[name] = el.value;
+        return;
+      }
+
+      if (type === "checkbox") {
+        values[name] = el.checked ? (el.value || "Yes") : "No";
+        return;
+      }
+
+      // normal inputs/select/textarea
+      values[name] = (el.value ?? "").toString().trim();
+    });
+
+    // Merge radio groups (even if not selected)
+    Object.keys(radios).forEach((name) => {
+      values[name] = radios[name] ?? "";
+    });
+
+    let message = `New Form Submission (${formId}):
+`;
+
+    // stable sort for easy reading
+    Object.keys(values)
+      .sort((a, b) => a.localeCompare(b))
+      .forEach((key) => {
+        const v = values[key];
+        message += `${key}: ${v === "" ? "-" : v}
+`;
+      });
+
+    // Optional car select + image
     if (carSelectId) {
       const carSelect = document.getElementById(carSelectId);
       const carImg = document.getElementById(carImgId);
       if (carSelect) {
         const selectedOption = carSelect.options[carSelect.selectedIndex];
-        message += `Selected Car: ${selectedOption.text}\n`;
+        if (selectedOption && selectedOption.value) {
+          message += `Selected Car: ${selectedOption.text}
+`;
+        }
       }
       if (carImg && carImg.src) {
-        message += `Car Image: ${carImg.src}\n`;
+        message += `Car Image: ${carImg.src}
+`;
       }
     }
 
-    sendToTelegram(message); // Telegramga yuborish
+    await sendToTelegram(message);
 
     form.reset();
     if (carImgId) {
@@ -58,7 +97,7 @@ function handleFormSubmit(formId, carSelectId = null, carImgId = null) {
       if (carImg) carImg.style.display = "none";
     }
 
-    alert("Message sent We will get back to you !");
+    alert("Message sent. We will get back to you!");
   });
 }
 
@@ -86,12 +125,28 @@ async function setupCarSelect(selectId, imgId) {
 
   select.addEventListener("change", () => {
     const selectedCar = cars.find((c) => c.id == select.value);
-    if (selectedCar && img) {
-      img.src = selectedCar.img;
-      img.style.display = "block";
-    } else if (img) {
-      img.src = "";
-      img.style.display = "none";
+    const vText = document.getElementById("finVehicleText");
+    const vMeta = document.getElementById("finVehicleMeta");
+
+    if (selectedCar) {
+      if (img) {
+        img.src = selectedCar.img;
+        img.style.display = "block";
+      }
+      if (vText) vText.textContent = `${selectedCar.year} ${selectedCar.make} ${selectedCar.model}`;
+      if (vMeta) {
+        const miles = selectedCar.mileage ? `${Number(selectedCar.mileage).toLocaleString()} mi` : "";
+        const trans = selectedCar.transmission || "";
+        const price = selectedCar.price ? `$${Number(selectedCar.price).toLocaleString()}` : "";
+        vMeta.textContent = [miles, trans, price].filter(Boolean).join(" • ") || "";
+      }
+    } else {
+      if (img) {
+        img.src = "";
+        img.style.display = "none";
+      }
+      if (vText) vText.textContent = "Choose a vehicle (optional)";
+      if (vMeta) vMeta.textContent = "We’ll match your application to inventory.";
     }
   });
 }
@@ -102,6 +157,7 @@ function setupMultiStepForm(formId) {
   if (!form) return;
 
   const steps = form.querySelectorAll(".form-step");
+  if (!steps.length) return;
   let currentStep = 0;
 
   function showStep(index) {
@@ -142,4 +198,13 @@ document.addEventListener("DOMContentLoaded", () => {
   handleFormSubmit("contactForm");
   handleFormSubmit("financingForm", "carSelect", "selectedCarImage");
   handleFormSubmit("tradeForm", "tradeCarSelect", "tradeCarImage");
+  handleFormSubmit("testDriveForm");
+
+  // Prefill test drive car (if coming from inventory)
+  const carField = document.querySelector("#testDriveForm [name='car']");
+  if (carField) {
+    const params = new URLSearchParams(window.location.search);
+    const carName = params.get("car");
+    if (carName) carField.value = carName;
+  }
 });
