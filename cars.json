@@ -32,7 +32,7 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/kia3.jpg",
+    "img": "assets/cars/kia4.jpg",
     "images": [
       "assets/cars/kia2.jpg",
       "assets/cars/kia3.jpg",
@@ -80,7 +80,7 @@
       "Power Windows",
       "Premium Sound"
     ],
-    "img": "assets/cars/elantra1.jpg",
+    "img": "assets/cars/elantra4.jpg",
     "images": [
       "assets/cars/elantra2.jpg",
       "assets/cars/elantra3.jpg",
@@ -128,7 +128,7 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/bmw1.jpg",
+    "img": "assets/cars/bmw3.jpg",
     "images": [
       "assets/cars/bmw2.jpg",
       "assets/cars/bmw3.jpg",
@@ -223,7 +223,7 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/jaguar.jpg",
+    "img": "assets/cars/jaguar2.jpg",
     "images": [
       "assets/cars/jaguar.jpg",
       "assets/cars/jaguar2.jpg",
@@ -267,7 +267,7 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/sonata.jpg",
+    "img": "assets/cars/sonata2.jpg",
     "images": [
       "assets/cars/sonata1.jpg",
       "assets/cars/sonata2.jpg",
@@ -311,7 +311,7 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/volvo6.jpg",
+    "img": "assets/cars/volvo5.jpg",
     "images": [
       "assets/cars/volvo.jpg",
       "assets/cars/volvo1.jpg",
@@ -353,7 +353,7 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/audi.jpg",
+    "img": "assets/cars/audi8.jpg",
     "images": [
       "assets/cars/audi1.jpg",
       "assets/cars/audi2.jpg",
@@ -397,7 +397,7 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/equinox1.jpg",
+    "img": "assets/cars/equinox3.jpg",
     "images": [
       "assets/cars/equinox1.jpg",
       "assets/cars/equinox2.jpg",
@@ -443,7 +443,7 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/traverse.jpg",
+    "img": "assets/cars/traverse1.jpg",
     "images": [
       "assets/cars/traverse1.jpg",
       "assets/cars/traverse2.jpg",
@@ -490,7 +490,7 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/malibu.jpg",
+    "img": "assets/cars/malibu3.jpg",
     "images": [
       "assets/cars/malibu1.jpg",
       "assets/cars/malibu2.jpg",
@@ -537,7 +537,7 @@
       "ABS Brakes",
       "Curtain Air Bags"
     ],
-    "img": "assets/cars/subaru1.jpg",
+    "img": "assets/cars/subaru2.jpg",
     "images": [
       "assets/cars/subaru.jpg",
       "assets/cars/subaru2.jpg",
@@ -583,7 +583,7 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/car.jpg",
+    "img": "assets/cars/car2.jpg",
     "images": [
       "assets/cars/car2.jpg",
       "assets/cars/car3.jpg",
@@ -629,7 +629,7 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/altima.jpg",
+    "img": "assets/cars/altima1.jpg",
     "images": [
       "assets/cars/altima1.jpg",
       "assets/cars/altima2.jpg",
@@ -723,7 +723,7 @@
       "Power Windows",
       "Sunroof/Moonroof"
     ],
-    "img": "assets/cars/ford.jpg",
+    "img": "assets/cars/ford1.jpg",
     "images": [
       "assets/cars/ford1.jpg",
       "assets/cars/ford2.jpg",
@@ -770,9 +770,9 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/rogue.jpg",
+    "img": "assets/cars/rogue1.jpg",
     "images": [
-      "assets/cars/rogue1.jpg",
+      "assets/cars/rogue.jpg",
       "assets/cars/rogue2.jpg",
       "assets/cars/rogue3.jpg",
       "assets/cars/rogue4.jpg",
@@ -816,7 +816,7 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/sorento.jpg",
+    "img": "assets/cars/sorento1.jpg",
     "images": [
       "assets/cars/sorento1.jpg",
       "assets/cars/sorento2.jpg",
@@ -863,7 +863,7 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/sorento2018.jpg",
+    "img": "assets/cars/sorento20181.jpg",
     "images": [
       "assets/cars/sorento20181.jpg",
       "assets/cars/sorento20182.jpg",
@@ -958,7 +958,7 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/sedona.jpg",
+    "img": "assets/cars/sedona1.jpg",
     "images": [
       "assets/cars/sedona1.jpg",
       "assets/cars/sedona2.jpg",
@@ -1007,9 +1007,9 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/versa.jpg",
+    "img": "assets/cars/versa1.jpg",
     "images": [
-      "assets/cars/versa1.jpg",
+      "assets/cars/versa.jpg",
       "assets/cars/versa2.jpg",
       "assets/cars/versa3.jpg",
       "assets/cars/versa4.jpg",
@@ -1054,7 +1054,7 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/camry.jpg",
+    "img": "assets/cars/camry1.jpg",
     "images": [
       "assets/cars/camry1.jpg",
       "assets/cars/camry2.jpg",
@@ -1103,7 +1103,7 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/malbu.jpg",
+    "img": "assets/cars/malbu2.jpg",
     "images": [
       "assets/cars/malbu1.jpg",
       "assets/cars/malbu2.jpg",
@@ -1151,7 +1151,7 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/albl.jpg",
+    "img": "assets/cars/albl1.jpg",
     "images": [
       "assets/cars/albl1.jpg",
       "assets/cars/albl2.jpg",
@@ -1199,9 +1199,9 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/sonic.jpg",
+    "img": "assets/cars/sonic1.jpg",
     "images": [
-      "assets/cars/sonic1.jpg",
+      "assets/cars/sonic.jpg",
       "assets/cars/sonic2.jpg",
       "assets/cars/sonic3.jpg",
       "assets/cars/sonic4.jpg",
@@ -1295,10 +1295,10 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/escape.jpg",
+    "img": "assets/cars/escape2.jpg",
     "images": [
       "assets/cars/escape1.jpg",
-      "assets/cars/escape2.jpg",
+      "assets/cars/escape.jpg",
       "assets/cars/escape3.jpg",
       "assets/cars/escape4.jpg",
       "assets/cars/escape5.jpg",

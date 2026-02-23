@@ -245,7 +245,9 @@ html[data-theme="light"] .cards-row::-webkit-scrollbar-thumb{ background: rgba(1
   border-color: rgba(255,255,255,0.20);
 }
 
-.car-card img{
+/* Only the main vehicle photo should use the fixed card image sizing.
+   Platform icons (CarGurus/CARFAX) live inside the same card and must NOT be affected. */
+.car-media > img{
   width:100%;
   height: 210px;
   object-fit: cover;
@@ -299,7 +301,7 @@ html[data-theme="light"] .cards-row::-webkit-scrollbar-thumb{ background: rgba(1
 
 /* Responsive */
 @media (max-width: 768px) {
-  .car-card img {
+  .car-media > img {
     height: 180px;
   }
 }
@@ -341,7 +343,7 @@ html[data-theme="light"] .cards-row::-webkit-scrollbar-thumb{ background: rgba(1
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  .car-card img {
+  .car-media > img {
     height: 300px;
   }
 }
@@ -373,7 +375,7 @@ html[data-theme="light"] .cards-row::-webkit-scrollbar-thumb{ background: rgba(1
 }
 
 @media (max-width: 380px) {
-  .car-card img {
+  .car-media > img {
     height: 200px;
   }
 }
@@ -440,7 +442,7 @@ html[data-theme="light"] .cards-row::-webkit-scrollbar-thumb{ background: rgba(1
   }
 
   /* 4. Car Cards (Avtomobillar ro'yxati) */
-  .car-card img {
+  .car-media > img {
     height: 220px !important; /* Juda katta yoki kichik bo'lmasligi uchun */
   }
 

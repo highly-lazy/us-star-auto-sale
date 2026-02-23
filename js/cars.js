@@ -106,7 +106,11 @@ document.addEventListener("DOMContentLoaded", () => {
                   <img src="assets/icons/cargurus.svg" alt="CarGurus" />
                   <span>CarGurus</span>
                 </a>
-                <span class="pill">Also on CarGurus</span>
+                <a href="https://www.carfax.com/Reviews-US-Star-Auto-Sales-Knoxville-TN_RJR0DUB8CK" target="_blank" rel="noopener">
+                  <img src="assets/icons/carfax.svg" alt="CARFAX" />
+                  <span>CARFAX</span>
+                </a>
+                <span class="pill">CarGurus + CARFAX</span>
               </div>
             </div>
           </div>

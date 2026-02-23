@@ -200,20 +200,9 @@ body.page-testdrive::after{ opacity: 0.14; }
   .car-buttons{ display: grid !important; grid-template-columns: 1fr !important; gap: 10px !important; }
   .car-buttons .btn{ width: 100% !important; }
 
-  /* ✅ CarGurus row: KEEP AS ROW on mobile (premium + no weird logo) */
-  .car-platform{
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 10px !important;
-  }
-  .car-platform .pill{
-    width: auto !important;
-    text-align: center !important;
-    padding: 8px 12px !important;
-    border-radius: 999px !important;
-    white-space: nowrap;
-  }
+  /* CarGurus row: prevent logo/pill from drifting on mobile */
+  .car-platform{ flex-direction: column !important; align-items: flex-start !important; }
+  .car-platform .pill{ width: 100% !important; text-align: center !important; }
 
   /* Saved page header: stack */
   .section-head{ flex-direction: column !important; align-items: flex-start !important; }
@@ -266,16 +255,9 @@ body.page-financing .hero{
 body.page-tradein .hero{
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%2309121f'/%3E%3Cstop offset='100%25' stop-color='%2303050a'/%3E%3C/linearGradient%3E%3CradialGradient id='r1' cx='25%25' cy='10%25' r='75%25'%3E%3Cstop offset='0%25' stop-color='%23355cff' stop-opacity='.26'/%3E%3Cstop offset='60%25' stop-color='%230b1c2d' stop-opacity='.08'/%3E%3Cstop offset='100%25' stop-color='%230b1c2d' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='r2' cx='85%25' cy='30%25' r='70%25'%3E%3Cstop offset='0%25' stop-color='%23c1121f' stop-opacity='.36'/%3E%3Cstop offset='62%25' stop-color='%230b1c2d' stop-opacity='.08'/%3E%3Cstop offset='100%25' stop-color='%230b1c2d' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23bg)'/%3E%3Crect width='1600' height='900' fill='url(%23r1)'/%3E%3Crect width='1600' height='900' fill='url(%23r2)'/%3E%3Cg opacity='.22'%3E%3Cpath d='M980 230 a140 140 0 1 0 280 0 a140 140 0 1 0 -280 0' fill='%23ffffff'/%3E%3Cpath d='M1040 230 a80 80 0 1 0 160 0 a80 80 0 1 0 -160 0' fill='%230b1c2d'/%3E%3Cpath d='M1015 390 h310 v16 h-310z' fill='%23ffffff'/%3E%3Cpath d='M1015 430 h240 v16 h-240z' fill='%23c1121f'/%3E%3C/g%3E%3C/svg%3E") center/cover no-repeat !important;
 }
-
-/* ✅ CarGurus: compact logo + clean badge */
 .car-platform a{ display:inline-flex; align-items:center; gap:8px; color: rgba(255,255,255,0.86); text-decoration:none; }
 .car-platform a:hover{ text-decoration: underline; }
-.car-platform img{
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
+.car-platform img{ width: 18px; height: 18px; }
 .car-platform .pill{
   padding: 7px 10px;
   border-radius: 999px;

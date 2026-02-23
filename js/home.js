@@ -72,6 +72,16 @@ document.addEventListener("DOMContentLoaded", () => {
               <span>${fuelType(car)}</span>
               <span>Stock: ${car.stock ?? "—"}</span>
             </div>
+            <div class="car-platform" aria-label="Vehicle listings and reports">
+              <a href="https://www.cargurus.com/Cars/m-US-Star-Auto-Group-LLC-sp463559" target="_blank" rel="noopener" aria-label="View us on CarGurus">
+                <img src="assets/icons/cargurus.svg" alt="CarGurus" />
+                <span>CarGurus</span>
+              </a>
+              <a href="https://www.carfax.com/Reviews-US-Star-Auto-Sales-Knoxville-TN_RJR0DUB8CK" target="_blank" rel="noopener" aria-label="Read our CARFAX reviews">
+                <img src="assets/icons/carfax.svg" alt="CARFAX" />
+                <span>CARFAX</span>
+              </a>
+            </div>
           </div>
         </div>
       `;

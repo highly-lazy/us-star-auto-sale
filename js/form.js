@@ -3,7 +3,8 @@
 ========================= */
 async function sendToTelegram(message) {
   const botToken = "8169526689:AAE44HRYOM_tr0u-kTZu5lQ2jujB7HtwdqA"; // <-- BotFather token
-  const chatId = "-1003451982775"; // <-- Sizning Telegram chat ID
+  // NOTE: Keep this in sync with config.php
+  const chatId = "6712355661"; // <-- Telegram chat/user ID
 
   const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
