@@ -153,20 +153,27 @@
 .sidebar {
   position: fixed;
   top: 0;
-  left: -100%;
+  left: 0;
   width: 280px;
   height: 100vh;
   background: var(--navy);
   padding: 20px;
   z-index: 1000;
-  transition: left 0.3s;
+  /* Use transform instead of off-screen left to avoid horizontal page overflow on mobile */
+  transform: translateX(-110%);
+  transition: transform 0.3s;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
 .sidebar.active {
-  left: 0;
+  transform: translateX(0);
+}
+
+/* Prevent tiny-screen overflow and keep the drawer usable on all phones */
+@media (max-width: 420px){
+  .sidebar{ width: min(86vw, 320px); }
 }
 
 .sidebar a {

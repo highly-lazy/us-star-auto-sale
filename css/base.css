@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+/* Hard stop for accidental horizontal scrolling on mobile (iOS/Android) */
+html{
+  width: 100%;
+  overflow-x: hidden;
+  background: #06080c;
+  overscroll-behavior-x: none;
+}
+
 body::before{
   content:"";
   position:fixed;
@@ -46,8 +54,15 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
+  /* prevents iOS rubber-band from revealing dark gutter */
+  overscroll-behavior-x: none;
   position: relative;
   padding-top: 114px; /* fixed header offset */
+}
+
+/* Mobile browsers (especially iOS) can glitch with fixed backgrounds and show dark gutters on swipe */
+@media (max-width: 768px){
+  body{ background-attachment: scroll, scroll, scroll, scroll; }
 }
 
 body.has-hero{ padding-top: 0; }

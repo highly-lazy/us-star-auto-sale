@@ -232,6 +232,25 @@ body.page-testdrive::after{ opacity: 0.14; }
   font-size: 13px;
 }
 
+/* Make sure platform row never causes horizontal overflow on any phone width */
+.car-platform, .car-platform *{ min-width: 0; }
+@media (max-width: 768px){
+  .car-platform{ flex-wrap: wrap; justify-content: flex-start; }
+  .car-platform .pill{ margin-left: auto; }
+}
+@media (max-width: 560px){
+  .car-platform .pill{ margin-left: 0; }
+}
+@media (max-width: 420px){
+  .car-platform{ font-size: 12.5px; }
+  .car-platform img{ width: 16px; height: 16px; }
+}
+@media (max-width: 360px){
+  .car-platform{ font-size: 12px; gap: 8px; }
+  .car-platform a{ gap: 7px; }
+  .car-platform .pill{ padding: 6px 9px; }
+}
+
 /* ==========================
    TEST DRIVE page: fix form grid + hero background
 ========================== */
