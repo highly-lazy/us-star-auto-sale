@@ -1,0 +1,74 @@
+/* ================= TRADE-IN PAGE (premium dark) ================= */
+
+.hero-tradein{ min-height: 55vh; }
+
+.tradein-section{ padding: 70px 0 90px; }
+
+.tradein-container{ max-width: 980px; margin: 0 auto; }
+
+.tradein-form{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: var(--shadow-soft);
+}
+
+.tradein-form h2{ color: var(--text-strong); font-family: var(--font-bold); margin-bottom: 8px; }
+.tradein-form .form-subtitle{ color: var(--text-muted); margin: 16px 0 10px; font-family: var(--font-semibold); }
+
+.form-group{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 900px){
+  .form-group{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px){
+  .form-group{ grid-template-columns: 1fr; }
+}
+
+.tradein-form input,
+.tradein-form select,
+.tradein-form textarea{
+  width: 100%;
+}
+
+.selected-car-preview{
+  width: 100%;
+  margin: 14px auto 10px;
+}
+
+.selected-car-preview img{
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: none;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+}
+
+.selected-car-info{
+  background: rgba(5,7,10,0.28);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 12px 14px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.tradein-form .btn{
+  width: 100%;
+  border-radius: 14px;
+}
+
+.form-status{
+  margin-top: 12px;
+  text-align:center;
+  color: var(--text-muted);
+}

@@ -1,0 +1,88 @@
+/* ================= FINANCING PAGE (premium dark) ================= */
+
+.hero-financing{ min-height: 55vh; }
+
+.financing-section{ padding: 70px 0 90px; }
+
+.financing-container{ max-width: 980px; margin: 0 auto; }
+
+.financing-form{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: var(--shadow-soft);
+}
+
+.progress-bar{
+  height: 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  overflow:hidden;
+  margin-bottom: 18px;
+}
+
+.progress{
+  height: 100%;
+  width: 25%;
+  background: linear-gradient(90deg, rgba(193,18,31,0.95), rgba(11,28,45,0.92));
+  transition: width .25s ease;
+}
+
+.form-step{ display:none; }
+.form-step.active{ display:block; }
+
+.form-step h3{
+  font-family: var(--font-bold);
+  font-size: 20px;
+  color: var(--text-strong);
+  margin-bottom: 12px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 860px){
+  .form-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+.selected-car-preview{
+  grid-column: 1 / -1;
+  background: rgba(5,7,10,0.28);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.selected-car-preview img{
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+#car-info p{ margin: 4px 0; font-size: 14px; color: var(--text-muted); }
+
+.buttons{
+  display:flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.buttons .btn{ flex:1; height: 52px; border-radius: 14px; }
+
+@media (max-width: 640px){
+  .financing-form{ padding: 18px; }
+  .buttons{ flex-direction: column; }
+}
+
+.form-status{
+  margin-top: 12px;
+  text-align:center;
+  color: var(--text-muted);
+}

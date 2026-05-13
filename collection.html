@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Inventory – US Star Auto Sale</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse our full inventory of premium used cars in Knoxville, TN. Filter by make, model, price and more." />
+  <link rel="icon" href="/assets/icons/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="dns-prefetch" href="https://maps.google.com" />
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/final.css" />
+
+  <style>
+  /* ══════════════════════════════════════════════
+     INVENTORY PAGE — Complete Redesign
+     Dark luxury automotive theme
+     Filter: right-side drawer (non-intrusive)
+     Grid: 4-col → 3 → 2 → 1
+     Animations: stagger reveal, hover glow
+  ══════════════════════════════════════════════ */
+
+  /* ── Layout shell ── */
+  .inv-page { padding-top: 110px; min-height: 100vh; }
+
+  /* ── Page header ── */
+  .inv-hero {
+    background: linear-gradient(135deg, rgba(7,20,33,0) 0%, rgba(193,18,31,0.04) 100%);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 28px 0 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .inv-hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(193,18,31,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .inv-hero-inner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .inv-hero h1 {
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 4px;
+    letter-spacing: -0.5px;
+  }
+  .inv-hero p { font-size: 14px; color: rgba(255,255,255,0.5); margin: 0; }
+
+  /* ── Toolbar (search + sort + filter trigger) ── */
+  .inv-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 0 0;
+    flex-wrap: wrap;
+  }
+
+  /* Search input */
+  .inv-search-wrap {
+    flex: 1 1 280px;
+    min-width: 220px;
+    position: relative;
+  }
+  .inv-search-wrap svg {
+    position: absolute; left: 14px; top: 50%;
+    transform: translateY(-50%);
+    width: 16px; height: 16px;
+    color: rgba(255,255,255,0.35);
+    pointer-events: none;
+    flex-shrink: 0;
+  }
+  .inv-search {
+    width: 100%;
+    height: 44px;
+    border-radius: 12px;
+    border: 1.5px solid rgba(255,255,255,0.11);
+    background: rgba(255,255,255,0.055);
+    color: #fff;
+    font-size: 14px;
+    padding: 0 14px 0 42px;
+    outline: none;
+    transition: border-color 220ms, background 220ms, box-shadow 220ms;
+    box-sizing: border-box;
+  }
+  .inv-search:focus {
+    border-color: rgba(193,18,31,0.55);
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 0 0 3px rgba(193,18,31,0.12);
+  }
+  .inv-search::placeholder { color: rgba(255,255,255,0.28); }
+
+  /* Sort select */
+  .inv-sort {
+    height: 44px;
+    border-radius: 12px;
+    border: 1.5px solid rgba(255,255,255,0.11);
+    background: rgba(255,255,255,0.055);
+    color: #fff;
+    font-size: 13px;
+    padding: 0 34px 0 14px;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    flex-shrink: 0;
+    min-width: 170px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.4)' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 11px center;
+    transition: border-color 220ms;
+  }
+  .inv-sort:focus { border-color: rgba(193,18,31,0.55); }
+  .inv-sort option { background: #071a2d; }
+
+  /* Filter trigger button */
+  .inv-filter-btn {
+    height: 44px;
+    padding: 0 18px;
+    border-radius: 12px;
+    border: 1.5px solid rgba(255,255,255,0.13);
+    background: rgba(255,255,255,0.055);
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    transition: all 220ms;
+    position: relative;
+    letter-spacing: 0.2px;
+  }
+  .inv-filter-btn:hover {
+    background: rgba(255,255,255,0.10);
+    border-color: rgba(255,255,255,0.22);
+    color: #fff;
+  }
+  .inv-filter-btn.has-filters {
+    border-color: rgba(193,18,31,0.5);
+    background: rgba(193,18,31,0.10);
+    color: #fff;
+  }
+  .inv-filter-btn .filter-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #c1121f;
+    display: none;
+  }
+  .inv-filter-btn.has-filters .filter-dot { display: block; }
+  .inv-filter-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+  /* ── Status tabs ── */
+  .inv-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0 16px;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    margin-bottom: 20px;
+  }
+  .inv-tabs {
+    display: flex;
+    gap: 4px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 3px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .inv-tab {
+    height: 32px;
+    padding: 0 16px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: rgba(255,255,255,0.55);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 200ms;
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+  }
+  .inv-tab.on {
+    background: rgba(193,18,31,0.9);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(193,18,31,0.4);
+  }
+  .inv-tab:hover:not(.on) { color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.06); }
+
+  .inv-count-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+  }
+  .inv-count-label strong { color: rgba(255,255,255,0.8); font-weight: 700; }
+
+  /* ── Grid ── */
+  .inv-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    padding-bottom: 64px;
+  }
+  @media (max-width: 1280px) { .inv-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+  @media (max-width: 900px)  { .inv-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+  @media (max-width: 520px)  { .inv-grid { grid-template-columns: 1fr; gap: 12px; } }
+
+  /* ── Car Card ── */
+  .cc {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.09);
+    background: rgba(255,255,255,0.046);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 280ms cubic-bezier(.22,.68,0,1.2), box-shadow 280ms ease, border-color 280ms ease;
+    cursor: default;
+    /* Stagger animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: cardReveal 420ms cubic-bezier(.22,.68,0,1.2) forwards;
+  }
+  @keyframes cardReveal {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .cc:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 20px 54px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.13);
+    border-color: rgba(255,255,255,0.16);
+    z-index: 2;
+  }
+  .cc.is-sold {
+    opacity: 0;
+    animation: cardReveal 420ms cubic-bezier(.22,.68,0,1.2) forwards;
+  }
+  .cc.is-sold:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: rgba(255,255,255,0.09);
+    cursor: default;
+  }
+
+  /* Image area */
+  .cc-img {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background: rgba(0,0,0,0.25);
+    text-decoration: none;
+  }
+  .cc-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 500ms cubic-bezier(.22,.68,0,1.2);
+    will-change: transform;
+  }
+  .cc:not(.is-sold):hover .cc-img img { transform: scale(1.07); }
+
+  /* SOLD overlay */
+  .cc.is-sold .cc-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(5,13,28,0.62);
+    backdrop-filter: blur(1.5px);
+    z-index: 3;
+  }
+
+  /* Badge corner */
+  .cc-badge {
+    position: absolute;
+    top: 10px; left: 10px;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 7px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  }
+  .badge-sold    { background: rgba(15,15,20,0.88); color: #fff; border: 1px solid rgba(255,255,255,0.18); }
+  .badge-special { background: rgba(193,18,31,0.92); color: #fff; }
+  .badge-low     { background: rgba(22,110,55,0.92); color: #fff; }
+  .badge-featured{ background: rgba(200,158,32,0.92); color: #fff; }
+
+  /* SOLD text stamp */
+  .cc-sold-stamp {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(-12deg);
+    z-index: 6;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.88);
+    text-shadow: 0 2px 16px rgba(0,0,0,0.8);
+    border: 3px solid rgba(255,255,255,0.6);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    pointer-events: none;
+    display: none;
+  }
+  .cc.is-sold .cc-sold-stamp { display: block; }
+
+  /* Fav button */
+  .cc-fav {
+    position: absolute;
+    top: 9px; right: 9px;
+    z-index: 5;
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: background 200ms, transform 200ms;
+  }
+  .cc-fav:hover { background: rgba(193,18,31,0.65); transform: scale(1.12); }
+  .cc-fav svg { width: 15px; height: 15px; color: #fff; transition: fill 200ms; }
+  .cc-fav.is-saved svg { fill: #c1121f; color: #c1121f; }
+
+  /* Body */
+  .cc-body {
+    padding: 13px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    flex: 1;
+  }
+
+  .cc-name {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cc-price-row { display: flex; align-items: baseline; gap: 8px; }
+  .cc-price {
+    font-size: 18px;
+    font-weight: 900;
+    color: #d4af37;
+    letter-spacing: -0.3px;
+  }
+  .cc-price-sold {
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.35);
+    text-decoration: line-through;
+  }
+
+  .cc-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.50);
+  }
+  .cc-pill {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 5px;
+    padding: 2px 7px;
+    white-space: nowrap;
+  }
+
+  /* Actions */
+  .cc-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+  }
+  .cc-btn-view {
+    flex: 1;
+    height: 36px;
+    border-radius: 9px;
+    background: rgba(193,18,31,0.82);
+    color: #fff;
+    border: none;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 180ms, transform 180ms;
+    letter-spacing: 0.2px;
+  }
+  .cc-btn-view:hover { background: #d01220; transform: translateY(-1px); }
+  .cc-btn-td {
+    height: 36px;
+    padding: 0 11px;
+    border-radius: 9px;
+    border: 1px solid rgba(255,255,255,0.13);
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.78);
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 180ms;
+    white-space: nowrap;
+  }
+  .cc-btn-td:hover { background: rgba(255,255,255,0.12); color: #fff; }
+
+  .cc-sold-msg {
+    font-size: 12px;
+    color: rgba(255,255,255,0.38);
+    text-align: center;
+    padding: 4px 0;
+  }
+  .cc-sold-msg a { color: #d4af37; text-decoration: none; }
+  .cc-sold-msg a:hover { text-decoration: underline; }
+
+  /* ── Skeleton loading ── */
+  .cc-skel {
+    border-radius: 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    overflow: hidden;
+  }
+  .cc-skel-img {
+    aspect-ratio: 16/10;
+    background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  .cc-skel-body { padding: 13px 15px 15px; display: flex; flex-direction: column; gap: 9px; }
+  .cc-skel-line {
+    height: 12px; border-radius: 6px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  .cc-skel-line.w60 { width: 60%; }
+  .cc-skel-line.w40 { width: 40%; }
+  .cc-skel-line.w80 { width: 80%; }
+  @keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* ── Empty state ── */
+  .inv-empty {
+    grid-column: 1/-1;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  .inv-empty-icon { font-size: 48px; margin-bottom: 16px; opacity: 0.5; }
+  .inv-empty h3 { color: #fff; font-size: 20px; margin: 0 0 8px; }
+  .inv-empty p { color: rgba(255,255,255,0.45); font-size: 14px; margin: 0 0 20px; }
+  .inv-empty button {
+    height: 40px; padding: 0 20px; border-radius: 10px;
+    background: #c1121f; color: #fff; border: none;
+    font-size: 13px; font-weight: 600; cursor: pointer;
+    transition: background 180ms;
+  }
+  .inv-empty button:hover { background: #d01220; }
+
+  /* ══════════════════════════════════════════════
+     FILTER DRAWER (right-side)
+  ══════════════════════════════════════════════ */
+  .filter-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(3px);
+    z-index: 800;
+    opacity: 0; pointer-events: none;
+    transition: opacity 280ms ease;
+  }
+  .filter-overlay.open { opacity: 1; pointer-events: all; }
+
+  .filter-drawer {
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: min(380px, 92vw);
+    background: #071a2d;
+    border-left: 1px solid rgba(255,255,255,0.09);
+    z-index: 801;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 320ms cubic-bezier(.22,.68,0,1.2);
+    display: flex; flex-direction: column;
+    box-shadow: -20px 0 60px rgba(0,0,0,0.5);
+    overscroll-behavior: contain;
+  }
+  .filter-drawer.open { transform: translateX(0); }
+
+  .fd-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 22px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    position: sticky; top: 0;
+    background: #071a2d;
+    z-index: 2;
+    flex-shrink: 0;
+  }
+  .fd-head h2 { font-size: 17px; font-weight: 700; color: #fff; margin: 0; }
+  .fd-head span { font-size: 12px; color: rgba(255,255,255,0.4); }
+  .fd-close {
+    width: 34px; height: 34px; border-radius: 9px;
+    border: 1px solid rgba(255,255,255,0.13);
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.7);
+    font-size: 18px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 180ms;
+  }
+  .fd-close:hover { background: rgba(255,255,255,0.12); color: #fff; }
+
+  .fd-body { padding: 22px; display: flex; flex-direction: column; gap: 22px; flex: 1; }
+
+  .fd-section h3 {
+    font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    color: rgba(255,255,255,0.4); text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+
+  .fd-field { display: flex; flex-direction: column; gap: 7px; }
+  .fd-field label { font-size: 13px; color: rgba(255,255,255,0.65); }
+
+  .fd-select, .fd-input {
+    height: 42px;
+    border-radius: 10px;
+    border: 1.5px solid rgba(255,255,255,0.10);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    font-size: 14px;
+    padding: 0 14px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 200ms, box-shadow 200ms;
+  }
+  .fd-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.4)' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
+    cursor: pointer;
+  }
+  .fd-select option { background: #071a2d; }
+  .fd-select:focus, .fd-input:focus {
+    border-color: rgba(193,18,31,0.55);
+    box-shadow: 0 0 0 3px rgba(193,18,31,0.10);
+  }
+  .fd-input::placeholder { color: rgba(255,255,255,0.25); }
+
+  .fd-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  /* Range slider */
+  .fd-slider-wrap { padding: 4px 0; }
+  .fd-range-labels {
+    display: flex; justify-content: space-between;
+    font-size: 12px; color: rgba(255,255,255,0.45);
+    margin-bottom: 6px;
+  }
+  .fd-range-labels strong { color: rgba(255,255,255,0.75); }
+
+  /* Fuel type chips */
+  .fd-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .fd-chip {
+    height: 32px; padding: 0 13px;
+    border-radius: 8px;
+    border: 1.5px solid rgba(255,255,255,0.11);
+    background: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.6);
+    font-size: 12px; font-weight: 600;
+    cursor: pointer; transition: all 180ms;
+  }
+  .fd-chip.on {
+    border-color: rgba(193,18,31,0.6);
+    background: rgba(193,18,31,0.12);
+    color: #fff;
+  }
+  .fd-chip:hover:not(.on) { background: rgba(255,255,255,0.09); color: rgba(255,255,255,0.85); }
+
+  .fd-footer {
+    padding: 16px 22px 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex; gap: 10px;
+    position: sticky; bottom: 0;
+    background: #071a2d;
+    flex-shrink: 0;
+  }
+  .fd-apply {
+    flex: 1; height: 44px; border-radius: 11px;
+    background: #c1121f; color: #fff; border: none;
+    font-size: 14px; font-weight: 700;
+    cursor: pointer; letter-spacing: 0.2px;
+    transition: background 180ms, transform 180ms;
+  }
+  .fd-apply:hover { background: #d01220; transform: translateY(-1px); }
+  .fd-reset {
+    height: 44px; padding: 0 18px; border-radius: 11px;
+    border: 1.5px solid rgba(255,255,255,0.15);
+    background: transparent; color: rgba(255,255,255,0.7);
+    font-size: 14px; cursor: pointer;
+    transition: all 180ms;
+  }
+  .fd-reset:hover { background: rgba(255,255,255,0.07); color: #fff; }
+
+  /* ── Mobile adjustments ── */
+  @media (max-width: 640px) {
+    .inv-page { padding-top: 90px; }
+    .inv-hero { padding: 18px 0 14px; }
+    .inv-toolbar { gap: 8px; padding-top: 14px; }
+    .inv-sort { min-width: 140px; font-size: 12px; }
+    .inv-filter-btn span { display: none; }
+    .inv-filter-btn { padding: 0 14px; }
+    .inv-status-row { padding: 10px 0 12px; margin-bottom: 14px; }
+    .inv-tabs { width: 100%; }
+    .inv-tab { flex: 1; text-align: center; font-size: 12px; padding: 0 10px; }
+  }
+  @media (max-width: 400px) {
+    .cc-btn-td { display: none; }
+    .cc-btn-view { border-radius: 8px; }
+  }
+  </style>
+</head>
+<body class="page-inventory">
+
+<!-- ══ HEADER ══ -->
+<header class="site-header">
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <span class="top-item">
+          <svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 22s7-4.5 7-12a7 7 0 1 0-14 0c0 7.5 7 12 7 12Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 13.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          Knoxville, TN
+        </span>
+        <span class="top-item">
+          <svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Mon–Sat 9:00–6:00
+        </span>
+      </div>
+      <div class="topbar-right">
+        <a class="top-link" href="financing.html">
+          <svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Apply Financing
+        </a>
+        <a class="top-link" href="tel:+18653773230">
+          <svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .6a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+          865-924-7326
+        </a>
+        <a class="top-link pulse" href="sms:+18653773230">
+          <svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+          Text Us
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container header-container">
+    <a class="brand" href="index.html" aria-label="US Star Auto Sale Home">
+      <span class="brand-mark">★</span>
+      <span class="brand-stack">
+        <span class="brand-name">US Star Auto</span>
+        <span class="brand-tag">Sale</span>
+      </span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="collection.html" style="color:#fff;font-weight:700;">Inventory</a>
+      <a href="saved.html" class="nav-saved">Saved <span class="nav-badge" data-fav-count>0</span></a>
+      <a href="financing.html">Financing</a>
+      <a href="tradein.html">Trade‑In</a>
+      <a href="testdrive.html">Test Drive</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="financing.html" class="btn btn-primary btn-small">Get Pre‑Approved</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE SIDEBAR -->
+<aside class="sidebar" id="sidebar" aria-label="Mobile menu">
+  <button class="close-btn" id="closeBtn" aria-label="Close menu">✕</button>
+  <a href="index.html">Home</a>
+  <a href="collection.html">Inventory</a>
+  <a href="saved.html" class="nav-saved">Saved <span class="nav-badge" data-fav-count>0</span></a>
+  <a href="financing.html">Financing</a>
+  <a href="tradein.html">Trade‑In</a>
+  <a href="testdrive.html">Test Drive</a>
+  <a href="contact.html">Contact</a>
+  <div class="sidebar-cta">
+    <a class="btn btn-primary" href="financing.html">Get Pre‑Approved</a>
+    <a class="btn btn-ghost" href="tel:+18653773230">Call Now</a>
+  </div>
+</aside>
+<div class="overlay" id="overlay"></div>
+
+<!-- ══ FILTER OVERLAY ══ -->
+<div class="filter-overlay" id="filterOverlay" role="presentation"></div>
+
+<!-- ══ FILTER DRAWER ══ -->
+<aside class="filter-drawer" id="filterDrawer" aria-label="Filter vehicles" role="dialog" aria-modal="true">
+  <div class="fd-head">
+    <div>
+      <h2>Filter Vehicles</h2>
+      <span id="fdActiveCount"></span>
+    </div>
+    <button class="fd-close" id="fdClose" aria-label="Close filters">✕</button>
+  </div>
+
+  <div class="fd-body">
+
+    <!-- Make / Model -->
+    <div class="fd-section">
+      <h3>Make &amp; Model</h3>
+      <div class="fd-field" style="gap:10px;">
+        <select id="fdMake" class="fd-select" aria-label="Filter by make">
+          <option value="">All Makes</option>
+        </select>
+        <select id="fdModel" class="fd-select" aria-label="Filter by model">
+          <option value="">All Models</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Year -->
+    <div class="fd-section">
+      <h3>Year Range</h3>
+      <div class="fd-row">
+        <div class="fd-field">
+          <label for="fdYMin">From year</label>
+          <input id="fdYMin" class="fd-input" type="number" placeholder="e.g. 2015" inputmode="numeric" min="1990" max="2030" />
+        </div>
+        <div class="fd-field">
+          <label for="fdYMax">To year</label>
+          <input id="fdYMax" class="fd-input" type="number" placeholder="e.g. 2023" inputmode="numeric" min="1990" max="2030" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Price -->
+    <div class="fd-section">
+      <h3>Price Range</h3>
+      <div class="fd-row">
+        <div class="fd-field">
+          <label for="fdPMin">Min price $</label>
+          <input id="fdPMin" class="fd-input" type="number" placeholder="0" inputmode="numeric" />
+        </div>
+        <div class="fd-field">
+          <label for="fdPMax">Max price $</label>
+          <input id="fdPMax" class="fd-input" type="number" placeholder="Any" inputmode="numeric" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Mileage -->
+    <div class="fd-section">
+      <h3>Max Mileage</h3>
+      <div class="fd-field">
+        <label for="fdMiles">Maximum miles</label>
+        <input id="fdMiles" class="fd-input" type="number" placeholder="e.g. 100,000" inputmode="numeric" />
+      </div>
+    </div>
+
+    <!-- Transmission -->
+    <div class="fd-section">
+      <h3>Transmission</h3>
+      <div class="fd-chips" id="fdTransChips">
+        <button class="fd-chip on" data-val="">Any</button>
+        <button class="fd-chip" data-val="automatic">Automatic</button>
+        <button class="fd-chip" data-val="manual">Manual</button>
+      </div>
+    </div>
+
+    <!-- Fuel type -->
+    <div class="fd-section">
+      <h3>Fuel Type</h3>
+      <div class="fd-chips" id="fdFuelChips">
+        <button class="fd-chip on" data-val="">Any</button>
+        <button class="fd-chip" data-val="gas">Gas</button>
+        <button class="fd-chip" data-val="hybrid">Hybrid</button>
+        <button class="fd-chip" data-val="electric">Electric</button>
+        <button class="fd-chip" data-val="diesel">Diesel</button>
+      </div>
+    </div>
+
+  </div><!-- /fd-body -->
+
+  <div class="fd-footer">
+    <button class="fd-reset" id="fdReset">Reset All</button>
+    <button class="fd-apply" id="fdApply">Show Results</button>
+  </div>
+</aside>
+
+<!-- ══ MAIN CONTENT ══ -->
+<main class="inv-page">
+  <div class="inv-hero">
+    <div class="container inv-hero-inner">
+      <div>
+        <h1>Vehicle Inventory</h1>
+        <p>Knoxville, TN · Premium Pre-Owned Vehicles</p>
+      </div>
+      <a href="financing.html" class="btn btn-primary btn-small" style="flex-shrink:0;">Get Pre‑Approved</a>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="container inv-toolbar">
+      <div class="inv-search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+          <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <input id="invSearch" class="inv-search" type="search"
+          placeholder="Search make, model, year, VIN…"
+          aria-label="Search inventory" autocomplete="off" />
+      </div>
+
+      <select id="invSort" class="inv-sort" aria-label="Sort inventory">
+        <option value="new">Newest First</option>
+        <option value="priceAsc">Price: Low → High</option>
+        <option value="priceDesc">Price: High → Low</option>
+        <option value="milesAsc">Mileage: Low → High</option>
+      </select>
+
+      <button class="inv-filter-btn" id="openFilters" aria-label="Open filters" aria-expanded="false" aria-controls="filterDrawer">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M6 12h12M9 17h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Filters</span>
+        <div class="filter-dot" aria-hidden="true"></div>
+      </button>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top: 20px;">
+    <!-- Status tabs + count -->
+    <div class="inv-status-row">
+      <div class="inv-tabs" role="tablist" aria-label="Vehicle status">
+        <button class="inv-tab on" data-st="available" role="tab" aria-selected="true">Available</button>
+        <button class="inv-tab" data-st="sold" role="tab" aria-selected="false">Sold</button>
+        <button class="inv-tab" data-st="all" role="tab" aria-selected="false">All Vehicles</button>
+      </div>
+      <div class="inv-count-label" id="invCountLabel" aria-live="polite"></div>
+    </div>
+
+    <!-- Grid -->
+    <div class="inv-grid" id="invGrid" role="list">
+      <!-- Skeletons -->
+      <div class="cc-skel"><div class="cc-skel-img"></div><div class="cc-skel-body"><div class="cc-skel-line w80"></div><div class="cc-skel-line w40"></div><div class="cc-skel-line w60"></div></div></div>
+      <div class="cc-skel"><div class="cc-skel-img"></div><div class="cc-skel-body"><div class="cc-skel-line w80"></div><div class="cc-skel-line w40"></div><div class="cc-skel-line w60"></div></div></div>
+      <div class="cc-skel"><div class="cc-skel-img"></div><div class="cc-skel-body"><div class="cc-skel-line w80"></div><div class="cc-skel-line w40"></div><div class="cc-skel-line w60"></div></div></div>
+      <div class="cc-skel"><div class="cc-skel-img"></div><div class="cc-skel-body"><div class="cc-skel-line w80"></div><div class="cc-skel-line w40"></div><div class="cc-skel-line w60"></div></div></div>
+      <div class="cc-skel"><div class="cc-skel-img"></div><div class="cc-skel-body"><div class="cc-skel-line w80"></div><div class="cc-skel-line w40"></div><div class="cc-skel-line w60"></div></div></div>
+      <div class="cc-skel"><div class="cc-skel-img"></div><div class="cc-skel-body"><div class="cc-skel-line w80"></div><div class="cc-skel-line w40"></div><div class="cc-skel-line w60"></div></div></div>
+      <div class="cc-skel"><div class="cc-skel-img"></div><div class="cc-skel-body"><div class="cc-skel-line w80"></div><div class="cc-skel-line w40"></div><div class="cc-skel-line w60"></div></div></div>
+      <div class="cc-skel"><div class="cc-skel-img"></div><div class="cc-skel-body"><div class="cc-skel-line w80"></div><div class="cc-skel-line w40"></div><div class="cc-skel-line w60"></div></div></div>
+    </div>
+  </div>
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="footer-map">
+    <iframe src="https://www.google.com/maps?q=7665%20Maynardville%20Pike%2C%20Knoxville%2C%20TN%2037938&output=embed"
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="US Star Auto Sale location"></iframe>
+    <div class="map-overlay">
+      <h4>US Star Auto Sale</h4>
+      <p>7665 Maynardville Pike<br />Knoxville, TN 37938</p>
+      <a href="https://maps.google.com/?q=7665+Maynardville+Pike+Knoxville+TN+37938" target="_blank" rel="noopener">Get Directions →</a>
+    </div>
+  </div>
+  <div class="container footer-container">
+    <div class="footer-col footer-logo">
+      <a class="logo" href="index.html">US <span class="red-star">★</span> Auto Sale</a>
+    </div>
+    <div class="footer-col footer-info">
+      <p><strong>Working Hours:</strong><br />9:00 – 18:00, Mon – Sat</p>
+      <p><strong>Address:</strong><br />7665 Maynardville Pike<br />Knoxville, TN 37938</p>
+      <p><strong>Email:</strong><br /><a href="mailto:Usstar@autoussales.com">Usstar@autoussales.com</a></p>
+    </div>
+    <div class="footer-col footer-social">
+      <a href="https://www.facebook.com/usstarautosale/" target="_blank" rel="noopener">
+        <img src="assets/icons/facebook-svgrepo-com.svg" alt="Facebook" loading="lazy" decoding="async" /> Facebook
+      </a>
+      <a href="https://www.cargurus.com/Cars/m-US-Star-Auto-Group-LLC-sp463559" target="_blank" rel="noopener">
+        <img src="assets/icons/cargurus.svg" alt="CarGurus" loading="lazy" decoding="async" /> CarGurus
+      </a>
+    </div>
+  </div>
+  <p class="footer-copy">© US Star Auto Sale 2025 · All rights reserved · <a href="terms-of-use.html" style="color:inherit;">Terms of Use</a> · <a href="privacy-policy.html" style="color:inherit;">Privacy Policy</a></p>
+</footer>
+
+<!-- ══ SCRIPTS ══ -->
+<script src="js/main.js"></script>
+<script src="js/favorites.js"></script>
+<script src="js/utils.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* ── Helpers ── */
+  const $ = id => document.getElementById(id);
+  const norm = v => String(v ?? '').toLowerCase().trim();
+  const num  = v => { const n = Number(v); return v !== '' && v != null && Number.isFinite(n) ? n : null; };
+
+  function fuel(c) {
+    if (c.fuel) return c.fuel;
+    const t = [c.make, c.model, c.engine].join(' ');
+    if (/hybrid/i.test(t)) return 'Hybrid';
+    if (/electric|ev\b|tesla/i.test(t)) return 'Electric';
+    if (/diesel/i.test(t)) return 'Diesel';
+    return 'Gas';
+  }
+
+  function badge(c) {
+    const sold = (c.status || 'available') === 'sold';
+    if (sold) return ['SOLD', 'badge-sold'];
+    const p = num(c.price), m = num(c.mileage);
+    if (p !== null && p <= 8000) return ['SPECIAL', 'badge-special'];
+    if (m !== null && m <= 70000) return ['LOW MILES', 'badge-low'];
+    return ['FEATURED', 'badge-featured'];
+  }
+
+  /* ── State ── */
+  let allCars     = [];
+  let activeStatus= 'available';
+  let activeTrans = '';
+  let activeFuel  = '';
+  let debTimer;
+
+  /* ── DOM refs ── */
+  const grid       = $('invGrid');
+  const invSearch  = $('invSearch');
+  const invSort    = $('invSort');
+  const countLabel = $('invCountLabel');
+  const tabs       = document.querySelectorAll('.inv-tab');
+
+  // Filter drawer
+  const filterOverlay = $('filterOverlay');
+  const filterDrawer  = $('filterDrawer');
+  const openFiltersBtn= $('openFilters');
+  const fdClose    = $('fdClose');
+  const fdApply    = $('fdApply');
+  const fdReset    = $('fdReset');
+  const fdMake     = $('fdMake');
+  const fdModel    = $('fdModel');
+  const fdYMin     = $('fdYMin');
+  const fdYMax     = $('fdYMax');
+  const fdPMin     = $('fdPMin');
+  const fdPMax     = $('fdPMax');
+  const fdMiles    = $('fdMiles');
+  const fdActiveCount = $('fdActiveCount');
+
+  /* ── Filter drawer open/close ── */
+  function openDrawer() {
+    filterDrawer.classList.add('open');
+    filterOverlay.classList.add('open');
+    openFiltersBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    fdClose.focus();
+  }
+  function closeDrawer() {
+    filterDrawer.classList.remove('open');
+    filterOverlay.classList.remove('open');
+    openFiltersBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    openFiltersBtn.focus();
+  }
+  openFiltersBtn.addEventListener('click', openDrawer);
+  fdClose.addEventListener('click', closeDrawer);
+  filterOverlay.addEventListener('click', closeDrawer);
+  fdApply.addEventListener('click', () => { applyAll(); closeDrawer(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && filterDrawer.classList.contains('open')) closeDrawer(); });
+
+  /* ── Transmission chips ── */
+  document.querySelectorAll('#fdTransChips .fd-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('#fdTransChips .fd-chip').forEach(c => c.classList.remove('on'));
+      chip.classList.add('on');
+      activeTrans = chip.dataset.val;
+      updateActiveCount();
+    });
+  });
+
+  /* ── Fuel chips ── */
+  document.querySelectorAll('#fdFuelChips .fd-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('#fdFuelChips .fd-chip').forEach(c => c.classList.remove('on'));
+      chip.classList.add('on');
+      activeFuel = chip.dataset.val;
+      updateActiveCount();
+    });
+  });
+
+  /* ── Status tabs ── */
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => { t.classList.remove('on'); t.setAttribute('aria-selected', 'false'); });
+      tab.classList.add('on');
+      tab.setAttribute('aria-selected', 'true');
+      activeStatus = tab.dataset.st;
+      applyAll();
+    });
+  });
+
+  /* ── Search + sort ── */
+  invSearch.addEventListener('input', () => { clearTimeout(debTimer); debTimer = setTimeout(applyAll, 150); });
+  invSort.addEventListener('change', applyAll);
+  fdMake.addEventListener('change', () => { fillModels(); updateActiveCount(); });
+  fdModel.addEventListener('change', updateActiveCount);
+  [fdYMin, fdYMax, fdPMin, fdPMax, fdMiles].forEach(el =>
+    el.addEventListener('input', () => { clearTimeout(debTimer); debTimer = setTimeout(updateActiveCount, 200); })
+  );
+
+  /* ── Reset ── */
+  fdReset.addEventListener('click', () => {
+    fdMake.value = ''; fdModel.value = '';
+    fdYMin.value = ''; fdYMax.value = '';
+    fdPMin.value = ''; fdPMax.value = '';
+    fdMiles.value = '';
+    activeTrans = ''; activeFuel = '';
+    document.querySelectorAll('#fdTransChips .fd-chip').forEach((c,i) => c.classList.toggle('on', i===0));
+    document.querySelectorAll('#fdFuelChips .fd-chip').forEach((c,i) => c.classList.toggle('on', i===0));
+    fillModels();
+    updateActiveCount();
+    applyAll();
+  });
+
+  /* ── Active filter count ── */
+  function updateActiveCount() {
+    const count = [
+      fdMake.value, fdModel.value, fdYMin.value, fdYMax.value,
+      fdPMin.value, fdPMax.value, fdMiles.value, activeTrans, activeFuel
+    ].filter(Boolean).length;
+    fdActiveCount.textContent = count ? `${count} filter${count > 1 ? 's' : ''} active` : '';
+    openFiltersBtn.classList.toggle('has-filters', count > 0);
+  }
+
+  /* ── Populate makes ── */
+  function fillMakes() {
+    const makes = [...new Set(allCars.map(c => c.make).filter(Boolean))].sort();
+    fdMake.innerHTML = '<option value="">All Makes</option>' +
+      makes.map(m => `<option value="${norm(m)}">${m}</option>`).join('');
+    fillModels();
+  }
+
+  function fillModels() {
+    const mk = norm(fdMake.value);
+    const models = [...new Set(allCars
+      .filter(c => !mk || norm(c.make) === mk)
+      .map(c => c.model).filter(Boolean))].sort();
+    fdModel.innerHTML = '<option value="">All Models</option>' +
+      models.map(m => `<option value="${norm(m)}">${m}</option>`).join('');
+  }
+
+  /* ── Card renderer ── */
+  function renderCard(c, idx) {
+    const sold = (c.status || 'available') === 'sold';
+    const p = num(c.price), m = num(c.mileage);
+    const [btxt, bcls] = badge(c);
+    const fuelLabel = fuel(c);
+    const delay = Math.min(idx * 45, 400);
+    const detailLink = `car.html?id=${c.id}`;
+    const tdLink = `testdrive.html?car=${encodeURIComponent([c.year,c.make,c.model].filter(Boolean).join(' '))}`;
+
+    return `
+<article class="cc${sold ? ' is-sold' : ''}" role="listitem" style="animation-delay:${delay}ms">
+  <a class="cc-img" href="${sold ? detailLink : detailLink}" aria-label="${c.year ?? ''} ${c.make ?? ''} ${c.model ?? ''}">
+    <span class="cc-badge ${bcls}" aria-label="${btxt}">${btxt}</span>
+    ${sold ? '<div class="cc-sold-stamp" aria-hidden="true">SOLD</div>' : ''}
+    <button class="cc-fav" type="button" data-fav-btn="${c.id}" aria-label="Save ${c.year ?? ''} ${c.make ?? ''} ${c.model ?? ''}" aria-pressed="false" onclick="event.preventDefault();event.stopPropagation();">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 21s-7-4.6-9.2-8.7C.9 8.7 3 5.5 6.4 5.1c1.7-.2 3.4.6 4.3 2 1-1.4 2.7-2.2 4.3-2 3.4.4 5.5 3.6 3.6 7.2C19 16.4 12 21 12 21Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <img src="${c.img}" alt="${c.year ?? ''} ${c.make ?? ''} ${c.model ?? ''}" loading="lazy" decoding="async" />
+  </a>
+  <div class="cc-body">
+    <h3 class="cc-name" title="${c.year ?? ''} ${c.make ?? ''} ${c.model ?? ''}">${c.year ?? ''} ${c.make ?? ''} ${c.model ?? ''}</h3>
+    <div class="cc-price-row">
+      ${sold
+        ? `<span class="cc-price-sold">$${p !== null ? p.toLocaleString() : ''}</span>`
+        : `<span class="cc-price">$${p !== null ? p.toLocaleString() : (c.price ?? '')}</span>`}
+    </div>
+    <div class="cc-meta">
+      <span class="cc-pill">${m !== null ? m.toLocaleString() : '—'} mi</span>
+      <span class="cc-pill">${fuelLabel}</span>
+      <span class="cc-pill">${c.transmission ?? ''}</span>
+      ${c.carfax ? '<span class="cc-pill" style="color:#d4af37;border-color:rgba(212,175,55,0.3);">CARFAX</span>' : ''}
+    </div>
+    <div class="cc-actions">
+      ${sold
+        ? `<p class="cc-sold-msg">No longer available · <a href="collection.html">See similar</a></p>`
+        : `<a href="${detailLink}" class="cc-btn-view">View Details</a>
+           <a href="${tdLink}" class="cc-btn-td">Test Drive</a>`}
+    </div>
+  </div>
+</article>`;
+  }
+
+  /* ── Main apply function ── */
+  function applyAll() {
+    const q   = norm(invSearch.value);
+    const mk  = norm(fdMake.value);
+    const mo  = norm(fdModel.value);
+    const ylo = num(fdYMin.value), yhi = num(fdYMax.value);
+    const plo = num(fdPMin.value), phi = num(fdPMax.value);
+    const mlx = num(fdMiles.value);
+    const sort= invSort.value;
+
+    let cars = allCars.filter(c => {
+      // Status
+      const st = c.status || 'available';
+      if (activeStatus !== 'all' && st !== activeStatus) return false;
+
+      // Structured filters
+      if (mk && norm(c.make) !== mk) return false;
+      if (mo && norm(c.model) !== mo) return false;
+
+      const y = num(c.year), p = num(c.price), m = num(c.mileage);
+      if (ylo !== null && (y === null || y < ylo)) return false;
+      if (yhi !== null && (y === null || y > yhi)) return false;
+      if (plo !== null && (p === null || p < plo)) return false;
+      if (phi !== null && (p === null || p > phi)) return false;
+      if (mlx !== null && (m === null || m > mlx)) return false;
+
+      // Transmission chip
+      if (activeTrans && !norm(c.transmission).includes(activeTrans)) return false;
+
+      // Fuel chip
+      if (activeFuel && !norm(fuel(c)).includes(activeFuel)) return false;
+
+      // Text search
+      if (q) {
+        const haystack = [c.make,c.model,c.year,c.color,c.stock,c.vin,c.engine,c.transmission,c.fuel].map(norm).join(' ');
+        if (!haystack.includes(q)) return false;
+      }
+
+      return true;
+    });
+
+    // Sort
+    if (sort === 'priceAsc')  cars.sort((a,b) => (num(a.price)??1e9)  - (num(b.price)??1e9));
+    else if (sort === 'priceDesc') cars.sort((a,b) => (num(b.price)??-1) - (num(a.price)??-1));
+    else if (sort === 'milesAsc')  cars.sort((a,b) => (num(a.mileage)??1e9) - (num(b.mileage)??1e9));
+    else cars.sort((a,b) => (b.id||0) - (a.id||0));
+
+    // Update count
+    const label = activeStatus === 'sold' ? 'sold vehicles' : activeStatus === 'all' ? 'total vehicles' : 'available';
+    countLabel.innerHTML = `<strong>${cars.length}</strong> ${label}`;
+
+    // Render
+    if (!cars.length) {
+      grid.innerHTML = `
+        <div class="inv-empty">
+          <div class="inv-empty-icon">🔍</div>
+          <h3>No vehicles found</h3>
+          <p>Try adjusting your search or filters</p>
+          <button onclick="document.getElementById('fdReset').click();document.getElementById('invSearch').value='';document.getElementById('invSort').value='new';">
+            Reset All Filters
+          </button>
+        </div>`;
+      return;
+    }
+
+    grid.innerHTML = cars.map((c, i) => renderCard(c, i)).join('');
+    window.USStarFavs?.syncButtons?.(grid);
+  }
+
+  /* ── Fetch + init ── */
+  fetch('cars.json', { cache: 'no-store' })
+    .then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); })
+    .then(data => {
+      allCars = Array.isArray(data) ? data : [];
+      fillMakes();
+      applyAll();
+    })
+    .catch(() => {
+      grid.innerHTML = `
+        <div class="inv-empty">
+          <div class="inv-empty-icon">⚠️</div>
+          <h3>Failed to load inventory</h3>
+          <p>Please refresh the page or try again later.</p>
+        </div>`;
+    });
+
+})();
+</script>
+</body>
+</html>

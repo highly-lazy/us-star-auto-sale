@@ -1,0 +1,19 @@
+{
+  "name": "US Star Auto Sale",
+  "short_name": "US Star Auto",
+  "icons": [
+    {
+      "src": "android-chrome-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#071a2d",
+  "background_color": "#071a2d",
+  "display": "standalone"
+}
