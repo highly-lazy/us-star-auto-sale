@@ -193,7 +193,7 @@
     ],
     "description": "2018 Dodge Ram 1500 in Gray with 212,256 miles. Equipped with 2.5L engine, automatic transmission, and full power options.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "sold"
   },
   {
     "id": 5,
@@ -1288,7 +1288,7 @@
     ],
     "description": "2018 Mitsubishi Outlander Sport SE in Silver with 141,408 miles.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "available"
   },
   {
     "id": 28,
@@ -1983,7 +1983,7 @@
     ],
     "description": "2017 Kia Sorento EX AWD Sport Utility 4D for sale. Clean and reliable SUV that runs and drives great. Equipped with a 2.4L 4-cylinder gasoline engine, automatic transmission, and all-wheel drive. Gray exterior with black interior. Comfortable, spacious, and perfect for everyday driving. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "sold"
   },
   {
     "id": 42,
@@ -2041,7 +2041,7 @@
     ],
     "description": "2013 Chevrolet Silverado 1500 LT Pickup 4D for sale. Strong and dependable truck that runs and drives great. Equipped with a powerful 5.3L V8 gasoline engine, automatic transmission, and rear-wheel drive. Burgundy exterior with black interior. Perfect for work, towing, or everyday use. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "sold"
   },
   {
     "id": 43,
@@ -2885,7 +2885,7 @@
   ],
   "description": "2018 Land Rover Discovery HSE Sport Utility for sale. Luxury and capable SUV with premium comfort and strong off-road performance. Equipped with a 3.0L V6 engine, automatic transmission, and all-wheel drive system. Dark grey exterior with high-end interior features. Ideal for family trips and all-road driving. Clean title. Carfax available. Financing available.",
   "fuel": "Gas",
-  "status": "available"
+  "status": "sold"
 },
 
 
@@ -3243,6 +3243,121 @@
     "assets/cars/spt10.jpg"
   ],
   "description": "2014 Kia Sportage LX for sale. Clean and reliable compact SUV with smooth driving performance and good fuel efficiency. Equipped with a 2.4L 4-cylinder engine, automatic transmission, and front-wheel drive. Silver exterior with spacious and comfortable interior. Ideal for daily commuting and family use. Clean title. Carfax available. Financing available.",
+  "fuel": "Gas",
+  "status": "available"
+},
+
+{
+  "id": 66,
+  "make": "Nissan",
+  "model": "Murano S",
+  "year": 2019,
+  "price": 9910,
+  "mileage": null,
+  "color": "Navy Blue",
+  "engine": "3.5L V6",
+  "transmission": "Automatic",
+  "stock": null,
+  "vin": null,
+  "carfax": true,
+  "financing": true,
+  "features": [
+    "All-Wheel Drive (AWD)",
+    "Bluetooth",
+    "Backup Camera",
+    "Power Windows",
+    "Power Door Locks",
+    "Keyless Entry",
+    "Cruise Control",
+    "Steering Wheel Controls",
+    "Cold A/C",
+    "Heater",
+    "LED Headlights",
+    "Panoramic Sunroof",
+    "Push Button Start",
+    "Apple CarPlay",
+    "Android Auto",
+    "Spacious Interior",
+    "Comfortable Ride",
+    "Perfect for Daily Driving",
+    "Family Friendly"
+  ],
+  "img": "assets/cars/murano.jpg",
+  "images": [
+    "assets/cars/murano1.jpg",
+    "assets/cars/murano2.jpg",
+    "assets/cars/murano3.jpg",
+    "assets/cars/murano4.jpg",
+    "assets/cars/murano5.jpg",
+    "assets/cars/murano6.jpg",
+    "assets/cars/murano7.jpg",
+    "assets/cars/murano8.jpg"
+  ],
+  "description": "2019 Nissan Murano for sale. Stylish and spacious midsize SUV in Navy Blue exterior. Powered by a smooth 3.5L V6 engine with automatic CVT transmission. Features LED headlights, modern infotainment system, and a comfortable interior perfect for families and daily driving. Clean title. Carfax available. Financing available.",
+  "fuel": "Gas",
+  "status": "available"
+},
+{
+  "id": 67,
+  "make": "Chevrolet",
+  "model": "Equinox",
+  "year": 2015,
+  "price": 7220,
+  "mileage": 122288,
+  "color": "Silver",
+  "engine": null,
+  "transmission": "Automatic",
+  "stock": null,
+  "vin": null,
+  "carfax": true,
+  "financing": true,
+  "features": [],
+  "img": "assets/cars/equinox.jpg",
+  "images": [
+    "assets/cars/equinox11.jpg",
+    "assets/cars/equinox22.jpg",
+    "assets/cars/equinox33.jpg",
+    "assets/cars/equinox44.jpg",
+    "assets/cars/equinox55.jpg",
+    "assets/cars/equinox66.jpg",
+    "assets/cars/equinox77.jpg"
+  ],
+  "description": "2015 Chevrolet Equinox for sale. Silver exterior. 122,288 miles. Clean title. Carfax available. Financing available.",
+  "fuel": "Gas",
+  "status": "available"
+},
+
+{
+  "id": 68,
+  "make": "Dodge",
+  "model": "Grand Caravan SXT Plus",
+  "year": 2013,
+  "price": 8856,
+  "mileage": 152582,
+  "color": "Gray",
+  "engine": null,
+  "transmission": "Automatic",
+  "stock": null,
+  "vin": null,
+  "carfax": true,
+  "financing": true,
+  "features": [
+    "Minivan 4D",
+    "Spacious Interior",
+    "Family Friendly"
+  ],
+  "img": "assets/cars/van.jpg",
+  "images": [
+    "assets/cars/van1.jpg",
+    "assets/cars/van2.jpg",
+    "assets/cars/van3.jpg",
+    "assets/cars/van4.jpg",
+    "assets/cars/van5.jpg",
+    "assets/cars/van6.jpg",
+    "assets/cars/van7.jpg",
+    "assets/cars/van8.jpg"
+  ],
+  "description": "2013 Dodge Grand Caravan SXT Plus Minivan 4D for sale. Gray exterior. 152,582 miles. Clean title. Carfax available. Financing available.",
   "fuel": "Gas",
   "status": "available"
 }
