@@ -3,7 +3,7 @@
   <head>
     <title>Credit Application | US Star Auto Sale</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Apply for auto financing online at US Star Auto Sale, Knoxville, TN." />
+    <meta name="description" content="Apply for auto financing online at US Star Auto Sale, Knoxville, TN. Fast, secure pre‑approval through our DealerCenter credit application." />
     <link rel="icon" href="/assets/icons/logo.png" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/icons/logo.png" />
     <link rel="stylesheet" href="css/variables.css" />
@@ -14,8 +14,358 @@
     <link rel="stylesheet" href="css/final.css" />
     <link rel="stylesheet" href="css/perf.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <style>
+      /* =========================================================
+         CREDIT APPLICATION — Embedded DealerCenter form
+         ========================================================= */
+      .ca-hero{
+        position:relative;
+        padding: 60px 0 30px;
+        text-align:center;
+        overflow:hidden;
+      }
+      .ca-hero::before{
+        content:"";
+        position:absolute;
+        inset:0;
+        background:
+          radial-gradient(700px 320px at 30% 30%, rgba(193,18,31,0.18), transparent 60%),
+          radial-gradient(600px 300px at 80% 80%, rgba(44,123,255,0.10), transparent 60%);
+        pointer-events:none;
+      }
+      .ca-hero .container{ position:relative; z-index:1; }
+
+      .ca-eyebrow{
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        padding:6px 14px;
+        border:1px solid rgba(255,255,255,0.18);
+        border-radius:999px;
+        font-size:12px;
+        letter-spacing:.18em;
+        text-transform:uppercase;
+        color:rgba(255,255,255,0.80);
+        background:rgba(255,255,255,0.05);
+        backdrop-filter: blur(8px);
+        animation: fadeUp .8s ease both;
+      }
+      .ca-eyebrow .secure-dot{
+        width:6px;height:6px;border-radius:50%;
+        background:#1ec27a;
+        box-shadow:0 0 0 6px rgba(30,194,122,0.20);
+        animation: livePulse 1.6s ease-in-out infinite;
+      }
+      @keyframes livePulse{
+        0%,100%{ box-shadow:0 0 0 4px rgba(30,194,122,0.20); }
+        50%    { box-shadow:0 0 0 10px rgba(30,194,122,0.00); }
+      }
+      .ca-hero h1{
+        margin: 18px 0 12px;
+        font-size: clamp(34px, 5vw, 54px);
+        font-weight: 800;
+        letter-spacing:-.02em;
+        line-height:1.05;
+        animation: fadeUp .8s ease .08s both;
+      }
+      .ca-hero h1 .accent{
+        color: var(--red);
+        position:relative;
+        display:inline-block;
+      }
+      .ca-hero h1 .accent::after{
+        content:"";
+        position:absolute;
+        left:0; right:0; bottom:-6px;
+        height:4px;
+        background:linear-gradient(90deg, transparent, var(--red), transparent);
+        border-radius:2px;
+        animation: underlineGrow 1.2s ease .4s both;
+      }
+      @keyframes underlineGrow{
+        from { transform: scaleX(0); opacity:0; }
+        to   { transform: scaleX(1); opacity:1; }
+      }
+      .ca-hero p.lead{
+        max-width: 640px;
+        margin: 0 auto 24px;
+        color: rgba(255,255,255,0.75);
+        font-size: 17px;
+        line-height:1.55;
+        animation: fadeUp .8s ease .16s both;
+      }
+
+      /* TRUST BAR — small badges below hero */
+      .trust-row{
+        display:flex;
+        flex-wrap:wrap;
+        gap:14px;
+        justify-content:center;
+        margin: 0 auto 8px;
+        animation: fadeUp .8s ease .24s both;
+      }
+      .trust-pill{
+        display:inline-flex;
+        align-items:center;
+        gap:10px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.10);
+        color: rgba(255,255,255,0.80);
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .trust-pill svg{ width:16px; height:16px; color: var(--red); }
+
+      /* BENEFITS STEPS — 3 quick steps before the form */
+      .steps-section{
+        padding: 30px 0 10px;
+      }
+      .steps-grid{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+      @media (max-width: 800px){
+        .steps-grid{ grid-template-columns: 1fr; }
+      }
+      .step-card{
+        background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 18px;
+        padding: 22px;
+        position:relative;
+        overflow:hidden;
+        transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+        animation: fadeUp .6s ease both;
+      }
+      .step-card:nth-child(1){ animation-delay: .25s; }
+      .step-card:nth-child(2){ animation-delay: .35s; }
+      .step-card:nth-child(3){ animation-delay: .45s; }
+      .step-card:hover{
+        transform: translateY(-4px);
+        border-color: rgba(193,18,31,0.40);
+        box-shadow: 0 18px 40px rgba(193,18,31,0.18);
+      }
+      .step-card::before{
+        content:"";
+        position:absolute;
+        top:0; left:0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--red), transparent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .4s ease;
+      }
+      .step-card:hover::before{ transform: scaleX(1); }
+      .step-num{
+        position:absolute;
+        top:18px; right:20px;
+        font-size: 44px;
+        font-weight: 800;
+        line-height:1;
+        color: rgba(193,18,31,0.18);
+        letter-spacing:-.04em;
+      }
+      .step-icon{
+        width:42px; height:42px;
+        border-radius: 12px;
+        background: linear-gradient(180deg, rgba(193,18,31,0.25), rgba(193,18,31,0.10));
+        border: 1px solid rgba(193,18,31,0.40);
+        display:flex; align-items:center; justify-content:center;
+        margin-bottom: 14px;
+        color: #ff5d6c;
+      }
+      .step-icon svg{ width:20px; height:20px; }
+      .step-title{
+        font-size: 17px;
+        font-weight: 700;
+        margin: 0 0 6px;
+        color: #fff;
+      }
+      .step-desc{
+        font-size: 14px;
+        color: rgba(255,255,255,0.65);
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      /* IFRAME WRAPPER — main credit application */
+      .ca-form-section{
+        padding: 30px 0 70px;
+      }
+      .ca-form-wrap{
+        max-width: 1100px;
+        margin: 0 auto;
+        position:relative;
+        animation: fadeUp .8s ease .3s both;
+      }
+      .ca-form-frame{
+        background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+        border: 1px solid rgba(255,255,255,0.14);
+        border-radius: 24px;
+        padding: 6px;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+        position:relative;
+        overflow:hidden;
+      }
+      .ca-form-frame::before{
+        content:"";
+        position:absolute;
+        inset:0;
+        padding:1px;
+        border-radius:24px;
+        background: linear-gradient(135deg, rgba(193,18,31,0.40), transparent 30%, transparent 70%, rgba(44,123,255,0.30));
+        -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+                mask-composite: exclude;
+        pointer-events:none;
+      }
+      .ca-form-bar{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding: 14px 20px;
+        background: rgba(0,0,0,0.30);
+        border-radius: 18px 18px 0 0;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        flex-wrap:wrap;
+        gap: 10px;
+      }
+      .ca-form-bar .left{
+        display:flex; align-items:center; gap:10px;
+        font-size: 13px;
+        color: rgba(255,255,255,0.85);
+        font-weight: 600;
+      }
+      .ca-form-bar .left .dots{
+        display:inline-flex; gap:5px;
+      }
+      .ca-form-bar .left .dots span{
+        width:9px; height:9px; border-radius:50%;
+        background: rgba(255,255,255,0.18);
+      }
+      .ca-form-bar .left .dots span:nth-child(1){ background:#ff5f57; }
+      .ca-form-bar .left .dots span:nth-child(2){ background:#febc2e; }
+      .ca-form-bar .left .dots span:nth-child(3){ background:#28c840; }
+      .ca-form-bar .right{
+        display:inline-flex;
+        align-items:center;
+        gap:6px;
+        font-size: 12px;
+        color: rgba(255,255,255,0.65);
+      }
+      .ca-form-bar .right svg{ width:14px; height:14px; color:#1ec27a; }
+
+      .ca-iframe-host{
+        position:relative;
+        background: #fff;
+        border-radius: 0 0 18px 18px;
+        overflow:hidden;
+        min-height: 1280px;
+      }
+      .ca-iframe-host iframe{
+        display:block;
+        width: 100%;
+        height: 1280px;
+        border: 0;
+      }
+
+      .ca-loader{
+        position:absolute;
+        inset:0;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap: 14px;
+        background: #fff;
+        z-index: 2;
+        transition: opacity .4s ease;
+      }
+      .ca-loader.hide{ opacity:0; pointer-events:none; }
+      .ca-loader .spinner{
+        width: 44px; height: 44px;
+        border-radius: 50%;
+        border: 4px solid rgba(193,18,31,0.15);
+        border-top-color: var(--red);
+        animation: spin 1s linear infinite;
+      }
+      .ca-loader .lbl{
+        color: #555;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      @keyframes spin{ to{ transform: rotate(360deg); } }
+
+      /* HELP FOOTER under iframe */
+      .help-row{
+        margin-top: 22px;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      @media (max-width: 720px){ .help-row{ grid-template-columns: 1fr; } }
+      .help-card{
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 16px;
+        padding: 18px 20px;
+        display:flex;
+        align-items:center;
+        gap: 14px;
+        transition: all .25s ease;
+      }
+      .help-card:hover{
+        background: rgba(255,255,255,0.07);
+        border-color: rgba(193,18,31,0.30);
+        transform: translateY(-2px);
+      }
+      .help-card .h-ic{
+        width: 42px; height: 42px;
+        background: linear-gradient(180deg, var(--red), #8a0d18);
+        border-radius: 12px;
+        display:flex; align-items:center; justify-content:center;
+        flex-shrink:0;
+        color:#fff;
+        box-shadow: 0 8px 18px rgba(193,18,31,0.30);
+      }
+      .help-card .h-ic svg{ width:20px; height:20px; }
+      .help-card .h-text .lbl{
+        font-size: 11px;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.50);
+        margin-bottom: 3px;
+        font-weight: 600;
+      }
+      .help-card .h-text .val{
+        font-size: 16px;
+        color: #fff;
+        font-weight: 600;
+      }
+      .help-card .h-text .val a{
+        color:#fff;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255,255,255,0.30);
+        transition: border-color .2s ease;
+      }
+      .help-card .h-text .val a:hover{ border-color: var(--red); }
+
+      /* Animations */
+      @keyframes fadeUp{
+        from{ opacity:0; transform: translateY(14px); }
+        to  { opacity:1; transform: translateY(0); }
+      }
+    </style>
   </head>
-  <body class="page-contact">
+  <body style="--page-bg-image: url('/assets/images/fon1.png');" class="page-contact">
+
     <!-- HEADER -->
     <header class="site-header">
       <div class="topbar">
@@ -89,22 +439,120 @@
     <div class="overlay" id="overlay"></div>
 
     <main>
-      <section class="section container" style="padding:40px 20px 60px;">
-        <h1 style="font-size:2rem;margin-bottom:8px;text-align:center;">Credit Application</h1>
-        <p style="color:#888;margin-bottom:32px;text-align:center;">Fill out the form below to get pre-approved for financing at US Star Auto Sale.</p>
 
-        <div style="text-align:center; padding: 60px 20px;">
-          <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:50px 40px;max-width:500px;margin:0 auto;">
-            <div style="font-size:48px;margin-bottom:20px;">📋</div>
-            <h2 style="font-size:1.6rem;margin-bottom:12px;color:#fff;">Apply for Financing</h2>
-            <p style="color:rgba(255,255,255,0.72);margin-bottom:32px;line-height:1.6;">Fill out our secure credit application to get pre-approved for financing at US Star Auto Sale.</p>
-            <a href="https://ssl.hasyourcar.com/credit_application/creditapplication?template=Template4&version=1&theme=8C8C8C&formtype=S&dcid=29012591" 
-               target="_blank" 
-               rel="noopener"
-               style="display:inline-block;background:linear-gradient(180deg,#d61525,#a80f1b);color:#fff;padding:16px 40px;border-radius:999px;font-size:16px;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,0.10);">
-              Start Credit Application →
-            </a>
-            <p style="color:rgba(255,255,255,0.45);font-size:13px;margin-top:20px;">🔒 Secure & Encrypted</p>
+      <!-- HERO -->
+      <section class="ca-hero">
+        <div class="container">
+          <span class="ca-eyebrow"><span class="secure-dot"></span> Secure • SSL Encrypted • DealerCenter</span>
+          <h1>Get <span class="accent">Pre‑Approved</span> in Minutes</h1>
+          <p class="lead">Apply for auto financing online — fast, secure, and no obligation. Most applicants get a response the same day. Bad credit, no credit, first‑time buyers all welcome.</p>
+
+          <div class="trust-row">
+            <span class="trust-pill">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Soft credit check
+            </span>
+            <span class="trust-pill">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Takes ~5 minutes
+            </span>
+            <span class="trust-pill">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2"/></svg>
+              256‑bit encryption
+            </span>
+            <span class="trust-pill">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              No obligation
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3-STEP BENEFITS -->
+      <section class="steps-section container">
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="step-title">Fill Out the Form</h3>
+            <p class="step-desc">Tell us a bit about yourself, income, and the vehicle you want. Takes about 5 minutes.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .6a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="step-title">We Review Quickly</h3>
+            <p class="step-desc">Our finance team reviews your application — usually within hours, often the same day.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3 class="step-title">Drive Home Approved</h3>
+            <p class="step-desc">Get matched with the best rate and terms. Pick your car and drive home the same day.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DEALERCENTER IFRAME -->
+      <section class="ca-form-section">
+        <div class="container">
+          <div class="ca-form-wrap">
+            <div class="ca-form-frame">
+              <div class="ca-form-bar">
+                <div class="left">
+                  <span class="dots"><span></span><span></span><span></span></span>
+                  <span>Secure Credit Application</span>
+                </div>
+                <div class="right">
+                  <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2"/></svg>
+                  Powered by DealerCenter • 256‑bit SSL
+                </div>
+              </div>
+
+              <div class="ca-iframe-host">
+                <div class="ca-loader" id="caLoader">
+                  <div class="spinner"></div>
+                  <div class="lbl">Loading secure application…</div>
+                </div>
+                <iframe
+                  src="https://ssl.hasyourcar.com/credit_application/creditapplication?template=Template4&version=1&theme=8C8C8C&formtype=S&dcid=29012591"
+                  title="US Star Auto Sale — Credit Application"
+                  scrolling="auto"
+                  style="height:1265px;width:100%;"
+                  frameborder="0"
+                  border="0"
+                  onload="document.getElementById('caLoader').classList.add('hide')"
+                  loading="lazy">
+                </iframe>
+              </div>
+            </div>
+
+            <!-- HELP FOOTER -->
+            <div class="help-row">
+              <div class="help-card">
+                <div class="h-ic">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .6a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="h-text">
+                  <div class="lbl">Need help applying?</div>
+                  <div class="val"><a href="tel:+18659247326">(865) 924‑7326</a></div>
+                </div>
+              </div>
+              <div class="help-card">
+                <div class="h-ic">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M3 7l9 6 9-6M5 5h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="h-text">
+                  <div class="lbl">Email us anytime</div>
+                  <div class="val"><a href="mailto:sales@autoussales.com">sales@autoussales.com</a></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -131,5 +579,12 @@
 
     <script src="js/main.js"></script>
     <script src="js/favorites.js"></script>
+    <script>
+      // Backup loader hide after 6s in case iframe onload doesn't trigger
+      setTimeout(()=>{
+        const l = document.getElementById('caLoader');
+        if(l) l.classList.add('hide');
+      }, 6000);
+    </script>
   </body>
 </html>

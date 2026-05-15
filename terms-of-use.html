@@ -3,7 +3,7 @@
   <head>
     <title>Terms of Use | US Star Auto Sale</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Terms of Use for US Star Auto Sale, Knoxville, TN." />
+    <meta name="description" content="Terms of Use and SMS Terms of Service for US Star Auto Sale, Knoxville, TN." />
     <link rel="icon" href="/assets/icons/logo.png" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/icons/logo.png" />
     <link rel="stylesheet" href="css/variables.css" />
@@ -14,6 +14,134 @@
     <link rel="stylesheet" href="css/final.css" />
     <link rel="stylesheet" href="css/perf.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <style>
+      .legal-hero{
+        padding: 50px 0 24px;
+        text-align:center;
+        position:relative;
+        overflow:hidden;
+      }
+      .legal-hero::before{
+        content:"";
+        position:absolute;
+        inset:0;
+        background: radial-gradient(700px 280px at 50% 0%, rgba(193,18,31,0.14), transparent 60%);
+        pointer-events:none;
+      }
+      .legal-hero .container{ position:relative; z-index:1; }
+      .legal-eyebrow{
+        display:inline-block;
+        padding: 5px 14px;
+        font-size: 11px;
+        letter-spacing: .22em;
+        text-transform: uppercase;
+        color: var(--red);
+        border: 1px solid rgba(193,18,31,0.40);
+        border-radius: 999px;
+        background: rgba(193,18,31,0.06);
+        animation: fadeUp .6s ease both;
+      }
+      .legal-hero h1{
+        margin: 16px 0 6px;
+        font-size: clamp(32px, 4.5vw, 46px);
+        font-weight: 800;
+        letter-spacing: -.02em;
+        animation: fadeUp .6s ease .08s both;
+      }
+      .legal-hero .sub{
+        color: rgba(255,255,255,0.65);
+        margin: 0;
+        font-size: 15px;
+        animation: fadeUp .6s ease .16s both;
+      }
+
+      .legal-shell{
+        max-width: 860px;
+        margin: 30px auto 70px;
+        padding: 0 20px;
+      }
+      .legal-card{
+        background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 22px;
+        padding: 40px 44px;
+        box-shadow: 0 24px 60px rgba(0,0,0,0.40);
+        animation: fadeUp .8s ease .2s both;
+      }
+      @media (max-width: 640px){ .legal-card{ padding: 28px 22px; } }
+
+      .legal-card h2{
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0 0 22px;
+        color: #fff;
+        padding-bottom: 14px;
+        border-bottom: 1px solid rgba(255,255,255,0.10);
+      }
+      .legal-card a{
+        color: var(--red);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        font-weight: 600;
+      }
+      .legal-card a:hover{ color: #ff4d5d; }
+
+      .tos-list{
+        display:grid;
+        gap: 18px;
+      }
+      .tos-item{
+        display:flex;
+        gap: 16px;
+        padding: 18px 18px 18px 18px;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 14px;
+        transition: all .25s ease;
+      }
+      .tos-item:hover{
+        background: rgba(193,18,31,0.05);
+        border-color: rgba(193,18,31,0.30);
+        transform: translateX(4px);
+      }
+      .tos-num{
+        flex-shrink: 0;
+        width: 36px; height: 36px;
+        background: linear-gradient(180deg, var(--red), #8a0d18);
+        color: #fff;
+        font-weight: 800;
+        font-size: 14px;
+        border-radius: 10px;
+        display:flex; align-items:center; justify-content:center;
+        box-shadow: 0 6px 16px rgba(193,18,31,0.30);
+      }
+      .tos-body{ flex:1; min-width:0; }
+      .tos-body p{
+        margin: 0;
+        color: rgba(255,255,255,0.82);
+        font-size: 15px;
+        line-height: 1.65;
+      }
+      .tos-body p + p{ margin-top: 10px; }
+
+      .info-callout{
+        margin-top: 24px;
+        padding: 18px 22px;
+        background: rgba(193,18,31,0.06);
+        border: 1px solid rgba(193,18,31,0.22);
+        border-radius: 12px;
+        font-size: 14px;
+        color: rgba(255,255,255,0.80);
+        line-height: 1.6;
+      }
+      .info-callout strong{ color: var(--red); }
+
+      @keyframes fadeUp{
+        from{ opacity:0; transform: translateY(12px); }
+        to  { opacity:1; transform: translateY(0); }
+      }
+    </style>
   </head>
   <body class="page-contact">
     <!-- HEADER -->
@@ -64,7 +192,7 @@
         </nav>
         <div class="header-actions">
           <a href="collection.html" class="btn btn-ghost btn-small">Browse</a>
-          <a href="financing.html" class="btn btn-primary btn-small">Get Pre‑Approved</a>
+          <a href="credit-application.html" class="btn btn-primary btn-small">Apply Now</a>
           <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
         </div>
       </div>
@@ -82,30 +210,74 @@
       <a href="contact.html">Contact</a>
       <a href="credit-application.html">Credit App</a>
       <div class="sidebar-cta">
-        <a class="btn btn-primary" href="financing.html">Get Pre‑Approved</a>
+        <a class="btn btn-primary" href="credit-application.html">Apply Now</a>
         <a class="btn btn-ghost" href="tel:+18659247326">Call Now</a>
       </div>
     </aside>
     <div class="overlay" id="overlay"></div>
 
     <main>
-      <section class="section container" style="max-width:800px;margin:0 auto;padding:40px 20px 60px;">
-        <h1 style="font-size:2rem;margin-bottom:8px;">Terms of Use</h1>
-        <p style="color:#888;margin-bottom:32px;">US Star Auto Group LLC — Knoxville, TN</p>
+      <section class="legal-hero">
+        <div class="container">
+          <span class="legal-eyebrow">Legal</span>
+          <h1>Terms of Use</h1>
+          <p class="sub">US Star Auto Group LLC — Knoxville, TN</p>
+        </div>
+      </section>
 
-        <h2 style="font-size:1.2rem;margin:28px 0 10px;">SMS Terms of Service</h2>
+      <section class="legal-shell">
+        <div class="legal-card">
+          <h2>SMS Terms of Service</h2>
 
-        <p><strong>1.</strong> When you opt-in to the service, we will send you a message to confirm your signup. Depending on your selection, you may receive marketing and non-marketing messages which include offers, news, and updates. Message frequency varies. Message and data rates may apply. Consent to receive marketing messages is not a condition of any purchase. Text "HELP" for help. Text "STOP" to cancel.</p>
+          <div class="tos-list">
+            <div class="tos-item">
+              <div class="tos-num">1</div>
+              <div class="tos-body">
+                <p>When you opt‑in to the service, we will send you a message to confirm your signup. Depending on your selection, you may receive marketing and non‑marketing messages which include offers, news, and updates. Message frequency varies. Message and data rates may apply. Consent to receive marketing messages is not a condition of any purchase. Text "HELP" for help. Text "STOP" to cancel.</p>
+              </div>
+            </div>
 
-        <p><strong>2.</strong> You can cancel this service at any time. Just text "STOP" to the number that texted you. After you send the message "STOP" to us, we will send you a reply message to confirm that you have been unsubscribed. After this, you will no longer receive messages from us. If you want to join again, just sign up as you did the first time and we will start sending messages to you again.</p>
+            <div class="tos-item">
+              <div class="tos-num">2</div>
+              <div class="tos-body">
+                <p>You can cancel this service at any time. Just text "STOP" to the number that texted you. After you send the message "STOP" to us, we will send you a reply message to confirm that you have been unsubscribed. After this, you will no longer receive messages from us.</p>
+                <p>If you want to join again, just sign up as you did the first time and we will start sending messages to you again.</p>
+              </div>
+            </div>
 
-        <p><strong>3.</strong> If at any time you forget what keywords are supported, just text "HELP" to the number that texted you. After you send the message "HELP" to us, we will respond with instructions on how to use our service as well as how to unsubscribe.</p>
+            <div class="tos-item">
+              <div class="tos-num">3</div>
+              <div class="tos-body">
+                <p>If at any time you forget what keywords are supported, just text "HELP" to the number that texted you. After you send the message "HELP" to us, we will respond with instructions on how to use our service as well as how to unsubscribe.</p>
+              </div>
+            </div>
 
-        <p><strong>4.</strong> Carriers are not liable for delayed or undelivered messages.</p>
+            <div class="tos-item">
+              <div class="tos-num">4</div>
+              <div class="tos-body">
+                <p>Carriers are not liable for delayed or undelivered messages.</p>
+              </div>
+            </div>
 
-        <p><strong>5.</strong> For all questions about the messages sent to you by us, you can send an email to <a href="mailto:sales@autoussales.com" style="color:#c0392b;">sales@autoussales.com</a></p>
+            <div class="tos-item">
+              <div class="tos-num">5</div>
+              <div class="tos-body">
+                <p>For all questions about the messages sent to you by us, you can send an email to <a href="mailto:sales@autoussales.com">sales@autoussales.com</a>.</p>
+              </div>
+            </div>
 
-        <p><strong>6.</strong> If you have any questions regarding privacy, please read our <a href="privacy-policy.html" style="color:#c0392b;text-decoration:underline;">Privacy Policy</a>.</p>
+            <div class="tos-item">
+              <div class="tos-num">6</div>
+              <div class="tos-body">
+                <p>If you have any questions regarding privacy, please read our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-callout">
+            <strong>Quick reference:</strong> Reply <strong>HELP</strong> for assistance · Reply <strong>STOP</strong> to opt‑out at any time · Message and data rates may apply · Message frequency varies.
+          </div>
+        </div>
       </section>
     </main>
 
