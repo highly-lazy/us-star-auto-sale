@@ -1,0 +1,17 @@
+/* app.css — React-specific tweaks layered on top of the original stylesheets */
+
+/* Router links should look like the original <a> tags (no default browser styling shift) */
+#root {
+  min-height: 100vh;
+}
+
+/* Inventory grid card images keep aspect ratio while loading (prevents layout shift) */
+.cc-img img,
+.car-card .car-media img {
+  aspect-ratio: 16 / 10;
+}
+
+/* Smooth route transitions */
+main {
+  min-height: 40vh;
+}
