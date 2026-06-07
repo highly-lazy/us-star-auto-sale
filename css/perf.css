@@ -1,0 +1,80 @@
+/* ============================================
+   PERFORMANCE & UX IMPROVEMENTS
+   Add <link rel="stylesheet" href="css/perf.css"> to all pages
+============================================ */
+
+/* 1. Prevent layout shift from images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 2. Better font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 3. Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 4. Fix excessive side whitespace - container was 1440px causing gaps */
+.container {
+  width: min(1400px, calc(100% - 40px));
+  margin: 0 auto;
+}
+@media (max-width: 600px) {
+  .container { width: calc(100% - 24px); }
+}
+
+/* 5. Inventory page - 4 cols override for .cars-grid on inventory */
+.page-inventory .cars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.page-inventory .cars-grid .car-card {
+  grid-column: unset;
+  min-width: 0;
+}
+@media (max-width: 1200px) {
+  .page-inventory .cars-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 820px) {
+  .page-inventory .cars-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .page-inventory .cars-grid { grid-template-columns: 1fr; }
+}
+
+/* 6. Better scrollbar on featured strip */
+.featured .cars-grid {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.2) transparent;
+}
+
+/* 7. Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid rgba(193,18,31,0.7);
+  outline-offset: 2px;
+}
+
+/* 8. Reduce Google Maps iframe paint cost */
+.footer-map iframe {
+  content-visibility: auto;
+}
+
+/* 9. Touch target minimum size */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 10. GPU-accelerated transitions only */
+.car-card,
+.inv-card,
+.ic {
+  will-change: transform;
+}

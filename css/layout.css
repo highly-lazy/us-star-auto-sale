@@ -1,0 +1,383 @@
+/* Header */
+.site-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: rgba(7, 20, 33, 0.78);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+.site-header::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:0.20;
+  background:
+    radial-gradient(700px 200px at 12% 0%, rgba(193,18,31,0.55), transparent 60%),
+    radial-gradient(600px 220px at 90% 10%, rgba(255,255,255,0.20), transparent 60%);
+}
+
+.topbar{
+  position: relative;
+  z-index: 1;
+  background: rgba(5,7,10,0.55);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.topbar-inner{
+  height: 36px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 12px;
+  letter-spacing: .2px;
+  color: rgba(255,255,255,0.78);
+}
+
+.topbar .top-item,
+.topbar .top-link{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  white-space: nowrap;
+}
+
+.topbar-left{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.topbar-right{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+.topbar .top-link{
+  color: rgba(255,255,255,0.88);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 999px;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.topbar .top-link:hover{
+  background: rgba(255,255,255,0.10);
+  transform: translateY(-1px);
+}
+
+.header-container{
+  position: relative;
+  z-index: 1;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  height: 78px;
+  gap: 16px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color: var(--white);
+}
+
+.brand-mark{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display:grid;
+  place-items:center;
+  font-size: 22px;
+  background: linear-gradient(180deg, rgba(193,18,31,0.95), rgba(193,18,31,0.55));
+  box-shadow: 0 14px 30px rgba(193,18,31,0.28);
+  border: 1px solid rgba(255,255,255,0.14);
+}
+
+.brand-stack{
+  display:flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.brand-name{
+  font-family: var(--font-bold);
+  font-size: 16px;
+  letter-spacing: .4px;
+}
+
+.brand-tag{
+  font-family: var(--font-medium);
+  font-size: 12px;
+  color: rgba(255,255,255,0.75);
+}
+
+
+
+/* Desktop nav */
+.desktop-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.desktop-nav a {
+  font-family: var(--font-semibold);
+  color: var(--white);
+  transition: color 0.3s;
+}
+
+.desktop-nav a:hover {
+  color: var(--red);
+}
+
+/* Mobile menu button */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background: var(--navy);
+  padding: 20px;
+  z-index: 1000;
+  /* Use transform instead of off-screen left to avoid horizontal page overflow on mobile */
+  transform: translateX(-110%);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+}
+
+/* Prevent tiny-screen overflow and keep the drawer usable on all phones */
+@media (max-width: 420px){
+  .sidebar{ width: min(86vw, 320px); }
+}
+
+.sidebar a {
+  color: var(--white);
+  font-size: 18px;
+  font-family: var(--font-medium);
+}
+
+.sidebar a:hover {
+  color: var(--red);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 22px;
+  align-self: flex-end;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 900;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  .menu-btn {
+    display: block;
+  }
+}
+
+/* --- MOBIL VERSIYA UCHUN MAXSUS TUZATISHLAR --- */
+@media (max-width: 768px) {
+  /* 1. Header konteynerini kengaytirish */
+  .header-container {
+    height: 80px !important; /* Header juda kichik bo'lmasligi uchun */
+    padding: 0 15px !important;
+  }
+
+  .btn {
+    min-width: 200px !important; /* Juda kichik bo'lib qolmasligi uchun */
+    max-width: 300px !important; /* Juda katta bo'lib ketmasligi uchun */
+    margin: 0 auto !important;
+  }
+
+  /* Logotip o'lchami */
+  .brand {
+    font-size: 18px !important;
+    white-space: nowrap;
+  }
+
+  /* 2. O'ng tomondagi elementlar (Sell Now + Burger) */
+  /* Agar HTML-da tugma va burger alohida bo'lsa, ularni flex qiling */
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Gamburger tugmasining o'zi */
+  .menu-btn {
+    font-size: 24px !important;
+    margin-left: 10px; /* Tugma bilan oraliq masofa */
+  }
+
+  /* 3. Hero Section - Cho'zilib ketgan tugmalar va padding */
+  .hero {
+    padding: 140px 20px 60px !important; /* Header tagida qolmasligi uchun */
+  }
+
+  .hero-title {
+    font-size: 26px !important; /* Sarlavha sig'ishi uchun */
+    line-height: 1.3;
+  }
+
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: column !important; /* Ustma-ust qilish */
+    align-items: center !important;
+    gap: 15px !important;
+    width: 100% !important;
+  }
+
+  /* Tugmalarni "rasvo" cho'zilishidan qutqarish */
+  .btn-hero {
+    width: 85% !important; /* Ekran bo'ylab 100% yoyilmaydi */
+    max-width: 300px !important; /* Juda katta bo'lishini cheklaydi */
+    padding: 14px 0 !important;
+    text-align: center;
+    font-size: 15px !important;
+    display: block !important;
+  }
+
+  /* 4. Kontakt Formasidagi tugma */
+  #contactForm button {
+    width: 85% !important;
+    max-width: 300px !important;
+  }
+}
+
+/* Juda kichik ekranlar uchun qo'shimcha (iPhone SE) */
+@media (max-width: 380px) {
+  .brand {
+    font-size: 16px !important;
+  }
+  .header-container {
+    height: 70px !important;
+  }
+}
+
+/* 380px dan 403px gacha bo'lgan oraliq uchun maxsus tuzatish */
+@media (max-width: 403px) and (min-width: 380px) {
+  .call-btn {
+    padding: 6px 10px !important; /* Paddingni kamaytiramiz */
+    font-size: 12px !important; /* Shriftni kichraytiramiz */
+    height: auto !important; /* Balandlikni avtomat qilamiz */
+    line-height: 1.2 !important;
+    display: flex !important; /* Markazlash uchun */
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .header-container {
+    gap: 5px !important; /* Logo va tugmalar orasini biroz qisqartiramiz */
+  }
+
+  .brand {
+    font-size: 16px !important; /* Logotip ham joy bo'shatishi uchun */
+  }
+}
+
+
+/* Header actions */
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+
+.desktop-nav a{
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  color: rgba(255,255,255,0.86);
+}
+
+.desktop-nav a:hover{
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.14);
+  color: var(--white);
+}
+
+.ico{ display:inline-block; }
+
+.menu-btn{
+  display:none;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color: var(--white);
+  font-size: 20px;
+}
+
+.menu-btn:hover{ background: rgba(255,255,255,0.10); }
+
+/* Sidebar CTA */
+.sidebar-cta{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top: 18px;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .desktop-nav{ display:none; }
+  .menu-btn{ display:inline-grid; place-items:center; }
+  .topbar{ display:none; }
+  .header-actions a.btn{ display:none; }
+}
+
+
+/* Extra small header */
+@media (max-width: 520px){
+  .header-actions{ gap: 8px; flex-wrap: nowrap; }
+  .header-actions .btn.btn-ghost{ display:none !important; } /* hide Browse */
+  .btn-small{ padding: 10px 12px; font-size: 13px; }
+  .brand-name{ font-size: 14px; }
+  .brand-tag{ font-size: 11px; }
+}
