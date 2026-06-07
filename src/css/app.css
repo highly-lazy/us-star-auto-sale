@@ -15,3 +15,56 @@
 main {
   min-height: 40vh;
 }
+
+/* ── Mobile polish ───────────────────────────────────────────── */
+
+/* Never allow horizontal scroll / clipped text */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  /* Hero headline was clipping on narrow screens — scale to viewport */
+  .hero-title {
+    font-size: clamp(28px, 8vw, 40px) !important;
+    word-break: break-word;
+  }
+  .hero-subtext {
+    font-size: 15px !important;
+  }
+  .hero-kicker {
+    font-size: 12px;
+  }
+  /* Featured cards: single column, comfortable spacing */
+  .cards-row,
+  .cars-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Section titles a touch smaller */
+  .section-title {
+    font-size: clamp(22px, 6vw, 30px);
+  }
+}
+
+/* Empty states (Saved / Home no-results) should span and center, not sit in a tiny grid cell */
+.cars-grid .empty-state,
+.cards-row .empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 64px 20px;
+  color: var(--muted);
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}
+
+/* Tablet: featured/saved grids 2-up instead of cramped */
+@media (min-width: 641px) and (max-width: 900px) {
+  .cards-row,
+  .cars-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}

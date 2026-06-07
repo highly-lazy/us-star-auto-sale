@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
 import { useCars } from "../lib/useCars.js";
-import { carName, toNum } from "../lib/utils.js";
+import { carName, toNum, normalize } from "../lib/utils.js";
 import { submitFormToTelegram } from "../lib/telegram.js";
 
 const STATES = ["AL","AK","AZ","AR","CA","CO","CT","DE","DC","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"];
@@ -13,9 +13,18 @@ const RES_MONTHS = Array.from({ length: 12 }, (_, i) => `${i} Months`);
 
 export default function Financing() {
   const { cars } = useCars();
+  const [params] = useSearchParams();
   const [selected, setSelected] = useState("");
   const [sending, setSending] = useState(false);
   const car = cars.find((c) => String(c.id) === String(selected));
+
+  // Preselect a vehicle when arriving from a car page (?car=Year Make Model)
+  useEffect(() => {
+    const wanted = normalize(params.get("car"));
+    if (!wanted || selected || !cars.length) return;
+    const match = cars.find((c) => normalize(carName(c)) === wanted);
+    if (match) setSelected(String(match.id));
+  }, [params, cars, selected]);
 
   const vehMeta = car
     ? [

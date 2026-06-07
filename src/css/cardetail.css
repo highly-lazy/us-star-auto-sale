@@ -1,0 +1,308 @@
+/* cardetail.css — modern vehicle detail page (CarMax/Carvana-style) */
+
+.vdp {
+  padding-top: 96px;
+  min-height: 100vh;
+}
+@media (max-width: 640px) { .vdp { padding-top: 78px; } }
+
+/* Breadcrumb */
+.vdp-crumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  padding: 10px 0 18px;
+  flex-wrap: wrap;
+}
+.vdp-crumb a { color: var(--text-2); text-decoration: none; }
+.vdp-crumb a:hover { color: #fff; }
+.vdp-crumb span.sep { opacity: 0.5; }
+.vdp-crumb .cur { color: #fff; font-weight: 600; }
+
+/* Two-column shell */
+.vdp-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(320px, 1fr);
+  gap: 28px;
+  align-items: start;
+  padding-bottom: 56px;
+}
+@media (max-width: 960px) {
+  .vdp-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+
+/* ── Gallery ── */
+.vdp-gallery { min-width: 0; }
+.vdp-main {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0a1c30;
+  border: 1px solid var(--border);
+  aspect-ratio: 4 / 3;
+  box-shadow: var(--shadow-soft);
+}
+.vdp-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.vdp-main.is-sold img { filter: grayscale(0.3) brightness(0.7); }
+
+.vdp-sold-stamp {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  pointer-events: none;
+}
+.vdp-sold-stamp span {
+  font-size: clamp(28px, 6vw, 52px);
+  font-weight: 900;
+  letter-spacing: 6px;
+  color: #fff;
+  border: 4px solid rgba(255,255,255,0.85);
+  border-radius: 10px;
+  padding: 8px 26px;
+  transform: rotate(-10deg);
+  text-shadow: 0 2px 18px rgba(0,0,0,0.7);
+  background: rgba(193,18,31,0.35);
+  backdrop-filter: blur(2px);
+}
+
+/* Counter + arrows */
+.vdp-count {
+  position: absolute;
+  bottom: 12px; right: 12px;
+  z-index: 3;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  display: flex; align-items: center; gap: 6px;
+}
+.vdp-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(6px);
+  transition: background 180ms, transform 180ms;
+}
+.vdp-nav:hover { background: var(--red); transform: translateY(-50%) scale(1.08); }
+.vdp-nav.prev { left: 12px; }
+.vdp-nav.next { right: 12px; }
+@media (max-width: 640px) { .vdp-nav { width: 38px; height: 38px; font-size: 18px; } }
+
+/* Fav (heart) overlay on gallery */
+.vdp-fav {
+  position: absolute;
+  top: 12px; right: 12px;
+  z-index: 3;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background 180ms, transform 180ms;
+}
+.vdp-fav:hover { background: rgba(193,18,31,0.65); transform: scale(1.08); }
+.vdp-fav svg { width: 19px; height: 19px; color: #fff; }
+.vdp-fav.is-saved svg { fill: #fff; }
+
+/* Thumbnail strip */
+.vdp-thumbs {
+  display: flex;
+  gap: 9px;
+  margin-top: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+  scroll-snap-type: x proximity;
+}
+.vdp-thumbs::-webkit-scrollbar { height: 6px; }
+.vdp-thumbs::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.18); border-radius: 6px; }
+.vdp-thumb {
+  flex: 0 0 auto;
+  width: 92px;
+  aspect-ratio: 4 / 3;
+  border-radius: 9px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: #0a1c30;
+  cursor: pointer;
+  padding: 0;
+  scroll-snap-align: start;
+  opacity: 0.6;
+  transition: opacity 160ms, border-color 160ms;
+}
+.vdp-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vdp-thumb:hover { opacity: 0.85; }
+.vdp-thumb.is-active { opacity: 1; border-color: var(--red); }
+@media (max-width: 640px) { .vdp-thumb { width: 74px; } }
+
+/* ── Info panel (sticky) ── */
+.vdp-info { position: sticky; top: 92px; }
+@media (max-width: 960px) { .vdp-info { position: static; } }
+
+.vdp-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: var(--shadow-soft);
+}
+
+.vdp-titlerow { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.vdp-title { font-size: clamp(20px, 2.4vw, 26px); font-weight: 800; color: #fff; margin: 0; line-height: 1.2; letter-spacing: -0.4px; }
+.vdp-save {
+  flex: 0 0 auto;
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 38px; padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-2);
+  font-size: 13px; font-weight: 600;
+  cursor: pointer;
+  transition: all 180ms;
+}
+.vdp-save svg { width: 16px; height: 16px; }
+.vdp-save:hover { background: var(--surface-2); color: #fff; }
+.vdp-save.is-saved { border-color: rgba(193,18,31,0.5); background: rgba(193,18,31,0.12); color: #fff; }
+.vdp-save.is-saved svg { fill: var(--red); color: var(--red); }
+
+.vdp-pricerow { display: flex; align-items: baseline; gap: 12px; margin: 14px 0 4px; flex-wrap: wrap; }
+.vdp-price { font-size: 32px; font-weight: 900; color: var(--gold); letter-spacing: -0.5px; }
+.vdp-price.sold { color: rgba(255,255,255,0.4); text-decoration: line-through; font-size: 24px; }
+.vdp-price-note { font-size: 13px; color: var(--muted); }
+.vdp-miles { font-size: 14px; color: var(--text-2); margin: 0 0 18px; }
+.vdp-miles strong { color: #fff; }
+
+/* Spec grid */
+.vdp-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.vdp-spec {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 11px;
+  padding: 10px 12px;
+  min-width: 0;
+}
+.vdp-spec .k {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--muted);
+  display: flex; align-items: center; gap: 5px;
+  margin-bottom: 3px;
+}
+.vdp-spec .k svg { width: 13px; height: 13px; opacity: 0.7; flex-shrink: 0; }
+.vdp-spec .v { font-size: 14px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* CARFAX trust */
+.vdp-carfax {
+  display: flex; align-items: center; gap: 9px;
+  background: rgba(212,175,55,0.10);
+  border: 1px solid rgba(212,175,55,0.28);
+  border-radius: 11px;
+  padding: 11px 13px;
+  margin-bottom: 16px;
+}
+.vdp-carfax svg { width: 20px; height: 20px; color: var(--gold); flex-shrink: 0; }
+.vdp-carfax span { font-size: 12.5px; color: var(--text-2); line-height: 1.35; }
+.vdp-carfax strong { color: var(--gold); }
+
+/* CTA buttons */
+.vdp-cta { display: flex; flex-direction: column; gap: 9px; }
+.vdp-cta .btn-row { display: flex; gap: 9px; }
+.vdp-btn {
+  flex: 1;
+  height: 46px;
+  border-radius: 11px;
+  border: none;
+  font-size: 14px; font-weight: 700;
+  cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  text-decoration: none;
+  transition: transform 160ms, background 160ms, box-shadow 160ms;
+  letter-spacing: 0.2px;
+}
+.vdp-btn svg { width: 17px; height: 17px; }
+.vdp-btn--primary { background: var(--red); color: #fff; box-shadow: 0 8px 22px rgba(193,18,31,0.32); }
+.vdp-btn--primary:hover { background: #d8202e; transform: translateY(-1px); }
+.vdp-btn--ghost { background: var(--surface); color: #fff; border: 1px solid var(--border); }
+.vdp-btn--ghost:hover { background: var(--surface-2); }
+.vdp-btn--gold { background: rgba(212,175,55,0.14); color: var(--gold); border: 1px solid rgba(212,175,55,0.4); }
+.vdp-btn--gold:hover { background: rgba(212,175,55,0.22); }
+
+/* Sold notice in panel */
+.vdp-sold-box {
+  background: rgba(193,18,31,0.10);
+  border: 1px solid rgba(193,18,31,0.35);
+  border-radius: 12px;
+  padding: 14px 16px;
+  text-align: center;
+  color: var(--text-2);
+  font-size: 13.5px;
+}
+.vdp-sold-box a { color: var(--gold); font-weight: 700; text-decoration: none; }
+
+/* ── Lower sections ── */
+.vdp-sections { display: grid; gap: 18px; padding-bottom: 64px; }
+.vdp-block {
+  background: rgba(255,255,255,0.035);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 24px;
+}
+.vdp-block h2 {
+  font-size: 18px; font-weight: 800; color: #fff;
+  margin: 0 0 14px;
+  display: flex; align-items: center; gap: 9px;
+}
+.vdp-block h2::before {
+  content: '';
+  width: 4px; height: 18px;
+  background: var(--red);
+  border-radius: 3px;
+}
+.vdp-desc { color: var(--text-2); font-size: 14.5px; line-height: 1.7; margin: 0; }
+
+.vdp-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 9px;
+}
+.vdp-feature {
+  display: flex; align-items: center; gap: 9px;
+  font-size: 13.5px; color: var(--text-2);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 9px;
+  padding: 9px 12px;
+}
+.vdp-feature svg { width: 15px; height: 15px; color: #2fa86a; flex-shrink: 0; }
