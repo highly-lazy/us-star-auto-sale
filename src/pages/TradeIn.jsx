@@ -25,15 +25,20 @@ export default function TradeIn() {
   };
 
   return (
-    <Layout bodyClass="page-tradein">
-      <section className="hero hero--tradein" style={{ "--hero-image": "url('/assets/images/blue.jpg')" }}>
-        <div className="overlay"></div>
-        <div className="wrapper">
-          <h1 className="hero-title">Trade Your Car Easily</h1>
-          <p className="hero-subtext">Trade your car with us !</p>
+    <Layout bodyClass="page-tradein has-hero" title="Trade‑In Your Vehicle" description="Get a fast trade-in estimate at US Star Auto Sale in Knoxville, TN.">
+      <section className="hero-banner">
+        <div className="wrapper hero-banner__inner">
+          <span className="hero-eyebrow">★ Trade‑In · Knoxville, TN</span>
+          <h1 className="hero-title">Trade up. We make it easy.</h1>
+          <p className="hero-subtext">Get top dollar for your current ride and put it toward your next one. Free, no‑obligation estimate — usually within 24 hours.</p>
           <div className="hero-buttons">
-            <Link to="/testdrive" className="btn btn-primary">Test Drive</Link>
+            <a href="#tradeForm" className="btn btn-red">Get My Estimate</a>
             <Link to="/inventory" className="btn btn-ghost">View Inventory</Link>
+          </div>
+          <div className="hero-chips">
+            <span className="hero-chip">✓ All makes &amp; models</span>
+            <span className="hero-chip">✓ Apply value instantly</span>
+            <span className="hero-chip">✓ No obligation</span>
           </div>
         </div>
       </section>

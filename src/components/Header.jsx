@@ -1,35 +1,57 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useFavorites } from "../lib/favorites.js";
+import { useLang } from "../lib/i18n.jsx";
 
+// Nav model — labels are i18n keys resolved via t().
 const NAV = [
-  { to: "/", label: "Home", end: true },
-  { to: "/inventory", label: "Inventory" },
-  { to: "/saved", label: "Saved", saved: true },
-  { to: "/financing", label: "Financing" },
-  { to: "/tradein", label: "Trade‑In" },
-  { to: "/testdrive", label: "Test Drive" },
-  { to: "/contact", label: "Contact" },
-  { to: "/credit-application", label: "Credit App" },
+  { to: "/", key: "nav.home", end: true },
+  {
+    key: "nav.inventory",
+    to: "/inventory",
+    children: [
+      { to: "/inventory", key: "nav.allVehicles" },
+      { to: "/inventory?cond=new", key: "nav.newCars" },
+      { to: "/inventory?cond=used", key: "nav.usedCars" },
+      { to: "/saved", key: "nav.saved" },
+    ],
+  },
+  {
+    key: "nav.financing",
+    to: "/financing",
+    children: [
+      { to: "/financing", key: "nav.getApproved" },
+      { to: "/credit-application", key: "nav.creditApp" },
+      { to: "/tradein", key: "nav.tradein" },
+    ],
+  },
+  {
+    key: "nav.services",
+    to: "/testdrive",
+    children: [
+      { to: "/testdrive", key: "nav.testdrive" },
+      { to: "/contact", key: "nav.contactUs" },
+    ],
+  },
+  { to: "/contact", key: "nav.contact" },
 ];
+
+function LangToggle({ className = "" }) {
+  const { lang, setLang } = useLang();
+  return (
+    <div className={`lang-toggle ${className}`} role="group" aria-label="Language">
+      <button className={lang === "en" ? "on" : ""} onClick={() => setLang("en")} aria-pressed={lang === "en"}>EN</button>
+      <button className={lang === "es" ? "on" : ""} onClick={() => setLang("es")} aria-pressed={lang === "es"}>ES</button>
+    </div>
+  );
+}
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(null);
   const { count } = useFavorites();
-  const close = () => setOpen(false);
-
-  const navLink = (item) => (
-    <NavLink
-      key={item.to}
-      to={item.to}
-      end={item.end}
-      className={item.saved ? "nav-saved" : undefined}
-      onClick={close}
-    >
-      {item.label}
-      {item.saved && <span className="nav-badge">{count}</span>}
-    </NavLink>
-  );
+  const { t } = useLang();
+  const close = () => { setOpen(false); setOpenMenu(null); };
 
   return (
     <>
@@ -42,7 +64,7 @@ export default function Header() {
                   <path d="M12 22s7-4.5 7-12a7 7 0 1 0-14 0c0 7.5 7 12 7 12Z" stroke="currentColor" strokeWidth="2" />
                   <path d="M12 13.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" stroke="currentColor" strokeWidth="2" />
                 </svg>
-                Knoxville, TN
+                7665 Maynardville Pike, Knoxville, TN
               </span>
               <span className="top-item">
                 <svg className="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -54,24 +76,10 @@ export default function Header() {
             </div>
 
             <div className="topbar-right">
-              <Link className="top-link" to="/financing">
-                <svg className="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                </svg>
-                Apply Financing
-              </Link>
-              <a className="top-link" href="tel:+18653773230">
-                <svg className="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .6a2 2 0 0 1 1.7 2Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-                </svg>
-                865-924-7326
-              </a>
-              <a className="top-link pulse" href="sms:+18653773230">
-                <svg className="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-                </svg>
-                Text Us
-              </a>
+              <Link className="top-link" to="/financing">{t("top.financing")}</Link>
+              <a className="top-link" href="tel:+18653773230">865-377-3230</a>
+              <a className="top-link pulse" href="sms:+18653773230">{t("top.text")}</a>
+              <LangToggle />
             </div>
           </div>
         </div>
@@ -81,32 +89,95 @@ export default function Header() {
             <span className="brand-mark">★</span>
             <span className="brand-stack">
               <span className="brand-name">US Star Auto</span>
-              <span className="brand-tag">Sale</span>
+              <span className="brand-tag">Sale · Knoxville, TN</span>
             </span>
           </Link>
 
           <nav className="desktop-nav" aria-label="Primary">
-            {NAV.map(navLink)}
+            {NAV.map((item) =>
+              item.children ? (
+                <div className="nav-item has-dropdown" key={item.key}>
+                  <NavLink to={item.to} className="nav-top">
+                    {t(item.key)}
+                    <svg className="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="m6 9 6 6 6-6" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </NavLink>
+                  <div className="dropdown">
+                    {item.children.map((c) => (
+                      <NavLink key={c.to + c.key} to={c.to} onClick={close}>{t(c.key)}</NavLink>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <NavLink key={item.to} to={item.to} end={item.end} className="nav-top" onClick={close}>
+                  {t(item.key)}
+                </NavLink>
+              ),
+            )}
+            <NavLink to="/saved" className="nav-top nav-saved" onClick={close} aria-label={t("nav.saved")}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 21s-7-4.6-9.2-8.7C.9 8.7 3 5.5 6.4 5.1c1.7-.2 3.4.6 4.3 2 1-1.4 2.7-2.2 4.3-2 3.4.4 5.5 3.6 3.6 7.2C19 16.4 12 21 12 21Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+              </svg>
+              {count > 0 && <span className="nav-badge">{count}</span>}
+            </NavLink>
           </nav>
 
           <div className="header-actions">
-            <Link to="/inventory" className="btn btn-ghost btn-small">Browse</Link>
-            <Link to="/financing" className="btn btn-primary btn-small">Get Pre‑Approved</Link>
-            <button className="menu-btn" aria-label="Open menu" onClick={() => setOpen(true)}>
-              ☰
-            </button>
+            <Link to="/financing" className="btn btn-primary btn-small">{t("cta.preApproved")}</Link>
+            <button className="menu-btn" aria-label="Open menu" onClick={() => setOpen(true)}>☰</button>
           </div>
         </div>
       </header>
 
       <aside className={`sidebar${open ? " active" : ""}`} aria-label="Mobile menu">
-        <button className="close-btn" aria-label="Close menu" onClick={close}>
-          ✕
-        </button>
-        {NAV.map(navLink)}
+        <div className="sidebar-top">
+          <Link className="brand brand--sidebar" to="/" onClick={close}>
+            <span className="brand-mark">★</span>
+            <span className="brand-name">US Star Auto Sale</span>
+          </Link>
+          <button className="close-btn" aria-label="Close menu" onClick={close}>✕</button>
+        </div>
+
+        <nav className="sidebar-nav">
+          {NAV.map((item) =>
+            item.children ? (
+              <div className="sb-group" key={item.key}>
+                <button
+                  className={`sb-group-head${openMenu === item.key ? " open" : ""}`}
+                  onClick={() => setOpenMenu(openMenu === item.key ? null : item.key)}
+                  aria-expanded={openMenu === item.key}
+                >
+                  {t(item.key)}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                {openMenu === item.key && (
+                  <div className="sb-sub">
+                    {item.children.map((c) => (
+                      <NavLink key={c.to + c.key} to={c.to} onClick={close}>{t(c.key)}</NavLink>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <NavLink key={item.to} to={item.to} end={item.end} onClick={close}>{t(item.key)}</NavLink>
+            ),
+          )}
+          <NavLink to="/saved" onClick={close} className="nav-saved">
+            {t("nav.saved")} {count > 0 && <span className="nav-badge">{count}</span>}
+          </NavLink>
+        </nav>
+
         <div className="sidebar-cta">
-          <Link className="btn btn-primary" to="/financing" onClick={close}>Get Pre‑Approved</Link>
-          <a className="btn btn-ghost" href="tel:+18653773230">Call Now</a>
+          <Link className="btn btn-primary" to="/financing" onClick={close}>{t("cta.preApproved")}</Link>
+          <a className="btn btn-red" href="tel:+18653773230">{t("cta.callNow")}</a>
+        </div>
+        <div className="sidebar-foot">
+          <LangToggle className="lang-toggle--block" />
+          <a className="sb-contact" href="tel:+18653773230">📞 865-377-3230</a>
+          <span className="sb-contact muted">Mon–Sat · 9:00–18:00</span>
         </div>
       </aside>
 

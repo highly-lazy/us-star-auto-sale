@@ -1,9 +1,10 @@
 import { useState, useMemo, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
 import CarCard from "../components/CarCard.jsx";
 import { useCars } from "../lib/useCars.js";
 import { normalize, toNum, fuelType, isSold } from "../lib/utils.js";
+import { useLang } from "../lib/i18n.jsx";
 import "../css/inventory-page.css";
 
 const TRANS = [
@@ -19,18 +20,36 @@ const FUELS = [
   { val: "diesel", label: "Diesel" },
 ];
 
-const EMPTY = { make: "", model: "", yMin: "", yMax: "", pMin: "", pMax: "", miles: "" };
+const EMPTY = { make: "", model: "", yMin: "", yMax: "", pMin: "", pMax: "", miles: "", color: "" };
 
 export default function Inventory() {
   const { cars, loading, error } = useCars();
+  const { t } = useLang();
+  const [params] = useSearchParams();
+
+  // Seed filters from URL query (set by the hero AdvancedSearch panel).
+  const initF = {
+    ...EMPTY,
+    make: normalize(params.get("make") || ""),
+    model: normalize(params.get("model") || ""),
+    yMin: params.get("yMin") || "",
+    pMax: params.get("pMax") || "",
+    miles: params.get("miles") || "",
+    color: params.get("color") || "",
+  };
 
   const [q, setQ] = useState("");
   const [sort, setSort] = useState("new");
   const [status, setStatus] = useState("available");
-  const [trans, setTrans] = useState("");
+  const [cond, setCond] = useState(params.get("cond") || "all"); // all | new | used
+  const [trans, setTrans] = useState(params.get("trans") || "");
   const [fuel, setFuel] = useState("");
-  const [f, setF] = useState(EMPTY);
+  const [f, setF] = useState(initF);
   const [drawer, setDrawer] = useState(false);
+
+  // Keep condition in sync when nav links change ?cond= while page is mounted.
+  const condParam = params.get("cond") || "all";
+  useEffect(() => { setCond(condParam); }, [condParam]);
 
   useEffect(() => {
     document.body.style.overflow = drawer ? "hidden" : "";
@@ -52,11 +71,11 @@ export default function Inventory() {
     return [...new Set(cars.filter((c) => !mk || normalize(c.make) === mk).map((c) => c.model).filter(Boolean))].sort();
   }, [cars, f.make]);
 
-  const activeFilterCount = [f.make, f.model, f.yMin, f.yMax, f.pMin, f.pMax, f.miles, trans, fuel].filter(Boolean).length;
+  const activeFilterCount = [f.make, f.model, f.yMin, f.yMax, f.pMin, f.pMax, f.miles, f.color, trans, fuel].filter(Boolean).length;
 
   const results = useMemo(() => {
     const nq = normalize(q);
-    const mk = normalize(f.make), mo = normalize(f.model);
+    const mk = normalize(f.make), mo = normalize(f.model), col = normalize(f.color);
     const ylo = toNum(f.yMin), yhi = toNum(f.yMax);
     const plo = toNum(f.pMin), phi = toNum(f.pMax);
     const mlx = toNum(f.miles);
@@ -64,8 +83,10 @@ export default function Inventory() {
     let list = cars.filter((c) => {
       const st = c.status || "available";
       if (status !== "all" && st !== status) return false;
+      if (cond !== "all" && (c.condition || "used") !== cond) return false;
       if (mk && normalize(c.make) !== mk) return false;
       if (mo && normalize(c.model) !== mo) return false;
+      if (col && normalize(c.color) !== col) return false;
       const y = toNum(c.year), p = toNum(c.price), m = toNum(c.mileage);
       if (ylo !== null && (y === null || y < ylo)) return false;
       if (yhi !== null && (y === null || y > yhi)) return false;
@@ -87,7 +108,7 @@ export default function Inventory() {
     else list.sort((a, b) => Number(b.id) - Number(a.id));
 
     return list;
-  }, [cars, q, sort, status, trans, fuel, f]);
+  }, [cars, q, sort, status, cond, trans, fuel, f]);
 
   const resetFilters = () => {
     setF(EMPTY);
@@ -98,7 +119,7 @@ export default function Inventory() {
   const countLabel = status === "sold" ? "sold vehicles" : status === "all" ? "total vehicles" : "available";
 
   return (
-    <Layout bodyClass="page-inventory">
+    <Layout bodyClass="page-inventory has-hero" title="Vehicle Inventory" description="Browse our full inventory of premium used cars in Knoxville, TN. Filter by make, model, price, mileage and more.">
       {/* Filter overlay + drawer */}
       <div className={`filter-overlay${drawer ? " open" : ""}`} role="presentation" onClick={() => setDrawer(false)}></div>
       <aside className={`filter-drawer${drawer ? " open" : ""}`} aria-label="Filter vehicles" role="dialog" aria-modal="true">
@@ -175,10 +196,22 @@ export default function Inventory() {
         <div className="inv-hero">
           <div className="container inv-hero-inner">
             <div>
-              <h1>Vehicle Inventory</h1>
-              <p>Knoxville, TN · Premium Pre-Owned Vehicles</p>
+              <h1>{t("inv.title")}</h1>
+              <p>{t("inv.subtitle")}</p>
             </div>
-            <Link to="/financing" className="btn btn-primary btn-small" style={{ flexShrink: 0 }}>Get Pre‑Approved</Link>
+            <Link to="/financing" className="btn btn-primary btn-small" style={{ flexShrink: 0 }}>{t("cta.preApproved")}</Link>
+          </div>
+
+          <div className="container inv-cond-tabs">
+            {[
+              { v: "all", label: t("inv.all") },
+              { v: "new", label: t("inv.new") },
+              { v: "used", label: t("inv.used") },
+            ].map((c) => (
+              <button key={c.v} className={`inv-cond${cond === c.v ? " on" : ""}`} onClick={() => setCond(c.v)} aria-pressed={cond === c.v}>
+                {c.label}
+              </button>
+            ))}
           </div>
 
           <div className="container inv-toolbar">

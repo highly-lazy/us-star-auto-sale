@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
+import SpeedIntro from "./components/SpeedIntro.jsx";
+import { LanguageProvider } from "./lib/i18n.jsx";
 
 // Global stylesheets (order matters — mirrors the original cascade)
 import "./css/variables.css";
@@ -21,8 +23,11 @@ document.documentElement.dataset.theme = "dark";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <LanguageProvider>
+      <SpeedIntro />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </LanguageProvider>
   </React.StrictMode>,
 );

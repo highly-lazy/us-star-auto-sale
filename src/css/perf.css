@@ -53,7 +53,7 @@ html {
 /* 6. Better scrollbar on featured strip */
 .featured .cars-grid {
   scrollbar-width: thin;
-  scrollbar-color: rgba(255,255,255,0.2) transparent;
+  scrollbar-color: var(--border-2) transparent;
 }
 
 /* 7. Focus styles for accessibility */

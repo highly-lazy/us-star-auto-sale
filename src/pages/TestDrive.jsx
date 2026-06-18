@@ -19,17 +19,15 @@ export default function TestDrive() {
   };
 
   return (
-    <Layout bodyClass="page-testdrive">
-      <section className="hero hero--compact" style={{ "--hero-image": "url('/assets/images/blue.jpg')" }}>
-        <div className="wrapper">
-          <div>
-            <div className="hero-kicker">★ Test Drive • Knoxville, TN</div>
-            <h1 className="hero-title">Schedule a Test Drive</h1>
-            <p className="hero-sub">
-              Pick a date/time and we’ll confirm quickly. Prefer to call?{" "}
-              <a href="tel:+18653773230" style={{ textDecoration: "underline" }}>(865) 377‑3230</a>.
-            </p>
-          </div>
+    <Layout bodyClass="page-testdrive has-hero" title="Schedule a Test Drive" description="Book a test drive at US Star Auto Sale in Knoxville, TN. Pick a date and time and we'll confirm quickly.">
+      <section className="hero-banner hero-banner--compact">
+        <div className="wrapper hero-banner__inner">
+          <span className="hero-eyebrow">★ Test Drive · Knoxville, TN</span>
+          <h1 className="hero-title">Feel it before you buy it.</h1>
+          <p className="hero-subtext">
+            Pick a date and time — we’ll confirm fast. Prefer to call?{" "}
+            <a href="tel:+18653773230" style={{ textDecoration: "underline" }}>(865) 377‑3230</a>.
+          </p>
         </div>
       </section>
 

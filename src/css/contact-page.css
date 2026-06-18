@@ -26,13 +26,13 @@
         align-items:center;
         gap:8px;
         padding:6px 14px;
-        border:1px solid rgba(255,255,255,0.18);
+        border:1px solid var(--border);
         border-radius:999px;
         font-size:12px;
         letter-spacing:.18em;
         text-transform:uppercase;
-        color:rgba(255,255,255,0.80);
-        background:rgba(255,255,255,0.05);
+        color:var(--text-2);
+        background:var(--offwhite);
         backdrop-filter: blur(8px);
         animation: fadeUp .8s ease both;
       }
@@ -78,7 +78,7 @@
       .contact-hero p.lead{
         max-width: 620px;
         margin: 0 auto;
-        color: rgba(255,255,255,0.75);
+        color: var(--text-2);
         font-size: 17px;
         line-height:1.55;
         animation: fadeUp .8s ease .16s both;
@@ -102,10 +102,10 @@
         align-items:center;
         gap:10px;
         padding:10px 16px;
-        background:rgba(255,255,255,0.06);
-        border:1px solid rgba(255,255,255,0.14);
+        background: var(--surface);
+        border:1px solid var(--border-2);
         border-radius:999px;
-        color:#fff;
+        color: var(--text-strong);
         text-decoration:none;
         font-weight:600;
         font-size:14px;
@@ -132,11 +132,11 @@
       }
 
       .contact-card{
-        background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-        border: 1px solid rgba(255,255,255,0.12);
+        background: var(--surface);
+        border: 1px solid var(--border);
         border-radius: 22px;
         padding: 30px;
-        box-shadow: 0 24px 60px rgba(0,0,0,0.40);
+        box-shadow: var(--shadow-card);
         position:relative;
         overflow:hidden;
         animation: fadeUp .8s ease .3s both;
@@ -173,7 +173,7 @@
       }
       .form-head p{
         margin:0;
-        color: rgba(255,255,255,0.65);
+        color: var(--muted);
         font-size: 14px;
       }
 
@@ -190,7 +190,7 @@
         position:absolute;
         left:14px; top:13px;
         font-size:14px;
-        color: rgba(255,255,255,0.55);
+        color: var(--muted);
         pointer-events:none;
         transition: all .2s ease;
         background: transparent;
@@ -200,11 +200,11 @@
       .field textarea,
       .field select{
         width:100%;
-        background: rgba(255,255,255,0.04);
-        border: 1px solid rgba(255,255,255,0.14);
+        background: var(--surface);
+        border: 1px solid var(--border-2);
         border-radius: 12px;
         padding: 14px 14px 12px;
-        color:#fff;
+        color:var(--text);
         font-size: 15px;
         outline: none;
         transition: all .2s ease;
@@ -215,7 +215,7 @@
       .field textarea:focus,
       .field select:focus{
         border-color: var(--red);
-        background: rgba(255,255,255,0.07);
+        background: var(--surface);
         box-shadow: 0 0 0 4px rgba(193,18,31,0.18);
       }
       .field input:focus + label.float,
@@ -226,7 +226,7 @@
         left:10px;
         font-size:11px;
         color: var(--red);
-        background: #0a1b30;
+        background: var(--surface);
         font-weight: 600;
         letter-spacing: .04em;
         text-transform: uppercase;
@@ -238,7 +238,7 @@
         padding: 20px;
         background:
           linear-gradient(180deg, rgba(193,18,31,0.06), rgba(193,18,31,0.02)),
-          rgba(255,255,255,0.03);
+          var(--offwhite);
         border: 1px solid rgba(193,18,31,0.22);
         border-radius: 14px;
         position:relative;
@@ -247,7 +247,7 @@
         content:"COMMUNICATIONS CONSENT";
         position:absolute;
         top:-9px; left:16px;
-        background: #0a1b30;
+        background: var(--offwhite);
         padding: 0 8px;
         font-size: 10px;
         letter-spacing: .22em;
@@ -262,23 +262,23 @@
         cursor:pointer;
         font-size: 14px;
         line-height:1.5;
-        color: rgba(255,255,255,0.88);
+        color: var(--text-2);
         user-select:none;
         transition: color .2s ease;
       }
-      .consent-block label.check:hover{ color:#fff; }
+      .consent-block label.check:hover{ color:var(--text); }
       .consent-block label.check input[type="checkbox"]{
         appearance:none;
         -webkit-appearance:none;
         width: 20px; height: 20px;
         min-width: 20px;
         margin-top: 1px;
-        border: 2px solid rgba(255,255,255,0.30);
+        border: 2px solid var(--border-2);
         border-radius: 5px;
         cursor: pointer;
         position: relative;
         transition: all .2s ease;
-        background: rgba(255,255,255,0.04);
+        background: var(--surface);
       }
       .consent-block label.check input[type="checkbox"]:hover{
         border-color: var(--red);
@@ -299,11 +299,11 @@
       }
       .consent-fine{
         font-size:12.5px;
-        color: rgba(255,255,255,0.62);
+        color: var(--muted);
         line-height:1.6;
         margin: 10px 0 0;
       }
-      .consent-fine strong{ color: rgba(255,255,255,0.88); font-weight:600; }
+      .consent-fine strong{ color: var(--text-2); font-weight:600; }
       .consent-fine a{ color: var(--red); text-decoration: underline; font-weight:600; }
       .consent-fine a:hover{ color: #ff4d5d; }
 
@@ -319,7 +319,7 @@
         padding: 14px 28px;
         background: linear-gradient(180deg, #d61525 0%, #a80f1b 100%);
         color:#fff;
-        border: 1px solid rgba(255,255,255,0.10);
+        border: 1px solid rgba(193,18,31,0.30);
         border-radius: 999px;
         font-weight: 700;
         font-size: 15px;
@@ -348,7 +348,7 @@
       .btn-submit:disabled{ opacity:.7; cursor:default; }
       .submit-note{
         font-size:12.5px;
-        color:rgba(255,255,255,0.55);
+        color:var(--muted);
         margin:0;
       }
 
@@ -356,8 +356,8 @@
       .side-stack{ display:grid; gap: 18px; }
 
       .info-card{
-        background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-        border: 1px solid rgba(255,255,255,0.12);
+        background: var(--surface);
+        border: 1px solid var(--border);
         border-radius: 22px;
         padding: 26px;
         animation: fadeUp .8s ease .4s both;
@@ -383,14 +383,14 @@
         display:flex;
         gap:14px;
         padding: 12px 0;
-        border-top: 1px solid rgba(255,255,255,0.08);
+        border-top: 1px solid var(--border);
         align-items:flex-start;
       }
       .info-row:first-of-type{ border-top: 0; padding-top: 0; }
       .info-row .ic{
         width:36px; height:36px;
-        background: rgba(255,255,255,0.05);
-        border:1px solid rgba(255,255,255,0.12);
+        background: var(--offwhite);
+        border:1px solid var(--border);
         border-radius: 10px;
         display:flex; align-items:center; justify-content:center;
         flex-shrink:0;
@@ -408,20 +408,20 @@
         font-size:11px;
         letter-spacing:.16em;
         text-transform: uppercase;
-        color: rgba(255,255,255,0.50);
+        color: var(--muted);
         margin-bottom: 4px;
         font-weight:600;
       }
       .info-row .meta .val{
         font-size: 15px;
-        color: #fff;
+        color: var(--text);
         line-height: 1.45;
         word-break: break-word;
       }
       .info-row .meta .val a{
-        color:#fff;
+        color:var(--text);
         text-decoration: none;
-        border-bottom: 1px solid rgba(255,255,255,0.30);
+        border-bottom: 1px solid var(--border-2);
         transition: border-color .2s ease;
       }
       .info-row .meta .val a:hover{ border-color: var(--red); }
@@ -429,9 +429,9 @@
       .map-card{
         border-radius: 22px;
         overflow:hidden;
-        border:1px solid rgba(255,255,255,0.12);
-        box-shadow: 0 24px 60px rgba(0,0,0,0.40);
-        background: rgba(255,255,255,0.04);
+        border:1px solid var(--border);
+        box-shadow: var(--shadow-card);
+        background: var(--surface);
         height: 320px;
         position:relative;
         animation: fadeUp .8s ease .5s both;
@@ -479,7 +479,7 @@
       }
       .form-success .ok-mark svg{ width:32px; height:32px; color:#fff; }
       .form-success h3{ margin:0 0 6px; font-size: 22px; }
-      .form-success p{ color: rgba(255,255,255,0.70); margin:0; }
+      .form-success p{ color: var(--text-2); margin:0; }
 
       @keyframes fadeUp{
         from{ opacity:0; transform: translateY(14px); }

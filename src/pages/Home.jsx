@@ -2,8 +2,14 @@ import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
 import CarCardClassic from "../components/CarCardClassic.jsx";
+import AdvancedSearch from "../components/AdvancedSearch.jsx";
+import LeadForm from "../components/LeadForm.jsx";
+import PromoMarquee from "../components/PromoMarquee.jsx";
+import CountUp from "../components/CountUp.jsx";
 import { useCars } from "../lib/useCars.js";
 import { normalize } from "../lib/utils.js";
+import { useLang } from "../lib/i18n.jsx";
+import { useReveal } from "../lib/useReveal.js";
 
 const carText = (c) =>
   [c.make, c.model, c.year, c.price, c.mileage, c.stock, c.vin, c.color, c.engine, c.transmission]
@@ -12,8 +18,10 @@ const carText = (c) =>
 
 export default function Home() {
   const { cars, error } = useCars();
+  const { t, lang } = useLang();
   const [q, setQ] = useState("");
   const [legalOpen, setLegalOpen] = useState(false);
+  useReveal([cars.length, lang]);
 
   const featured = useMemo(() => {
     const sorted = [...cars].sort((a, b) => Number(b.id) - Number(a.id));
@@ -22,15 +30,20 @@ export default function Home() {
     return filtered.slice(0, 8);
   }, [cars, q]);
 
+  const newArrivals = useMemo(
+    () => cars.filter((c) => c.condition === "new").sort((a, b) => Number(b.id) - Number(a.id)).slice(0, 8),
+    [cars],
+  );
+
   return (
-    <Layout bodyClass="page-home has-hero">
+    <Layout bodyClass="page-home has-hero" title="Premium Used Cars in Knoxville, TN">
       <section className="hero hero--home" style={{ "--hero-image": "url('/assets/images/elantra12.webp')" }}>
         <div className="wrapper">
           <div>
-            <div className="hero-kicker floaty">★ Premium Used Cars • Knoxville, TN</div>
-            <h1 className="hero-title">A better way to buy your next car.</h1>
+            <div className="hero-kicker floaty">★ {t("hero.kicker")}</div>
+            <h1 className="hero-title">{t("hero.title")}</h1>
             <p className="hero-subtext">
-              Shop our curated inventory, schedule a test drive, and get pre‑approved — fast.
+              {t("hero.subtext")}
               <span className="muted" style={{ display: "block", marginTop: 8 }}>
                 Prefer a dedicated credit application? Use our secure portal:{" "}
                 <a href="https://startyourcreditapproval.com/credit-application/DCR13" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>
@@ -39,24 +52,15 @@ export default function Home() {
               </span>
             </p>
             <div className="trust-row">
-              <span className="trust-badge">✅ Quality‑Inspected Vehicles</span>
-              <a className="trust-badge" href="tel:+18659247326" aria-label="Call for a shipping quote">🚚 Get quote to ship your vehicle</a>
-              <span className="trust-badge">🧾 CARFAX Available</span>
-              <span className="trust-badge">⭐ CarGurus Dealer</span>
+              <span className="trust-badge">✅ {t("hero.badge.quality")}</span>
+              <a className="trust-badge" href="tel:+18659247326" aria-label="Call for a shipping quote">🚚 {t("hero.badge.ship")}</a>
+              <span className="trust-badge">🧾 {t("hero.badge.carfax")}</span>
+              <span className="trust-badge">⭐ {t("hero.badge.cargurus")}</span>
             </div>
           </div>
 
-          <div className="hero-panel">
-            <div className="hero-search">
-              <input
-                type="search"
-                placeholder="Search make, model, year, stock, VIN…"
-                aria-label="Search inventory"
-                value={q}
-                onChange={(e) => setQ(e.target.value)}
-              />
-              <Link className="btn btn-primary" to="/inventory" aria-label="Go to inventory">Search</Link>
-            </div>
+          <div className="hero-panel hero-panel--search">
+            <AdvancedSearch variant="hero" />
             <div className="hero-cta-row">
               <a className="icon-btn pulse" href="tel:+18653773230" aria-label="Call us">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .6a2 2 0 0 1 1.7 2Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" /></svg>
@@ -83,10 +87,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section container featured">
+      <PromoMarquee />
+
+      {newArrivals.length > 0 && (
+        <section className="section container featured reveal">
+          <div className="section-head">
+            <h2 className="section-title"><span className="title-accent">{t("section.newArrivals")}</span></h2>
+            <Link className="link-more" to="/inventory?cond=new">{t("section.viewAll")} →</Link>
+          </div>
+          <div className="cards-row">
+            {newArrivals.map((car) => <CarCardClassic key={car.id} car={car} variant="home" />)}
+          </div>
+        </section>
+      )}
+
+      <section className="section container featured reveal">
         <div className="section-head">
-          <h2 className="section-title">Featured Inventory</h2>
-          <Link className="link-more" to="/inventory">View All →</Link>
+          <h2 className="section-title">{t("section.featured")}</h2>
+          <Link className="link-more" to="/inventory">{t("section.viewAll")} →</Link>
         </div>
 
         <div className="inventory-toolbar">
@@ -111,48 +129,62 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="about-home">
+      <section className="about-home reveal">
         <div className="container">
           <div className="about-grid">
             <div className="about-text">
-              <h2>About US Star Auto Sale</h2>
-              <p className="subtitle">Your trusted partner for quality vehicles and flexible financing across the United States.</p>
-              <p>US Star Auto Sale is a customer-focused auto dealership dedicated to helping people find reliable, high-quality vehicles at competitive prices. We believe buying a car should be simple, transparent, and stress-free.</p>
-              <p>With access to multiple lenders nationwide, we offer flexible financing options for all credit types — good, bad, or no credit.</p>
-              <Link to="/financing" className="btn-primary">Apply for Financing</Link>
+              <h2>{t("about.title")}</h2>
+              <p className="subtitle">{t("about.subtitle")}</p>
+              <p>{t("about.p1")}</p>
+              <p>{t("about.p2")}</p>
+              <div className="about-actions">
+                <Link to="/financing" className="btn btn-primary">{t("about.applyBtn")}</Link>
+                <Link to="/inventory" className="btn btn-ghost">{t("about.browseBtn")}</Link>
+              </div>
             </div>
             <div className="about-stats">
-              <div className="stat"><h3>50+</h3><span>Cars Sold</span></div>
-              <div className="stat"><h3>Fast</h3><span>Approval Process</span></div>
-              <div className="stat"><h3>Nationwide</h3><span>Lender Network</span></div>
+              <div className="stat"><h3><CountUp end={50} suffix="+" /></h3><span>{t("about.stat.sold")}</span></div>
+              <div className="stat"><h3>{t("about.stat.fast")}</h3><span>{t("about.stat.approval")}</span></div>
+              <div className="stat"><h3>{t("about.stat.nationwide")}</h3><span>{t("about.stat.network")}</span></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section services" id="services">
+      <section className="section services reveal" id="services">
         <div className="container">
-          <h2 className="section-title">Our Services</h2>
+          <h2 className="section-title services-title">{t("section.services")}</h2>
+          <p className="section-subtitle">{t("section.servicesSub")}</p>
           <div className="services-grid">
             <div className="service-card">
-              <img src="/assets/icons/delivery.png" alt="Nationwide Delivery" loading="lazy" decoding="async" />
-              <h3>Get Quote to Ship Your Vehicle</h3>
-              <p>Tap to call and get a fast shipping quote anywhere in the USA.</p>
-              <a className="btn btn-ghost btn-small" href="tel:+18652692676" aria-label="Call for shipping quote">Call for Quote</a>
+              <span className="svc-icon"><img src="/assets/icons/delivery.png" alt="" loading="lazy" decoding="async" /></span>
+              <h3>{t("svc.ship.title")}</h3>
+              <p>{t("svc.ship.text")}</p>
+              <a className="svc-link" href="tel:+18652692676">{t("svc.ship.btn")} →</a>
             </div>
             <div className="service-card">
-              <img src="/assets/icons/financee.png" alt="Financing Options" loading="lazy" decoding="async" />
-              <h3>Financing Options</h3>
-              <p>Flexible financing tailored to your needs with easy approval.</p>
+              <span className="svc-icon"><img src="/assets/icons/financee.png" alt="" loading="lazy" decoding="async" /></span>
+              <h3>{t("svc.finance.title")}</h3>
+              <p>{t("svc.finance.text")}</p>
+              <Link className="svc-link" to="/financing">{t("svc.finance.btn")} →</Link>
             </div>
             <div className="service-card">
-              <img src="/assets/icons/drive.png" alt="Test Drive" loading="lazy" decoding="async" />
-              <h3>Test Drive</h3>
-              <p>Book a test drive and experience your car before buying.</p>
+              <span className="svc-icon"><img src="/assets/icons/drive.png" alt="" loading="lazy" decoding="async" /></span>
+              <h3>{t("svc.test.title")}</h3>
+              <p>{t("svc.test.text")}</p>
+              <Link className="svc-link" to="/testdrive">{t("svc.test.btn")} →</Link>
+            </div>
+            <div className="service-card">
+              <span className="svc-icon svc-icon--trade">⇄</span>
+              <h3>{t("svc.trade.title")}</h3>
+              <p>{t("svc.trade.text")}</p>
+              <Link className="svc-link" to="/tradein">{t("svc.trade.btn")} →</Link>
             </div>
           </div>
         </div>
       </section>
+
+      <LeadForm />
 
       <section className="legal-disclaimer" id="legal">
         <div className="container">

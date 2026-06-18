@@ -17,7 +17,7 @@ export default function Saved() {
   }, [cars, ids]);
 
   return (
-    <Layout bodyClass="page-saved" bodyStyle={{ "--page-bg-image": "url('/assets/images/fon1.png')" }}>
+    <Layout bodyClass="page-saved" bodyStyle={{ "--page-bg-image": "url('/assets/images/fon1.png')" }} title="Saved Vehicles" description="Your saved vehicles at US Star Auto Sale.">
       <section className="section container">
         <div className="section-head">
           <div>

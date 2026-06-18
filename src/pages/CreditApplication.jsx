@@ -6,7 +6,7 @@ export default function CreditApplication() {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <Layout bodyClass="page-contact" bodyStyle={{ "--page-bg-image": "url('/assets/images/fon1.png')" }}>
+    <Layout bodyClass="page-contact" bodyStyle={{ "--page-bg-image": "url('/assets/images/fon1.png')" }} title="Credit Application" description="Apply for auto financing online — fast, secure, and no obligation. Most applicants get a response the same day.">
       <main>
         <section className="ca-hero">
           <div className="container">

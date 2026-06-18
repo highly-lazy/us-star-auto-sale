@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { fuelType, toNum, carName } from "../lib/utils.js";
+import { fuelType, toNum, carName, onImgError } from "../lib/utils.js";
 import { useFavorite } from "../lib/favorites.js";
 
 // Classic `.car-card` used on Home (featured) and Saved pages.
@@ -35,7 +35,7 @@ export default function CarCardClassic({ car, variant = "home", fallbackBadge = 
             <path d="M12 21s-7-4.6-9.2-8.7C.9 8.7 3 5.5 6.4 5.1c1.7-.2 3.4.6 4.3 2 1-1.4 2.7-2.2 4.3-2 3.4.4 5.5 3.6 3.6 7.2C19 16.4 12 21 12 21Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
           </svg>
         </button>
-        <img src={car.img} alt={name} loading="lazy" decoding="async" width="640" height="400" />
+        <img src={car.thumb || car.img} alt={name} loading="lazy" decoding="async" width="480" height="300" onError={onImgError} />
       </Link>
       <div className="car-info">
         <div className="car-top">

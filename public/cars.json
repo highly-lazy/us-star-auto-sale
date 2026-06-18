@@ -32,13 +32,14 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/kia4.jpg",
+    "img": "assets/cars/kia2.jpg",
     "images": [
       "assets/cars/kia2.jpg"
     ],
     "description": "2013 Kia Optima Hybrid in Silver with 126,354 miles. Equipped with 2.4L engine, automatic transmission, and full power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 2,
@@ -73,13 +74,14 @@
       "Power Windows",
       "Premium Sound"
     ],
-    "img": "assets/cars/elantra4.jpg",
+    "img": "assets/cars/elantra2.jpg",
     "images": [
       "assets/cars/elantra2.jpg"
     ],
     "description": "2020 Hyundai Elantra in Red with 129,995 miles. Equipped with 2.0L engine, automatic transmission, and premium features.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "new"
   },
   {
     "id": 3,
@@ -119,7 +121,8 @@
     ],
     "description": "2015 BMW 3 Series in White with 176,548 miles. Equipped with 2.5L engine, automatic transmission, and full power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 4,
@@ -159,7 +162,8 @@
     ],
     "description": "2018 Dodge Ram 1500 in Gray with 212,256 miles. Equipped with 2.5L engine, automatic transmission, and full power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 5,
@@ -199,7 +203,8 @@
     ],
     "description": "2016 Jaguar XF in Gray with 86,463 miles. Equipped with 340 hp 3L V6 engine, automatic transmission, and full power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 6,
@@ -236,7 +241,8 @@
     ],
     "description": "2017 Hyundai Sonata in Silver with 118,633 miles. Equipped with a 2.4L engine, automatic transmission, and power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 7,
@@ -267,13 +273,14 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/volvo6.jpg",
+    "img": "assets/cars/volvo.jpg",
     "images": [
       "assets/cars/volvo.jpg"
     ],
     "description": "2012 Volvo XC60 in White with 128,374 miles. Equipped with a 3.2L engine, automatic transmission, and power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 8,
@@ -310,7 +317,8 @@
     ],
     "description": "2013 Audi Allroad in Silver with 139,134 miles. Equipped with a 2.0L turbo engine, automatic transmission, and power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 9,
@@ -341,13 +349,14 @@
       "Power Mirrors",
       "Power Windows"
     ],
-    "img": "assets/cars/equinox2.jpg",
+    "img": "assets/cars/equinox1.jpg",
     "images": [
       "assets/cars/equinox1.jpg"
     ],
     "description": "2019 Chevrolet Equinox in Red with 153,200 miles. Equipped with a 1.5L turbo engine, automatic transmission, and power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "new"
   },
   {
     "id": 10,
@@ -387,7 +396,8 @@
     ],
     "description": "2017 Chevrolet Traverse LS FWD in Silver with 114,736 miles. Equipped with 281 hp 3.6L V6 engine, automatic transmission, and full power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 11,
@@ -427,7 +437,8 @@
     ],
     "description": "2016 Chevrolet Malibu in White with 126,175 miles. Equipped with 160 hp 1.5L I6 engine, automatic transmission, and full power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 12,
@@ -467,7 +478,8 @@
     ],
     "description": "2022 Subaru Outback in White with 67,938 miles. Equipped with 182 hp 2.5L H4 engine, automatic transmission, and full power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "new"
   },
   {
     "id": 13,
@@ -507,7 +519,8 @@
     ],
     "description": "2016 Chevrolet Equinox in Blue with 100,374 miles. Equipped with 182 hp 2.4L I4 engine, automatic transmission, and full power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 14,
@@ -547,7 +560,8 @@
     ],
     "description": "2012 Nissan Altima in White with 145,780 miles. Equipped with 175 hp 2.5L I4 engine, automatic transmission, and full power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 15,
@@ -593,7 +607,8 @@
     ],
     "description": "2019 Mercedes-Benz GLS 450 in Gray with 69,971 miles. Equipped with 362 hp 3.0L V6 engine, automatic transmission, and luxury features.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "available",
+    "condition": "new"
   },
   {
     "id": 16,
@@ -634,7 +649,8 @@
     ],
     "description": "2019 Ford Escape in Black with 138,725 miles. Equipped with 179 hp 1.5L I4 engine, automatic transmission, and luxury features.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "new"
   },
   {
     "id": 17,
@@ -674,7 +690,8 @@
     ],
     "description": "2020 Nissan Rogue in Gray with 145,138 miles. Equipped with 170 hp 2.5L I4 engine, automatic transmission, and full power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "new"
   },
   {
     "id": 18,
@@ -714,7 +731,8 @@
     ],
     "description": "2016 Kia Sorento in Gray with 145,111 miles. Equipped with 185 hp 2.4L I4 engine, automatic transmission, and full power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 19,
@@ -754,7 +772,8 @@
     ],
     "description": "2018 Kia Sorento in Gray with 121,555 miles. Equipped with 185 hp 2.4L I4 engine, automatic transmission, and full power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 20,
@@ -794,7 +813,8 @@
     ],
     "description": "2016 Dodge Grand Caravan in White with 145,124 miles. Equipped with 283 hp 3.6L V6 engine, automatic transmission, and full power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 21,
@@ -834,7 +854,8 @@
     ],
     "description": "2019 Kia Sedona in Black with 161,527 miles. Equipped with 3.3L V6 engine, automatic transmission, and full power options.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "new"
   },
   {
     "id": 22,
@@ -874,7 +895,8 @@
     ],
     "description": "2015 Nissan Versa in Blue with 147,717 miles.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 23,
@@ -914,7 +936,8 @@
     ],
     "description": "2010 Toyota Camry in White with 166,795 miles.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 24,
@@ -954,7 +977,8 @@
     ],
     "description": "2015 Chevrolet Malibu LT in Silver with 120,366 miles.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 25,
@@ -994,7 +1018,8 @@
     ],
     "description": "2016 Nissan Altima in Black with 152,929 miles.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 26,
@@ -1043,7 +1068,8 @@
     ],
     "description": "2020 Chevrolet Sonic LT in Red with 80,621 miles.",
     "fuel": "Electric",
-    "status": "available"
+    "status": "sold",
+    "condition": "new"
   },
   {
     "id": 27,
@@ -1087,12 +1113,12 @@
       "assets/cars/mits6.jpg",
       "assets/cars/mits7.jpg",
       "assets/cars/mits8.jpg",
-      "assets/cars/mits9.jpg",
-      "assets/cars/mits10.jpg"
+      "assets/cars/mits9.jpg"
     ],
     "description": "2018 Mitsubishi Outlander Sport SE in Silver with 141,408 miles.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 28,
@@ -1132,7 +1158,8 @@
     ],
     "description": "2020 Ford Escape SE in White with 142,521 miles.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "new"
   },
   {
     "id": 29,
@@ -1166,7 +1193,8 @@
     ],
     "description": "2021 Nissan Versa SV for sale. Fuel-efficient and reliable sedan that runs and drives great with automatic transmission. Gray exterior with black interior, 102,883 miles. Clean title. Financing available.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "new"
   },
   {
     "id": 30,
@@ -1200,7 +1228,8 @@
     ],
     "description": "2016 Chrysler Town & Country Touring for sale. Spacious and reliable minivan with a 3.6L V6 gasoline engine, automatic transmission, and front-wheel drive. White exterior with black interior, 167,501 miles. Clean title. Financing available.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 31,
@@ -1243,7 +1272,8 @@
     ],
     "description": "2019 Dodge Journey SE for sale. Spacious and reliable SUV with a 2.4L 4-cylinder gasoline engine, automatic transmission, and front-wheel drive. White exterior with black interior, 125,724 miles. Clean title.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "sold",
+    "condition": "new"
   },
   {
     "id": 32,
@@ -1290,7 +1320,8 @@
     ],
     "description": "2012 Jeep Compass Sport for sale. Reliable and practical SUV with automatic transmission, gray exterior with gray interior, and 123,157 miles. Clean title.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "available",
+    "condition": "used"
   },
   {
     "id": 33,
@@ -1333,7 +1364,8 @@
     ],
     "description": "2015 Subaru Impreza 2.0i Sport Premium AWD for sale. Reliable and sporty sedan with a 2.0L 4-cylinder gasoline engine, automatic transmission, and all-wheel drive. White exterior with gray interior, 171,838 miles.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 34,
@@ -1377,7 +1409,8 @@
     ],
     "description": "2014 Nissan Pathfinder SL Sport Utility 4D for sale. Reliable and spacious family SUV with a 3.5L V6 gasoline engine, automatic CVT transmission, and a comfortable interior. Gray exterior, 120,309 miles. Comes with Carfax and financing available.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 35,
@@ -1430,7 +1463,8 @@
     ],
     "description": "2015 Volkswagen Passat 1.8T Wolfsburg Edition Sedan 4D for sale. Stylish and comfortable sedan with a 1.8L turbocharged 4-cylinder gasoline engine and automatic transmission. Beige exterior, Carfax available, financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "available",
+    "condition": "used"
   },
   {
     "id": 36,
@@ -1474,7 +1508,8 @@
     ],
     "description": "2015 Kia Soul Wagon 4D for sale. Reliable and fuel-efficient wagon with a 2.0L 4-cylinder gasoline engine and automatic transmission. 110,340 miles. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 37,
@@ -1518,7 +1553,8 @@
     ],
     "description": "2016 Lexus IS 300 Sedan 4D for sale. Luxury and sporty sedan with a 3.5L V6 engine, automatic transmission, and a comfortable premium interior. 91,492 miles. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 38,
@@ -1562,7 +1598,8 @@
     ],
     "description": "2015 BMW X3 xDrive35i Sport Utility 4D for sale. Luxury and sporty SUV with a 3.0L turbocharged 6-cylinder gasoline engine, automatic transmission, and all-wheel drive. 128,237 miles. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 39,
@@ -1611,12 +1648,12 @@
       "assets/cars/ramquad7.jpg",
       "assets/cars/ramquad8.jpg",
       "assets/cars/ramquad9.jpg",
-      "assets/cars/ramquad10.jpg",
-      "assets/cars/ramquad11.jpg"
+      "assets/cars/ramquad10.jpg"
     ],
     "description": "2016 Ram 1500 Quad Cab Big Horn Pickup 4D 6 1/3 ft for sale. Powerful and reliable pickup truck with a 5.7L V8 HEMI gasoline engine, automatic transmission, and a spacious Quad Cab interior. Black exterior, 172,660 miles. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 40,
@@ -1660,7 +1697,8 @@
     ],
     "description": "2016 Nissan Pathfinder SV Sport Utility 4D for sale. Reliable and spacious family SUV with a 3.5L V6 gasoline engine, automatic CVT transmission, and a comfortable interior. Gray exterior. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 41,
@@ -1703,7 +1741,8 @@
     ],
     "description": "2017 Kia Sorento EX AWD Sport Utility 4D for sale. Clean and reliable SUV that runs and drives great. Equipped with a 2.4L 4-cylinder gasoline engine, automatic transmission, and all-wheel drive. Gray exterior with black interior. Comfortable, spacious, and perfect for everyday driving. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 42,
@@ -1747,7 +1786,8 @@
     ],
     "description": "2013 Chevrolet Silverado 1500 LT Pickup 4D for sale. Strong and dependable truck that runs and drives great. Equipped with a powerful 5.3L V8 gasoline engine, automatic transmission, and rear-wheel drive. Burgundy exterior with black interior. Perfect for work, towing, or everyday use. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 43,
@@ -1800,7 +1840,8 @@
     ],
     "description": "2010 Toyota Prius V Hybrid Hatchback 4D for sale. Very fuel-efficient and reliable hybrid that runs and drives great. Equipped with a 1.8L 4-cylinder hybrid engine, automatic CVT transmission, and front-wheel drive. White exterior with tan interior. Perfect for saving gas and daily commuting. Carfax available and financing available.",
     "fuel": "Hybrid",
-    "status": "available"
+    "status": "available",
+    "condition": "used"
   },
   {
     "id": 44,
@@ -1858,7 +1899,8 @@
     ],
     "description": "2015 Chrysler Town & Country Touring Minivan 4D for sale. Clean and spacious minivan that runs and drives great. Equipped with a 3.6L V6 gasoline engine, automatic transmission, and front-wheel drive. Silver exterior with black interior. Perfect for families, road trips, and everyday use with plenty of comfort and space. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 45,
@@ -1914,7 +1956,8 @@
     ],
     "description": "2015 Kia Sportage LX Sport Utility 4D for sale. Clean and reliable SUV that runs and drives great. Equipped with a 2.4L 4-cylinder gasoline engine, automatic transmission, and front-wheel drive. Silver exterior with gray interior. Easy to drive, comfortable, and perfect for everyday use. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "available",
+    "condition": "used"
   },
   {
     "id": 46,
@@ -1956,7 +1999,8 @@
     ],
     "description": "2014 Nissan Rogue Select S AWD Sport Utility 4D for sale. Low mileage SUV that runs and drives great. Equipped with a 2.5L 4-cylinder gasoline engine, automatic CVT transmission, and all-wheel drive. Very reliable and perfect for daily driving with excellent comfort and fuel economy. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 47,
@@ -1998,9 +2042,10 @@
     "images": [
       "assets/cars/optima1.jpg"
     ],
-    "description": "2016 Kia Optima LX Sedan 4D for sale. Clean and stylish sedan that runs and drives great. Equipped with a 2.4L 4-cylinder gasoline engine, automatic transmission, and front-wheel drive. Black exterior with black interior. Comfortable, reliable, and very fuel efficient \u2014 perfect daily driver. Clean title. Carfax available and financing available.",
+    "description": "2016 Kia Optima LX Sedan 4D for sale. Clean and stylish sedan that runs and drives great. Equipped with a 2.4L 4-cylinder gasoline engine, automatic transmission, and front-wheel drive. Black exterior with black interior. Comfortable, reliable, and very fuel efficient — perfect daily driver. Clean title. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 48,
@@ -2042,7 +2087,8 @@
     ],
     "description": "2010 Toyota Corolla S Sedan 4D for sale. Reliable and fuel-efficient sedan that runs and drives great. Equipped with a 1.8L 4-cylinder gasoline engine, automatic transmission, and front-wheel drive. Gray exterior with black interior. Perfect daily driver with low maintenance and excellent gas mileage. Clean title. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 49,
@@ -2090,7 +2136,8 @@
     ],
     "description": "2016 Kia Soul for sale. Clean and practical hatchback with great fuel economy and smooth driving experience. Equipped with a 1.6L 4-cylinder engine, automatic transmission, and front-wheel drive. Gray exterior with comfortable interior. Ideal for daily use, city driving, and first-time drivers. Clean title. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 50,
@@ -2137,7 +2184,8 @@
     ],
     "description": "2014 Chevrolet Cruze for sale. Clean and fuel-efficient sedan with a smooth driving experience. Equipped with a 1.4L turbocharged 4-cylinder engine, automatic transmission, and front-wheel drive. White exterior with comfortable interior. Great option for daily commuting and city driving. Clean title. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 51,
@@ -2186,7 +2234,8 @@
     ],
     "description": "2016 Hyundai Veloster Coupe 3D for sale. Sporty and stylish hatchback with excellent fuel efficiency and unique design. Equipped with a 1.6L 4-cylinder engine, automatic transmission, and front-wheel drive. Perfect for city driving and young drivers looking for a sporty feel. Clean title. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "available",
+    "condition": "used"
   },
   {
     "id": 52,
@@ -2238,7 +2287,8 @@
     ],
     "description": "Chrysler Voyager LXi Minivan 4D for sale. Spacious and comfortable family minivan with smooth driving experience and large interior space. Ideal for family trips and daily use. Clean title. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "available",
+    "condition": "new"
   },
   {
     "id": 53,
@@ -2290,7 +2340,8 @@
     ],
     "description": "2017 Hyundai Elantra SE Sedan 4D for sale. Clean and fuel-efficient sedan with smooth driving experience and modern features. Equipped with a 2.0L 4-cylinder engine, automatic transmission, and front-wheel drive. Red exterior with comfortable interior. Ideal for daily commuting. Clean title. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "available",
+    "condition": "used"
   },
   {
     "id": 54,
@@ -2340,7 +2391,8 @@
     ],
     "description": "2015 Nissan Rogue Sport S for sale. Reliable and practical compact SUV with smooth driving experience. Equipped with a 2.0L 4-cylinder engine, automatic transmission, and available all-wheel drive. Black exterior with comfortable and spacious interior. Ideal for daily commuting and family use. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 55,
@@ -2388,7 +2440,8 @@
     ],
     "description": "2013 Hyundai Sonata GLS for sale. Clean and reliable midsize sedan with a smooth driving experience. Equipped with a 2.4L 4-cylinder engine, automatic transmission, and front-wheel drive. White exterior with spacious and comfortable interior. Ideal for daily commuting and family use. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 56,
@@ -2436,7 +2489,8 @@
     ],
     "description": "2015 Nissan Sentra S Sedan for sale. Clean and fuel-efficient sedan with smooth driving performance. Equipped with a 1.8L 4-cylinder engine, automatic CVT transmission, and front-wheel drive. Gray exterior with comfortable interior. Ideal for daily commuting. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "available",
+    "condition": "used"
   },
   {
     "id": 57,
@@ -2482,12 +2536,12 @@
       "assets/cars/caravn7.jpg",
       "assets/cars/caravn8.jpg",
       "assets/cars/caravn9.jpg",
-      "assets/cars/caravn10.jpg",
-      "assets/cars/caravn11.jpg"
+      "assets/cars/caravn10.jpg"
     ],
     "description": "2016 Dodge Grand Caravan RT Minivan for sale. Spacious and practical family minivan with strong performance and comfort. Equipped with a 3.6L V6 engine, automatic transmission, and front-wheel drive. Silver exterior with large interior space and 7-passenger seating. Ideal for family trips and daily use. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 58,
@@ -2530,7 +2584,8 @@
     ],
     "description": "2018 Land Rover Discovery HSE Sport Utility for sale. Luxury and capable SUV with premium comfort and strong off-road performance. Equipped with a 3.0L V6 engine, automatic transmission, and all-wheel drive system. Dark grey exterior with high-end interior features. Ideal for family trips and all-road driving. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "sold"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 59,
@@ -2578,7 +2633,8 @@
     ],
     "description": "2013 Hyundai Sonata LT for sale. Clean and fuel-efficient midsize sedan with smooth driving performance. Equipped with a 2.4L 4-cylinder engine, automatic transmission, and front-wheel drive. Sky blue exterior with comfortable interior. Ideal for daily commuting and family use. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 60,
@@ -2629,7 +2685,8 @@
     ],
     "description": "2017 Kia Sedona LX Minivan for sale. Spacious and reliable family minivan with smooth driving and strong V6 performance. Equipped with a 3.3L V6 engine, automatic transmission, and front-wheel drive. Gray exterior with comfortable and roomy interior. Ideal for family travel and daily use. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "sold",
+    "condition": "used"
   },
   {
     "id": 61,
@@ -2681,7 +2738,8 @@
     ],
     "description": "2016 BMW 5 Series 528i for sale. Luxury midsize sedan with strong turbo engine and smooth driving performance. Equipped with a 2.0L turbocharged 4-cylinder engine, automatic transmission, and rear-wheel drive. Black exterior with premium interior features. Ideal for comfort and executive driving. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "available",
+    "condition": "used"
   },
   {
     "id": 62,
@@ -2731,7 +2789,8 @@
     ],
     "description": "2018 Chevrolet Trax LS for sale. Compact and fuel-efficient SUV with modern features and easy city driving. Equipped with a 1.4L turbocharged 4-cylinder engine, automatic transmission, and front-wheel drive. White exterior with comfortable interior. Ideal for daily commuting and urban use. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "sold",
+    "condition": "new"
   },
   {
     "id": 63,
@@ -2781,7 +2840,8 @@
     ],
     "description": "2016 Nissan Altima 2.5 SR Sedan for sale. Sporty and fuel-efficient midsize sedan with smooth CVT transmission and reliable performance. Equipped with a 2.5L 4-cylinder engine, automatic transmission, and front-wheel drive. Gray exterior with comfortable interior. Ideal for daily commuting with sporty feel. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "available",
+    "condition": "used"
   },
   {
     "id": 64,
@@ -2830,7 +2890,8 @@
     ],
     "description": "2012 Nissan Altima S Sedan for sale. Reliable and fuel-efficient midsize sedan with smooth driving performance. Equipped with a 2.5L 4-cylinder engine, automatic CVT transmission, and front-wheel drive. Gray exterior with comfortable interior. Ideal for daily commuting and budget-friendly ownership. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "available",
+    "condition": "used"
   },
   {
     "id": 65,
@@ -2880,7 +2941,8 @@
     ],
     "description": "2014 Kia Sportage LX for sale. Clean and reliable compact SUV with smooth driving performance and good fuel efficiency. Equipped with a 2.4L 4-cylinder engine, automatic transmission, and front-wheel drive. Silver exterior with spacious and comfortable interior. Ideal for daily commuting and family use. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "available",
+    "condition": "used"
   },
   {
     "id": 66,
@@ -2930,7 +2992,8 @@
     ],
     "description": "2019 Nissan Murano for sale. Stylish and spacious midsize SUV in Navy Blue exterior. Powered by a smooth 3.5L V6 engine with automatic CVT transmission. Features LED headlights, modern infotainment system, and a comfortable interior perfect for families and daily driving. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "available",
+    "condition": "new"
   },
   {
     "id": 67,
@@ -2959,7 +3022,8 @@
     ],
     "description": "2015 Chevrolet Equinox for sale. Silver exterior. 122,288 miles. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "available",
+    "condition": "used"
   },
   {
     "id": 68,
@@ -2993,263 +3057,265 @@
     ],
     "description": "2013 Dodge Grand Caravan SXT Plus Minivan 4D for sale. Gray exterior. 152,582 miles. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available"
+    "status": "available",
+    "condition": "used"
   },
-
   {
-  "id": 69,
-  "make": "Honda",
-  "model": "HR-V EX-L w/Navigation",
-  "year": 2016,
-  "price": 8856,
-  "mileage": 161378,
-  "color": "Silver",
-  "engine": "1.8L 4-Cylinder",
-  "transmission": "Automatic",
-  "stock": null,
-  "vin": null,
-  "carfax": true,
-  "financing": true,
-  "features": [
-    "All-Wheel Drive (AWD)",
-    "Navigation System",
-    "Bluetooth",
-    "Backup Camera",
-    "Power Windows",
-    "Power Door Locks",
-    "Keyless Entry",
-    "Cruise Control",
-    "Steering Wheel Controls",
-    "Cold A/C",
-    "Heater",
-    "Sunroof/Moonroof",
-    "Leather Seats",
-    "Heated Front Seats",
-    "Push Button Start",
-    "Sport Utility 4D",
-    "Fuel Efficient",
-    "Spacious Interior",
-    "Perfect for Daily Driving",
-    "Family Friendly"
-  ],
-  "img": "assets/cars/honda.jpg",
-  "images": [
-    "assets/cars/honda.jpg",
-    "assets/cars/honda1.jpg",
-    "assets/cars/honda2.jpg",
-    "assets/cars/honda3.jpg",
-    "assets/cars/honda4.jpg",
-    "assets/cars/honda5.jpg",
-    "assets/cars/honda6.jpg",
-    "assets/cars/honda7.jpg",
-    "assets/cars/honda8.jpg",
-    "assets/cars/honda9.jpg"
-  ],
-  "description": "2016 Honda HR-V EX-L with Navigation for sale. Stylish and reliable compact SUV in Silver exterior. Powered by a 1.8L 4-cylinder engine with automatic transmission. Fully loaded EX-L trim with navigation, leather seats, heated front seats, sunroof, and backup camera. Great fuel efficiency and spacious interior. Perfect for daily driving and family use. Clean title. Carfax available. Financing available.",
-  "fuel": "Gas",
-  "status": "available"
-},
-{
-  "id": 70,
-  "make": "Chevrolet",
-  "model": "Trax LS",
-  "year": 2016,
-  "price": 6499,
-  "mileage": 131392,
-  "color": "Blue",
-  "engine": "1.4L 4-Cylinder Turbo",
-  "transmission": "Automatic",
-  "stock": null,
-  "vin": null,
-  "carfax": true,
-  "financing": true,
-  "features": [
-    "Front-Wheel Drive (FWD)",
-    "Bluetooth",
-    "Backup Camera",
-    "Power Windows",
-    "Power Door Locks",
-    "Keyless Entry",
-    "Cruise Control",
-    "Steering Wheel Controls",
-    "Cold A/C",
-    "Heater",
-    "Compact SUV",
-    "Fuel Efficient",
-    "Reliable",
-    "Comfortable Ride",
-    "Spacious Interior",
-    "Perfect for Daily Driving",
-    "Family Friendly"
-  ],
-  "img": "assets/cars/trx.jpg",
-  "images": [
-    "assets/cars/trx1.jpg",
-    "assets/cars/trx2.jpg",
-    "assets/cars/trx3.jpg",
-    "assets/cars/trx4.jpg",
-    "assets/cars/trx5.jpg",
-    "assets/cars/trx6.jpg",
-    "assets/cars/trx7.jpg",
-    "assets/cars/trx8.jpg",
-    "assets/cars/trx9.jpg"
-  ],
-  "description": "2016 Chevrolet Trax LS for sale. Compact and reliable SUV in Blue exterior. Powered by a 1.4L turbocharged 4-cylinder engine with automatic transmission. Great fuel efficiency and easy to maneuver in the city. Comfortable interior with all the essential features for daily driving. Clean title. Carfax available. Financing available.",
-  "fuel": "Gas",
-  "status": "available"
-},
-
-{
-  "id": 71,
-  "make": "Hyundai",
-  "model": "Sonata",
-  "year": 2017,
-  "price": 7101,
-  "mileage": 119148,
-  "color": "Silver",
-  "engine": "2.4L 4-Cylinder",
-  "transmission": "Automatic",
-  "stock": null,
-  "vin": null,
-  "carfax": true,
-  "financing": true,
-  "features": [
-    "Front-Wheel Drive (FWD)",
-    "Bluetooth",
-    "Backup Camera",
-    "Power Windows",
-    "Power Door Locks",
-    "Keyless Entry",
-    "Cruise Control",
-    "Steering Wheel Controls",
-    "Cold A/C",
-    "Heater",
-    "Sedan",
-    "Fuel Efficient",
-    "Reliable",
-    "Comfortable Ride",
-    "Spacious Interior",
-    "Perfect for Daily Driving",
-    "Family Friendly"
-  ],
-  "img": "assets/cars/snt.jpg",
-  "images": [
-    "assets/cars/snt1.jpg",
-    "assets/cars/snt2.jpg",
-    "assets/cars/snt3.jpg",
-    "assets/cars/snt4.jpg",
-    "assets/cars/snt5.jpg",
-    "assets/cars/snt6.jpg",
-    "assets/cars/snt7.jpg",
-    "assets/cars/snt8.jpg",
-    "assets/cars/snt9.jpg"
-  ],
-  "description": "2017 Hyundai Sonata for sale. Clean and reliable mid-size sedan in Silver exterior. Powered by a 2.4L 4-cylinder engine with automatic transmission. Smooth and comfortable ride with spacious interior, perfect for daily commuting and family use. Great fuel efficiency and well-maintained condition. Clean title. Carfax available. Financing available.",
-  "fuel": "Gas",
-  "status": "available"
-},
-
-{
-  "id": 72,
-  "make": "Ford",
-  "model": "Mustang V6",
-  "year": 2016,
-  "price": 12400,
-  "mileage": 156000,
-  "color": "Red/Black",
-  "engine": "3.7L V6",
-  "transmission": "Automatic",
-  "stock": null,
-  "vin": null,
-  "carfax": true,
-  "financing": true,
-  "features": [
-    "Rear-Wheel Drive (RWD)",
-    "Bluetooth",
-    "Backup Camera",
-    "Power Windows",
-    "Power Door Locks",
-    "Keyless Entry",
-    "Cruise Control",
-    "Steering Wheel Controls",
-    "Cold A/C",
-    "Heater",
-    "Sport Coupe",
-    "Black Alloy Wheels",
-    "Custom Hood Stripes",
-    "LED Headlights",
-    "Performance Exhaust",
-    "Sporty Interior",
-    "Powerful V6 Engine",
-    "Perfect for Car Enthusiasts"
-  ],
-  "img": "assets/cars/mustang.jpg",
-  "images": [
-    "assets/cars/mustang1.jpg",
-    "assets/cars/mustang2.jpg",
-    "assets/cars/mustang3.jpg",
-    "assets/cars/mustang4.jpg",
-    "assets/cars/mustang5.jpg",
-    "assets/cars/mustang6.jpg",
-    "assets/cars/mustang7.jpg",
-    "assets/cars/mustang8.jpg"
-  ],
-  "description": "2016 Ford Mustang V6 for sale. Head-turning sports coupe in bold Red exterior with custom black hood stripes and black alloy wheels. Powered by a 3.7L V6 engine with automatic transmission and rear-wheel drive. Sporty and aggressive styling with LED headlights and performance-ready setup. Perfect for car enthusiasts who want style and power. Clean title. Carfax available. Financing available.",
-  "fuel": "Gas",
-  "status": "available"
-},
-
-{
-  "id": 73,
-  "make": "Ford",
-  "model": "Escape Titanium",
-  "year": 2013,
-  "price": 7999,
-  "mileage": 129000,
-  "color": "White",
-  "engine": "2.0L 4-Cylinder Turbo",
-  "transmission": "Automatic",
-  "stock": null,
-  "vin": null,
-  "carfax": true,
-  "financing": true,
-  "features": [
-    "All-Wheel Drive (AWD)",
-    "Navigation System",
-    "Bluetooth",
-    "Backup Camera",
-    "Power Windows",
-    "Power Door Locks",
-    "Keyless Entry",
-    "Cruise Control",
-    "Steering Wheel Controls",
-    "Cold A/C",
-    "Heater",
-    "Panoramic Sunroof",
-    "Leather Seats",
-    "Heated Front Seats",
-    "Push Button Start",
-    "MyFord Touch Infotainment",
-    "Compact SUV",
-    "Fuel Efficient",
-    "Spacious Interior",
-    "Perfect for Daily Driving",
-    "Family Friendly"
-  ],
-  "img": "assets/cars/escp.jpg",
-  "images": [
-    "assets/cars/escp1.jpg",
-    "assets/cars/escp2.jpg",
-    "assets/cars/escp3.jpg",
-    "assets/cars/escp4.jpg",
-    "assets/cars/escp5.jpg",
-    "assets/cars/escp6.jpg",
-    "assets/cars/escp7.jpg",
-    "assets/cars/escp8.jpg",
-    "assets/cars/escp9.jpg"
-  ],
-  "description": "2013 Ford Escape Titanium for sale. Clean and well-maintained compact SUV in White exterior. Powered by a 2.0L turbocharged 4-cylinder engine with automatic transmission and all-wheel drive. Top-of-the-line Titanium trim with leather seats, heated front seats, panoramic sunroof, navigation, and backup camera. Spacious and comfortable interior perfect for families and daily driving. Clean title. Carfax available. Financing available.",
-  "fuel": "Gas",
-  "status": "available"
-}
+    "id": 69,
+    "make": "Honda",
+    "model": "HR-V EX-L w/Navigation",
+    "year": 2016,
+    "price": 8856,
+    "mileage": 161378,
+    "color": "Silver",
+    "engine": "1.8L 4-Cylinder",
+    "transmission": "Automatic",
+    "stock": null,
+    "vin": null,
+    "carfax": true,
+    "financing": true,
+    "features": [
+      "All-Wheel Drive (AWD)",
+      "Navigation System",
+      "Bluetooth",
+      "Backup Camera",
+      "Power Windows",
+      "Power Door Locks",
+      "Keyless Entry",
+      "Cruise Control",
+      "Steering Wheel Controls",
+      "Cold A/C",
+      "Heater",
+      "Sunroof/Moonroof",
+      "Leather Seats",
+      "Heated Front Seats",
+      "Push Button Start",
+      "Sport Utility 4D",
+      "Fuel Efficient",
+      "Spacious Interior",
+      "Perfect for Daily Driving",
+      "Family Friendly"
+    ],
+    "img": "assets/cars/honda.jpg",
+    "images": [
+      "assets/cars/honda.jpg",
+      "assets/cars/honda1.jpg",
+      "assets/cars/honda2.jpg",
+      "assets/cars/honda3.jpg",
+      "assets/cars/honda4.jpg",
+      "assets/cars/honda5.jpg",
+      "assets/cars/honda6.jpg",
+      "assets/cars/honda7.jpg",
+      "assets/cars/honda8.jpg",
+      "assets/cars/honda9.jpg"
+    ],
+    "description": "2016 Honda HR-V EX-L with Navigation for sale. Stylish and reliable compact SUV in Silver exterior. Powered by a 1.8L 4-cylinder engine with automatic transmission. Fully loaded EX-L trim with navigation, leather seats, heated front seats, sunroof, and backup camera. Great fuel efficiency and spacious interior. Perfect for daily driving and family use. Clean title. Carfax available. Financing available.",
+    "fuel": "Gas",
+    "status": "available",
+    "condition": "used"
+  },
+  {
+    "id": 70,
+    "make": "Chevrolet",
+    "model": "Trax LS",
+    "year": 2016,
+    "price": 6499,
+    "mileage": 131392,
+    "color": "Blue",
+    "engine": "1.4L 4-Cylinder Turbo",
+    "transmission": "Automatic",
+    "stock": null,
+    "vin": null,
+    "carfax": true,
+    "financing": true,
+    "features": [
+      "Front-Wheel Drive (FWD)",
+      "Bluetooth",
+      "Backup Camera",
+      "Power Windows",
+      "Power Door Locks",
+      "Keyless Entry",
+      "Cruise Control",
+      "Steering Wheel Controls",
+      "Cold A/C",
+      "Heater",
+      "Compact SUV",
+      "Fuel Efficient",
+      "Reliable",
+      "Comfortable Ride",
+      "Spacious Interior",
+      "Perfect for Daily Driving",
+      "Family Friendly"
+    ],
+    "img": "assets/cars/trx.jpg",
+    "images": [
+      "assets/cars/trx1.jpg",
+      "assets/cars/trx2.jpg",
+      "assets/cars/trx3.jpg",
+      "assets/cars/trx4.jpg",
+      "assets/cars/trx5.jpg",
+      "assets/cars/trx6.jpg",
+      "assets/cars/trx7.jpg",
+      "assets/cars/trx8.jpg",
+      "assets/cars/trx9.jpg"
+    ],
+    "description": "2016 Chevrolet Trax LS for sale. Compact and reliable SUV in Blue exterior. Powered by a 1.4L turbocharged 4-cylinder engine with automatic transmission. Great fuel efficiency and easy to maneuver in the city. Comfortable interior with all the essential features for daily driving. Clean title. Carfax available. Financing available.",
+    "fuel": "Gas",
+    "status": "available",
+    "condition": "used"
+  },
+  {
+    "id": 71,
+    "make": "Hyundai",
+    "model": "Sonata",
+    "year": 2017,
+    "price": 7101,
+    "mileage": 119148,
+    "color": "Silver",
+    "engine": "2.4L 4-Cylinder",
+    "transmission": "Automatic",
+    "stock": null,
+    "vin": null,
+    "carfax": true,
+    "financing": true,
+    "features": [
+      "Front-Wheel Drive (FWD)",
+      "Bluetooth",
+      "Backup Camera",
+      "Power Windows",
+      "Power Door Locks",
+      "Keyless Entry",
+      "Cruise Control",
+      "Steering Wheel Controls",
+      "Cold A/C",
+      "Heater",
+      "Sedan",
+      "Fuel Efficient",
+      "Reliable",
+      "Comfortable Ride",
+      "Spacious Interior",
+      "Perfect for Daily Driving",
+      "Family Friendly"
+    ],
+    "img": "assets/cars/snt.jpg",
+    "images": [
+      "assets/cars/snt1.jpg",
+      "assets/cars/snt2.jpg",
+      "assets/cars/snt3.jpg",
+      "assets/cars/snt4.jpg",
+      "assets/cars/snt5.jpg",
+      "assets/cars/snt6.jpg",
+      "assets/cars/snt7.jpg",
+      "assets/cars/snt8.jpg",
+      "assets/cars/snt9.jpg"
+    ],
+    "description": "2017 Hyundai Sonata for sale. Clean and reliable mid-size sedan in Silver exterior. Powered by a 2.4L 4-cylinder engine with automatic transmission. Smooth and comfortable ride with spacious interior, perfect for daily commuting and family use. Great fuel efficiency and well-maintained condition. Clean title. Carfax available. Financing available.",
+    "fuel": "Gas",
+    "status": "available",
+    "condition": "used"
+  },
+  {
+    "id": 72,
+    "make": "Ford",
+    "model": "Mustang V6",
+    "year": 2016,
+    "price": 12400,
+    "mileage": 156000,
+    "color": "Red/Black",
+    "engine": "3.7L V6",
+    "transmission": "Automatic",
+    "stock": null,
+    "vin": null,
+    "carfax": true,
+    "financing": true,
+    "features": [
+      "Rear-Wheel Drive (RWD)",
+      "Bluetooth",
+      "Backup Camera",
+      "Power Windows",
+      "Power Door Locks",
+      "Keyless Entry",
+      "Cruise Control",
+      "Steering Wheel Controls",
+      "Cold A/C",
+      "Heater",
+      "Sport Coupe",
+      "Black Alloy Wheels",
+      "Custom Hood Stripes",
+      "LED Headlights",
+      "Performance Exhaust",
+      "Sporty Interior",
+      "Powerful V6 Engine",
+      "Perfect for Car Enthusiasts"
+    ],
+    "img": "assets/cars/mustang.jpg",
+    "images": [
+      "assets/cars/mustang1.jpg",
+      "assets/cars/mustang2.jpg",
+      "assets/cars/mustang3.jpg",
+      "assets/cars/mustang4.jpg",
+      "assets/cars/mustang5.jpg",
+      "assets/cars/mustang6.jpg",
+      "assets/cars/mustang7.jpg",
+      "assets/cars/mustang8.jpg"
+    ],
+    "description": "2016 Ford Mustang V6 for sale. Head-turning sports coupe in bold Red exterior with custom black hood stripes and black alloy wheels. Powered by a 3.7L V6 engine with automatic transmission and rear-wheel drive. Sporty and aggressive styling with LED headlights and performance-ready setup. Perfect for car enthusiasts who want style and power. Clean title. Carfax available. Financing available.",
+    "fuel": "Gas",
+    "status": "available",
+    "condition": "used"
+  },
+  {
+    "id": 73,
+    "make": "Ford",
+    "model": "Escape Titanium",
+    "year": 2013,
+    "price": 7999,
+    "mileage": 129000,
+    "color": "White",
+    "engine": "2.0L 4-Cylinder Turbo",
+    "transmission": "Automatic",
+    "stock": null,
+    "vin": null,
+    "carfax": true,
+    "financing": true,
+    "features": [
+      "All-Wheel Drive (AWD)",
+      "Navigation System",
+      "Bluetooth",
+      "Backup Camera",
+      "Power Windows",
+      "Power Door Locks",
+      "Keyless Entry",
+      "Cruise Control",
+      "Steering Wheel Controls",
+      "Cold A/C",
+      "Heater",
+      "Panoramic Sunroof",
+      "Leather Seats",
+      "Heated Front Seats",
+      "Push Button Start",
+      "MyFord Touch Infotainment",
+      "Compact SUV",
+      "Fuel Efficient",
+      "Spacious Interior",
+      "Perfect for Daily Driving",
+      "Family Friendly"
+    ],
+    "img": "assets/cars/escp.jpg",
+    "images": [
+      "assets/cars/escp1.jpg",
+      "assets/cars/escp2.jpg",
+      "assets/cars/escp3.jpg",
+      "assets/cars/escp4.jpg",
+      "assets/cars/escp5.jpg",
+      "assets/cars/escp6.jpg",
+      "assets/cars/escp7.jpg",
+      "assets/cars/escp8.jpg",
+      "assets/cars/escp9.jpg"
+    ],
+    "description": "2013 Ford Escape Titanium for sale. Clean and well-maintained compact SUV in White exterior. Powered by a 2.0L turbocharged 4-cylinder engine with automatic transmission and all-wheel drive. Top-of-the-line Titanium trim with leather seats, heated front seats, panoramic sunroof, navigation, and backup camera. Spacious and comfortable interior perfect for families and daily driving. Clean title. Carfax available. Financing available.",
+    "fuel": "Gas",
+    "status": "available",
+    "condition": "used"
+  }
 ]

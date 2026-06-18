@@ -23,13 +23,13 @@
         align-items:center;
         gap:8px;
         padding:6px 14px;
-        border:1px solid rgba(255,255,255,0.18);
+        border:1px solid var(--border);
         border-radius:999px;
         font-size:12px;
         letter-spacing:.18em;
         text-transform:uppercase;
-        color:rgba(255,255,255,0.80);
-        background:rgba(255,255,255,0.05);
+        color:var(--text-2);
+        background:var(--offwhite);
         backdrop-filter: blur(8px);
         animation: fadeUp .8s ease both;
       }
@@ -72,7 +72,7 @@
       .ca-hero p.lead{
         max-width: 640px;
         margin: 0 auto 24px;
-        color: rgba(255,255,255,0.75);
+        color: var(--text-2);
         font-size: 17px;
         line-height:1.55;
         animation: fadeUp .8s ease .16s both;
@@ -93,9 +93,9 @@
         gap:10px;
         padding: 10px 16px;
         border-radius: 999px;
-        background: rgba(255,255,255,0.04);
-        border: 1px solid rgba(255,255,255,0.10);
-        color: rgba(255,255,255,0.80);
+        background: var(--surface);
+        border: 1px solid var(--border-2);
+        color: var(--text-2);
         font-size: 13px;
         font-weight: 500;
       }
@@ -116,8 +116,8 @@
         .steps-grid{ grid-template-columns: 1fr; }
       }
       .step-card{
-        background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-        border: 1px solid rgba(255,255,255,0.12);
+        background: var(--surface);
+        border: 1px solid var(--border);
         border-radius: 18px;
         padding: 22px;
         position:relative;
@@ -168,11 +168,11 @@
         font-size: 17px;
         font-weight: 700;
         margin: 0 0 6px;
-        color: #fff;
+        color: var(--text-strong);
       }
       .step-desc{
         font-size: 14px;
-        color: rgba(255,255,255,0.65);
+        color: var(--text-2);
         line-height: 1.5;
         margin: 0;
       }
@@ -188,11 +188,11 @@
         animation: fadeUp .8s ease .3s both;
       }
       .ca-form-frame{
-        background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-        border: 1px solid rgba(255,255,255,0.14);
+        background: var(--surface);
+        border: 1px solid var(--border);
         border-radius: 24px;
         padding: 6px;
-        box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+        box-shadow: var(--shadow-card);
         position:relative;
         overflow:hidden;
       }
@@ -213,16 +213,16 @@
         align-items:center;
         justify-content:space-between;
         padding: 14px 20px;
-        background: rgba(0,0,0,0.30);
+        background: var(--offwhite);
         border-radius: 18px 18px 0 0;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
+        border-bottom: 1px solid var(--border);
         flex-wrap:wrap;
         gap: 10px;
       }
       .ca-form-bar .left{
         display:flex; align-items:center; gap:10px;
         font-size: 13px;
-        color: rgba(255,255,255,0.85);
+        color: var(--text);
         font-weight: 600;
       }
       .ca-form-bar .left .dots{
@@ -230,7 +230,7 @@
       }
       .ca-form-bar .left .dots span{
         width:9px; height:9px; border-radius:50%;
-        background: rgba(255,255,255,0.18);
+        background: var(--border-2);
       }
       .ca-form-bar .left .dots span:nth-child(1){ background:#ff5f57; }
       .ca-form-bar .left .dots span:nth-child(2){ background:#febc2e; }
@@ -240,13 +240,13 @@
         align-items:center;
         gap:6px;
         font-size: 12px;
-        color: rgba(255,255,255,0.65);
+        color: var(--muted);
       }
       .ca-form-bar .right svg{ width:14px; height:14px; color:#1ec27a; }
 
       .ca-iframe-host{
         position:relative;
-        background: #fff;
+        background: var(--surface);
         border-radius: 0 0 18px 18px;
         overflow:hidden;
         min-height: 1280px;
@@ -266,7 +266,7 @@
         align-items:center;
         justify-content:center;
         gap: 14px;
-        background: #fff;
+        background: var(--surface);
         z-index: 2;
         transition: opacity .4s ease;
       }
@@ -294,8 +294,8 @@
       }
       @media (max-width: 720px){ .help-row{ grid-template-columns: 1fr; } }
       .help-card{
-        background: rgba(255,255,255,0.04);
-        border: 1px solid rgba(255,255,255,0.10);
+        background: var(--surface);
+        border: 1px solid var(--border);
         border-radius: 16px;
         padding: 18px 20px;
         display:flex;

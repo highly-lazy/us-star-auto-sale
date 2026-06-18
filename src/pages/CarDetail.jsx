@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
 import { useCars } from "../lib/useCars.js";
-import { fuelType, isSold, toNum, carName } from "../lib/utils.js";
+import { fuelType, isSold, toNum, carName, thumbPath, onImgError } from "../lib/utils.js";
 import { useFavorite } from "../lib/favorites.js";
 import "../css/cardetail.css";
 
@@ -41,10 +41,6 @@ export default function CarDetail() {
   const go = (n) => setIdx((i) => (n + images.length) % images.length);
   const next = () => go(idx + 1);
   const prev = () => go(idx - 1);
-
-  useEffect(() => {
-    if (car) document.title = `${name} – US Star Auto Sale`;
-  }, [car, name]);
 
   useEffect(() => {
     if (!images.length) return;
@@ -104,7 +100,12 @@ export default function CarDetail() {
   ].filter((s) => s.v);
 
   return (
-    <Layout bodyClass="page-car">
+    <Layout
+      bodyClass="page-car"
+      title={name}
+      description={car.description || `${name} for sale at US Star Auto Sale in Knoxville, TN.`}
+      image={car.img}
+    >
       <main className="vdp container">
         <nav className="vdp-crumb" aria-label="Breadcrumb">
           <Link to="/">Home</Link>
@@ -141,7 +142,7 @@ export default function CarDetail() {
               <div className="vdp-thumbs">
                 {images.map((src, i) => (
                   <button key={i} className={`vdp-thumb${i === idx ? " is-active" : ""}`} type="button" aria-label={`View image ${i + 1}`} onClick={() => setIdx(i)}>
-                    <img src={src} alt={`${name} thumbnail ${i + 1}`} loading="lazy" decoding="async" />
+                    <img src={thumbPath(src)} alt={`${name} thumbnail ${i + 1}`} loading="lazy" decoding="async" />
                   </button>
                 ))}
               </div>

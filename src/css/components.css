@@ -24,26 +24,25 @@ input, textarea, select{
 }
 
 input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="date"], input[type="time"], input[type="search"], textarea, select{
-  background: rgba(5,7,10,0.28);
-  border: 1px solid var(--border);
+  background: var(--surface);
+  border: 1px solid var(--border-2);
   color: var(--text);
-  border-radius: 14px;
+  border-radius: 10px;
   padding: 12px 14px;
   outline: none;
   transition: box-shadow .18s ease, border-color .18s ease, background .18s ease;
 }
 
-/* Make native select dropdown readable on dark backgrounds (best-effort) */
-select option{ background: #0b0f19; color: #ffffff; }
+select option{ background: var(--surface); color: var(--text); }
 
 textarea{ min-height: 120px; resize: vertical; }
 
-input::placeholder, textarea::placeholder{ color: rgba(255,255,255,0.55); }
+input::placeholder, textarea::placeholder{ color: var(--muted); }
 
 input:focus, textarea:focus, select:focus{
-  box-shadow: 0 0 0 3px var(--focus);
-  border-color: rgba(255,255,255,0.20);
-  background: rgba(5,7,10,0.38);
+  box-shadow: 0 0 0 3px rgba(29,111,224,0.18);
+  border-color: var(--blue);
+  background: var(--surface);
 }
 
 /* Favorites (heart) */
@@ -109,15 +108,16 @@ input:focus, textarea:focus, select:focus{
   align-items:center;
   justify-content:center;
   gap:10px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.06);
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-2);
+  background: var(--surface);
   color: var(--text-strong);
+  font-weight: 600;
   box-shadow: var(--shadow-soft);
-  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+  transition: transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
 }
-.icon-btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,0.10); }
+.icon-btn:hover{ transform: translateY(-1px); background: var(--blue-3); border-color: var(--blue); color: var(--blue-2); }
 .icon-btn svg{ width: 16px; height:16px; opacity:.92; }
 .icon-btn--square{ border-radius: 14px; }
 
@@ -180,26 +180,35 @@ html[data-theme="light"] .cards-row::-webkit-scrollbar-thumb{ background: rgba(1
 }
 
 .btn-primary{
-  background: linear-gradient(180deg, var(--red), #8f0b16);
+  background: linear-gradient(180deg, var(--blue), var(--blue-2));
   color: var(--white);
-  box-shadow: 0 14px 30px rgba(193,18,31,0.22);
+  box-shadow: 0 10px 24px rgba(29,111,224,0.28);
 }
 
 .btn-primary:hover{
   transform: translateY(-2px);
-  box-shadow: 0 20px 40px rgba(193,18,31,0.30);
+  box-shadow: 0 16px 34px rgba(29,111,224,0.38);
 }
 
+/* Red CTA variant (call / urgent) */
+.btn-red{
+  background: linear-gradient(180deg, var(--red-2), var(--red));
+  color:#fff;
+  box-shadow: 0 10px 24px rgba(193,18,31,0.26);
+}
+.btn-red:hover{ transform: translateY(-2px); box-shadow: 0 16px 34px rgba(193,18,31,0.34); }
+
 .btn-ghost{
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(255,255,255,0.14);
-  color: var(--white);
+  background: var(--surface);
+  border-color: var(--border-2);
+  color: var(--text-strong);
 }
 
 .btn-ghost:hover{
   transform: translateY(-2px);
-  background: rgba(255,255,255,0.10);
-  border-color: rgba(255,255,255,0.22);
+  background: var(--blue-3);
+  border-color: var(--blue);
+  color: var(--blue-2);
 }
 
 .btn-small{ padding: 10px 14px; font-size: 13px; }
@@ -229,20 +238,20 @@ html[data-theme="light"] .cards-row::-webkit-scrollbar-thumb{ background: rgba(1
   margin-bottom: 70px;
 }
 
-.cars-grid > .car-card{
-  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+.car-card{
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  box-shadow: var(--shadow-card);
   transform: translateZ(0);
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 
 .car-card:hover{
   transform: translateY(-6px);
-  box-shadow: var(--shadow);
-  border-color: rgba(255,255,255,0.20);
+  box-shadow: var(--shadow-strong);
+  border-color: var(--border-2);
 }
 
 /* Only the main vehicle photo should use the fixed card image sizing.
@@ -269,16 +278,17 @@ html[data-theme="light"] .cards-row::-webkit-scrollbar-thumb{ background: rgba(1
 .car-info h3{
   font-family: var(--font-semibold);
   font-size: 16px;
+  font-weight: 700;
   line-height: 1.25;
   margin-bottom: 10px;
-  color: var(--white);
+  color: var(--text-strong);
 }
 
 .car-info p{
   font-family: var(--font-regular);
   font-size: 13px;
   margin-bottom: 10px;
-  color: rgba(255,255,255,0.72);
+  color: var(--text-2);
 }
 
 .car-buttons {
@@ -310,7 +320,7 @@ html[data-theme="light"] .cards-row::-webkit-scrollbar-thumb{ background: rgba(1
   font-family: var(--font-regular);
   font-size: 15px;
   margin: 4px 0;
-  color: var(--navy);
+  color: var(--text-strong);
 }
 
 .car-buttons {
@@ -474,12 +484,13 @@ html[data-theme="light"] .cards-row::-webkit-scrollbar-thumb{ background: rgba(1
 
 .car-price{
   font-family: var(--font-bold);
-  color: var(--white);
-  font-size: 16px;
+  color: var(--price);
+  font-weight: 800;
+  font-size: 18px;
 }
 
 .car-price span{
-  color: rgba(255,255,255,0.72);
+  color: var(--muted);
   font-family: var(--font-medium);
   font-size: 12px;
   display:block;
@@ -497,9 +508,9 @@ html[data-theme="light"] .cards-row::-webkit-scrollbar-thumb{ background: rgba(1
   font-size: 12px;
   padding: 8px 10px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.14);
-  color: rgba(255,255,255,0.82);
+  background: var(--offwhite);
+  border: 1px solid var(--border);
+  color: var(--text-2);
 }
 
 .car-actions{
@@ -514,9 +525,9 @@ html[data-theme="light"] .cards-row::-webkit-scrollbar-thumb{ background: rgba(1
   font-size: 12px;
   padding: 8px 10px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.14);
-  color: rgba(255,255,255,0.82);
+  background: var(--offwhite);
+  border: 1px solid var(--border);
+  color: var(--text-2);
 }
 
 .car-media{ display:block; }

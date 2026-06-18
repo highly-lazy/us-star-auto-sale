@@ -18,7 +18,7 @@ export default function Contact() {
   };
 
   return (
-    <Layout bodyClass="page-contact" bodyStyle={{ "--page-bg-image": "url('/assets/images/fon1.png')" }}>
+    <Layout bodyClass="page-contact" bodyStyle={{ "--page-bg-image": "url('/assets/images/fon1.png')" }} title="Contact Us" description="Contact US Star Auto Sale in Knoxville, TN. Call, text, email, or send us a message — we usually reply in under an hour.">
       <main className="contact-page">
         <section className="contact-hero">
           <div className="container">

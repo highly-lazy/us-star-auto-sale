@@ -46,7 +46,7 @@ export default function Financing() {
   };
 
   return (
-    <Layout bodyClass="page-financing">
+    <Layout bodyClass="page-financing has-hero" title="Get Pre‑Approved Online" description="Apply for auto financing online at US Star Auto Sale. Fast response, all credit welcome — good, bad, or no credit.">
       <section className="hero hero--compact">
         <div className="wrapper">
           <div>
