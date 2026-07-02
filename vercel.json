@@ -1,5 +1,5 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/__maintenance_404__.html" }
+  "routes": [
+    { "src": "/(.*)", "status": 404 }
   ]
 }
