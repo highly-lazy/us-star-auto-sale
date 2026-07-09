@@ -1840,7 +1840,7 @@
     ],
     "description": "2010 Toyota Prius V Hybrid Hatchback 4D for sale. Very fuel-efficient and reliable hybrid that runs and drives great. Equipped with a 1.8L 4-cylinder hybrid engine, automatic CVT transmission, and front-wheel drive. White exterior with tan interior. Perfect for saving gas and daily commuting. Carfax available and financing available.",
     "fuel": "Hybrid",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -1956,7 +1956,7 @@
     ],
     "description": "2015 Kia Sportage LX Sport Utility 4D for sale. Clean and reliable SUV that runs and drives great. Equipped with a 2.4L 4-cylinder gasoline engine, automatic transmission, and front-wheel drive. Silver exterior with gray interior. Easy to drive, comfortable, and perfect for everyday use. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -2287,7 +2287,7 @@
     ],
     "description": "Chrysler Voyager LXi Minivan 4D for sale. Spacious and comfortable family minivan with smooth driving experience and large interior space. Ideal for family trips and daily use. Clean title. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "new"
   },
   {
@@ -2340,7 +2340,7 @@
     ],
     "description": "2017 Hyundai Elantra SE Sedan 4D for sale. Clean and fuel-efficient sedan with smooth driving experience and modern features. Equipped with a 2.0L 4-cylinder engine, automatic transmission, and front-wheel drive. Red exterior with comfortable interior. Ideal for daily commuting. Clean title. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -2738,7 +2738,7 @@
     ],
     "description": "2016 BMW 5 Series 528i for sale. Luxury midsize sedan with strong turbo engine and smooth driving performance. Equipped with a 2.0L turbocharged 4-cylinder engine, automatic transmission, and rear-wheel drive. Black exterior with premium interior features. Ideal for comfort and executive driving. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -2840,7 +2840,7 @@
     ],
     "description": "2016 Nissan Altima 2.5 SR Sedan for sale. Sporty and fuel-efficient midsize sedan with smooth CVT transmission and reliable performance. Equipped with a 2.5L 4-cylinder engine, automatic transmission, and front-wheel drive. Gray exterior with comfortable interior. Ideal for daily commuting with sporty feel. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -3022,7 +3022,7 @@
     ],
     "description": "2015 Chevrolet Equinox for sale. Silver exterior. 122,288 miles. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -3111,7 +3111,7 @@
     ],
     "description": "2016 Honda HR-V EX-L with Navigation for sale. Stylish and reliable compact SUV in Silver exterior. Powered by a 1.8L 4-cylinder engine with automatic transmission. Fully loaded EX-L trim with navigation, leather seats, heated front seats, sunroof, and backup camera. Great fuel efficiency and spacious interior. Perfect for daily driving and family use. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -3315,7 +3315,7 @@
     ],
     "description": "2013 Ford Escape Titanium for sale. Clean and well-maintained compact SUV in White exterior. Powered by a 2.0L turbocharged 4-cylinder engine with automatic transmission and all-wheel drive. Top-of-the-line Titanium trim with leather seats, heated front seats, panoramic sunroof, navigation, and backup camera. Spacious and comfortable interior perfect for families and daily driving. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   }
 ]

@@ -24,7 +24,9 @@ export default function Home() {
   useReveal([cars.length, lang]);
 
   const featured = useMemo(() => {
-    const sorted = [...cars].sort((a, b) => Number(b.id) - Number(a.id));
+    const sorted = [...cars]
+      .filter((c) => (c.status || "available") !== "sold")
+      .sort((a, b) => Number(b.id) - Number(a.id));
     const nq = normalize(q);
     const filtered = !nq ? sorted : sorted.filter((c) => carText(c).includes(nq));
     return filtered.slice(0, 8);
