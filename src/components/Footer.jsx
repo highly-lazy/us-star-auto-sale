@@ -58,8 +58,8 @@ export default function Footer() {
           <h5>{t("nav.contact")}</h5>
           <p><strong>{t("footer.hours")}:</strong><br />Mon–Sat · 9:00–18:00</p>
           <p><strong>{t("footer.address")}:</strong><br />7665 Maynardville Pike<br />Knoxville, TN 37938</p>
-          <p><a href="tel:+18653773230">📞 865-377-3230</a></p>
-          <p><a href="mailto:Usstar@autoussales.com">✉ Usstar@autoussales.com</a></p>
+          <p><a href="tel:+18659247326">📞 865-924-7326</a></p>
+          <p><a href="mailto:sales@autoussales.com">✉ sales@autoussales.com</a></p>
         </div>
       </div>
 

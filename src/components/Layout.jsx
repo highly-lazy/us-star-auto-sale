@@ -64,7 +64,7 @@ export default function Layout({ bodyClass = "", bodyStyle, title, description, 
       <Header />
       {children}
       <Footer />
-      <a className="floating-textus" href="sms:+18653773230" aria-label="Text US Star Auto Sale">
+      <a className="floating-textus" href="sms:+18659247326" aria-label="Text US Star Auto Sale">
         TEXT US
       </a>
     </>

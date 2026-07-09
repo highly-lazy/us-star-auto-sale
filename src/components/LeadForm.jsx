@@ -19,7 +19,7 @@ export default function LeadForm() {
       setSent(true);
       form.reset();
     } else {
-      alert("Sorry, something went wrong. Please call us at 865-377-3230.");
+      alert("Sorry, something went wrong. Please call us at 865-924-7326.");
     }
   };
 

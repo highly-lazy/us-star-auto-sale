@@ -55,7 +55,7 @@ export default function Financing() {
             <p className="hero-subtext">
               Fill out the application below and we’ll confirm quickly. Prefer to use our secure credit portal?{" "}
               <a href="https://startyourcreditapproval.com/credit-application/DCR13" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>Start your credit application</a>.
-              Prefer to call? <a href="tel:+18653773230" style={{ textDecoration: "underline" }}>(865) 377‑3230</a>
+              Prefer to call? <a href="tel:+18659247326" style={{ textDecoration: "underline" }}>(865) 924‑7326</a>
             </p>
           </div>
           <div className="hero-panel">
@@ -255,7 +255,7 @@ export default function Financing() {
 
               <div className="fin-actions">
                 <button className="btn btn-primary" type="submit" disabled={sending}>{sending ? "Submitting…" : "Submit"}</button>
-                <a className="btn btn-ghost" href="tel:+18653773230">Call Instead</a>
+                <a className="btn btn-ghost" href="tel:+18659247326">Call Instead</a>
               </div>
             </div>
 

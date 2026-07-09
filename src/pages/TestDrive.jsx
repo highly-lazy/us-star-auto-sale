@@ -26,7 +26,7 @@ export default function TestDrive() {
           <h1 className="hero-title">Feel it before you buy it.</h1>
           <p className="hero-subtext">
             Pick a date and time — we’ll confirm fast. Prefer to call?{" "}
-            <a href="tel:+18653773230" style={{ textDecoration: "underline" }}>(865) 377‑3230</a>.
+            <a href="tel:+18659247326" style={{ textDecoration: "underline" }}>(865) 924‑7326</a>.
           </p>
         </div>
       </section>

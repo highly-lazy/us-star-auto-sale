@@ -77,8 +77,8 @@ export default function Header() {
 
             <div className="topbar-right">
               <Link className="top-link" to="/financing">{t("top.financing")}</Link>
-              <a className="top-link" href="tel:+18653773230">865-377-3230</a>
-              <a className="top-link pulse" href="sms:+18653773230">{t("top.text")}</a>
+              <a className="top-link" href="tel:+18659247326">865-924-7326</a>
+              <a className="top-link pulse" href="sms:+18659247326">{t("top.text")}</a>
               <LangToggle />
             </div>
           </div>
@@ -172,11 +172,11 @@ export default function Header() {
 
         <div className="sidebar-cta">
           <Link className="btn btn-primary" to="/financing" onClick={close}>{t("cta.preApproved")}</Link>
-          <a className="btn btn-red" href="tel:+18653773230">{t("cta.callNow")}</a>
+          <a className="btn btn-red" href="tel:+18659247326">{t("cta.callNow")}</a>
         </div>
         <div className="sidebar-foot">
           <LangToggle className="lang-toggle--block" />
-          <a className="sb-contact" href="tel:+18653773230">📞 865-377-3230</a>
+          <a className="sb-contact" href="tel:+18659247326">📞 865-924-7326</a>
           <span className="sb-contact muted">Mon–Sat · 9:00–18:00</span>
         </div>
       </aside>
