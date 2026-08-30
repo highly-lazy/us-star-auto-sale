@@ -497,7 +497,7 @@ a { color: inherit; }
 /* Card action row: CARFAX · Financing · Test Drive */
 .car-actions {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 6px;
   margin-top: 12px;
 }
@@ -523,6 +523,7 @@ a { color: inherit; }
 .car-action img { height: 15px; width: auto; }
 .car-action:hover { border-color: var(--navy); color: var(--navy); background: var(--fillsoft); }
 .car-action--carfax:hover { border-color: var(--red); color: var(--red); }
+.car-action--cargurus:hover { border-color: var(--navy); color: var(--navy); }
 
 .car-cta { margin-top: 10px; display: grid; grid-template-columns: 1fr; gap: 8px; }
 .car-cta .btn { width: 100%; padding: 12px; font-size: 12px; }
@@ -553,48 +554,52 @@ a { color: inherit; }
 .finband__points li { display: flex; align-items: center; gap: 10px; color: rgba(255, 255, 255, 0.86); font-size: 15px; }
 .finband__points svg { width: 18px; height: 18px; color: var(--red); flex: 0 0 auto; }
 
-/* ---------- 10. Reviews ---------- */
+/* ---------- 10. Reviews — self-scrolling Google strip ---------- */
 
-.reviews { background: var(--white); }
-.reviews__head { text-align: center; max-width: 900px; margin: 0 auto 42px; }
-.reviews__head h2 { font-size: clamp(26px, 3.6vw, 46px); font-weight: 800; margin: 0 0 12px; }
+.reviews { background: var(--paper); border-block: 1px solid var(--line); overflow: hidden; }
+.reviews__head { text-align: center; max-width: 820px; margin: 0 auto 38px; }
+.reviews__head h2 { font-size: clamp(26px, 3.4vw, 44px); font-weight: 800; margin: 0 0 14px; }
 .reviews__head p { color: var(--text-2); font-size: 16.5px; margin: 0; }
 
-.reviews__rail { position: relative; display: flex; align-items: center; gap: 14px; }
-
-.reviews__nav {
-  flex: 0 0 auto;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--line);
+.reviews__summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
   background: #fff;
-  color: var(--navy);
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 22px;
+  text-decoration: none;
+  box-shadow: var(--shadow-soft);
 }
-.reviews__nav:hover { border-color: var(--navy); background: var(--navy); color: #fff; }
-.reviews__nav:disabled { opacity: 0.3; cursor: default; }
-.reviews__nav svg { width: 18px; height: 18px; }
+.reviews__score { font-size: 22px; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; }
+.reviews__count { font-size: 13px; color: var(--muted); }
 
-.reviews__track {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(300px, 1fr);
+.stars { color: var(--star); letter-spacing: 0.08em; font-size: 15px; }
+.band--dark .stars, .hero .stars { color: var(--star-on-dark); }
+
+/* The strip: one row, duplicated, translated forever. */
+.rv-strip { position: relative; width: 100%; overflow: hidden; padding: 6px 0 4px; }
+.rv-track {
+  display: flex;
   gap: 18px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  padding: 6px 2px 10px;
+  width: max-content;
+  padding-inline: 18px;
+  animation: rvScroll calc(var(--rv-count, 8) * 6s) linear infinite;
 }
-.reviews__track::-webkit-scrollbar { display: none; }
+.rv-strip:hover .rv-track,
+.rv-strip:focus-within .rv-track { animation-play-state: paused; }
+@keyframes rvScroll {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
 
-.review-card {
+.rv-card {
   position: relative;
-  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: min(360px, 82vw);
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -602,44 +607,69 @@ a { color: inherit; }
   display: flex;
   flex-direction: column;
   gap: 14px;
-  min-height: 220px;
+  box-shadow: var(--shadow-soft);
 }
 /* Navy corner brackets, as on the reference layout */
-.review-card::before,
-.review-card::after {
+.rv-card::before, .rv-card::after {
   content: "";
   position: absolute;
-  width: 54px;
-  height: 54px;
+  width: 52px;
+  height: 52px;
   border: 2px solid var(--navy);
   pointer-events: none;
 }
-.review-card::before { top: -1px; right: -1px; border-left: 0; border-bottom: 0; border-radius: 0 var(--radius) 0 0; }
-.review-card::after  { bottom: -1px; left: -1px; border-right: 0; border-top: 0; border-radius: 0 0 0 var(--radius); }
+.rv-card::before { top: -1px; right: -1px; border-left: 0; border-bottom: 0; border-radius: 0 var(--radius) 0 0; }
+.rv-card::after  { bottom: -1px; left: -1px; border-right: 0; border-top: 0; border-radius: 0 0 0 var(--radius); }
 
-.review-card__top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.review-card__name { font-weight: 800; font-size: 19px; color: var(--navy-2); letter-spacing: -0.02em; }
-.review-card__stars { color: var(--star); font-size: 15px; letter-spacing: 0.08em; }
-.review-card__text {
+.rv-card__top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.rv-card__name { font-weight: 800; font-size: 19px; color: var(--navy-2); letter-spacing: -0.02em; }
+.rv-card__text {
+  margin: 0;
+  flex: 1;
   color: var(--text-2);
   font-size: 15px;
   line-height: 1.62;
-  margin: 0;
-  flex: 1;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.review-card__foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.review-card__date { background: var(--paper); color: var(--muted); font-size: 12.5px; padding: 5px 12px; border-radius: var(--radius-sm); }
+.rv-card__foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.rv-card__date, .rv-card__src {
+  background: var(--paper);
+  color: var(--muted);
+  font-size: 12.5px;
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+}
 
-.gmark { font-weight: 700; font-size: 22px; letter-spacing: -0.04em; font-family: var(--font-display); }
+/* Soft edges so cards enter and leave instead of getting cut off */
+.rv-fade { position: absolute; top: 0; bottom: 0; width: clamp(40px, 8vw, 130px); pointer-events: none; z-index: 2; }
+.rv-fade--l { left: 0; background: linear-gradient(90deg, var(--paper), transparent); }
+.rv-fade--r { right: 0; background: linear-gradient(270deg, var(--paper), transparent); }
+
+.rv-empty {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 34px 28px;
+  box-shadow: var(--shadow-soft);
+}
+.rv-empty p { color: var(--text-2); font-size: 16px; line-height: 1.6; margin: 14px 0 22px; }
+.rv-empty__cta { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+.gmark { font-weight: 700; letter-spacing: -0.04em; font-family: var(--font-display); line-height: 1; }
 .gmark i { font-style: normal; }
 .gmark .g1 { color: #4285f4; } .gmark .g2 { color: #ea4335; } .gmark .g3 { color: #fbbc05; }
 .gmark .g4 { color: #4285f4; } .gmark .g5 { color: #34a853; } .gmark .g6 { color: #ea4335; }
 
-.reviews__cta { display: flex; justify-content: center; gap: 12px; margin-top: 34px; flex-wrap: wrap; }
+@media (prefers-reduced-motion: reduce) {
+  .rv-track { animation: none; }
+  .rv-strip { overflow-x: auto; }
+}
 
 /* ---------- 11. Services ---------- */
 
@@ -817,7 +847,7 @@ input:focus, select:focus, textarea:focus {
 @media (max-width: 640px) {
   .cards-row { grid-template-columns: 1fr !important; }
   .services-grid { grid-template-columns: 1fr; }
-  .car-actions { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .car-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -942,8 +972,9 @@ input:focus, select:focus, textarea:focus {
 .hero__slide {
   position: absolute;
   inset: 0;
+  background-image: url("/assets/images/hero-main.webp");
   background-size: cover;
-  background-position: 62% 55%;
+  background-position: 64% 50%;
   opacity: 0;
   transform: scale(1.05);
   transition: opacity 2s ease;
@@ -1194,7 +1225,7 @@ input:focus, select:focus, textarea:focus {
    =================================================================== */
 
 .reveal { transform: translateY(22px); }
-.car-card, .browse-tile, .service-card, .review-card { will-change: transform; }
+.car-card, .browse-tile, .service-card { will-change: transform; }
 
 .btn { position: relative; overflow: hidden; }
 .btn-primary::after {
@@ -1264,6 +1295,7 @@ img, svg, video, iframe { max-width: 100%; }
     background:
       linear-gradient(180deg, rgba(6, 23, 43, 0.88) 0%, rgba(6, 23, 43, 0.74) 45%, var(--navy-2) 100%);
   }
+  .hero__slide { background-image: url("/assets/images/hero-main@1400.webp"); background-position: 70% 46%; }
   .hero__glow--a { inset: auto -30% -40% auto; width: min(560px, 90vw); }
   .hero__glow--b { inset: -18% auto auto 20%; width: min(460px, 80vw); }
   .hero__grid { background-size: 52px 52px; }
@@ -1280,7 +1312,7 @@ img, svg, video, iframe { max-width: 100%; }
   .cards-row, .inventory-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
   .section-head { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 26px; }
   .reviews__head { margin-bottom: 30px; }
-  .reviews__track { grid-auto-columns: minmax(276px, 1fr); }
+  .rv-card { width: min(320px, 84vw); }
   .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 28px; }
 }
 
@@ -1325,12 +1357,11 @@ img, svg, video, iframe { max-width: 100%; }
   .adv-search--bar .adv-grid, .adv-grid { grid-template-columns: 1fr; }
   .searchbar__card { margin-top: -22px; padding: 16px; }
 
-  .reviews__rail { gap: 8px; }
-  .reviews__nav { width: 38px; height: 38px; }
-  .reviews__track { grid-auto-columns: minmax(238px, 1fr); }
-  .review-card { padding: 20px; min-height: 0; }
-  .review-card__name { font-size: 17px; }
-  .review-card::before, .review-card::after { width: 38px; height: 38px; }
+  .rv-track { gap: 12px; padding-inline: 12px; }
+  .rv-card { width: min(286px, 84vw); padding: 20px; }
+  .rv-card__name { font-size: 17px; }
+  .rv-card__text { font-size: 14.5px; -webkit-line-clamp: 5; }
+  .rv-card::before, .rv-card::after { width: 38px; height: 38px; }
 
   .faq__q button { padding: 16px 0; gap: 14px; }
   .faq__a { padding-right: 30px; }
@@ -1369,7 +1400,7 @@ img, svg, video, iframe { max-width: 100%; }
   .car-price { font-size: 18px; }
   .brand-name { font-size: 16px; }
   .brand-tag { font-size: 10px; letter-spacing: 0.1em; }
-  .reviews__track { grid-auto-columns: minmax(216px, 1fr); }
+  .rv-card { width: min(258px, 86vw); }
 }
 
 /* ---------- Landscape phones: don't let a short viewport trap the hero ---------- */

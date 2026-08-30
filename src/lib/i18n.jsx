@@ -28,7 +28,6 @@ const STRINGS = {
     // hero
     "hero.kicker": "Premium Used Cars • Knoxville, TN",
     "hero.title": "A better way to buy your next car.",
-    "hero.subtext": "Shop our curated inventory, schedule a test drive, and get pre‑approved — fast.",
     "hero.badge.quality": "Quality‑Inspected Vehicles",
     "hero.badge.ship": "Get quote to ship your vehicle",
     "hero.badge.carfax": "CARFAX Available",
@@ -145,7 +144,7 @@ const STRINGS = {
     "reviews.eyebrow": "What customers say",
     "reviews.title": "Customer Reviews",
     "reviews.readAll": "Read all reviews",
-    "reviews.fallback": "Our customers leave their reviews on CARFAX and CarGurus — read what they say about buying from US Star Auto Sale.",
+    "reviews.fallback": "Our customers leave their reviews on Google, CARFAX and CarGurus. Read what they say about buying from US Star Auto Sale — or add yours.",
 
     // about
     "about.eyebrow": "About us",
@@ -226,6 +225,9 @@ const STRINGS = {
     "faq.ship.a": "Yes. We work with buyers across the United States and can arrange shipping to your door. Call or text us with the listing you want and your ZIP code and we'll quote the delivery cost.",
     "faq.apply.q": "Can I apply for financing before I visit the lot?",
     "faq.apply.a": "Yes — that's the fastest way to buy. The online application takes about five minutes and most applicants hear back the same business day, so you can arrive knowing your budget and terms.",
+
+    "reviews.basedOn": "Based on {n} Google reviews",
+    "reviews.write": "Leave us a review",
   },
   es: {
     "top.financing": "Solicitar Financiamiento",
@@ -249,7 +251,6 @@ const STRINGS = {
 
     "hero.kicker": "Autos Usados Premium • Knoxville, TN",
     "hero.title": "Una mejor forma de comprar tu próximo auto.",
-    "hero.subtext": "Explora nuestro inventario, agenda una prueba de manejo y obtén pre‑aprobación — rápido.",
     "hero.badge.quality": "Vehículos Inspeccionados",
     "hero.badge.ship": "Cotiza el envío de tu vehículo",
     "hero.badge.carfax": "CARFAX Disponible",
@@ -355,7 +356,7 @@ const STRINGS = {
     "reviews.eyebrow": "Lo que dicen los clientes",
     "reviews.title": "Opiniones de Clientes",
     "reviews.readAll": "Ver todas las opiniones",
-    "reviews.fallback": "Nuestros clientes dejan sus opiniones en CARFAX y CarGurus — lee lo que dicen sobre comprar en US Star Auto Sale.",
+    "reviews.fallback": "Nuestros clientes dejan sus opiniones en Google, CARFAX y CarGurus. Lee lo que dicen sobre comprar en US Star Auto Sale — o deja la tuya.",
 
     "about.eyebrow": "Sobre nosotros",
     "about.stat.inStock": "Vehículos en Inventario",
@@ -427,6 +428,9 @@ const STRINGS = {
     "faq.ship.a": "Sí. Trabajamos con compradores en todo Estados Unidos y podemos coordinar el envío a tu puerta. Llámanos o mándanos un mensaje con la unidad y tu código postal y te cotizamos la entrega.",
     "faq.apply.q": "¿Puedo aplicar al financiamiento antes de visitarlos?",
     "faq.apply.a": "Sí — es la forma más rápida de comprar. La solicitud en línea toma unos cinco minutos y la mayoría recibe respuesta el mismo día hábil, así que llegas sabiendo tu presupuesto y tus términos.",
+
+    "reviews.basedOn": "Basado en {n} opiniones de Google",
+    "reviews.write": "Déjanos una opinión",
   },
 };
 

@@ -3,6 +3,7 @@ import { fuelType, toNum, carName, onImgError, isSold } from "../lib/utils.js";
 import { useFavorite } from "../lib/favorites.js";
 
 const CARFAX_DEALER = "https://www.carfax.com/Reviews-US-Star-Auto-Sales-Knoxville-TN_RJR0DUB8CK";
+const CARGURUS_DEALER = "https://www.cargurus.com/Cars/m-US-Star-Auto-Group-LLC-sp463559";
 
 // A VIN gives a real per-vehicle CARFAX page; without one we fall back to the
 // dealer's CARFAX profile.
@@ -76,6 +77,16 @@ export default function CarCardClassic({ car, variant = "home", fallbackBadge = 
           >
             <Icon d="M12 3 4.5 6v5.4c0 4.3 3.1 8.3 7.5 9.6 4.4-1.3 7.5-5.3 7.5-9.6V6L12 3Z" />
             CARFAX
+          </a>
+          <a
+            className="car-action car-action--cargurus"
+            href={CARGURUS_DEALER}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="See our listings on CarGurus"
+          >
+            <Icon d="M4 17h16M6.5 17V10a2 2 0 0 1 .3-1l1.4-2.2a2 2 0 0 1 1.7-.9h4.2a2 2 0 0 1 1.7.9L17.2 9c.2.3.3.7.3 1v7M12 6.9V3M9 3h6" />
+            CarGurus
           </a>
           <Link className="car-action" to={`/financing?car=${nameParam}`} title="Get pre-approved on this vehicle">
             <Icon d="M3 10h18M6 15h4M5 6h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" />

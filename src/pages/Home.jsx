@@ -52,6 +52,8 @@ export default function Home() {
         </div>
       </section>
 
+      <Reviews />
+
       <BrandStrip cars={cars} />
 
       <BrowseTiles cars={cars} />
@@ -100,8 +102,6 @@ export default function Home() {
       </section>
 
       <FinancingBand />
-
-      <Reviews />
 
       {/* ---------- About ---------- */}
       <section className="about-home reveal">

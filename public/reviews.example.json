@@ -1,16 +1,13 @@
-[
-  {
-    "name": "Izreon Rivera",
-    "rating": 5,
-    "date": "10.12.2025",
-    "source": "Google",
-    "text": "Paste the real review text here. Copy each review from your Google Business profile exactly as the customer wrote it."
-  },
-  {
-    "name": "Haider Khan",
-    "rating": 5,
-    "date": "04.02.2026",
-    "source": "Google",
-    "text": "Second review. `source` can be \"Google\", \"CARFAX\" or \"CarGurus\" — Google reviews show the Google mark on the card."
-  }
-]
+{
+  "rating": 4.9,
+  "count": 63,
+  "reviews": [
+    {
+      "name": "Full name as it appears on Google",
+      "rating": 5,
+      "date": "04.02.2026",
+      "source": "Google",
+      "text": "Paste the review exactly as the customer wrote it. Do not write these yourself — US law (FTC 16 CFR Part 465) treats invented reviews as deceptive advertising."
+    }
+  ]
+}

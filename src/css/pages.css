@@ -29,7 +29,7 @@
     radial-gradient(1100px 600px at 18% 0%, rgba(214,40,40, 0.35), transparent 60%),
     radial-gradient(900px 500px at 90% 10%, var(--fillsoft), transparent 60%),
     linear-gradient(180deg, rgba(5, 7, 10, 0.35), rgba(5, 7, 10, 0.95)),
-    var(--hero-image, url("/assets/images/hero-1.webp"));
+    var(--hero-image, url("/assets/images/hero-main.webp"));
   background-size: cover;
   background-position: center;
   filter: saturate(1.05) contrast(1.05);

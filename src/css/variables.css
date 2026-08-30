@@ -19,7 +19,8 @@
   --paper-2: #eaeef4;
   --line:    #e2e8f0;
 
-  --star:    #f5a524;   /* review stars only */
+  --star:    #c2740a;   /* review stars — 3.35:1 on --paper, 3.6:1 on white */
+  --star-on-dark: #f5a524;
   --green:   #16a34a;   /* "available" / success only */
 
   /* ---- Tonal tokens -------------------------------------------------

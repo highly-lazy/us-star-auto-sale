@@ -1,31 +1,9 @@
-import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import HeroRatings from "./HeroRatings.jsx";
 import { useLang } from "../lib/i18n.jsx";
 
-// Background plates. Both are near-black studio frames (97% of each is under
-// 6% luminance), so they are composited with `screen` onto the navy base —
-// only their highlights come through and the type stays readable without a
-// heavy dark veil sitting on top of a daylight snapshot.
-const SLIDES = [
-  "/assets/images/hero-1.webp",
-  "/assets/images/hero-2.webp",
-];
-
-const INTERVAL = 6500;
-
 export default function Hero({ count }) {
   const { t } = useLang();
-  const [active, setActive] = useState(0);
-  const reduced = useRef(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    reduced.current = mq.matches;
-    if (mq.matches || SLIDES.length < 2) return;
-    const id = setInterval(() => setActive((i) => (i + 1) % SLIDES.length), INTERVAL);
-    return () => clearInterval(id);
-  }, []);
 
   const stats = [
     { v: count ? String(count) : "—", k: t("hero.stat.inStock") },
@@ -35,14 +13,11 @@ export default function Hero({ count }) {
 
   return (
     <section className="hero hero--v2">
+      {/* One plate: a near-black wide frame whose left third is empty, so the
+          headline sits on clean darkness. The image is set in CSS so the
+          smaller file can be swapped in on phones. */}
       <div className="hero__media" aria-hidden="true">
-        {SLIDES.map((src, i) => (
-          <div
-            key={src}
-            className={`hero__slide${i === active ? " is-on" : ""}`}
-            style={{ backgroundImage: `url('${src}')` }}
-          />
-        ))}
+        <div className="hero__slide is-on" />
       </div>
       <div className="hero__veil" aria-hidden="true" />
       <div className="hero__glow hero__glow--a" aria-hidden="true" />
