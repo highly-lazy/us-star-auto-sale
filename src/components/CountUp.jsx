@@ -8,7 +8,9 @@ export default function CountUp({ end = 50, suffix = "", duration = 1400 }) {
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || !end) return;
+    // `end` arrives after cars.json loads — re-arm so the count isn't stuck at 0.
+    done.current = false;
     const io = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !done.current) {
@@ -26,7 +28,13 @@ export default function CountUp({ end = 50, suffix = "", duration = 1400 }) {
       { threshold: 0.4 },
     );
     io.observe(el);
-    return () => io.disconnect();
+    // Safety net: if the observer never fires (element off-screen in a
+    // print/screenshot context, IO unsupported), show the real number anyway.
+    const snap = setTimeout(() => setVal((v) => (v === 0 ? end : v)), duration + 900);
+    return () => {
+      io.disconnect();
+      clearTimeout(snap);
+    };
   }, [end, duration]);
 
   return <span ref={ref}>{val}{suffix}</span>;

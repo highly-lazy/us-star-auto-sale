@@ -60,7 +60,7 @@ export default function Financing() {
           </div>
           <div className="hero-panel">
             <div className="trust-row">
-              <span className="trust-badge">✅ Secure</span>
+              <span className="trust-badge">Secure</span>
               <span className="trust-badge">⚡ Fast Response</span>
               <span className="trust-badge">🏁 All Credit Welcome</span>
             </div>

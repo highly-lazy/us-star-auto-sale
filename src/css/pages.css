@@ -26,10 +26,10 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(1100px 600px at 18% 0%, rgba(193, 18, 31, 0.35), transparent 60%),
-    radial-gradient(900px 500px at 90% 10%, rgba(255, 255, 255, 0.14), transparent 60%),
+    radial-gradient(1100px 600px at 18% 0%, rgba(214,40,40, 0.35), transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, var(--fillsoft), transparent 60%),
     linear-gradient(180deg, rgba(5, 7, 10, 0.35), rgba(5, 7, 10, 0.95)),
-    var(--hero-image, url("/assets/images/elantra12.webp"));
+    var(--hero-image, url("/assets/images/hero-1.webp"));
   background-size: cover;
   background-position: center;
   filter: saturate(1.05) contrast(1.05);
@@ -61,7 +61,7 @@
   font-family: var(--font-semibold);
   letter-spacing: .8px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--tone-2);
   margin-bottom: 14px;
 }
 
@@ -75,7 +75,7 @@
 .hero-subtext {
   font-family: var(--font-medium);
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--tone-2);
   margin-bottom: 22px;
 }
 
@@ -134,9 +134,9 @@
   gap: 10px;
   padding: 10px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--fillsoft);
+  background: var(--fillsoft);
+  color: var(--tone-1);
   font-size: 13px;
 }
 
@@ -211,9 +211,9 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(900px 320px at 12% 10%, rgba(193, 18, 31, 0.20), transparent 55%),
-    radial-gradient(900px 320px at 85% 20%, rgba(255, 255, 255, 0.10), transparent 55%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.00));
+    radial-gradient(900px 320px at 12% 10%, rgba(214,40,40, 0.20), transparent 55%),
+    radial-gradient(900px 320px at 85% 20%, var(--fillsoft), transparent 55%),
+    linear-gradient(180deg, var(--fillsoft), var(--fillsoft));
   pointer-events: none;
 }
 
@@ -239,8 +239,8 @@
   position: absolute;
   inset: -2px;
   background:
-    radial-gradient(520px 220px at 20% 0%, rgba(193, 18, 31, 0.35), transparent 60%),
-    radial-gradient(520px 220px at 90% 10%, rgba(255, 255, 255, 0.16), transparent 60%);
+    radial-gradient(520px 220px at 20% 0%, rgba(214,40,40, 0.35), transparent 60%),
+    radial-gradient(520px 220px at 90% 10%, var(--hairline-2), transparent 60%);
   opacity: 0.35;
   pointer-events: none;
 }
@@ -365,7 +365,7 @@
 }
 
 .card-badge--finance::before {
-  content: "💳";
+  content: "";
 }
 
 
@@ -487,8 +487,8 @@
   content: "";
   position: absolute;
   inset: -2px;
-  background: radial-gradient(420px 220px at 10% 0%, rgba(193, 18, 31, 0.25), transparent 60%),
-    radial-gradient(420px 220px at 90% 0%, rgba(255, 255, 255, 0.12), transparent 60%);
+  background: radial-gradient(420px 220px at 10% 0%, rgba(214,40,40, 0.25), transparent 60%),
+    radial-gradient(420px 220px at 90% 0%, var(--fillsoft), transparent 60%);
   opacity: .65;
   pointer-events: none;
 }
@@ -674,7 +674,7 @@
   right: 0;
   bottom: 0;
   height: 80px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.92));
+  background: linear-gradient(180deg, var(--fillsoft), var(--tone-1));
   pointer-events: none;
   opacity: 1;
   transition: opacity .2s ease;
@@ -951,7 +951,7 @@
 .car-price {
   font-weight: 900;
   letter-spacing: 0.2px;
-  color: #d4af37;
+  color: #d62828;
   white-space: nowrap;
 }
 
@@ -1048,7 +1048,7 @@
 .car-thumb.is-active {
   opacity: 1;
   transform: translateY(-1px);
-  border-color: rgba(193, 18, 31, 0.65);
+  border-color: rgba(214,40,40, 0.65);
 }
 
 .car-thumb img {
@@ -1193,8 +1193,8 @@
 }
 
 .inventory-search:focus {
-  border-color: rgba(193, 18, 31, 0.65);
-  box-shadow: 0 0 0 4px rgba(193, 18, 31, 0.18);
+  border-color: rgba(214,40,40, 0.65);
+  box-shadow: 0 0 0 4px rgba(214,40,40, 0.18);
 }
 
 .inventory-sort {
@@ -1207,8 +1207,8 @@
 }
 
 .inventory-sort:focus {
-  border-color: rgba(193, 18, 31, 0.65);
-  box-shadow: 0 0 0 4px rgba(193, 18, 31, 0.18);
+  border-color: rgba(214,40,40, 0.65);
+  box-shadow: 0 0 0 4px rgba(214,40,40, 0.18);
 }
 
 /* ==========================
@@ -1558,8 +1558,8 @@
 
 .inv-filters input:focus,
 .inv-filters select:focus {
-  border-color: rgba(193, 18, 31, 0.6);
-  box-shadow: 0 0 0 4px rgba(193, 18, 31, 0.18);
+  border-color: rgba(214,40,40, 0.6);
+  box-shadow: 0 0 0 4px rgba(214,40,40, 0.18);
 }
 
 .inv-filters .filters-actions {
@@ -1594,7 +1594,7 @@
 }
 
 .inv-filters .suggest-item:hover {
-  background: rgba(193, 18, 31, 0.14);
+  background: rgba(214,40,40, 0.14);
 }
 
 /* results spacing so toolbar doesn't stick to cards */
@@ -1622,17 +1622,17 @@
    PAGE-SPECIFIC BACKGROUNDS (no local asset photos)
 ========================== */
 body.page-financing {
-  --hero-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%221600%22%20height=%22900%22%20viewBox=%220%200%201600%20900%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%220%22%20stop-color=%22#071421%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%220.55%22%20stop-color=%22#0b1c2d%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%221%22%20stop-color=%22#12060a%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3CradialGradient%20id=%22r1%22%20cx=%2225%%22%20cy=%2218%%22%20r=%2260%%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%220%22%20stop-color=%22#c1121f%22%20stop-opacity=%220.75%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%221%22%20stop-color=%22#c1121f%22%20stop-opacity=%220%22/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%20%20%3CradialGradient%20id=%22r2%22%20cx=%2278%%22%20cy=%2222%%22%20r=%2255%%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%220%22%20stop-color=%22#2c7bff%22%20stop-opacity=%220.35%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%221%22%20stop-color=%22#2c7bff%22%20stop-opacity=%220%22/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%20%20%3Cfilter%20id=%22blur%22%20x=%22-20%%22%20y=%22-20%%22%20width=%22140%%22%20height=%22140%%22%3E%0A%20%20%20%20%20%20%3CfeGaussianBlur%20stdDeviation=%2218%22/%3E%0A%20%20%20%20%3C/filter%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width=%221600%22%20height=%22900%22%20fill=%22url(#g)%22/%3E%0A%20%20%3Ccircle%20cx=%22420%22%20cy=%22180%22%20r=%22340%22%20fill=%22url(#r1)%22%20filter=%22url(#blur)%22/%3E%0A%20%20%3Ccircle%20cx=%221240%22%20cy=%22210%22%20r=%22320%22%20fill=%22url(#r2)%22%20filter=%22url(#blur)%22/%3E%0A%20%20%3Cpath%20d=%22M0%20710%20C%20320%20640,%20520%20780,%20820%20730%20C%201040%20695,%201240%20610,%201600%20660%20L1600%20900%20L0%20900%20Z%22%20fill=%22#06080c%22%20opacity=%220.55%22/%3E%0A%20%20%3Cpath%20d=%22M120%20650%20C%20420%20585,%20700%20705,%20980%20650%20C%201180%20610,%201380%20550,%201560%20585%22%20fill=%22none%22%20stroke=%22#ffffff%22%20stroke-opacity=%220.16%22%20stroke-width=%222%22/%3E%0A%3C/svg%3E");
+  --hero-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%221600%22%20height=%22900%22%20viewBox=%220%200%201600%20900%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%220%22%20stop-color=%22#071421%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%220.55%22%20stop-color=%22#0b1c2d%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%221%22%20stop-color=%22#12060a%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3CradialGradient%20id=%22r1%22%20cx=%2225%%22%20cy=%2218%%22%20r=%2260%%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%220%22%20stop-color=%22#a81e1e%22%20stop-opacity=%220.75%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%221%22%20stop-color=%22#a81e1e%22%20stop-opacity=%220%22/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%20%20%3CradialGradient%20id=%22r2%22%20cx=%2278%%22%20cy=%2222%%22%20r=%2255%%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%220%22%20stop-color=%22#2c7bff%22%20stop-opacity=%220.35%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%221%22%20stop-color=%22#2c7bff%22%20stop-opacity=%220%22/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%20%20%3Cfilter%20id=%22blur%22%20x=%22-20%%22%20y=%22-20%%22%20width=%22140%%22%20height=%22140%%22%3E%0A%20%20%20%20%20%20%3CfeGaussianBlur%20stdDeviation=%2218%22/%3E%0A%20%20%20%20%3C/filter%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width=%221600%22%20height=%22900%22%20fill=%22url(#g)%22/%3E%0A%20%20%3Ccircle%20cx=%22420%22%20cy=%22180%22%20r=%22340%22%20fill=%22url(#r1)%22%20filter=%22url(#blur)%22/%3E%0A%20%20%3Ccircle%20cx=%221240%22%20cy=%22210%22%20r=%22320%22%20fill=%22url(#r2)%22%20filter=%22url(#blur)%22/%3E%0A%20%20%3Cpath%20d=%22M0%20710%20C%20320%20640,%20520%20780,%20820%20730%20C%201040%20695,%201240%20610,%201600%20660%20L1600%20900%20L0%20900%20Z%22%20fill=%22#06080c%22%20opacity=%220.55%22/%3E%0A%20%20%3Cpath%20d=%22M120%20650%20C%20420%20585,%20700%20705,%20980%20650%20C%201180%20610,%201380%20550,%201560%20585%22%20fill=%22none%22%20stroke=%22#ffffff%22%20stroke-opacity=%220.16%22%20stroke-width=%222%22/%3E%0A%3C/svg%3E");
   --page-bg-image: none;
 }
 
 body.page-tradein {
-  --hero-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%221600%22%20height=%22900%22%20viewBox=%220%200%201600%20900%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id=%22bg%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%220%22%20stop-color=%22#071421%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%220.6%22%20stop-color=%22#0b1c2d%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%221%22%20stop-color=%22#06080c%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3ClinearGradient%20id=%22stripe%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%220%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%220%22%20stop-color=%22#c1121f%22%20stop-opacity=%220%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%220.5%22%20stop-color=%22#c1121f%22%20stop-opacity=%220.55%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%221%22%20stop-color=%22#c1121f%22%20stop-opacity=%220%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width=%221600%22%20height=%22900%22%20fill=%22url(#bg)%22/%3E%0A%20%20%3Cg%20opacity=%220.22%22%3E%0A%20%20%20%20%3Cpath%20d=%22M-200%20120%20L1400%20-140%22%20stroke=%22url(#stripe)%22%20stroke-width=%2280%22/%3E%0A%20%20%20%20%3Cpath%20d=%22M-260%20280%20L1340%2020%22%20stroke=%22url(#stripe)%22%20stroke-width=%2280%22/%3E%0A%20%20%20%20%3Cpath%20d=%22M-320%20440%20L1280%20180%22%20stroke=%22url(#stripe)%22%20stroke-width=%2280%22/%3E%0A%20%20%3C/g%3E%0A%20%20%3Ccircle%20cx=%221180%22%20cy=%22200%22%20r=%22260%22%20fill=%22#ffffff%22%20opacity=%220.08%22/%3E%0A%20%20%3Ccircle%20cx=%22420%22%20cy=%22220%22%20r=%22300%22%20fill=%22#c1121f%22%20opacity=%220.12%22/%3E%0A%3C/svg%3E");
+  --hero-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%221600%22%20height=%22900%22%20viewBox=%220%200%201600%20900%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id=%22bg%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%220%22%20stop-color=%22#071421%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%220.6%22%20stop-color=%22#0b1c2d%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%221%22%20stop-color=%22#06080c%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3ClinearGradient%20id=%22stripe%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%220%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%220%22%20stop-color=%22#a81e1e%22%20stop-opacity=%220%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%220.5%22%20stop-color=%22#a81e1e%22%20stop-opacity=%220.55%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset=%221%22%20stop-color=%22#a81e1e%22%20stop-opacity=%220%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width=%221600%22%20height=%22900%22%20fill=%22url(#bg)%22/%3E%0A%20%20%3Cg%20opacity=%220.22%22%3E%0A%20%20%20%20%3Cpath%20d=%22M-200%20120%20L1400%20-140%22%20stroke=%22url(#stripe)%22%20stroke-width=%2280%22/%3E%0A%20%20%20%20%3Cpath%20d=%22M-260%20280%20L1340%2020%22%20stroke=%22url(#stripe)%22%20stroke-width=%2280%22/%3E%0A%20%20%20%20%3Cpath%20d=%22M-320%20440%20L1280%20180%22%20stroke=%22url(#stripe)%22%20stroke-width=%2280%22/%3E%0A%20%20%3C/g%3E%0A%20%20%3Ccircle%20cx=%221180%22%20cy=%22200%22%20r=%22260%22%20fill=%22#ffffff%22%20opacity=%220.08%22/%3E%0A%20%20%3Ccircle%20cx=%22420%22%20cy=%22220%22%20r=%22300%22%20fill=%22#a81e1e%22%20opacity=%220.12%22/%3E%0A%3C/svg%3E");
   --page-bg-image: none;
 }
 
 body.page-inventory {
-  --page-bg-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%221200%22%20height=%22800%22%20viewBox=%220%200%201200%20800%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3Cpattern%20id=%22p%22%20width=%22120%22%20height=%22120%22%20patternUnits=%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cpath%20d=%22M0%2060%20H120%22%20stroke=%22#ffffff%22%20stroke-opacity=%220.10%22%20stroke-width=%222%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d=%22M60%200%20V120%22%20stroke=%22#ffffff%22%20stroke-opacity=%220.06%22%20stroke-width=%222%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx=%2218%22%20cy=%2218%22%20r=%223%22%20fill=%22#c1121f%22%20fill-opacity=%220.30%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx=%22102%22%20cy=%2288%22%20r=%223%22%20fill=%22#2c7bff%22%20fill-opacity=%220.22%22/%3E%0A%20%20%20%20%3C/pattern%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width=%221200%22%20height=%22800%22%20fill=%22url(#p)%22/%3E%0A%3C/svg%3E");
+  --page-bg-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%221200%22%20height=%22800%22%20viewBox=%220%200%201200%20800%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3Cpattern%20id=%22p%22%20width=%22120%22%20height=%22120%22%20patternUnits=%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cpath%20d=%22M0%2060%20H120%22%20stroke=%22#ffffff%22%20stroke-opacity=%220.10%22%20stroke-width=%222%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d=%22M60%200%20V120%22%20stroke=%22#ffffff%22%20stroke-opacity=%220.06%22%20stroke-width=%222%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx=%2218%22%20cy=%2218%22%20r=%223%22%20fill=%22#a81e1e%22%20fill-opacity=%220.30%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx=%22102%22%20cy=%2288%22%20r=%223%22%20fill=%22#2c7bff%22%20fill-opacity=%220.22%22/%3E%0A%20%20%20%20%3C/pattern%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width=%221200%22%20height=%22800%22%20fill=%22url(#p)%22/%3E%0A%3C/svg%3E");
 }
 
 /* Keep the financing form separated from hero */

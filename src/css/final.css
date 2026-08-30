@@ -49,7 +49,7 @@ h1,h2,h3,h4,h5{ color: var(--text) !important; }
 .car-actions .btn{ flex: 1 1 0; justify-content: center; }
 .btn-view{ background: var(--offwhite) !important; border: 1px solid var(--border) !important; color: var(--text) !important; }
 .btn-view:hover{ background: var(--surface-2) !important; }
-.btn-test{ background: linear-gradient(180deg, var(--red-2), var(--red)) !important; border: 1px solid rgba(255,255,255,0.10) !important; color: #fff !important; }
+.btn-test{ background: linear-gradient(180deg, var(--red-2), var(--red)) !important; border: 1px solid var(--fillsoft) !important; color: #fff !important; }
 .btn-test:hover{ filter: brightness(1.05); transform: translateY(-1px); }
 
 .btn-call{ background: var(--offwhite) !important; border: 1px solid var(--border) !important; color: var(--text) !important; }
@@ -77,7 +77,7 @@ button[type="submit"],
 button[type="button"].btn-primary{
   background: linear-gradient(180deg, var(--red-2), var(--red)) !important;
   color:#fff !important;
-  border: 1px solid rgba(255,255,255,0.10) !important;
+  border: 1px solid var(--fillsoft) !important;
 }
 
 /* Detail page readability */
@@ -89,11 +89,11 @@ button[type="button"].btn-primary{
 .car-summary .muted{ color: var(--muted) !important; }
 
 /* Footer match site */
-.site-footer{ background: var(--navy-2) !important; border-top: 1px solid rgba(255,255,255,0.10) !important; color: rgba(255,255,255,0.88) !important; }
-.footer-copy{ color: rgba(255,255,255,0.65) !important; }
-.footer-copy a{ color: rgba(255,255,255,0.65) !important; text-decoration: none; }
+.site-footer{ background: var(--navy-2) !important; border-top: 1px solid var(--fillsoft) !important; color: var(--tone-1) !important; }
+.footer-copy{ color: var(--tone-2) !important; }
+.footer-copy a{ color: var(--tone-2) !important; text-decoration: none; }
 .footer-copy a:hover{ text-decoration: underline; }
-.footer-info p, .footer-info a, .footer-social a{ color: rgba(255,255,255,0.88) !important; }
+.footer-info p, .footer-info a, .footer-social a{ color: var(--tone-1) !important; }
 
 /* Floating Text Us like Prime Motors */
 .floating-textus{
@@ -110,7 +110,7 @@ button[type="button"].btn-primary{
   color: #fff;
   font-weight: 900;
   letter-spacing: .3px;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid var(--fillsoft);
   box-shadow: var(--shadow);
 }
 .floating-textus:hover{ filter: brightness(1.05); transform: translateY(-1px); }
@@ -307,7 +307,7 @@ body.page-tradein .hero{
   padding: 0 12px;
   outline: none;
 }
-.fin-input:focus{ box-shadow: 0 0 0 4px rgba(193,18,31,0.18); border-color: rgba(193,18,31,0.65); }
+.fin-input:focus{ box-shadow: 0 0 0 4px rgba(214,40,40,0.18); border-color: rgba(214,40,40,0.65); }
 .fin-text{ height: auto; padding: 12px; resize: vertical; }
 .fin-radio{ display:flex; flex-wrap:wrap; align-items:center; gap: 10px; padding: 10px 12px; border-radius: 14px; border: 1px solid var(--border); background: var(--offwhite); }
 .fin-radio span{ font-size: 12px; color: var(--muted); margin-right: 6px; }

@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
 import CarCard from "../components/CarCard.jsx";
 import { useCars } from "../lib/useCars.js";
-import { normalize, toNum, fuelType, isSold } from "../lib/utils.js";
+import { normalize, toNum, fuelType, isSold, bodyStyle, priceBand } from "../lib/utils.js";
 import { useLang } from "../lib/i18n.jsx";
 import "../css/inventory-page.css";
 
@@ -46,6 +46,10 @@ export default function Inventory() {
   const [fuel, setFuel] = useState("");
   const [f, setF] = useState(initF);
   const [drawer, setDrawer] = useState(false);
+
+  // Facets driven straight off the URL (set by the home "Shop by …" tiles).
+  const bandKey = params.get("price") || "";
+  const styleParam = params.get("style") || "";
 
   // Keep condition in sync when nav links change ?cond= while page is mounted.
   const condParam = params.get("cond") || "all";
@@ -93,6 +97,8 @@ export default function Inventory() {
       if (plo !== null && (p === null || p < plo)) return false;
       if (phi !== null && (p === null || p > phi)) return false;
       if (mlx !== null && (m === null || m > mlx)) return false;
+      if (bandKey && priceBand(c)?.key !== bandKey) return false;
+      if (styleParam && bodyStyle(c) !== styleParam) return false;
       if (trans && !normalize(c.transmission).includes(trans)) return false;
       if (fuel && !normalize(fuelType(c)).includes(fuel)) return false;
       if (nq) {
@@ -108,7 +114,7 @@ export default function Inventory() {
     else list.sort((a, b) => Number(b.id) - Number(a.id));
 
     return list;
-  }, [cars, q, sort, status, cond, trans, fuel, f]);
+  }, [cars, q, sort, status, cond, trans, fuel, f, bandKey, styleParam]);
 
   const resetFilters = () => {
     setF(EMPTY);

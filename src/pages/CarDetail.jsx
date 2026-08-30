@@ -68,7 +68,7 @@ export default function CarDetail() {
             <h1 className="vdp-title">Vehicle not found</h1>
             <p style={{ color: "var(--muted)", marginTop: 8 }}>
               This listing may have been removed.{" "}
-              <Link to="/inventory" style={{ color: "var(--gold)" }}>Browse available inventory →</Link>
+              <Link to="/inventory" style={{ color: "var(--red)", textDecoration: "underline" }}>Browse available inventory →</Link>
             </p>
           </div>
         </main>

@@ -1,123 +1,89 @@
-import { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
 import CarCardClassic from "../components/CarCardClassic.jsx";
 import AdvancedSearch from "../components/AdvancedSearch.jsx";
 import LeadForm from "../components/LeadForm.jsx";
-import PromoMarquee from "../components/PromoMarquee.jsx";
+import Hero from "../components/Hero.jsx";
+import FAQ from "../components/FAQ.jsx";
+import BrandStrip from "../components/BrandStrip.jsx";
+import FinancingBand from "../components/FinancingBand.jsx";
+import BrowseTiles from "../components/BrowseTiles.jsx";
+import Reviews from "../components/Reviews.jsx";
 import CountUp from "../components/CountUp.jsx";
 import { useCars } from "../lib/useCars.js";
-import { normalize } from "../lib/utils.js";
+import { isSold } from "../lib/utils.js";
 import { useLang } from "../lib/i18n.jsx";
 import { useReveal } from "../lib/useReveal.js";
 
-const carText = (c) =>
-  [c.make, c.model, c.year, c.price, c.mileage, c.stock, c.vin, c.color, c.engine, c.transmission]
-    .map(normalize)
-    .join(" ");
+const CREDIT_PORTAL = "https://startyourcreditapproval.com/credit-application/DCR13";
 
 export default function Home() {
   const { cars, error } = useCars();
   const { t, lang } = useLang();
-  const [q, setQ] = useState("");
   const [legalOpen, setLegalOpen] = useState(false);
   useReveal([cars.length, lang]);
 
-  const featured = useMemo(() => {
-    const sorted = [...cars]
-      .filter((c) => (c.status || "available") !== "sold")
-      .sort((a, b) => Number(b.id) - Number(a.id));
-    const nq = normalize(q);
-    const filtered = !nq ? sorted : sorted.filter((c) => carText(c).includes(nq));
-    return filtered.slice(0, 8);
-  }, [cars, q]);
+  const available = useMemo(() => cars.filter((c) => !isSold(c)), [cars]);
+
+  const featured = useMemo(
+    () => [...available].sort((a, b) => Number(b.id) - Number(a.id)).slice(0, 8),
+    [available],
+  );
 
   const newArrivals = useMemo(
-    () => cars.filter((c) => c.condition === "new").sort((a, b) => Number(b.id) - Number(a.id)).slice(0, 8),
-    [cars],
+    () =>
+      available
+        .filter((c) => c.condition === "new")
+        .sort((a, b) => Number(b.id) - Number(a.id))
+        .slice(0, 8),
+    [available],
   );
 
   return (
-    <Layout bodyClass="page-home has-hero" title="Premium Used Cars in Knoxville, TN">
-      <section className="hero hero--home" style={{ "--hero-image": "url('/assets/images/elantra12.webp')" }}>
-        <div className="wrapper">
-          <div>
-            <div className="hero-kicker floaty">★ {t("hero.kicker")}</div>
-            <h1 className="hero-title">{t("hero.title")}</h1>
-            <p className="hero-subtext">
-              {t("hero.subtext")}
-              <span className="muted" style={{ display: "block", marginTop: 8 }}>
-                Prefer a dedicated credit application? Use our secure portal:{" "}
-                <a href="https://startyourcreditapproval.com/credit-application/DCR13" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>
-                  StartYourCreditApproval.com
-                </a>
-              </span>
-            </p>
-            <div className="trust-row">
-              <span className="trust-badge">✅ {t("hero.badge.quality")}</span>
-              <a className="trust-badge" href="tel:+18659247326" aria-label="Call for a shipping quote">🚚 {t("hero.badge.ship")}</a>
-              <span className="trust-badge">🧾 {t("hero.badge.carfax")}</span>
-              <span className="trust-badge">⭐ {t("hero.badge.cargurus")}</span>
-            </div>
-          </div>
+    <Layout bodyClass="page-home has-hero" title="Used Cars for Sale in Knoxville, TN">
+      <Hero count={available.length} />
 
-          <div className="hero-panel hero-panel--search">
-            <AdvancedSearch variant="hero" />
-            <div className="hero-cta-row">
-              <a className="icon-btn pulse" href="tel:+18659247326" aria-label="Call us">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .6a2 2 0 0 1 1.7 2Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" /></svg>
-                Call
-              </a>
-              <a className="icon-btn" href="sms:+18659247326" aria-label="Text us">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" /></svg>
-                Text
-              </a>
-              <Link className="icon-btn" to="/testdrive" aria-label="Schedule test drive">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 7V3m8 4V3M4 11h16M6 21h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
-                Test Drive
-              </Link>
-              <Link className="icon-btn" to="/financing" aria-label="Apply for financing">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7h18M5 11h14M7 15h10M9 19h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
-                Financing
-              </Link>
-              <a className="icon-btn" href="https://startyourcreditapproval.com/credit-application/DCR13" target="_blank" rel="noopener noreferrer" aria-label="Open online credit application">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M6 11h12M6 15h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /><path d="M20 7v10a2 2 0 0 1-2 2H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
-                Credit App
-              </a>
-            </div>
+      <section className="searchbar" aria-label="Search inventory">
+        <div className="container">
+          <div className="searchbar__card">
+            <AdvancedSearch variant="bar" />
           </div>
         </div>
       </section>
 
-      <PromoMarquee />
+      <BrandStrip cars={cars} />
 
-      {newArrivals.length > 0 && (
+      <BrowseTiles cars={cars} />
+
+      {/* ---------- New arrivals ---------- */}
+      {newArrivals.length >= 3 && (
         <section className="section container featured reveal">
           <div className="section-head">
-            <h2 className="section-title"><span className="title-accent">{t("section.newArrivals")}</span></h2>
+            <h2 className="section-title">
+              <span className="eyebrow">{t("section.justIn")}</span>
+              {t("section.newArrivals")}
+            </h2>
             <Link className="link-more" to="/inventory?cond=new">{t("section.viewAll")} →</Link>
           </div>
           <div className="cards-row">
-            {newArrivals.map((car) => <CarCardClassic key={car.id} car={car} variant="home" />)}
+            {newArrivals.map((car) => (
+              <CarCardClassic key={car.id} car={car} variant="home" />
+            ))}
           </div>
         </section>
       )}
 
+      {/* ---------- Featured inventory ---------- */}
       <section className="section container featured reveal">
         <div className="section-head">
-          <h2 className="section-title">{t("section.featured")}</h2>
-          <Link className="link-more" to="/inventory">{t("section.viewAll")} →</Link>
-        </div>
-
-        <div className="inventory-toolbar">
-          <input
-            className="inventory-search"
-            type="search"
-            placeholder="Search by make, model, year, stock, VIN…"
-            aria-label="Search inventory"
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-          />
+          <h2 className="section-title">
+            <span className="eyebrow">{t("section.inStock")}</span>
+            {t("section.featured")}
+          </h2>
+          <Link className="link-more" to="/inventory">
+            {t("section.viewAll")} ({available.length}) →
+          </Link>
         </div>
 
         <div className="cards-row">
@@ -129,12 +95,20 @@ export default function Home() {
             <div className="empty-state">No vehicles found.</div>
           )}
         </div>
+
+        <p className="price-disclaimer">{t("legal.priceDisclaimer")}</p>
       </section>
 
+      <FinancingBand />
+
+      <Reviews />
+
+      {/* ---------- About ---------- */}
       <section className="about-home reveal">
         <div className="container">
           <div className="about-grid">
             <div className="about-text">
+              <span className="eyebrow">{t("about.eyebrow")}</span>
               <h2>{t("about.title")}</h2>
               <p className="subtitle">{t("about.subtitle")}</p>
               <p>{t("about.p1")}</p>
@@ -145,49 +119,92 @@ export default function Home() {
               </div>
             </div>
             <div className="about-stats">
-              <div className="stat"><h3><CountUp end={50} suffix="+" /></h3><span>{t("about.stat.sold")}</span></div>
-              <div className="stat"><h3>{t("about.stat.fast")}</h3><span>{t("about.stat.approval")}</span></div>
-              <div className="stat"><h3>{t("about.stat.nationwide")}</h3><span>{t("about.stat.network")}</span></div>
+              <div className="stat">
+                <h3><CountUp end={available.length} /></h3>
+                <span>{t("about.stat.inStock")}</span>
+              </div>
+              <div className="stat">
+                <h3><CountUp end={cars.length - available.length} suffix="+" /></h3>
+                <span>{t("about.stat.sold")}</span>
+              </div>
+              <div className="stat">
+                <h3>{t("about.stat.fast")}</h3>
+                <span>{t("about.stat.approval")}</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* ---------- Services ---------- */}
       <section className="section services reveal" id="services">
         <div className="container">
-          <h2 className="section-title services-title">{t("section.services")}</h2>
-          <p className="section-subtitle">{t("section.servicesSub")}</p>
+          <div className="section-head">
+            <h2 className="section-title services-title">
+              <span className="eyebrow">{t("section.howWeHelp")}</span>
+              {t("section.services")}
+            </h2>
+          </div>
+
           <div className="services-grid">
             <div className="service-card">
-              <span className="svc-icon"><img src="/assets/icons/delivery.png" alt="" loading="lazy" decoding="async" /></span>
-              <h3>{t("svc.ship.title")}</h3>
-              <p>{t("svc.ship.text")}</p>
-              <a className="svc-link" href="tel:+18652692676">{t("svc.ship.btn")} →</a>
-            </div>
-            <div className="service-card">
-              <span className="svc-icon"><img src="/assets/icons/financee.png" alt="" loading="lazy" decoding="async" /></span>
+              <span className="svc-icon">
+                <img src="/assets/icons/financee.png" alt="" loading="lazy" decoding="async" />
+              </span>
               <h3>{t("svc.finance.title")}</h3>
               <p>{t("svc.finance.text")}</p>
               <Link className="svc-link" to="/financing">{t("svc.finance.btn")} →</Link>
             </div>
-            <div className="service-card">
-              <span className="svc-icon"><img src="/assets/icons/drive.png" alt="" loading="lazy" decoding="async" /></span>
-              <h3>{t("svc.test.title")}</h3>
-              <p>{t("svc.test.text")}</p>
-              <Link className="svc-link" to="/testdrive">{t("svc.test.btn")} →</Link>
-            </div>
+
             <div className="service-card">
               <span className="svc-icon svc-icon--trade">⇄</span>
               <h3>{t("svc.trade.title")}</h3>
               <p>{t("svc.trade.text")}</p>
               <Link className="svc-link" to="/tradein">{t("svc.trade.btn")} →</Link>
             </div>
+
+            <div className="service-card">
+              <span className="svc-icon">
+                <img src="/assets/icons/drive.png" alt="" loading="lazy" decoding="async" />
+              </span>
+              <h3>{t("svc.test.title")}</h3>
+              <p>{t("svc.test.text")}</p>
+              <Link className="svc-link" to="/testdrive">{t("svc.test.btn")} →</Link>
+            </div>
+
+            <div className="service-card">
+              <span className="svc-icon">
+                <img src="/assets/icons/delivery.png" alt="" loading="lazy" decoding="async" />
+              </span>
+              <h3>{t("svc.ship.title")}</h3>
+              <p>{t("svc.ship.text")}</p>
+              <a className="svc-link" href="tel:+18659247326">{t("svc.ship.btn")} →</a>
+            </div>
+
+            <div className="service-card">
+              <span className="svc-icon">$</span>
+              <h3>{t("svc.credit.title")}</h3>
+              <p>{t("svc.credit.text")}</p>
+              <a className="svc-link" href={CREDIT_PORTAL} target="_blank" rel="noopener noreferrer">
+                {t("svc.credit.btn")} →
+              </a>
+            </div>
+
+            <div className="service-card">
+              <span className="svc-icon">★</span>
+              <h3>{t("svc.history.title")}</h3>
+              <p>{t("svc.history.text")}</p>
+              <Link className="svc-link" to="/contact">{t("svc.history.btn")} →</Link>
+            </div>
           </div>
         </div>
       </section>
 
+      <FAQ />
+
       <LeadForm />
 
+      {/* ---------- Legal ---------- */}
       <section className="legal-disclaimer" id="legal">
         <div className="container">
           <div className={`legal-card${legalOpen ? " is-open" : ""}`}>

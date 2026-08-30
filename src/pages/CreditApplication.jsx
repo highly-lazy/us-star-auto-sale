@@ -37,19 +37,19 @@ export default function CreditApplication() {
         <section className="steps-section container">
           <div className="steps-grid">
             <div className="step-card">
-              <div className="step-num">01</div>
+              <div className="step-num" aria-hidden="true">01</div>
               <div className="step-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg></div>
               <h3 className="step-title">Fill Out the Form</h3>
               <p className="step-desc">Tell us a bit about yourself, income, and the vehicle you want. Takes about 5 minutes.</p>
             </div>
             <div className="step-card">
-              <div className="step-num">02</div>
+              <div className="step-num" aria-hidden="true">02</div>
               <div className="step-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .6a2 2 0 0 1 1.7 2Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" /></svg></div>
               <h3 className="step-title">We Review Quickly</h3>
               <p className="step-desc">Our finance team reviews your application — usually within hours, often the same day.</p>
             </div>
             <div className="step-card">
-              <div className="step-num">03</div>
+              <div className="step-num" aria-hidden="true">03</div>
               <div className="step-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="2" /><path d="M3 9h18" stroke="currentColor" strokeWidth="2" /></svg></div>
               <h3 className="step-title">Drive Home Approved</h3>
               <p className="step-desc">Get matched with the best rate and terms. Pick your car and drive home the same day.</p>

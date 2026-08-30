@@ -58,7 +58,7 @@ html {
 
 /* 7. Focus styles for accessibility */
 *:focus-visible {
-  outline: 2px solid rgba(193,18,31,0.7);
+  outline: 2px solid rgba(214,40,40,0.7);
   outline-offset: 2px;
 }
 

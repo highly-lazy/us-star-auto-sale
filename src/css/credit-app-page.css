@@ -12,8 +12,8 @@
         position:absolute;
         inset:0;
         background:
-          radial-gradient(700px 320px at 30% 30%, rgba(193,18,31,0.18), transparent 60%),
-          radial-gradient(600px 300px at 80% 80%, rgba(44,123,255,0.10), transparent 60%);
+          radial-gradient(700px 320px at 30% 30%, rgba(214,40,40,0.18), transparent 60%),
+          radial-gradient(600px 300px at 80% 80%, rgba(28,74,124,0.10), transparent 60%);
         pointer-events:none;
       }
       .ca-hero .container{ position:relative; z-index:1; }
@@ -130,8 +130,8 @@
       .step-card:nth-child(3){ animation-delay: .45s; }
       .step-card:hover{
         transform: translateY(-4px);
-        border-color: rgba(193,18,31,0.40);
-        box-shadow: 0 18px 40px rgba(193,18,31,0.18);
+        border-color: rgba(214,40,40,0.40);
+        box-shadow: 0 18px 40px rgba(214,40,40,0.18);
       }
       .step-card::before{
         content:"";
@@ -151,14 +151,14 @@
         font-size: 44px;
         font-weight: 800;
         line-height:1;
-        color: rgba(193,18,31,0.18);
+        color: rgba(214,40,40,0.18);
         letter-spacing:-.04em;
       }
       .step-icon{
         width:42px; height:42px;
         border-radius: 12px;
-        background: linear-gradient(180deg, rgba(193,18,31,0.25), rgba(193,18,31,0.10));
-        border: 1px solid rgba(193,18,31,0.40);
+        background: linear-gradient(180deg, rgba(214,40,40,0.25), rgba(214,40,40,0.10));
+        border: 1px solid rgba(214,40,40,0.40);
         display:flex; align-items:center; justify-content:center;
         margin-bottom: 14px;
         color: #ff5d6c;
@@ -202,7 +202,7 @@
         inset:0;
         padding:1px;
         border-radius:24px;
-        background: linear-gradient(135deg, rgba(193,18,31,0.40), transparent 30%, transparent 70%, rgba(44,123,255,0.30));
+        background: linear-gradient(135deg, rgba(214,40,40,0.40), transparent 30%, transparent 70%, rgba(28,74,124,0.30));
         -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
         -webkit-mask-composite: xor;
                 mask-composite: exclude;
@@ -274,7 +274,7 @@
       .ca-loader .spinner{
         width: 44px; height: 44px;
         border-radius: 50%;
-        border: 4px solid rgba(193,18,31,0.15);
+        border: 4px solid rgba(214,40,40,0.15);
         border-top-color: var(--red);
         animation: spin 1s linear infinite;
       }
@@ -304,8 +304,8 @@
         transition: all .25s ease;
       }
       .help-card:hover{
-        background: rgba(255,255,255,0.07);
-        border-color: rgba(193,18,31,0.30);
+        background: var(--fillsoft);
+        border-color: rgba(214,40,40,0.30);
         transform: translateY(-2px);
       }
       .help-card .h-ic{
@@ -315,14 +315,14 @@
         display:flex; align-items:center; justify-content:center;
         flex-shrink:0;
         color:#fff;
-        box-shadow: 0 8px 18px rgba(193,18,31,0.30);
+        box-shadow: 0 8px 18px rgba(214,40,40,0.30);
       }
       .help-card .h-ic svg{ width:20px; height:20px; }
       .help-card .h-text .lbl{
         font-size: 11px;
         letter-spacing: .16em;
         text-transform: uppercase;
-        color: rgba(255,255,255,0.50);
+        color: var(--tone-2);
         margin-bottom: 3px;
         font-weight: 600;
       }
@@ -334,7 +334,7 @@
       .help-card .h-text .val a{
         color:#fff;
         text-decoration: none;
-        border-bottom: 1px solid rgba(255,255,255,0.30);
+        border-bottom: 1px solid var(--tone-3);
         transition: border-color .2s ease;
       }
       .help-card .h-text .val a:hover{ border-color: var(--red); }

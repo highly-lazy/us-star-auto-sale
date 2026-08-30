@@ -100,7 +100,7 @@ export function normalizeCar(raw, idx = 0) {
 export const IMG_FALLBACK =
   "data:image/svg+xml;charset=utf-8," +
   encodeURIComponent(
-    `<svg xmlns='http://www.w3.org/2000/svg' width='480' height='300' viewBox='0 0 480 300'><rect width='480' height='300' fill='#0a1c30'/><path d='M120 190h240l-30-70a20 20 0 0 0-19-13H169a20 20 0 0 0-19 13z' fill='#16314a'/><circle cx='170' cy='195' r='18' fill='#0a1c30' stroke='#22405c' stroke-width='6'/><circle cx='330' cy='195' r='18' fill='#0a1c30' stroke='#22405c' stroke-width='6'/><text x='240' y='250' fill='#3a5a78' font-family='sans-serif' font-size='16' text-anchor='middle'>Image unavailable</text></svg>`,
+    `<svg xmlns='http://www.w3.org/2000/svg' width='480' height='300' viewBox='0 0 480 300'><rect width='480' height='300' fill='#101114'/><path d='M120 190h240l-30-70a20 20 0 0 0-19-13H169a20 20 0 0 0-19 13z' fill='#1f2027'/><circle cx='170' cy='195' r='18' fill='#101114' stroke='#2c2d35' stroke-width='6'/><circle cx='330' cy='195' r='18' fill='#101114' stroke='#2c2d35' stroke-width='6'/><text x='240' y='250' fill='#5a5b63' font-family='sans-serif' font-size='16' text-anchor='middle'>Image unavailable</text></svg>`,
   );
 
 // Use as an <img onError={onImgError}> handler — swaps to the placeholder once.
@@ -127,6 +127,38 @@ export function fuelType(c) {
   if (/electric|\bev\b|tesla/i.test(m)) return "Electric";
   if (/diesel/i.test(m)) return "Diesel";
   return "Gas";
+}
+
+// Body style inferred from the model string (the feed spells it out, e.g.
+// "Cherokee Trailhawk Sport Utility 4D") with a make/model fallback list.
+const STYLE_RULES = [
+  [/sport utility|\bsuv\b|crossover/i, "SUV"],
+  [/pickup|\btruck\b|crew cab|regular cab|extended cab|silverado|\bram \d|f-?150|sierra|tacoma|tundra|frontier|ranger|colorado/i, "Truck"],
+  [/minivan|\bvan\b|caravan|sienna|odyssey|sedona|pacifica|transit/i, "Van"],
+  [/coupe|\bconvertible\b|mustang|challenger|camaro|veloster/i, "Coupe"],
+  [/wagon|hatchback|outback sport/i, "Wagon"],
+  [/sedan|\bsdn\b/i, "Sedan"],
+];
+
+export function bodyStyle(c) {
+  if (c.body || c.bodyStyle) return String(c.body || c.bodyStyle);
+  const hay = `${c.make ?? ""} ${c.model ?? ""}`;
+  for (const [re, label] of STYLE_RULES) if (re.test(hay)) return label;
+  return "Sedan";
+}
+
+// Price buckets used by the "Shop by price" tiles and /inventory?price= links.
+export const PRICE_BANDS = [
+  { key: "u8",     label: "Under $8,000",     min: 0,     max: 7999 },
+  { key: "8-12",   label: "$8,000 – $12,000", min: 8000,  max: 11999 },
+  { key: "12-20",  label: "$12,000 – $20,000", min: 12000, max: 19999 },
+  { key: "o20",    label: "Over $20,000",     min: 20000, max: Infinity },
+];
+
+export function priceBand(c) {
+  const p = toNum(c.price);
+  if (p === null) return null;
+  return PRICE_BANDS.find((b) => p >= b.min && p <= b.max) || null;
 }
 
 export function isSold(c) {

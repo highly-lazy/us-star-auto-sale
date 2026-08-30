@@ -2,6 +2,18 @@ import { Link } from "react-router-dom";
 import { badgeFor, fuelType, isSold, toNum, carName, onImgError } from "../lib/utils.js";
 import { useFavorite } from "../lib/favorites.js";
 
+const CARFAX_DEALER = "https://www.carfax.com/Reviews-US-Star-Auto-Sales-Knoxville-TN_RJR0DUB8CK";
+const carfaxHref = (car) =>
+  car.vin ? `https://www.carfax.com/vehicle/${encodeURIComponent(car.vin)}` : CARFAX_DEALER;
+
+function Icon({ d }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d={d} stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 // Inventory card — matches collection.html `.cc` markup.
 export default function CarCard({ car, index = 0 }) {
   const sold = isSold(car);
@@ -11,7 +23,8 @@ export default function CarCard({ car, index = 0 }) {
   const fuel = fuelType(car);
   const name = carName(car);
   const detail = `/car/${car.id}`;
-  const td = `/testdrive?car=${encodeURIComponent(name)}`;
+  const nameParam = encodeURIComponent(name);
+  const td = `/testdrive?car=${nameParam}`;
   const { saved, toggle } = useFavorite(car.id);
   const delay = Math.min(index * 45, 400);
 
@@ -51,10 +64,30 @@ export default function CarCard({ car, index = 0 }) {
           <span className="cc-pill">{m !== null ? m.toLocaleString() : "—"} mi</span>
           <span className="cc-pill">{fuel}</span>
           {car.transmission && <span className="cc-pill">{car.transmission}</span>}
-          {car.carfax && (
-            <span className="cc-pill" style={{ color: "#d4af37", borderColor: "rgba(212,175,55,0.3)" }}>CARFAX</span>
-          )}
         </div>
+
+        {!sold && (
+          <div className="car-actions" aria-label="Vehicle actions">
+            <a
+              className="car-action car-action--carfax"
+              href={carfaxHref(car)}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Vehicle history report"
+            >
+              <Icon d="M12 3 4.5 6v5.4c0 4.3 3.1 8.3 7.5 9.6 4.4-1.3 7.5-5.3 7.5-9.6V6L12 3Z" />
+              CARFAX
+            </a>
+            <Link className="car-action" to={`/financing?car=${nameParam}`} title="Get pre-approved on this vehicle">
+              <Icon d="M3 10h18M6 15h4M5 6h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" />
+              Financing
+            </Link>
+            <Link className="car-action" to={td} title="Schedule a test drive">
+              <Icon d="M5 17h14M6.5 17V9.8a2 2 0 0 1 .3-1l1.4-2.2a2 2 0 0 1 1.7-1h4.2a2 2 0 0 1 1.7 1l1.4 2.2c.2.3.3.7.3 1V17M4 12h16M8 20h1M15 20h1" />
+              Test Drive
+            </Link>
+          </div>
+        )}
         <div className="cc-actions">
           {sold ? (
             <p className="cc-sold-msg">
@@ -63,7 +96,6 @@ export default function CarCard({ car, index = 0 }) {
           ) : (
             <>
               <Link to={detail} className="cc-btn-view">View Details</Link>
-              <Link to={td} className="cc-btn-td">Test Drive</Link>
             </>
           )}
         </div>

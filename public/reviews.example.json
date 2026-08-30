@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Izreon Rivera",
+    "rating": 5,
+    "date": "10.12.2025",
+    "source": "Google",
+    "text": "Paste the real review text here. Copy each review from your Google Business profile exactly as the customer wrote it."
+  },
+  {
+    "name": "Haider Khan",
+    "rating": 5,
+    "date": "04.02.2026",
+    "source": "Google",
+    "text": "Second review. `source` can be \"Google\", \"CARFAX\" or \"CarGurus\" — Google reviews show the Google mark on the card."
+  }
+]

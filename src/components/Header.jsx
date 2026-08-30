@@ -176,7 +176,7 @@ export default function Header() {
         </div>
         <div className="sidebar-foot">
           <LangToggle className="lang-toggle--block" />
-          <a className="sb-contact" href="tel:+18659247326">📞 865-924-7326</a>
+          <a className="sb-contact" href="tel:+18659247326">865-924-7326</a>
           <span className="sb-contact muted">Mon–Sat · 9:00–18:00</span>
         </div>
       </aside>

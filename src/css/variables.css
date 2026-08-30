@@ -1,58 +1,139 @@
 :root {
-  /* Brand — deep navy with red + blue accents (premium dark theme) */
-  --navy: #0b1f38;
-  --navy-2: #07172b;     /* darkest — topbar / footer base */
-  --navy-3: #143a63;     /* lighter navy — hovers / accents */
+  /* ===============================================================
+     US Star Auto Sale — design system
+     Brand: navy + red on white. Light content, dark chrome.
+     =============================================================== */
 
-  --white: #ffffff;
-  --offwhite: #0e2540;   /* now a DARK fill (pills/chips on dark) */
+  /* Brand */
+  --navy:    #0b2545;   /* primary brand navy */
+  --navy-2:  #06172b;   /* darkest — header, footer, hero */
+  --navy-3:  #12365e;   /* lifted navy — hovers, dark cards */
+  --navy-4:  #1c4a7c;
 
-  --blue: #2f7bf6;
-  --blue-2: #1a5fd0;
-  --blue-3: rgba(47,123,246,0.16);
+  --red:     #d62828;   /* action / accent */
+  --red-2:   #a81e1e;
+  --red-3:   rgba(214, 40, 40, 0.10);
 
-  --red: #e02434;
-  --red-2: #c1121f;
-  --gold: #d9b451;
-  --price: #ffc83d;   /* vehicle price — yellow/gold, pops on navy */
+  --white:   #ffffff;
+  --paper:   #f4f6f9;   /* light section background */
+  --paper-2: #eaeef4;
+  --line:    #e2e8f0;
 
-  /* UI tokens — DARK THEME */
-  --bg: #0a1c33;             /* page background */
-  --bg-top: #0b1f38;
-  --surface: #102a49;        /* cards / panels (slightly lighter than bg) */
-  --surface-2: #0e2540;      /* subtle fills */
-  --border: rgba(255,255,255,0.10);
-  --border-2: rgba(255,255,255,0.18);
+  --star:    #f5a524;   /* review stars only */
+  --green:   #16a34a;   /* "available" / success only */
 
-  --text: rgba(255,255,255,0.94);   /* primary text */
-  --text-2: rgba(255,255,255,0.74); /* secondary */
-  --muted: rgba(255,255,255,0.55);  /* muted/labels */
-  --text-strong: #ffffff;           /* headings */
-  --text-muted: rgba(255,255,255,0.55);
-  --focus: rgba(47,123,246,0.32);
+  /* ---- Tonal tokens -------------------------------------------------
+     These flip inside dark bands (see the .on-dark scope below), so the
+     same legacy rule reads correctly on white and on navy. */
+  --tone-1:     rgba(6, 23, 43, 0.94);   /* strong text  */
+  --tone-2:     rgba(6, 23, 43, 0.68);   /* body text    */
+  --tone-3:     rgba(6, 23, 43, 0.58);   /* muted        */
+  --hairline:   rgba(6, 23, 43, 0.10);   /* 1px borders  */
+  --hairline-2: rgba(6, 23, 43, 0.18);
+  --fillsoft:   rgba(6, 23, 43, 0.04);   /* subtle fills */
 
-  /* Header */
-  --header-bg: #081a30;
-  --header-text: rgba(255, 255, 255, 0.92);
-  --topbar-bg: #06121f;
+  /* ---- UI tokens (light base) ---- */
+  --bg:        var(--white);
+  --bg-top:    var(--white);
+  --surface:   var(--white);
+  --surface-2: var(--paper);
+  --offwhite:  var(--paper);
+  --border:    var(--line);
+  --border-2:  #cbd5e1;
 
-  --accent: var(--red);
-  --accent-2: var(--blue);
+  --text:        #14293f;
+  --text-2:      #4b5c70;
+  --muted:       #5b6b7f;   /* 5.6:1 on white, 5.2:1 on --paper */
+  --text-muted:  #5b6b7f;
+  --text-strong: var(--navy-2);
+  --focus:       rgba(11, 37, 69, 0.18);
 
-  --shadow: 0 22px 60px rgba(0,0,0,0.45);
-  --shadow-soft: 0 12px 34px rgba(0,0,0,0.32);
-  --shadow-card: 0 14px 38px rgba(0,0,0,0.36);
-  --shadow-strong: 0 28px 70px rgba(0,0,0,0.55);
+  /* Dark chrome */
+  --header-bg:   var(--navy-2);
+  --header-text: rgba(255, 255, 255, 0.90);
+  --topbar-bg:   #04101e;
 
-  --radius: 16px;
-  --radius-sm: 10px;
+  --accent:   var(--red);
+  --accent-2: var(--navy);
 
-  --font-regular: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  /* Legacy aliases */
+  --blue:   var(--navy);
+  --blue-2: var(--navy-3);
+  --blue-3: rgba(11, 37, 69, 0.10);
+  --gold:   var(--star);
+  --price:  var(--navy);
+  --danger: var(--red);
+
+  /* Elevation — soft and neutral, never coloured */
+  --shadow:        0 24px 60px rgba(6, 23, 43, 0.16);
+  --shadow-soft:   0 6px 20px rgba(6, 23, 43, 0.08);
+  --shadow-card:   0 10px 30px rgba(6, 23, 43, 0.10);
+  --shadow-strong: 0 30px 70px rgba(6, 23, 43, 0.22);
+
+  --radius:    10px;
+  --radius-sm: 6px;
+
+  --font-regular: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-display: var(--font-regular);
-  --font-medium: var(--font-regular);
+  --font-medium:   var(--font-regular);
   --font-semibold: var(--font-regular);
-  --font-bold: var(--font-regular);
+  --font-bold:     var(--font-regular);
 
-  /* Layout */
-  --container: 1220px;
+  --section-y: clamp(56px, 6.5vw, 100px);
+}
+
+/* Dark bands re-point the tonal tokens so inherited legacy rules invert
+   cleanly instead of drawing dark-on-dark. */
+.site-header,
+.topbar,
+.sidebar,
+.hero,
+.hero-banner,
+.inv-hero,
+.contact-hero,
+.ca-hero,
+.page-hero,
+.site-footer,
+.lead-section,
+.band--dark {
+  --tone-1:     rgba(255, 255, 255, 0.95);
+  --tone-2:     rgba(255, 255, 255, 0.72);
+  --tone-3:     rgba(255, 255, 255, 0.62);
+  --hairline:   rgba(255, 255, 255, 0.12);
+  --hairline-2: rgba(255, 255, 255, 0.22);
+  --fillsoft:   rgba(255, 255, 255, 0.06);
+
+  --text:        rgba(255, 255, 255, 0.92);
+  --text-2:      rgba(255, 255, 255, 0.70);
+  --muted:       rgba(255, 255, 255, 0.62);
+  --text-strong: #ffffff;
+  --text-muted:  rgba(255, 255, 255, 0.62);
+  --surface:     var(--navy-3);
+  --surface-2:   rgba(255, 255, 255, 0.06);
+  --border:      rgba(255, 255, 255, 0.12);
+  --border-2:    rgba(255, 255, 255, 0.22);
+}
+
+/* …but a white card sitting inside a dark band is light again. */
+.hero .adv-search,
+.band--dark .adv-search,
+.lead-section .lead-card,
+.site-header .dropdown,
+.card--light {
+  --tone-1:     rgba(6, 23, 43, 0.94);
+  --tone-2:     rgba(6, 23, 43, 0.68);
+  --tone-3:     rgba(6, 23, 43, 0.58);
+  --hairline:   rgba(6, 23, 43, 0.10);
+  --hairline-2: rgba(6, 23, 43, 0.18);
+  --fillsoft:   rgba(6, 23, 43, 0.04);
+
+  --text:        #14293f;
+  --text-2:      #4b5c70;
+  --muted:       #64748b;
+  --text-strong: var(--navy-2);
+  --text-muted:  #5b6b7f;
+  --surface:     #ffffff;
+  --surface-2:   var(--paper);
+  --border:      var(--line);
+  --border-2:    #cbd5e1;
 }
