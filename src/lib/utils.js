@@ -165,9 +165,25 @@ export function isSold(c) {
   return (c.status || "available") === "sold";
 }
 
+// Price-drop ("deal") vehicles carry an `oldPrice` above the current asking price.
+export function isDeal(c) {
+  if (isSold(c)) return false;
+  const p = toNum(c.price);
+  const o = toNum(c.oldPrice);
+  return p !== null && o !== null && o > p;
+}
+
+// Dollars off the original asking price, or null when the car is not discounted.
+export function savings(c) {
+  if (!isDeal(c)) return null;
+  return toNum(c.oldPrice) - toNum(c.price);
+}
+
 // Inventory badge (matches collection.html inline logic)
 export function badgeFor(c) {
   if (isSold(c)) return { text: "SOLD", cls: "badge-sold" };
+  const s = savings(c);
+  if (s !== null) return { text: `SAVE $${s.toLocaleString()}`, cls: "badge-deal" };
   const p = toNum(c.price);
   const m = toNum(c.mileage);
   if (p !== null && p <= 8000) return { text: "SPECIAL", cls: "badge-special" };
@@ -187,3 +203,63 @@ export const fmtMiles = (v) => {
   const n = toNum(v);
   return n !== null ? n.toLocaleString() : v ?? "";
 };
+
+// "128k miles" — the short mileage form used on listing cards.
+export function milesShort(c) {
+  const m = toNum(c.mileage);
+  if (m === null) return null;
+  return m >= 1000 ? `${Math.round(m / 1000)}k miles` : `${m.toLocaleString()} miles`;
+}
+
+// Rough monthly estimate: 72 months at 9.9% APR with 10% down. Illustrative only.
+export function monthlyEstimate(c, { months = 72, apr = 0.099, downPct = 0.1 } = {}) {
+  const p = toNum(c.price);
+  if (!p) return null;
+  const principal = p * (1 - downPct);
+  const r = apr / 12;
+  const pay = (principal * r) / (1 - Math.pow(1 + r, -months));
+  return Math.round(pay);
+}
+
+// Feature bullets for the card — the marketing-relevant ones, capped.
+const FEATURE_PRIORITY = [
+  /navigation/i, /leather/i, /sunroof|moonroof/i, /awd|4wd|four wheel|all wheel/i,
+  /backup camera|rear camera/i, /heated seat/i, /bluetooth/i, /third row|3rd row/i,
+  /alloy wheel/i, /remote start/i, /keyless/i, /cruise control/i,
+];
+export function topFeatures(c, limit = 4) {
+  const list = Array.isArray(c.features) ? c.features : [];
+  const picked = [];
+  for (const re of FEATURE_PRIORITY) {
+    const hit = list.find((x) => re.test(x) && !picked.includes(x));
+    if (hit) picked.push(hit);
+    if (picked.length >= limit) break;
+  }
+  for (const x of list) {
+    if (picked.length >= limit) break;
+    if (!picked.includes(x)) picked.push(x);
+  }
+  return picked.slice(0, limit);
+}
+
+// Feature groups for the detail page — the flat feed list read as sections.
+const FEATURE_GROUPS = [
+  ["Safety", /air ?bag|abs|brake assist|stability|traction|blind spot|lane |collision|alarm|immobilizer|child|latch|tire pressure|rollover|security/i],
+  ["Comfort & Interior", /seat|leather|climate|air conditioning|heated|cooled|memory|lumbar|armrest|cup holder|vanity|console|floor mat|steering wheel|tilt|telescop|cruise control|keyless|remote start|power window|power door|trunk|cargo/i],
+  ["Entertainment", /stereo|radio|audio|speaker|cd |mp3|bluetooth|usb|aux|satellite|navigation|touch ?screen|premium sound|smart ?device|apple|android/i],
+  ["Exterior", /wheel|tire|sunroof|moonroof|roof rack|spoiler|fog|headlight|daytime|mirror|window tint|bumper|running board|tow|trailer|bed liner/i],
+  ["Mechanical", /engine|transmission|4wd|awd|drive|suspension|axle|differential|cylinder|turbo|hybrid|battery|power steering|power brakes|gvwr/i],
+];
+
+export function groupFeatures(c) {
+  const list = Array.isArray(c.features) ? c.features : [];
+  const groups = FEATURE_GROUPS.map(([name]) => ({ name, items: [] }));
+  const other = [];
+  for (const item of list) {
+    const i = FEATURE_GROUPS.findIndex(([, re]) => re.test(item));
+    if (i >= 0) groups[i].items.push(item);
+    else other.push(item);
+  }
+  if (other.length) groups.push({ name: "Additional", items: other });
+  return groups.filter((g) => g.items.length);
+}

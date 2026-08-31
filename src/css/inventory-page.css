@@ -627,3 +627,29 @@
     .cc-btn-td { display: none; }
     .cc-btn-view { border-radius: 8px; }
   }
+
+  /* ---- Price drops (anchored pricing) ---- */
+  .badge-deal { background: rgba(214,40,40,0.95); color: #fff; }
+
+  .cc-price-was {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+    text-decoration: line-through;
+    text-decoration-thickness: 1.5px;
+  }
+  .cc-price.is-deal { color: var(--red, #d62828); }
+  .cc-price-save {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #166e37;
+    background: rgba(22,110,55,0.10);
+    border-radius: 3px;
+    padding: 2px 6px;
+    white-space: nowrap;
+  }
+  .cc-price-row { flex-wrap: wrap; row-gap: 4px; }
+
+  .inv-tab--deals.on { background: var(--red, #d62828); color: #fff; }

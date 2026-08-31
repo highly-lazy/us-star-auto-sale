@@ -1,0 +1,247 @@
+/* ===================================================================
+   Vehicle detail v2 — structural rebuild.
+   Palette untouched: navy / red / white tokens only.
+   =================================================================== */
+
+/* ---------- 1. Identity bar above the gallery ---------- */
+.vdp-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 4px 0 18px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+  animation: vdp-in 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes vdp-in { from { opacity: 0; transform: translateY(12px); } }
+
+.vdp-top-main { min-width: 0; flex: 1 1 320px; }
+.vdp-top .vdp-title {
+  margin: 0;
+  font-size: clamp(23px, 3vw, 34px);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--navy) !important;
+}
+
+.vdp-top-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+}
+.vdp-tag {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 4px 9px;
+  animation: vdp-tag-in 0.4s cubic-bezier(0.2, 1.2, 0.4, 1) both;
+}
+.vdp-top-tags li:nth-child(2) { animation-delay: 0.05s; }
+.vdp-top-tags li:nth-child(3) { animation-delay: 0.1s; }
+.vdp-top-tags li:nth-child(4) { animation-delay: 0.15s; }
+.vdp-top-tags li:nth-child(5) { animation-delay: 0.2s; }
+@keyframes vdp-tag-in { from { opacity: 0; transform: translateY(6px); } }
+
+.vdp-tag--style { background: var(--navy); border-color: var(--navy); color: #fff; }
+.vdp-tag--stock { font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
+
+/* ---------- 2. Price block ---------- */
+.vdp-monthly { margin: 6px 0 0; font-size: 13px; color: var(--muted); }
+.vdp-monthly strong { color: var(--navy); font-weight: 800; }
+
+.vdp-primary { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin: 16px 0 4px; }
+.vdp-pbtn {
+  display: grid;
+  place-items: center;
+  padding: 13px 10px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+.vdp-pbtn--red { background: var(--red); color: #fff; }
+.vdp-pbtn--red:hover { background: var(--red-2); color: #fff; transform: translateY(-1px); box-shadow: 0 8px 20px -10px rgba(214, 40, 40, 0.8); }
+.vdp-pbtn--navy { background: var(--navy); color: #fff; }
+.vdp-pbtn--navy:hover { background: var(--navy-3); color: #fff; transform: translateY(-1px); box-shadow: 0 8px 20px -10px rgba(11, 37, 69, 0.8); }
+
+/* ---------- 3. Secondary action list ---------- */
+.vdp-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.vdp-actions li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.vdp-actions a,
+.vdp-actions button {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: 10px 8px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--navy);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.14s ease;
+}
+.vdp-actions a:hover,
+.vdp-actions button:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.vdp-actions button[aria-expanded="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+/* ---------- 4. Loan calculator drawer ---------- */
+.vdp-calc {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.34s cubic-bezier(0.3, 0.8, 0.3, 1);
+}
+.vdp-calc.open { grid-template-rows: 1fr; }
+.vdp-calc-inner { overflow: hidden; }
+
+.pcalc {
+  margin-top: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.pcalc-out { display: flex; align-items: baseline; gap: 6px; }
+.pcalc-amt { font-size: 30px; font-weight: 900; letter-spacing: -0.03em; color: var(--navy); }
+.pcalc-per { font-size: 13px; font-weight: 700; color: var(--muted); }
+
+.pcalc-field { display: flex; flex-direction: column; gap: 7px; }
+.pcalc-field > span { font-size: 12px; font-weight: 600; color: var(--text-2); }
+.pcalc-field > span strong { color: var(--navy); font-weight: 800; }
+
+.pcalc-field input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--line);
+  outline: none;
+  cursor: pointer;
+}
+.pcalc-field input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--red);
+  border: 3px solid #fff;
+  box-shadow: 0 1px 5px rgba(6, 23, 43, 0.35);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+.pcalc-field input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.16); }
+.pcalc-field input[type="range"]::-moz-range-thumb {
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  background: var(--red);
+  border: 3px solid #fff;
+  box-shadow: 0 1px 5px rgba(6, 23, 43, 0.35);
+  cursor: pointer;
+}
+
+.pcalc-terms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.pcalc-term {
+  padding: 8px 4px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text-2);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.pcalc-term:hover { border-color: var(--navy-4); color: var(--navy); }
+.pcalc-term.on { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+.pcalc-note { margin: 0; font-size: 11.5px; line-height: 1.5; color: var(--muted); }
+.pcalc-note strong { color: var(--text-2); }
+
+/* ---------- 5. Features by category ---------- */
+.vdp-groups { display: grid; gap: 20px; }
+.vdp-group h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--navy) !important;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.vdp-group h3 span {
+  font-size: 10.5px;
+  font-weight: 800;
+  min-width: 19px;
+  height: 19px;
+  display: grid;
+  place-items: center;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--muted);
+  letter-spacing: 0;
+}
+
+/* ---------- 6. Similar vehicles ---------- */
+.vdp-similar {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+  gap: 18px;
+}
+.vdp-similar > * { min-width: 0; }
+
+/* ---------- 7. Responsive ---------- */
+@media (max-width: 640px) {
+  .vdp-top { padding-bottom: 14px; margin-bottom: 16px; }
+  .vdp-primary { grid-template-columns: 1fr; }
+  .vdp-actions { grid-template-columns: 1fr 1fr; }
+  .pcalc-amt { font-size: 26px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vdp-top, .vdp-tag { animation: none; }
+  .vdp-calc, .vdp-pbtn, .vdp-actions a, .vdp-actions button { transition: none !important; }
+  .vdp-pbtn:hover, .vdp-actions a:hover, .vdp-actions button:hover { transform: none; }
+}

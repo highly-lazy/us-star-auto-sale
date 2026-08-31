@@ -2,9 +2,13 @@ import { useState, useEffect, useMemo, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
 import { useCars } from "../lib/useCars.js";
-import { fuelType, isSold, toNum, carName, thumbPath, onImgError } from "../lib/utils.js";
+import {
+  fuelType, isSold, isDeal, savings, toNum, carName, thumbPath, onImgError,
+  bodyStyle, milesShort, monthlyEstimate, groupFeatures,
+} from "../lib/utils.js";
+import CarCard from "../components/CarCard.jsx";
+import PaymentCalc from "../components/PaymentCalc.jsx";
 import { useFavorite } from "../lib/favorites.js";
-import "../css/cardetail.css";
 
 // tiny inline icons for the spec grid
 const I = {
@@ -31,6 +35,7 @@ export default function CarDetail() {
   }, [car]);
 
   const [idx, setIdx] = useState(0);
+  const [calcOpen, setCalcOpen] = useState(false);
   const touchX = useRef(null);
   useEffect(() => setIdx(0), [id]);
 
@@ -87,6 +92,19 @@ export default function CarDetail() {
   const price = toNum(car.price);
   const mileage = toNum(car.mileage);
   const priceDisplay = price !== null ? `$${price.toLocaleString()}` : car.price ?? "";
+  const deal = isDeal(car);
+  const wasPrice = deal ? toNum(car.oldPrice) : null;
+  const saved$ = savings(car);
+  const monthly = sold ? null : monthlyEstimate(car);
+  const style = bodyStyle(car);
+  const groups = groupFeatures(car);
+  const nameParam = encodeURIComponent(name);
+
+  // Same body style, nearest in price — the natural next click.
+  const similar = cars
+    .filter((c) => c.id !== car.id && !isSold(c) && bodyStyle(c) === style)
+    .sort((a, b) => Math.abs((toNum(a.price) ?? 0) - (price ?? 0)) - Math.abs((toNum(b.price) ?? 0) - (price ?? 0)))
+    .slice(0, 3);
 
   const specs = [
     { k: "Mileage", v: mileage !== null ? `${mileage.toLocaleString()} mi` : car.mileage, icon: I.miles },
@@ -95,6 +113,8 @@ export default function CarDetail() {
     { k: "Transmission", v: car.transmission, icon: I.gear },
     { k: "Fuel", v: fuelType(car), icon: I.fuel },
     { k: "Color", v: car.color, icon: I.color },
+    { k: "Body Style", v: style, icon: I.tag },
+    { k: "Condition", v: car.condition === "new" ? "New" : "Used", icon: I.tag },
     { k: "Stock", v: car.stock, icon: I.tag },
     { k: "VIN", v: car.vin, icon: I.vin },
   ].filter((s) => s.v);
@@ -114,6 +134,26 @@ export default function CarDetail() {
           <span className="sep">›</span>
           <span className="cur">{name}</span>
         </nav>
+
+        {/* Identity bar — title, style and mileage read before the gallery */}
+        <header className="vdp-top">
+          <div className="vdp-top-main">
+            <h1 className="vdp-title">{name}</h1>
+            <ul className="vdp-top-tags">
+              <li className="vdp-tag vdp-tag--style">{style}</li>
+              {milesShort(car) && <li className="vdp-tag">{milesShort(car)}</li>}
+              {car.transmission && <li className="vdp-tag">{car.transmission}</li>}
+              <li className="vdp-tag">{fuelType(car)}</li>
+              {car.stock && <li className="vdp-tag vdp-tag--stock">Stock #{car.stock}</li>}
+            </ul>
+          </div>
+          {!sold && (
+            <button className={`vdp-save${saved ? " is-saved" : ""}`} type="button" aria-pressed={saved} onClick={toggle}>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-9.2-8.7C.9 8.7 3 5.5 6.4 5.1c1.7-.2 3.4.6 4.3 2 1-1.4 2.7-2.2 4.3-2 3.4.4 5.5 3.6 3.6 7.2C19 16.4 12 21 12 21Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" /></svg>
+              {saved ? "Saved" : "Save"}
+            </button>
+          )}
+        </header>
 
         <div className="vdp-grid">
           {/* Gallery */}
@@ -152,21 +192,28 @@ export default function CarDetail() {
           {/* Info panel */}
           <aside className="vdp-info">
             <div className="vdp-card">
-              <div className="vdp-titlerow">
-                <h1 className="vdp-title">{name}</h1>
-                {!sold && (
-                  <button className={`vdp-save${saved ? " is-saved" : ""}`} type="button" aria-pressed={saved} onClick={toggle}>
-                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-9.2-8.7C.9 8.7 3 5.5 6.4 5.1c1.7-.2 3.4.6 4.3 2 1-1.4 2.7-2.2 4.3-2 3.4.4 5.5 3.6 3.6 7.2C19 16.4 12 21 12 21Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" /></svg>
-                    {saved ? "Saved" : "Save"}
-                  </button>
-                )}
-              </div>
-
               <div className="vdp-pricerow">
-                <span className={`vdp-price${sold ? " sold" : ""}`}>{priceDisplay}</span>
+                {wasPrice !== null && (
+                  <span className="vdp-price-was" aria-label={`Was $${wasPrice.toLocaleString()}`}>
+                    ${wasPrice.toLocaleString()}
+                  </span>
+                )}
+                <span className={`vdp-price${sold ? " sold" : ""}${deal ? " is-deal" : ""}`}>{priceDisplay}</span>
+                {saved$ !== null && <span className="vdp-price-save">Save ${saved$.toLocaleString()}</span>}
                 {sold && <span className="vdp-price-note">No longer available</span>}
               </div>
-              {mileage !== null && <p className="vdp-miles"><strong>{mileage.toLocaleString()}</strong> miles</p>}
+              {monthly && (
+                <p className="vdp-monthly">
+                  est. <strong>${monthly.toLocaleString()}</strong>/mo &middot; 72 mo, 10% down, on approved credit
+                </p>
+              )}
+
+              {!sold && (
+                <div className="vdp-primary">
+                  <Link to={`/financing?car=${nameParam}`} className="vdp-pbtn vdp-pbtn--red">Get Financed</Link>
+                  <a href="sms:+18659247326" className="vdp-pbtn vdp-pbtn--navy">Text Us</a>
+                </div>
+              )}
 
               <div className="vdp-specs">
                 {specs.map((s) => (
@@ -191,17 +238,23 @@ export default function CarDetail() {
                 </div>
               ) : (
                 <div className="vdp-cta">
-                  <div className="btn-row">
-                    <Link to={`/testdrive?car=${encodeURIComponent(name)}`} className="vdp-btn vdp-btn--primary">
-                      <svg viewBox="0 0 24 24" fill="none"><path d="M8 7V3m8 4V3M4 11h16M6 21h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
-                      Test Drive
-                    </Link>
-                    <a href="tel:+18659247326" className="vdp-btn vdp-btn--ghost">
-                      <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .6a2 2 0 0 1 1.7 2Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" /></svg>
-                      Call Now
-                    </a>
+                  <ul className="vdp-actions">
+                    <li><Link to={`/testdrive?car=${nameParam}`}>Test Drive</Link></li>
+                    <li>
+                      <button type="button" aria-expanded={calcOpen} onClick={() => setCalcOpen((v) => !v)}>
+                        Loan Calculator
+                      </button>
+                    </li>
+                    <li><Link to={`/contact?offer=${nameParam}`}>Make an Offer</Link></li>
+                    <li><Link to={`/tradein?car=${nameParam}`}>Appraise Your Trade</Link></li>
+                    <li><a href="tel:+18659247326">Call Now</a></li>
+                  </ul>
+
+                  <div className={`vdp-calc${calcOpen ? " open" : ""}`}>
+                    <div className="vdp-calc-inner">
+                      <PaymentCalc price={price || 0} />
+                    </div>
                   </div>
-                  <Link to={`/financing?car=${encodeURIComponent(name)}`} className="vdp-btn vdp-btn--gold">Get Pre‑Approved for this Vehicle</Link>
                 </div>
               )}
             </div>
@@ -216,16 +269,32 @@ export default function CarDetail() {
               <p className="vdp-desc">{car.description}</p>
             </section>
           )}
-          {car.features?.length > 0 && (
+          {groups.length > 0 && (
             <section className="vdp-block">
               <h2>Features &amp; Options</h2>
-              <div className="vdp-features">
-                {car.features.map((f, i) => (
-                  <span className="vdp-feature" key={i}>
-                    <svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                    {f}
-                  </span>
+              <div className="vdp-groups">
+                {groups.map((g) => (
+                  <div className="vdp-group" key={g.name}>
+                    <h3>{g.name}<span>{g.items.length}</span></h3>
+                    <div className="vdp-features">
+                      {g.items.map((f, i) => (
+                        <span className="vdp-feature" key={i}>
+                          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                          {f}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 ))}
+              </div>
+            </section>
+          )}
+
+          {similar.length > 0 && (
+            <section className="vdp-block">
+              <h2>Similar {style}s</h2>
+              <div className="vdp-similar" role="list">
+                {similar.map((c, i) => <CarCard key={c.id} car={c} index={i} />)}
               </div>
             </section>
           )}

@@ -568,7 +568,8 @@
     "make": "Mercedes-Benz",
     "model": "GLS 450",
     "year": 2019,
-    "price": 30500,
+    "price": 28499,
+    "oldPrice": 30500,
     "mileage": 69971,
     "color": "Gray",
     "engine": "362 hp 3.0L V6",
@@ -1280,7 +1281,8 @@
     "make": "Jeep",
     "model": "Compass Sport",
     "year": 2012,
-    "price": 6525,
+    "price": 5525,
+    "oldPrice": 6525,
     "mileage": 123157,
     "color": "Gray",
     "engine": "Gasoline engine",
@@ -1471,7 +1473,8 @@
     "make": "Kia",
     "model": "Soul Wagon 4D",
     "year": 2015,
-    "price": 8565,
+    "price": 7999,
+    "oldPrice": 8999,
     "mileage": 110340,
     "color": "Unknown",
     "engine": "2.0L 4-Cyl",
@@ -1508,7 +1511,7 @@
     ],
     "description": "2015 Kia Soul Wagon 4D for sale. Reliable and fuel-efficient wagon with a 2.0L 4-cylinder gasoline engine and automatic transmission. 110,340 miles. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "sold",
+    "status": "available",
     "condition": "used"
   },
   {
@@ -2234,7 +2237,7 @@
     ],
     "description": "2016 Hyundai Veloster Coupe 3D for sale. Sporty and stylish hatchback with excellent fuel efficiency and unique design. Equipped with a 1.6L 4-cylinder engine, automatic transmission, and front-wheel drive. Perfect for city driving and young drivers looking for a sporty feel. Clean title. Carfax available and financing available.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -2448,7 +2451,8 @@
     "make": "Nissan",
     "model": "Sentra S Sedan",
     "year": 2015,
-    "price": 7025,
+    "price": 7499,
+    "oldPrice": 8500,
     "mileage": 110862,
     "color": "Gray",
     "engine": "1.8L 4-Cylinder",
@@ -2489,7 +2493,7 @@
     ],
     "description": "2015 Nissan Sentra S Sedan for sale. Clean and fuel-efficient sedan with smooth driving performance. Equipped with a 1.8L 4-cylinder engine, automatic CVT transmission, and front-wheel drive. Gray exterior with comfortable interior. Ideal for daily commuting. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "sold",
+    "status": "available",
     "condition": "used"
   },
   {
@@ -2592,7 +2596,8 @@
     "make": "Hyundai",
     "model": "Sonata LT",
     "year": 2013,
-    "price": 6070,
+    "price": 7499,
+    "oldPrice": 8100,
     "mileage": null,
     "color": "Sky Blue",
     "engine": "2.4L 4-Cylinder",
@@ -2633,7 +2638,7 @@
     ],
     "description": "2013 Hyundai Sonata LT for sale. Clean and fuel-efficient midsize sedan with smooth driving performance. Equipped with a 2.4L 4-cylinder engine, automatic transmission, and front-wheel drive. Sky blue exterior with comfortable interior. Ideal for daily commuting and family use. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "sold",
+    "status": "available",
     "condition": "used"
   },
   {
@@ -2897,7 +2902,7 @@
     "id": 65,
     "make": "Kia",
     "model": "Sportage LX",
-    "year": 2014,
+    "year": 2012,
     "price": 6645,
     "mileage": 103512,
     "color": "Silver",
@@ -2939,7 +2944,7 @@
       "assets/cars/spt9.jpg",
       "assets/cars/spt10.jpg"
     ],
-    "description": "2014 Kia Sportage LX for sale. Clean and reliable compact SUV with smooth driving performance and good fuel efficiency. Equipped with a 2.4L 4-cylinder engine, automatic transmission, and front-wheel drive. Silver exterior with spacious and comfortable interior. Ideal for daily commuting and family use. Clean title. Carfax available. Financing available.",
+    "description": "2012 Kia Sportage LX for sale. Clean and reliable compact SUV with smooth driving performance and good fuel efficiency. Equipped with a 2.4L 4-cylinder engine, automatic transmission, and front-wheel drive. Silver exterior with spacious and comfortable interior. Ideal for daily commuting and family use. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
     "status": "available",
     "condition": "used"
@@ -3029,7 +3034,7 @@
     "id": 68,
     "make": "Dodge",
     "model": "Grand Caravan SXT Plus",
-    "year": 2013,
+    "year": 2019,
     "price": 8856,
     "mileage": 152582,
     "color": "Gray",
@@ -3055,7 +3060,7 @@
       "assets/cars/van7.jpg",
       "assets/cars/van8.jpg"
     ],
-    "description": "2013 Dodge Grand Caravan SXT Plus Minivan 4D for sale. Gray exterior. 152,582 miles. Clean title. Carfax available. Financing available.",
+    "description": "2019 Dodge Grand Caravan SXT Plus Minivan 4D for sale. Gray exterior. 152,582 miles. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
     "status": "available",
     "condition": "used"
@@ -3219,7 +3224,8 @@
     "make": "Ford",
     "model": "Mustang V6",
     "year": 2016,
-    "price": 12400,
+    "price": 11499,
+    "oldPrice": 12400,
     "mileage": 156000,
     "color": "Red/Black",
     "engine": "3.7L V6",
@@ -3323,7 +3329,8 @@
     "make": "Mazda",
     "model": "CX-30 2.5 S",
     "year": 2024,
-    "price": 22500,
+    "price": 21499,
+    "oldPrice": 22500,
     "mileage": 49354,
     "color": "Black",
     "engine": "2.5L",
@@ -4321,7 +4328,7 @@
     ],
     "description": "2013 Toyota Sienna Limited Minivan 4D in Gray with 248,390 miles. Powered by a 3.5L V6 engine producing 266 HP with 6-speed automatic transmission and AWD.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -4398,7 +4405,8 @@
     "make": "Ford",
     "model": "Fusion SE Sedan 4D",
     "year": 2019,
-    "price": 11999,
+    "price": 11499,
+    "oldPrice": 11999,
     "mileage": 102257,
     "color": "Blue",
     "engine": "1.5L 4-Cyl EcoBoost Turbo",
@@ -4597,7 +4605,7 @@
     ],
     "description": "2011 Lexus RX 350 Sport Utility 4D in Light Blue with 137,117 miles. Powered by a 3.5L V6 engine producing 275 HP with 6-speed automatic transmission and FWD.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -4664,7 +4672,7 @@
     ],
     "description": "2014 Ford Escape Titanium Sport Utility 4D in White with 85,470 miles. Powered by a 2.0L 4-cylinder EcoBoost engine producing 178 HP with 6-speed SelectShift automatic transmission.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -4811,7 +4819,7 @@
     ],
     "description": "2017 Chevrolet Suburban Premier Sport Utility 4D in Black with 183,392 miles. Powered by a 5.3L V8 EcoTec3 engine producing 355 HP with 6-speed automatic transmission and 4WD.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {

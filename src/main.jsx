@@ -18,6 +18,14 @@ import "./css/tradein.css";
 import "./css/app.css";
 import "./css/redesign.css";
 
+/* Page stylesheets last: they refine the shared redesign layer, and loading
+   them from here keeps dev (module order) and build (bundle order) identical. */
+import "./css/inventory-page.css";
+import "./css/inventory-v2.css";
+import "./css/cardetail.css";
+import "./css/cardetail-v2.css";
+import "./css/nav-sale.css";
+
 // Site is always dark
 document.documentElement.dataset.theme = "dark";
 

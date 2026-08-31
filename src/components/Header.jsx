@@ -13,6 +13,7 @@ const NAV = [
       { to: "/inventory", key: "nav.allVehicles" },
       { to: "/inventory?cond=new", key: "nav.newCars" },
       { to: "/inventory?cond=used", key: "nav.usedCars" },
+      { to: "/inventory?status=deals", key: "nav.priceDrops", accent: true },
       { to: "/saved", key: "nav.saved" },
     ],
   },
@@ -105,7 +106,10 @@ export default function Header() {
                   </NavLink>
                   <div className="dropdown">
                     {item.children.map((c) => (
-                      <NavLink key={c.to + c.key} to={c.to} onClick={close}>{t(c.key)}</NavLink>
+                      <NavLink key={c.to + c.key} to={c.to} onClick={close} className={c.accent ? "is-accent" : undefined}>
+                        {t(c.key)}
+                        {c.accent && <span className="nav-tag">SALE</span>}
+                      </NavLink>
                     ))}
                   </div>
                 </div>
@@ -156,7 +160,10 @@ export default function Header() {
                 {openMenu === item.key && (
                   <div className="sb-sub">
                     {item.children.map((c) => (
-                      <NavLink key={c.to + c.key} to={c.to} onClick={close}>{t(c.key)}</NavLink>
+                      <NavLink key={c.to + c.key} to={c.to} onClick={close} className={c.accent ? "is-accent" : undefined}>
+                        {t(c.key)}
+                        {c.accent && <span className="nav-tag">SALE</span>}
+                      </NavLink>
                     ))}
                   </div>
                 )}

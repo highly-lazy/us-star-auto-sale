@@ -306,3 +306,23 @@
   padding: 9px 12px;
 }
 .vdp-feature svg { width: 15px; height: 15px; color: #2fa86a; flex-shrink: 0; }
+
+/* ---- Price drops (anchored pricing) ---- */
+.vdp-price-was {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+.vdp-price.is-deal { color: var(--red, #d62828); }
+.vdp-price-save {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #166e37;
+  background: rgba(22,110,55,0.10);
+  border-radius: 4px;
+  padding: 4px 9px;
+}
