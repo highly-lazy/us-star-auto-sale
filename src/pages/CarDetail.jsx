@@ -182,7 +182,7 @@ export default function CarDetail() {
               <div className="vdp-thumbs">
                 {images.map((src, i) => (
                   <button key={i} className={`vdp-thumb${i === idx ? " is-active" : ""}`} type="button" aria-label={`View image ${i + 1}`} onClick={() => setIdx(i)}>
-                    <img src={thumbPath(src)} alt={`${name} thumbnail ${i + 1}`} loading="lazy" decoding="async" />
+                    <img src={thumbPath(src)} alt={`${name} thumbnail ${i + 1}`} loading="lazy" decoding="async" onError={onImgError} />
                   </button>
                 ))}
               </div>
