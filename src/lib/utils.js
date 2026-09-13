@@ -107,6 +107,10 @@ export const IMG_FALLBACK =
 export function onImgError(e) {
   const el = e.currentTarget;
   if (el.dataset.fallback) return;
+  if (el.src.includes("/assets/cars/thumb/")) {
+    el.src = el.src.replace("/assets/cars/thumb/", "/assets/cars/");
+    return;
+  }
   el.dataset.fallback = "1";
   el.src = IMG_FALLBACK;
 }
