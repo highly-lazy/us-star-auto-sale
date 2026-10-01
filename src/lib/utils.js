@@ -187,7 +187,8 @@ export function savings(c) {
 export function badgeFor(c) {
   if (isSold(c)) return { text: "SOLD", cls: "badge-sold" };
   const s = savings(c);
-  if (s !== null) return { text: `SAVE $${s.toLocaleString()}`, cls: "badge-deal" };
+  // Optional `promo` label (e.g. "COLUMBUS DAY SALE") replaces the generic savings badge.
+  if (s !== null) return { text: c.promo || `SAVE $${s.toLocaleString()}`, cls: "badge-deal" };
   const p = toNum(c.price);
   const m = toNum(c.mileage);
   if (p !== null && p <= 8000) return { text: "SPECIAL", cls: "badge-special" };
