@@ -1322,7 +1322,7 @@
     ],
     "description": "2012 Jeep Compass Sport for sale. Reliable and practical SUV with automatic transmission, gray exterior with gray interior, and 123,157 miles. Clean title.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -2493,7 +2493,7 @@
     ],
     "description": "2015 Nissan Sentra S Sedan for sale. Clean and fuel-efficient sedan with smooth driving performance. Equipped with a 1.8L 4-cylinder engine, automatic CVT transmission, and front-wheel drive. Gray exterior with comfortable interior. Ideal for daily commuting. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -3267,7 +3267,7 @@
     ],
     "description": "2016 Ford Mustang V6 for sale. Head-turning sports coupe in bold Red exterior with custom black hood stripes and black alloy wheels. Powered by a 3.7L V6 engine with automatic transmission and rear-wheel drive. Sporty and aggressive styling with LED headlights and performance-ready setup. Perfect for car enthusiasts who want style and power. Clean title. Carfax available. Financing available.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -3730,7 +3730,7 @@
     ],
     "description": "2010 Honda CR-V EX Sport Utility 4D in Metallic Brown with 159,107 miles. Powered by a 2.4L 4-cylinder VTEC engine producing 180 HP with automatic transmission.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -3852,7 +3852,7 @@
     ],
     "description": "2017 Jeep Cherokee Trailhawk Sport Utility 4D in White with 135,801 miles. Powered by a 3.2L V6 engine producing 271 HP with automatic transmission and 4x4 capability.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -4397,7 +4397,7 @@
     ],
     "description": "2016 Honda HR-V EX Sport Utility 4D in Gray with 128,450 miles. Powered by a 1.8L 4-cylinder i-VTEC engine producing 141 HP with CVT automatic transmission.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -4467,7 +4467,7 @@
     ],
     "description": "2019 Ford Fusion SE Sedan 4D in Blue with 102,257 miles. Powered by a 1.5L 4-cylinder EcoBoost turbo engine producing 181 HP with 6-speed automatic transmission and FWD.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -4534,7 +4534,7 @@
     ],
     "description": "2016 Subaru Crosstrek 2.0i Premium Sport Utility 4D in Silver with 114,565 miles. Powered by a 2.0L 4-cylinder PZEV engine producing 148 HP with CVT automatic transmission and symmetrical AWD.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -4951,7 +4951,7 @@
     ],
     "description": "2007 Chevrolet Silverado (Classic) 1500 Extended Cab LT Pickup in Gold with 157,210 miles. Powered by a 4.8L V8 engine producing 285 HP with automatic transmission and 4WD.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -5383,7 +5383,7 @@
     ],
     "description": "2015 Volkswagen Tiguan 2.0T SE Sport Utility 4D in Gray with black interior and 101,421 miles. Powered by a 2.0L turbocharged 4-cylinder engine producing 200 HP with 6-speed Tiptronic automatic transmission and FWD.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -5469,7 +5469,7 @@
     ],
     "description": "2019 INFINITI QX80 LUXE Sport Utility 4D in Silver with 136,586 miles. Powered by a 5.6L V8 engine producing 400 HP with 7-speed automatic transmission and 4WD. Three-row luxury seating with leather interior.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -5608,7 +5608,7 @@
     ],
     "description": "2010 Honda CR-V EX-L Sport Utility 4D in Black with black leather interior and 148,623 miles. Powered by a 2.4L VTEC 4-cylinder engine producing 180 HP with 5-speed automatic transmission and 4WD.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -5927,7 +5927,7 @@
     ],
     "description": "2018 Chevrolet Silverado 1500 Custom Double Cab in Summit White with 157,221 miles. Powered by a 4.3L V6 EcoTec3 producing 285 HP with 6-speed automatic transmission and 4WD. No accidents reported, 2-owner, personal use with service history.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -6143,7 +6143,7 @@
     ],
     "description": "2012 Ram 1500 SLT Big Horn Crew Cab in Silver with black leather interior and 187,188 miles. Powered by the 5.7L HEMI V8 with automatic transmission, plus backup camera, touchscreen audio, running boards, tonneau cover and trailer hitch.",
     "fuel": "Gas",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -6526,7 +6526,7 @@
     ],
     "description": "2019 Dodge Grand Caravan SXT Minivan 4D in Silver with 106,048 miles. Equipped with a 3.6L V6 flex-fuel engine producing 283 HP, automatic 6-speed transmission, and front-wheel drive. Black interior. Very good condition.",
     "fuel": "Flexible Fuel",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -6720,7 +6720,7 @@
     ],
     "description": "2012 Honda Odyssey Touring Minivan 4D in Gray with Gray interior and 123,578 miles. Powered by a 3.5L V6 i-VTEC engine producing 248 HP with 6-speed automatic transmission and front-wheel drive. Very good condition. Rated 19 city / 28 highway MPG. Curb weight 4,541 lbs GVW.",
     "fuel": "Gasoline",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -6784,7 +6784,7 @@
     ],
     "description": "2016 Chevrolet Cruze Premier Sedan 4D in Red with Black interior and 100,386 miles. Equipped with a 1.4L turbocharged 4-cylinder engine producing 153 HP, automatic 6-speed transmission, and front-wheel drive. Excellent condition. Rated 30 city / 42 highway MPG. Curb weight 3,000 lbs GVW.",
     "fuel": "Gasoline",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -6848,7 +6848,7 @@
     ],
     "description": "Columbus Day Sale: was $9,999, now $8,999. 2019 Chevrolet Malibu LT Sedan 4D in Gray with Black interior and 157,640 miles. Powered by a 1.5L turbocharged 4-cylinder engine producing 163 HP with CVT automatic transmission and front-wheel drive. Very good condition. Rated 29 city / 36 highway MPG. Curb weight 3,159 lbs.",
     "fuel": "Gasoline",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -6915,7 +6915,7 @@
     ],
     "description": "Columbus Day Sale: was $14,499, now $12,999. 2014 Ram 1500 Crew Cab Laramie Pickup 4D 5 1/2 ft in Black with Black interior and 171,652 miles. Powered by a 5.7L HEMI V8 producing 395 HP with 8-speed automatic transmission and four-wheel drive. Good condition. Rated 15 city / 21 highway MPG. Curb weight 5,534 lbs, GVW 6,800 lbs.",
     "fuel": "Gasoline",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -6970,7 +6970,7 @@
     ],
     "description": "2011 Ram 1500 Crew Cab Laramie Pickup in Brown with 204,281 miles. Powered by a 5.7L HEMI V8 producing 390 HP, paired with a 5-speed automatic transmission and 4WD. Very good condition.",
     "fuel": "Gasoline",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -7245,7 +7245,7 @@
     ],
     "description": "2011 Toyota RAV4 with 157,737 miles. Silver exterior with Gray interior, 2.5L 4-cylinder engine producing 179 HP, 4-speed automatic transmission, and 4WD. Excellent condition.",
     "fuel": "Gasoline",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -7302,7 +7302,7 @@
     ],
     "description": "Was $13,199, now $12,899. 2017 Subaru Outback 2.5i Premium Wagon with 113,041 miles. Blue exterior with Black interior, 2.5L 4-cylinder engine producing 175 HP, automatic CVT, and AWD. Excellent condition.",
     "fuel": "Gasoline",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
@@ -7468,7 +7468,7 @@
     ],
     "description": "2018 Subaru Outback 2.5i Limited Wagon with 137,295 miles. White exterior with Gray interior, 2.5L PZEV 4-cylinder engine producing 175 HP, automatic CVT, and AWD. Excellent condition.",
     "fuel": "Gasoline",
-    "status": "available",
+    "status": "sold",
     "condition": "used"
   },
   {
