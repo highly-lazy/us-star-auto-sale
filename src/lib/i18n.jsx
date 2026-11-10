@@ -198,6 +198,12 @@ const STRINGS = {
     "hero.stat.history": "Vehicle history",
     "hero.stat.historyV": "CARFAX",
     "hero.scroll": "Scroll",
+    // seasonal hero (Thanksgiving)
+    "hero.tg.kicker": "Thanksgiving Sale • Knoxville, TN",
+    "hero.tg.titleA": "Thankful for you.",
+    "hero.tg.titleB": "Holiday savings.",
+    "hero.tg.subtext": "Give thanks with a better ride this season. Holiday pricing on select vehicles, financing for every credit type, and a vehicle history report on every listing.",
+    "hero.tg.cta": "Shop Thanksgiving Deals",
 
     // search bar
     "search.barTitle": "Find your vehicle",
@@ -404,6 +410,11 @@ const STRINGS = {
     "hero.stat.history": "Historial del vehículo",
     "hero.stat.historyV": "CARFAX",
     "hero.scroll": "Desliza",
+    "hero.tg.kicker": "Venta de Acción de Gracias • Knoxville, TN",
+    "hero.tg.titleA": "Gracias por elegirnos.",
+    "hero.tg.titleB": "Ofertas festivas.",
+    "hero.tg.subtext": "Celebra esta temporada con un mejor auto. Precios festivos en vehículos seleccionados, financiamiento para todo tipo de crédito y reporte de historial en cada publicación.",
+    "hero.tg.cta": "Ver Ofertas de Acción de Gracias",
 
     "search.barTitle": "Encuentra tu vehículo",
 
